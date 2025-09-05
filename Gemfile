@@ -56,6 +56,7 @@ group :test do
   gem "selenium-webdriver"
 end
 
+#追加でインストールしたgem
 gem "tailwindcss-rails"
 gem "tailwindcss-ruby", "3.4.17"
 
