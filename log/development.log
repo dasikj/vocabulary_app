@@ -41,3 +41,867 @@ Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255
   
 ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
   
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 192.168.65.1 at 2025-09-05 11:20:15 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-7.2.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-7.2.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.1ms | GC: 0.0ms)
+Completed 200 OK in 41ms (Views: 3.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.3ms)
+
+
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to SorceryCore (20250905234847)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "crypted_password" character varying, "salt" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250905234847') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to SorceryCore (20250905234847)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.7ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20250905234847'[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to SorceryCore (20250905234847)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "name" character varying NOT NULL, "crypted_password" character varying, "salt" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_name" ON "users" ("name")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250905234847') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to AddUsageCountsToUsers (20250906015650)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" ADD "quiz_uses_count" integer DEFAULT 0 NOT NULL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "review_uses_count" integer DEFAULT 0 NOT NULL[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250906015650') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 192.168.65.1 at 2025-09-06 11:31:29 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant SessionsController):
+
+Causes:
+ActionDispatch::MissingController (uninitialized constant SessionsController)
+NameError (uninitialized constant SessionsController)
+  
+Started GET "/" for 192.168.65.1 at 2025-09-06 11:51:28 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 12.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 391.0ms | GC: 54.5ms)
+Completed 200 OK in 434ms (Views: 393.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 54.5ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2025-09-06 11:51:28 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/" for 192.168.65.1 at 2025-09-06 11:52:00 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 9.0ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | GC: 0.5ms)
+Completed 200 OK in 28ms (Views: 18.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2025-09-06 11:52:00 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/" for 192.168.65.1 at 2025-09-06 11:52:26 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.8ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | GC: 0.2ms)
+Completed 200 OK in 20ms (Views: 9.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2025-09-06 11:52:27 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/" for 192.168.65.1 at 2025-09-06 11:54:24 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | GC: 0.6ms)
+Completed 200 OK in 24ms (Views: 10.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2025-09-06 11:54:24 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1235955690063948105)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to SorceryCore (20250905234847)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "name" character varying NOT NULL, "crypted_password" character varying, "salt" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_name" ON "users" ("name")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250905234847') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(1235955690063948105)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1235955690063948105)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to AddUsageCountsToUsers (20250906015650)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "quiz_uses_count" integer DEFAULT 0 NOT NULL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "review_uses_count" integer DEFAULT 0 NOT NULL[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250906015650') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(1235955690063948105)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 192.168.65.1 at 2025-09-06 11:55:50 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 7.2ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 117.2ms | GC: 0.3ms)
+Completed 200 OK in 136ms (Views: 119.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2025-09-06 11:55:50 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started POST "/session" for 192.168.65.1 at 2025-09-06 11:55:55 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "commit"=>"ログイン"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = '123@com' ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | GC: 0.0ms)
+Completed 422 Unprocessable Content in 50ms (Views: 6.8ms | ActiveRecord: 17.7ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+Started POST "/session" for 192.168.65.1 at 2025-09-06 17:06:10 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "commit"=>"ログイン"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = '123@com' ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 5.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | GC: 0.0ms)
+Completed 422 Unprocessable Content in 55ms (Views: 17.6ms | ActiveRecord: 3.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/session" for 192.168.65.1 at 2025-09-06 17:06:10 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "commit"=>"ログイン"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = '123@com' ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | GC: 0.0ms)
+Completed 422 Unprocessable Content in 21ms (Views: 15.9ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/session" for 192.168.65.1 at 2025-09-06 17:06:11 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "commit"=>"ログイン"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = '123@com' ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | GC: 2.2ms)
+Completed 422 Unprocessable Content in 74ms (Views: 10.0ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 60.6ms)
+
+
+Started POST "/session" for 192.168.65.1 at 2025-09-06 17:06:13 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "commit"=>"ログイン"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = '123@com' ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | GC: 1.2ms)
+Completed 422 Unprocessable Content in 24ms (Views: 14.2ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 1.2ms)
+
+
+Started GET "/users/new" for 192.168.65.1 at 2025-09-06 17:24:18 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 3.7ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!-- ユーザー登録フォーム -->
+<h1><%= t('title')</h1>
+<%= form_with model: @user, url: users_path, local: true do |f| %>
+  <div>
+    <%= f.label :name, t('activerecord.attributes.user.name') %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :email, t('activerecord.attributes.user.email') %><br>
+    <%= f.email_field :email %>
+  </div>
+
+  <div>
+    <%= f.label :password, t('activerecord.attributes.user.password') %><br>
+    <%= f.password_field :password %>
+  </div>
+
+  <div>
+    <%= f.label :password_confirmation, t('activerecord.attributes.user.password_confirmation') %><br>
+    <%= f.password_field :password_confirmation %>
+  </div>
+
+  <div>
+    <%= f.submit t('.submit') %>
+  </div>
+<% end %>
+
+):
+
+Causes:
+ActiveSupport::SyntaxErrorProxy (/myapp/app/views/users/new.html.erb:7: unknown regexp options - dv
+  </div>
+   ^~~~
+/myapp/app/views/users/new.html.erb:9: syntax error, unexpected '<'
+  <div>
+  ^
+/myapp/app/views/users/new.html.erb:17: unknown regexp options - dv
+  </div>
+   ^~~~
+/myapp/app/views/users/new.html.erb:26: unknown regexp options - dv
+  </div>
+   ^~~~
+/myapp/app/views/users/new.html.erb:29: unterminated string meets end of file
+          end
+             ^
+)
+1:    <!-- ユーザー登録フォーム -->
+2:    <h1><%= t('title')</h1>
+3:    <%= form_with model: @user, url: users_path, local: true do |f| %>
+4:      <div>
+5:        <%= f.label :name, t('activerecord.attributes.user.name') %><br>
+6:        <%= f.text_field :name %>
+7:      </div>
+8:    
+9:      <div>
+10:        <%= f.label :email, t('activerecord.attributes.user.email') %><br>
+11:        <%= f.email_field :email %>
+12:      </div>
+13:    
+14:      <div>
+15:        <%= f.label :password, t('activerecord.attributes.user.password') %><br>
+16:        <%= f.password_field :password %>
+17:      </div>
+18:    
+19:      <div>
+20:        <%= f.label :password_confirmation, t('activerecord.attributes.user.password_confirmation') %><br>
+21:        <%= f.password_field :password_confirmation %>
+22:      </div>
+23:    
+24:      <div>
+25:        <%= f.submit t('.submit') %>
+26:      </div>
+27:    <% end %>
+  
+app/views/users/new.html.erb:7: unknown regexp options - dv
+app/views/users/new.html.erb:9: syntax error, unexpected '<'
+app/views/users/new.html.erb:17: unknown regexp options - dv
+app/views/users/new.html.erb:26: unknown regexp options - dv
+app/views/users/new.html.erb:29: unterminated string meets end of file
+Started GET "/users/new" for 192.168.65.1 at 2025-09-06 17:26:03 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.0ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 3.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!-- ユーザー登録フォーム -->
+<h1><%= t('title')</h1> %>
+<%= form_with model: @user, url: users_path, local: true do |f| %>
+  <div>
+    <%= f.label :name, t('activerecord.attributes.user.name') %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :email, t('activerecord.attributes.user.email') %><br>
+    <%= f.email_field :email %>
+  </div>
+
+  <div>
+    <%= f.label :password, t('activerecord.attributes.user.password') %><br>
+    <%= f.password_field :password %>
+  </div>
+
+  <div>
+    <%= f.label :password_confirmation, t('activerecord.attributes.user.password_confirmation') %><br>
+    <%= f.password_field :password_confirmation %>
+  </div>
+
+  <div>
+    <%= f.submit t('.submit') %>
+  </div>
+<% end %>
+
+):
+
+Causes:
+ActiveSupport::SyntaxErrorProxy (/myapp/app/views/users/new.html.erb:7: unknown regexp options - dv
+  </div>
+   ^~~~
+/myapp/app/views/users/new.html.erb:7: unmatched close parenthesis: /h1> ); @output_buffer.safe_append='
+'.freeze; @output_buffer.append=  form_with model: @user, url: users_path, local: true do |f| ; @output_buffer.safe_append='
+  <div>
+    '.freeze; @output_buffer.append=( f.label :name, t('activerecord.attributes.user.name') ); @output_buffer.safe_append='<br>
+    '.freeze; @output_buffer.append=( f.text_field :name ); @output_buffer.safe_append='
+  </i
+/myapp/app/views/users/new.html.erb:9: syntax error, unexpected '<'
+  <div>
+  ^
+/myapp/app/views/users/new.html.erb:17: unknown regexp options - dv
+  </div>
+   ^~~~
+/myapp/app/views/users/new.html.erb:26: unknown regexp options - dv
+  </div>
+   ^~~~
+/myapp/app/views/users/new.html.erb:29: unterminated string meets end of file
+          end
+             ^
+)
+1:    <!-- ユーザー登録フォーム -->
+2:    <h1><%= t('title')</h1> %>
+3:    <%= form_with model: @user, url: users_path, local: true do |f| %>
+4:      <div>
+5:        <%= f.label :name, t('activerecord.attributes.user.name') %><br>
+6:        <%= f.text_field :name %>
+7:      </div>
+8:    
+9:      <div>
+10:        <%= f.label :email, t('activerecord.attributes.user.email') %><br>
+11:        <%= f.email_field :email %>
+12:      </div>
+13:    
+14:      <div>
+15:        <%= f.label :password, t('activerecord.attributes.user.password') %><br>
+16:        <%= f.password_field :password %>
+17:      </div>
+18:    
+19:      <div>
+20:        <%= f.label :password_confirmation, t('activerecord.attributes.user.password_confirmation') %><br>
+21:        <%= f.password_field :password_confirmation %>
+22:      </div>
+23:    
+24:      <div>
+25:        <%= f.submit t('.submit') %>
+26:      </div>
+27:    <% end %>
+  
+app/views/users/new.html.erb:7: unknown regexp options - dv
+app/views/users/new.html.erb:7: unmatched close parenthesis: /h1> ); @output_buffer.safe_append='
+app/views/users/new.html.erb:9: syntax error, unexpected '<'
+app/views/users/new.html.erb:17: unknown regexp options - dv
+app/views/users/new.html.erb:26: unknown regexp options - dv
+app/views/users/new.html.erb:29: unterminated string meets end of file
+Started GET "/users/new" for 192.168.65.1 at 2025-09-06 17:27:37 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.3ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | GC: 0.2ms)
+Completed 200 OK in 25ms (Views: 16.9ms | ActiveRecord: 1.6ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2025-09-06 17:27:37 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started POST "/users" for 192.168.65.1 at 2025-09-06 17:27:45 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"123@com", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "123@com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 4.5ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | GC: 0.5ms)
+Completed 422 Unprocessable Content in 85ms (Views: 10.4ms | ActiveRecord: 1.6ms (2 queries, 0 cached) | GC: 0.9ms)
+
+
+Started POST "/users" for 192.168.65.1 at 2025-09-06 17:28:03 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"123@com", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "123@com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | GC: 0.0ms)
+Completed 422 Unprocessable Content in 78ms (Views: 7.4ms | ActiveRecord: 1.7ms (2 queries, 0 cached) | GC: 0.8ms)
+
+
+Started POST "/users" for 192.168.65.1 at 2025-09-06 17:28:18 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"1234@com", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "1234@com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | GC: 0.4ms)
+Completed 422 Unprocessable Content in 86ms (Views: 7.0ms | ActiveRecord: 1.5ms (2 queries, 0 cached) | GC: 2.9ms)
+
+
+Started GET "/users/new" for 192.168.65.1 at 2025-09-06 17:28:32 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | GC: 0.0ms)
+Completed 200 OK in 20ms (Views: 11.1ms | ActiveRecord: 1.5ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2025-09-06 17:28:32 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/users/new" for 192.168.65.1 at 2025-09-06 17:33:17 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.2ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | GC: 0.1ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.4ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+  
+ActionView::Template::Error (Missing partial shared/_error_messages with {:locale=>[:ja], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/myapp/app/views"
+  * "/usr/local/bundle/gems/kaminari-core-1.2.2/app/views"
+  * "/usr/local/bundle/gems/turbo-rails-2.0.16/app/views"
+  * "/usr/local/bundle/gems/actiontext-7.2.2.2/app/views"
+  * "/usr/local/bundle/gems/actionmailbox-7.2.2.2/app/views"
+):
+
+Causes:
+ActionView::MissingTemplate (Missing partial shared/_error_messages with {:locale=>[:ja], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/myapp/app/views"
+  * "/usr/local/bundle/gems/kaminari-core-1.2.2/app/views"
+  * "/usr/local/bundle/gems/turbo-rails-2.0.16/app/views"
+  * "/usr/local/bundle/gems/actiontext-7.2.2.2/app/views"
+  * "/usr/local/bundle/gems/actionmailbox-7.2.2.2/app/views"
+)
+    1: <!-- ユーザー登録フォーム -->
+    2: <h1><%= t('.title') %> </h1>
+    3: <%= render 'shared/error_messages', object: @user %>
+    4: <%= form_with model: @user, url: users_path, local: true do |f| %>
+    5:   <div>
+    6:     <%= f.label :name, t('activerecord.attributes.user.name') %><br>
+  
+app/views/users/new.html.erb:3
+Started GET "/users/new" for 192.168.65.1 at 2025-09-06 17:34:56 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.4ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 23.4ms | GC: 7.1ms)
+Completed 200 OK in 38ms (Views: 25.2ms | ActiveRecord: 1.8ms (0 queries, 0 cached) | GC: 7.2ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2025-09-06 17:34:56 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started POST "/users" for 192.168.65.1 at 2025-09-06 17:35:00 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"123@com", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "123@com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.8ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | GC: 0.2ms)
+Completed 422 Unprocessable Content in 78ms (Views: 8.4ms | ActiveRecord: 1.5ms (2 queries, 0 cached) | GC: 0.2ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/new" for 192.168.65.1 at 2025-09-06 17:38:14 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered users/new.html.erb within layouts/application (Duration: 6.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 117.0ms | GC: 0.0ms)
+Completed 200 OK in 430ms (Views: 119.0ms | ActiveRecord: 3.2ms (0 queries, 0 cached) | GC: 64.0ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2025-09-06 17:38:14 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started POST "/users" for 192.168.65.1 at 2025-09-06 17:38:15 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"123@com", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "123@com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered users/new.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 77ms (ActiveRecord: 2.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (missing interpolation argument :attribute in "%{attribute}%{message}" ({:count=>4} given)):
+
+Causes:
+I18n::MissingInterpolationArgument (missing interpolation argument :attribute in "%{attribute}%{message}" ({:count=>4} given))
+    1: <% if object && object.errors.any? %>
+    2:   <div id="error_explanation" class="mb-4 p-3 border border-red-300 bg-red-50 text-red-700 text-sm rounded">
+    3:     <p><%= t('errors.format', default: "入力内容にエラーがあります（%{count}件）", count: object.errors.count) %></p>
+    4:     <ul class="list-disc pl-5">
+    5:       <% object.errors.full_messages.each do |msg| %>
+    6:         <li><%= msg %></li>
+  
+app/views/shared/_error_messages.html.erb:3
+app/views/users/new.html.erb:3
+app/controllers/users_controller.rb:13:in `create'
+Started GET "/users/new" for 192.168.65.1 at 2025-09-06 18:27:02 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 1.1ms | GC: 0.8ms)
+  Rendered users/new.html.erb within layouts/application (Duration: 12.3ms | GC: 6.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 47.1ms | GC: 29.9ms)
+Completed 200 OK in 97ms (Views: 51.8ms | ActiveRecord: 2.7ms (0 queries, 0 cached) | GC: 48.4ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2025-09-06 18:27:03 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started POST "/users" for 192.168.65.1 at 2025-09-06 18:27:05 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"123@com", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録"}
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (2.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "123@com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered users/new.html.erb within layouts/application (Duration: 6.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | GC: 1.9ms)
+Completed 422 Unprocessable Content in 91ms (Views: 14.3ms | ActiveRecord: 3.8ms (2 queries, 0 cached) | GC: 1.9ms)
+
+
+Started POST "/users" for 192.168.65.1 at 2025-09-06 18:27:38 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"TestUser", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "123@com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "TestUser"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "name", "crypted_password", "salt", "created_at", "updated_at", "quiz_uses_count", "review_uses_count") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "123@com"], ["name", "TestUser"], ["crypted_password", "$2a$10$sQdQC7GcWeEmzhB4P5MWxeM2uGptprGr51X5CQ/ezn/kF5nWfUftW"], ["salt", "hwYkEqaMZa-zD1MsSTMv"], ["created_at", "2025-09-06 18:27:39.017914"], ["updated_at", "2025-09-06 18:27:39.017914"], ["quiz_uses_count", 0], ["review_uses_count", 0]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Redirected to http://localhost:3000/session
+Completed 302 Found in 75ms (ActiveRecord: 3.2ms (3 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/session" for 192.168.65.1 at 2025-09-06 18:27:39 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/session"):
+  
+Started GET "/users/new" for 192.168.65.1 at 2025-09-06 18:27:39 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/new.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | GC: 0.1ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2025-09-06 18:27:39 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/login" for 192.168.65.1 at 2025-09-06 18:27:58 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+Started GET "/session/new" for 192.168.65.1 at 2025-09-06 18:28:32 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | GC: 0.2ms)
+Completed 200 OK in 15ms (Views: 13.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2025-09-06 18:28:32 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started POST "/session" for 192.168.65.1 at 2025-09-06 18:28:37 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "commit"=>"ログイン"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = '123@com' ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Redirected to http://localhost:3000/top
+Completed 302 Found in 122ms (ActiveRecord: 1.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/top" for 192.168.65.1 at 2025-09-06 18:28:37 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomeController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+NoMethodError (undefined method `vocabularies' for an instance of User):
+  
+app/controllers/HomeController.rb:8:in `index'
+Started GET "/session/new/na" for 192.168.65.1 at 2025-09-06 18:33:39 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/session/new/na"):
+  
+Started GET "/" for 192.168.65.1 at 2025-09-06 18:42:55 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+SyntaxError (/myapp/app/controllers/application_controller.rb:9: syntax error, unexpected string literal, expecting `end' or dummy end
+...flash.sessions.require_login')')
+...                              ^
+/myapp/app/controllers/application_controller.rb:12: unterminated string meets end of file):
+  
+app/controllers/application_controller.rb:9: syntax error, unexpected string literal, expecting `end' or dummy end
+app/controllers/application_controller.rb:12: unterminated string meets end of file
+app/controllers/sessions_controller.rb:1:in `<main>'
+Started GET "/" for 192.168.65.1 at 2025-09-06 18:42:56 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+SyntaxError (/myapp/app/controllers/application_controller.rb:9: syntax error, unexpected string literal, expecting `end' or dummy end
+...flash.sessions.require_login')')
+...                              ^
+/myapp/app/controllers/application_controller.rb:12: unterminated string meets end of file):
+  
+app/controllers/application_controller.rb:9: syntax error, unexpected string literal, expecting `end' or dummy end
+app/controllers/application_controller.rb:12: unterminated string meets end of file
+app/controllers/sessions_controller.rb:1:in `<main>'
+Started GET "/" for 192.168.65.1 at 2025-09-06 18:43:26 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.1ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | GC: 0.3ms)
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2025-09-06 18:43:26 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started POST "/session" for 192.168.65.1 at 2025-09-06 18:43:33 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "commit"=>"ログイン"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = '123@com' ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Redirected to http://localhost:3000/top
+Completed 302 Found in 135ms (ActiveRecord: 21.2ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/top" for 192.168.65.1 at 2025-09-06 18:43:33 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomeController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 6.4ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/new" for 192.168.65.1 at 2025-09-06 18:43:43 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/new"):
+  
+Started GET "/session/new" for 192.168.65.1 at 2025-09-06 18:43:51 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2025-09-06 18:43:51 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/users/new" for 192.168.65.1 at 2025-09-06 18:43:57 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered users/new.html.erb within layouts/application (Duration: 4.9ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | GC: 0.8ms)
+Completed 200 OK in 19ms (Views: 17.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2025-09-06 18:43:57 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/" for 192.168.65.1 at 2025-09-06 18:50:12 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+SyntaxError (/myapp/app/controllers/application_controller.rb:17: syntax error, unexpected end-of-input, expecting `end' or dummy end):
+  
+app/controllers/application_controller.rb:17: syntax error, unexpected end-of-input, expecting `end' or dummy end
+app/controllers/sessions_controller.rb:1:in `<main>'
+Started GET "/boards" for 192.168.65.1 at 2025-09-06 18:50:16 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/boards"):
+  

@@ -1,0 +1,17 @@
+<h1><%= t('.title') %></h1>
+
+<%= form_with url: session_path, local: true do |f| %>
+  <div>
+    <%= f.label :email, t('activerecord.attributes.user.email') %><br>
+    <%= f.email_field :email %>
+  </div>
+
+  <div>
+    <%= f.label :password, t('activerecord.attributes.user.password') %><br>
+    <%= f.password_field :password %>
+  </div>
+
+  <div>
+    <%= f.submit t('.submit') %>
+  </div>
+<% end %>
