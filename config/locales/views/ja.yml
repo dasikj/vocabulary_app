@@ -1,0 +1,22 @@
+ja:
+  users:
+    new:
+      title: ユーザー登録
+      submit: 登録
+  sessions:
+    new:
+      title: ログイン
+      submit: ログイン
+  flash:
+    users:
+      create:
+        success: 登録しました。ログインしてください。
+        failure: 登録に失敗しました。
+    sessions:
+      create:
+        success: ログインしました。
+        failure: メールアドレスまたはパスワードが違います。
+      destroy:
+        success: ログアウトしました。
+      reequire_login: ログインが必要です。
+      already_logged_in: すでにログインしています。      

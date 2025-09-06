@@ -1,0 +1,28 @@
+<!-- ユーザー登録フォーム -->
+<h1><%= t('.title') %> </h1>
+<%= render 'shared/error_messages', object: @user %>
+<%= form_with model: @user, url: users_path, local: true do |f| %>
+  <div>
+    <%= f.label :name, t('activerecord.attributes.user.name') %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :email, t('activerecord.attributes.user.email') %><br>
+    <%= f.email_field :email %>
+  </div>
+
+  <div>
+    <%= f.label :password, t('activerecord.attributes.user.password') %><br>
+    <%= f.password_field :password %>
+  </div>
+
+  <div>
+    <%= f.label :password_confirmation, t('activerecord.attributes.user.password_confirmation') %><br>
+    <%= f.password_field :password_confirmation %>
+  </div>
+
+  <div>
+    <%= f.submit t('.submit') %>
+  </div>
+<% end %>
