@@ -1,2 +1,78 @@
-<h1 class="mb-2"><%= t('.title', default: 'トップ') %></h1>
-#<div>ここにカレンダーを差し込みます</div>
+<% content_for :title, full_title(t(".title")) %>
+<div class="max-w-5xl mx-auto space-y-8">
+  <!-- サマリー：語彙/文章 登録数 -->
+  <section class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <div class="rounded-2xl bg-white shadow p-5 text-gray-900">
+      <p class="text-sm text-gray-500">語彙登録数</p>
+      <p class="mt-1 text-3xl font-bold tracking-tight">123</p> <!-- ダミー -->
+    </div>
+    <div class="rounded-2xl bg-white shadow p-5 text-gray-900">
+      <p class="text-sm text-gray-500">文章登録数</p>
+      <p class="mt-1 text-3xl font-bold tracking-tight">45</p> <!-- ダミー -->
+    </div>
+  </section>
+
+  <!-- 検索ブロック -->
+  <section class="rounded-2xl bg-white shadow p-6 space-y-4 text-gray-900">
+    <h2 class="text-lg font-semibold">登録した言葉を検索</h2>
+
+    <!-- 文章 / 語彙 トグル -->
+    <div class="inline-flex rounded-xl border overflow-hidden">
+      <button type="button" class="px-4 py-2 text-sm font-medium bg-gray-100">文章</button>
+      <button type="button" class="px-4 py-2 text-sm font-medium">語彙</button>
+    </div>
+
+    <!-- フリーワード -->
+    <div>
+      <input type="text" placeholder="検索したい語彙 / 文章を入力"
+             class="w-full rounded-xl border px-4 py-2 placeholder-gray-400" />
+    </div>
+
+    <!-- カテゴリ（語彙=品詞 / 文章=種類） -->
+    <div class="flex items-center gap-3">
+      <label class="text-sm text-gray-700">カテゴリ</label>
+      <select class="rounded-xl border px-3 py-2">
+        <option>絞らない</option>
+      </select>
+    </div>
+
+    <!-- タグ展開（AND/ORは後でJS） -->
+    <div class="space-y-2">
+      <button type="button" class="text-sm text-blue-600 hover:underline">+ タグ</button>
+      <div class="hidden border rounded-xl p-3" id="tag-panel">
+        <p class="text-sm text-gray-500">タグを選んで絞り込み（AND / OR 対応予定）</p>
+      </div>
+    </div>
+
+    <!-- 検索ボタン -->
+    <div>
+      <button type="button" class="rounded-xl bg-blue-600 text-white px-6 py-2">検索</button>
+    </div>
+  </section>
+
+  <!-- アクション：問題 / 振り返り -->
+  <section class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <a href="#" class="rounded-2xl bg-white shadow p-6 hover:shadow-md transition text-gray-900">
+      <h3 class="font-semibold">語彙をランダムに問題にする</h3>
+      <p class="text-sm text-gray-500 mt-1">当日以外から出題（例：10問）</p>
+    </a>
+    <a href="#" class="rounded-2xl bg-white shadow p-6 hover:shadow-md transition text-gray-900">
+      <h3 class="font-semibold">文章をランダムに振り返る</h3>
+      <p class="text-sm text-gray-500 mt-1">過去登録からランダム抽出</p>
+    </a>
+  </section>
+
+  <!-- カレンダー（ヒートマップ想定） -->
+  <section class="rounded-2xl bg-white shadow p-6 text-gray-800">
+  <div class="flex items-center justify-between">
+    <button type="button" class="px-3 py-1 rounded-lg border">&larr;</button>
+    <h2 class="text-lg font-semibold">2025年 9月</h2>
+    <button type="button" class="px-3 py-1 rounded-lg border">&rarr;</button>
+  </div>
+  <div class="mt-4 grid grid-cols-7 gap-1 max-w-md mx-auto">
+    <% 35.times do %>
+      <div class="h-8 w-8 rounded bg-gray-200"></div>
+    <% end %>
+  </div>
+  </section>
+</div>
