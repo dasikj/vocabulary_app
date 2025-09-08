@@ -1,8 +1,7 @@
 class SessionsController < ApplicationController
   # ログイン済みならトップページへリダイレクト（new, createアクションのみ）
   before_action :redirect_if_logged_in, only: %i[new create]
-  def new
-  end
+  def new; end
 
   def create
     @user = login(params[:email], params[:password])

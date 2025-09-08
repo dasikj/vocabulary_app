@@ -1,1 +1,27 @@
-  <h1 class="font-bold text-4xl">語彙一覧（ダミー）</h1>
+<% content_for :title, full_title(t(".title")) %>
+<div class="max-w-4xl mx-auto mt-6 space-y-4">
+  <h1 class="text-xl font-semibold"><%= t(".title") %></h1>
+
+  <div class="rounded-2xl bg-white text-gray-900 shadow divide-y">
+    <% @vocabularies.each do |v| %>
+      <div class="p-4 flex items-start justify-between gap-4">
+        <div>
+          <div class="font-semibold text-lg"><%= v.word %></div>
+          <div class="text-sm text-gray-500">
+            <%= v.reading.presence || t(".reading_none") %> /
+            <%= t("enums.vocabulary.part_of_speech.#{v.part_of_speech}") %>
+          </div>
+          <div class="mt-2 text-sm"><%= simple_format(v.meaning) %></div>
+          <% if v.example.present? %>
+            <div class="mt-1 text-xs text-gray-600"><%= t(".example_label") %><%= v.example %></div>
+          <% end %>
+        </div>
+        <div class="text-xs text-gray-500 whitespace-nowrap"><%= l v.created_at, format: :short %></div>
+      </div>
+    <% end %>
+    <% if @vocabularies.empty? %>
+      <div class="p-6 text-center text-gray-500"><%= t(".empty") %></div>
+    <% end %>
+  </div>
+  <%= paginate @vocabularies %>
+</div>

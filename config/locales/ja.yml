@@ -1,11 +1,17 @@
 ja:
   activerecord:
     models:
-      user: ユーザー
+      user: "ユーザー"
     attributes:
       user:
-        name: 名前
-        email: メールアドレス
-        password: パスワード
-        password_confirmation: パスワード確認
-        
+        email: "メールアドレス"
+        password: "パスワード"
+        password_confirmation: "パスワード確認"
+        name: "ユーザー名"
+      vocabulary:
+        word: "語彙"
+        reading: "読み"
+        meaning: "意味"
+        example: "用例"
+        part_of_speech: "品詞区分"
+        submit: "登録"
