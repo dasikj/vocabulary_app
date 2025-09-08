@@ -1,1 +1,40 @@
-<h1 class="font-bold text-4xl">語彙登録（ダミー）</h1>
+<div class="max-w-2xl mx-auto mt-10">
+  <div class="rounded-2xl bg-white text-gray-900 shadow p-6 space-y-6">
+    <h1 class="text-xl font-semibold"><%= t(".title") %></h1>
+    <%# 共通エラーメッセージ%>
+    <%= render "shared/error_messages", object: @vocabulary %>
+    <%# 語彙登録フォーム%>
+    <%= form_with model: @vocabulary, url: vocabularies_path, local: true do |f| %>
+      <div>
+        <%= f.label :word, class: "block text-sm mb-1" %>
+        <%= f.text_field :word, class: "w-full rounded-xl border px-3 py-2" %>
+      </div>
+
+      <div>
+        <%= f.label :reading, class: "block text-sm mb-1" %>
+        <%= f.text_field :reading, class: "w-full rounded-xl border px-3 py-2" %>
+      </div>
+
+      <div>
+        <%= f.label :meaning, class: "block text-sm mb-1" %>
+        <%= f.text_area :meaning, rows: 3, class: "w-full rounded-xl border px-3 py-2" %>
+      </div>
+
+      <div>
+        <%= f.label :example, class: "block text-sm mb-1" %>
+        <%= f.text_area :example, rows: 3, class: "w-full rounded-xl border px-3 py-2" %>
+      </div>
+
+      <div>
+        <%= f.label :part_of_speech, class: "block text-sm mb-1" %>
+        <%= f.select :part_of_speech,
+              Vocabulary.part_of_speeches.keys.map { |k| [I18n.t("enums.vocabulary.part_of_speech.#{k}"), k] },
+              {}, class: "w-full rounded-xl border px-3 py-2" %>
+      </div>
+
+      <div class="pt-2">
+        <%= f.submit t(".submit"), class: "w-full rounded-xl bg-blue-600 text-white py-2" %>
+      </div>
+    <% end %>
+  </div>
+</div>

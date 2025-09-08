@@ -9,7 +9,6 @@ ja:
       tag_edit: "タグ追加・編集"
       bookmark: "お気に入り"
       user_show: "ユーザー詳細"
-      
   placeholders:
     email: "メールアドレスを入力"
     password: "パスワード（8文字以上）"
@@ -19,20 +18,11 @@ ja:
     new:
       title: "ユーザー登録"
       submit: "作成"
-      email: "メールアドレス"
-      name: "ユーザー名"
-      password: "パスワード"
-      password_confirmation: "パスワード（確認）"
       return_login: "ログインページへ戻る"
   sessions:
     new:
       title: "ログイン"
       login: "ログイン"
-      email: "メールアドレス"
-      email_placeholder: "メールアドレスを入力"
-      password: "パスワード"
-      password_placeholder: "パスワード（8文字以上）"
-      submit: "ログイン"
       link_to_signup: "新規登録"
   flash:
     users:
@@ -47,6 +37,48 @@ ja:
         success: "ログアウトしました。"
       reequire_login: "ログインが必要です。"
       already_logged_in: "すでにログインしています。"
+    vocabularies:
+      create:
+        success: "語彙を登録しました。"
+        failure: "語彙の登録に失敗しました。"
+      update:
+        success: "語彙を更新しました"
+        failure: "語彙の更新に失敗しました。"
+      destroy:
+        success: "削除しました"   
   home:
     index:
-      title: "トップページ"          
+      title: "トップページ"
+  enums:
+    vocabulary:
+      part_of_speech:
+        noun: "名詞"
+        verb: "動詞"
+        adjective: "形容(動)詞"
+        adverb: "副詞"
+        idiom: "四字熟語"
+        phrase: "慣用句"
+        other: "その他"
+  vocabularies:
+    create:
+      success: "語彙を登録しました"
+      failure: "語彙の登録に失敗しました"  
+    index:
+      title: "語彙一覧"
+      empty: "まだ登録がありません"
+      reading_none: "（読みなし）"
+      example_label: "用例："
+    new:
+      title: "語彙登録"
+      submit: "登録"
+      return_index: "語彙一覧へ戻る" 
+    destroy:
+      button: "削除"
+      success: "語彙を削除しました"
+    update:
+      submit: "変更を保存"
+      success: "語彙を更新しました"
+      failure: "語彙の更新に失敗しました"
+    show:
+      title: "語彙詳細"
+      edit: "編集"

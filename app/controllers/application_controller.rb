@@ -6,12 +6,12 @@ class ApplicationController < ActionController::Base
   private
   # ログインを要求するメソッド / ログインしていなければログイン画面へリダイレクト
   def not_authenticated
-    redirect_to session_path, alert: t('flash.sessions.require_login')
+    redirect_to session_path, alert: t("flash.sessions.require_login")
   end
   # ログイン済みならトップページへリダイレクト
   def redirect_if_logged_in
     if logged_in?
-      redirect_to top_path, notice: t('flash.sessions.already_logged_in')
+      redirect_to top_path, notice: t("flash.sessions.already_logged_in")
     end
   end
 end

@@ -8544,8 +8544,24 @@ var hello_controller_default = class extends Controller {
   }
 };
 
+// app/javascript/controllers/edit_toggle_controller.js
+var edit_toggle_controller_default = class extends Controller {
+  static targets = ["field", "submit", "tags"];
+  toggle(e) {
+    const on = e.target.checked;
+    this.fieldTargets.forEach((el) => el.disabled = !on);
+    if (this.hasSubmitTarget) {
+      this.submitTarget.classList.toggle("invisible", !on);
+    }
+    if (this.hasTagsTarget) {
+      this.tagsTarget.classList.toggle("invisible", !on);
+    }
+  }
+};
+
 // app/javascript/controllers/index.js
 application.register("hello", hello_controller_default);
+application.register("edit-toggle", edit_toggle_controller_default);
 /*! Bundled license information:
 
 @hotwired/turbo/dist/turbo.es2017-esm.js:

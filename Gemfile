@@ -56,15 +56,18 @@ group :test do
   gem "selenium-webdriver"
 end
 
-#追加でインストールしたgem
+# 追加でインストールしたgem
 gem "tailwindcss-rails"
 gem "tailwindcss-ruby", "3.4.17"
 
-gem 'sorcery'
-gem 'kaminari'
-gem 'draper'
-gem 'ransack'
-gem 'turbo-rails'
-gem 'pry-byebug'
-gem 'gretel'
-gem 'rails-i18n'
+gem "sorcery"
+gem "kaminari"
+gem "draper"
+gem "ransack"
+gem "turbo-rails"
+gem "pry-byebug"
+gem "gretel"
+gem "rails-i18n"
+gem "rubocop", require: false
+gem "rubocop-capybara", require: false
+gem "rubocop-rails", require: false

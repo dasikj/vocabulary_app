@@ -1,0 +1,5 @@
+<% if current_page.last? %>
+  <span class="inline-flex h-9 items-center rounded-lg px-3 bg-gray-100 text-gray-400 cursor-not-allowed">>></span>
+<% else %>
+  <%= link_to ">>", url, class: "inline-flex h-9 items-center rounded-lg px-3 bg-white border text-gray-800 hover:bg-gray-100" %>
+<% end %>

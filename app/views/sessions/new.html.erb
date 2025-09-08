@@ -1,27 +1,26 @@
-<% content_for :title, full_title(t(".title")) %>
 <div class="max-w-md mx-auto mt-10">
   <div class="rounded-2xl bg-white text-gray-900 shadow p-6 space-y-5">
     <h1 class="text-xl font-semibold"><%= t(".login") %></h1>
-
+    
     <%= form_with url: session_path, method: :post, scope: nil do %>
       <div class="space-y-4">
         <div>
-          <%= label_tag :email, t(".email"), class: "block text-sm mb-1" %>
+          <%= label_tag :email, t("activerecord.attributes.user.email"), class: "block text-sm mb-1" %>
           <%= text_field_tag :email, nil,
-                placeholder: t(".email_placeholder"),
+                placeholder: t("placeholders.email"),
                 class: "w-full rounded-xl border px-3 py-2" %>
         </div>
 
         <div>
-          <%= label_tag :password, t(".password"), class: "block text-sm mb-1" %>
+          <%= label_tag :password, t("activerecord.attributes.user.password"), class: "block text-sm mb-1" %>
           <%= password_field_tag :password, nil,
-                placeholder: t(".password_placeholder"),
+                placeholder: t("placeholders.password"),
                 class: "w-full rounded-xl border px-3 py-2" %>
         </div>
 
         <div class="pt-2">
           <%= submit_tag t(".login"),
-                class: "w-full rounded-xl bg-blue-600 text-white py-2" %>
+                class: "w-full rounded-xl bg-blue-600 text-white py-2 hover:bg-blue-700 hover:shadow-lg active:translate-y-0.5 transition duration-150" %>
         </div>
       </div>
     <% end %>
