@@ -58,7 +58,7 @@ end
 
 # 追加でインストールしたgem
 gem "tailwindcss-rails"
-gem "tailwindcss-ruby", "3.4.17"
+gem "tailwindcss-ruby", "4.1.12"
 
 gem "sorcery"
 gem "kaminari"
