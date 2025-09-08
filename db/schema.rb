@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_09_08_082234) do
+ActiveRecord::Schema[7.2].define(version: 2025_09_08_223641) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "sentences", force: :cascade do |t|
+    t.text "body"
+    t.bigint "user_id", null: false
+    t.integer "sentence_category", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "body"], name: "index_sentences_on_user_id_and_body", unique: true
+    t.index ["user_id"], name: "index_sentences_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
@@ -57,6 +67,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_09_08_082234) do
     t.index ["user_id"], name: "index_vocabulary_tags_on_user_id"
   end
 
+  add_foreign_key "sentences", "users"
   add_foreign_key "vocabulary_taggings", "vocabularies"
   add_foreign_key "vocabulary_taggings", "vocabulary_tags"
   add_foreign_key "vocabulary_tags", "users"

@@ -6,6 +6,6 @@ class CreateVocabularyTags < ActiveRecord::Migration[7.2]
 
       t.timestamps
     end
-    add_index :vocabulary_tags, [:user_id, :name], unique: true
+    add_index :vocabulary_tags, [ :user_id, :name ], unique: true
   end
 end

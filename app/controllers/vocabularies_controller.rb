@@ -1,5 +1,5 @@
 class VocabulariesController < ApplicationController
-  before_action :set_vocabulary, only: [:show, :update, :destroy]
+  before_action :set_vocabulary, only: [ :show, :update, :destroy ]
   before_action :normalize_vocabulary_search!, only: :index
   def new
     @vocabulary = Vocabulary.new

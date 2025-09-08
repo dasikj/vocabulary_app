@@ -5,8 +5,10 @@ Rails.application.routes.draw do
   get "top", to: "home#index", as: "top"
   # ユーザー登録
   resources :users, only: [ :new, :create, :create ]
-  # 語彙 editいらない可能性あり
-  resources :vocabularies, only: [:new, :create, :index, :update, :destroy, :show]
+  # 語彙
+  resources :vocabularies, only: [ :new, :create, :index, :update, :destroy, :show ]
+  # 文章
+  resources :sentences, only: [ :new, :create, :index, :update, :destroy, :show ]
   # ログイン/ログアウト
   resource :session, only: [ :new, :create, :destroy ]
   # カレンダーに日毎の登録数を表示するダッシュボード

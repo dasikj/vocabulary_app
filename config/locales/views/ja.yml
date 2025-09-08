@@ -47,6 +47,15 @@ ja:
         failure: "語彙の更新に失敗しました。"
       destroy:
         success: "削除しました"
+    sentences:
+      create:
+        success: "文章を登録しました。"
+        failure: "文章の登録に失敗しました。"
+      update:
+        success: "文章を更新しました"
+        failure: "文章の更新に失敗しました。"
+      destroy:
+        success: "削除しました"
   home:
     index:
       title: "トップページ"
@@ -60,6 +69,17 @@ ja:
         idiom: "四字熟語"
         phrase: "慣用句"
         other: "その他"
+    sentence:
+      sentence_category:
+        metaphor: "比喩"       
+        appearance: "容姿・人物"    
+        description: "情景"   
+        psychology: "心理"      
+        conversation: "会話"   
+        expression: "表現"     
+        logic: "論理"          
+        gag: "ギャグ"            
+        other: "その他"          
   vocabularies:
     index:
       title: "語彙一覧"
@@ -82,3 +102,23 @@ ja:
       edit: "編集"
     search_form:
       all_part_of_speech: "品詞全て"
+  sentences:
+    index:
+      title: "文章一覧"
+      empty: "まだ登録がありません"
+    new:
+      title: "文章登録"
+      submit: "登録"
+      return_index: "文章一覧へ戻る" 
+    destroy:
+      button: "削除"
+      success: "文章を削除しました"
+    update:
+      submit: "変更を保存"
+      success: "文章を更新しました"
+      failure: "文章の更新に失敗しました"
+    show:
+      title: "文章詳細"
+      edit: "編集"
+    search_form:
+      all_sentence_category: "種類全て"
