@@ -1,4 +1,6 @@
 class Vocabulary < ApplicationRecord
+  has_many :vocabulary_taggings, dependent: :destroy
+  has_many :vocabulary_tags, through: :vocabulary_taggings
   enum part_of_speech: {
     noun: 0,        # 名詞
     verb: 1,        # 動詞
@@ -9,7 +11,7 @@ class Vocabulary < ApplicationRecord
     other: 6        # その他
   }
 
-  validates :word, presence: true, length: { maximum: 100 }
+  validates :word, presence: true, length: { maximum: 100 }, uniqueness: true
   validates :reading, length: { maximum: 100 }, allow_blank: true
   validates :meaning, presence: true
   validates :example, length: { maximum: 1000 }, allow_blank: true
