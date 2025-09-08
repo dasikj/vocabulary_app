@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_09_06_015650) do
+ActiveRecord::Schema[7.2].define(version: 2025_09_07_235343) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -25,5 +25,15 @@ ActiveRecord::Schema[7.2].define(version: 2025_09_06_015650) do
     t.integer "review_uses_count", default: 0, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["name"], name: "index_users_on_name", unique: true
+  end
+
+  create_table "vocabularies", force: :cascade do |t|
+    t.string "word"
+    t.string "reading"
+    t.text "meaning"
+    t.text "example"
+    t.integer "part_of_speech"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 end

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  #ログイン済みならトップページへリダイレクト（new, createアクションのみ）
+  # ログイン済みならトップページへリダイレクト（new, createアクションのみ）
   before_action :redirect_if_logged_in, only: %i[new create]
   # GET /users/new
   def new
@@ -9,9 +9,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to new_session_path, notice: t('flash.users.create.success')
+      redirect_to new_session_path, notice: t("flash.users.create.success")
     else
-      flash.now[:alert] = t('flash.users.create.failure')
+      flash.now[:alert] = t("flash.users.create.failure")
       render :new, status: :unprocessable_entity
     end
   end

@@ -11,7 +11,7 @@ class User < ApplicationRecord
   # 名前：必須・一意・長さチェック
   validates :name, presence: true, uniqueness: true,
                     length: { in: 3..30 }
-  # パスワード：必須・長さチェック・確認入力チェック (新規登録時と変更時のみ)                  
+  # パスワード：必須・長さチェック・確認入力チェック (新規登録時と変更時のみ)
   validates :password, length: { minimum: 8 },
                        confirmation: true,
                        if: -> { new_record? || changes[:crypted_password] }
