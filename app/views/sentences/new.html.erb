@@ -1,0 +1,25 @@
+<div class="max-w-2xl mx-auto mt-10">
+  <div class="rounded-2xl bg-white text-gray-900 shadow p-6 space-y-6">
+    <h1 class="text-xl font-semibold"><%= t(".title") %></h1>
+    <%# 共通エラーメッセージ%>
+    <%= render "shared/error_messages", object: @sentence %>
+    <%# 文章登録フォーム%>
+    <%= form_with model: @sentence, url: sentences_path, local: true do |f| %>
+      <div>
+        <%= f.label :body, class: "block text-sm mb-1" %>
+        <%= f.text_field :body, rows:10, class: "w-full rounded-xl border px-3 py-2" %>
+      </div>
+
+      <div>
+        <%= f.label :sentence_category, class: "block text-sm mb-1" %>
+        <%= f.select :sentence_category,
+              Sentence.sentence_categories.keys.map { |k| [I18n.t("enums.sentence.sentence_category.#{k}"), k] },
+              {}, class: "w-full rounded-xl border px-3 py-2" %>
+      </div>
+
+      <div class="pt-2">
+        <%= f.submit t(".submit"), class: "w-full rounded-xl bg-blue-600 text-white py-2" %>
+      </div>
+    <% end %>
+  </div>
+</div>

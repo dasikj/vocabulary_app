@@ -1,0 +1,26 @@
+<div class="max-w-4xl mx-auto mt-6 space-y-4">
+  <h1 class="text-xl font-semibold"><%= t(".title") %></h1>
+  <%# 検索フォーム %>
+  <%= render "search_form", q: @q %>
+  <%# 語彙表示 %>
+  <div class="rounded-2xl bg-white text-gray-900 shadow divide-y overflow-hidden">
+    <% @sentences.each do |v| %>
+      <div class="relative p-4 flex items-start justify-between gap-4 hover:bg-gray-200 cursor-pointer">
+        <div>
+          <div class="font-semibold text-lg"><%= v.body %></div>
+          <div class="text-sm text-gray-500">
+            <%= v.reading.presence || t(".reading_none") %> /
+            <%= t("enums.sentence.sentence_category.#{v.sentence_category}") %>
+          </div>
+        </div>
+        <div class="text-xs text-gray-500 whitespace-nowrap"><%= l v.created_at, format: :short %></div>
+        <%= link_to "", sentence_path(v), class: "absolute inset-0", aria: { label: v.body } %>
+      </div>
+    <% end %>
+    <% if @sentences.empty? %>
+      <div class="p-6 text-center text-gray-500"><%= t(".empty") %></div>
+    <% end %>
+  </div>
+  <%# ページネーション %>
+  <%= paginate @sentences %>
+</div>
