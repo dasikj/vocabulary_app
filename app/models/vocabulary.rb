@@ -1,15 +1,5 @@
 class Vocabulary < ApplicationRecord
-  has_many :vocabulary_taggings, dependent: :destroy
-  has_many :vocabulary_tags, through: :vocabulary_taggings
-  enum part_of_speech: {
-    noun: 0,        # 名詞
-    verb: 1,        # 動詞
-    adjective: 2,   # 形容詞（形容動詞も含む）
-    adverb: 3,      # 副詞
-    idiom: 4,       # 四字熟語
-    phrase: 5,      # 慣用句
-    other: 6        # その他
-  }
+  enum part_of_speech: { noun: 0, verb: 1, adjective: 2, adverb: 3, idiom: 4, phrase: 5, other: 6 }
 
   validates :word, presence: true, length: { maximum: 100 }, uniqueness: true
   validates :reading, length: { maximum: 100 }, allow_blank: true
@@ -23,5 +13,4 @@ class Vocabulary < ApplicationRecord
   
   def self.ransackable_associations(_auth = nil)
     %w[vocabulary_tags]
-  end
-end
+

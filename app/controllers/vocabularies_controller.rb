@@ -1,5 +1,9 @@
 class VocabulariesController < ApplicationController
+<<<<<<< HEAD
   before_action :set_vocabulary, only: [:show, :update, :destroy]
+=======
+  before_action :set_vocabulary, only: [ :edit, :show, :update, :destroy ]
+>>>>>>> cea280a (test CI停止)
   before_action :normalize_vocabulary_search!, only: :index
   def new
     @vocabulary = Vocabulary.new
