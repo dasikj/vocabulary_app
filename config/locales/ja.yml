@@ -17,3 +17,5 @@ ja:
         submit: "登録"
         update: "更新"
         delete: "削除"
+      form:
+        confirm: "本当に削除しますか？"

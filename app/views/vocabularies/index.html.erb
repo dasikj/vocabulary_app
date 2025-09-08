@@ -1,7 +1,8 @@
-<% content_for :title, full_title(t(".title")) %>
 <div class="max-w-4xl mx-auto mt-6 space-y-4">
   <h1 class="text-xl font-semibold"><%= t(".title") %></h1>
-
+  <%# 検索フォーム %>
+  <%= render "search_form", q: @q %>
+  <%# 語彙表示 %>
   <div class="rounded-2xl bg-white text-gray-900 shadow divide-y overflow-hidden">
     <% @vocabularies.each do |v| %>
       <div class="relative p-4 flex items-start justify-between gap-4 hover:bg-gray-200 cursor-pointer">
@@ -24,5 +25,6 @@
       <div class="p-6 text-center text-gray-500"><%= t(".empty") %></div>
     <% end %>
   </div>
+  <%# ページネーション %>
   <%= paginate @vocabularies %>
 </div>

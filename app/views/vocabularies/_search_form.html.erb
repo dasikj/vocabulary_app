@@ -1,0 +1,18 @@
+<%= search_form_for q, url: vocabularies_path, method: :get,
+      class: "mb-4 grid grid-cols-1 md:grid-cols-4 gap-3" do |f| %>
+
+  <%= f.search_field :word_or_meaning_or_example_cont,
+        placeholder: "キーワード", class: "rounded-xl border px-3 py-2" %>
+
+  <%= f.select :part_of_speech_eq,
+        Vocabulary.part_of_speeches.map { |k,_| [t("enums.vocabulary.part_of_speech.#{k}"), k] },
+        { include_blank: "品詞すべて" }, class: "rounded-xl border px-3 py-2" %>
+
+  <%= f.date_field :created_at_gteq, class: "rounded-xl border px-3 py-2" %>
+  <%= f.date_field :created_at_lteq, class: "rounded-xl border px-3 py-2" %>
+
+  <div class="md:col-span-4 flex gap-2">
+    <%= f.submit "検索", class: "rounded-xl bg-blue-600 text-white px-4 py-2 hover:bg-blue-700 transition hover:shadow-lg active:translate-y-0.5 duration-150" %>
+    <%= link_to "クリア", vocabularies_path, class: "hover:shadow-lg active:translate-y-0.5 transition duration-150 rounded-xl border bg-white px-4 py-2 hover:bg-gray-300" %>
+  </div>
+<% end %>

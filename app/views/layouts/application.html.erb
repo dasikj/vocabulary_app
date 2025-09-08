@@ -4,7 +4,7 @@
   <%# ↓ 更新時にキャッシュを保持して反映が遅くならないように。デバッグ後は消すこと %>
   <%# <meta name="turbo-cache-control" content="no-cache"> %>
   <%# ↑ 更新時にキャッシュを保持して反映が遅くならないように。デバッグ後は消すこと %>
-  <title><%= full_title(yield(:title)) %></title>
+  <title><%= full_title(t("#{controller_path}.#{action_name}.title", default: t("titles.default"))) %></title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
@@ -17,6 +17,7 @@
   <% unless controller_name == "sessions" || (controller_name == "users" && action_name == "new") %>
     <%= render "shared/header" %>
   <% end %>
+
 
   <main class="flex-grow container mx-auto p-4">
     <%= render "shared/flash" %>

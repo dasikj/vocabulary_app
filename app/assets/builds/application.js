@@ -8550,8 +8550,12 @@ var edit_toggle_controller_default = class extends Controller {
   toggle(e) {
     const on = e.target.checked;
     this.fieldTargets.forEach((el) => el.disabled = !on);
-    this.submitTarget.classList.toggle("hidden", !on);
-    if (this.hasTagsTarget) this.tagsTarget.classList.toggle("hidden", !on);
+    if (this.hasSubmitTarget) {
+      this.submitTarget.classList.toggle("invisible", !on);
+    }
+    if (this.hasTagsTarget) {
+      this.tagsTarget.classList.toggle("invisible", !on);
+    }
   }
 };
 

@@ -14,4 +14,13 @@ class Vocabulary < ApplicationRecord
   validates :meaning, presence: true
   validates :example, length: { maximum: 1000 }, allow_blank: true
   validates :part_of_speech, presence: true
+
+  def self.ransackable_attributes(_auth = nil)
+    %w[word reading meaning example part_of_speech created_at]
+  end
+
+  def self.ransackable_associations(_auth = nil)
+    []
+  end
+  
 end

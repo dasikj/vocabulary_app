@@ -72,3 +72,13 @@ ja:
       title: "語彙登録"
       submit: "登録"
       return_index: "語彙一覧へ戻る" 
+    destroy:
+      button: "削除"
+      success: "語彙を削除しました"
+    update:
+      submit: "変更を保存"
+      success: "語彙を更新しました"
+      failure: "語彙の更新に失敗しました"
+    show:
+      title: "語彙詳細"
+      edit: "編集"
