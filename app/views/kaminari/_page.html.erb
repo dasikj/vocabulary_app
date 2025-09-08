@@ -1,0 +1,5 @@
+<% if page.current? %>
+  <span class="inline-flex h-9 min-w-9 items-center justify-center rounded-lg bg-blue-600 px-3 text-white font-medium"><%= page.number %></span>
+<% else %>
+  <%= link_to page.number, url, class: "inline-flex h-9 min-w-9 items-center justify-center rounded-lg px-3 bg-white border text-gray-800 hover:bg-gray-100" %>
+<% end %>

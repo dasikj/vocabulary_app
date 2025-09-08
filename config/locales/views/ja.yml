@@ -40,7 +40,12 @@ ja:
     vocabularies:
       create:
         success: "語彙を登録しました。"
-        failure: "語彙の登録に失敗しました。"  
+        failure: "語彙の登録に失敗しました。"
+      update:
+        success: "語彙を更新しました"
+        failure: "語彙の更新に失敗しました。"
+      destroy:
+        success: "削除しました"   
   home:
     index:
       title: "トップページ"

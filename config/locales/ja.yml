@@ -15,3 +15,5 @@ ja:
         example: "用例"
         part_of_speech: "品詞区分"
         submit: "登録"
+        update: "更新"
+        delete: "削除"

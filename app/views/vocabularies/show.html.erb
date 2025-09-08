@@ -1,0 +1,49 @@
+<div class="flex items-center justify-between" data-controller="edit-toggle">
+  <h1 class="text-xl font-semibold"><%= @vocabulary.word %></h1>
+  <label class="flex items-center gap-2 text-sm">
+    <input type="checkbox" data-action="edit-toggle#toggle"> 編集
+  </label>
+</div>
+
+<%= form_with model: @vocabulary, url: vocabulary_path(@vocabulary), method: :patch, local: true, data: { controller: "edit-toggle" } do |f| %>
+  <div class="rounded-2xl bg-white text-gray-900 shadow p-6 space-y-4" data-edit-toggle-target="container">
+    <div>
+      <%= f.label :word, class: "block text-sm mb-1" %>
+      <%= f.text_field :word, class: "w-full rounded-xl border px-3 py-2",
+            data: { "edit-toggle-target": "field" }, disabled: true %>
+    </div>
+    <div>
+      <%= f.label :reading, class: "block text-sm mb-1" %>
+      <%= f.text_field :reading, class: "w-full rounded-xl border px-3 py-2",
+            data: { "edit-toggle-target": "field" }, disabled: true %>
+    </div>
+    <div>
+      <%= f.label :meaning, class: "block text-sm mb-1" %>
+      <%= f.text_area :meaning, rows: 3, class: "w-full rounded-xl border px-3 py-2",
+            data: { "edit-toggle-target": "field" }, disabled: true %>
+    </div>
+    <div>
+      <%= f.label :example, class: "block text-sm mb-1" %>
+      <%= f.text_area :example, rows: 3, class: "w-full rounded-xl border px-3 py-2",
+            data: { "edit-toggle-target": "field" }, disabled: true %>
+    </div>
+    <div>
+      <%= f.label :part_of_speech, class: "block text-sm mb-1" %>
+      <%= f.select :part_of_speech,
+            Vocabulary.part_of_speeches.keys.map { |k| [t("enums.vocabulary.part_of_speech.#{k}"), k] },
+            {}, class: "w-full rounded-xl border px-3 py-2",
+            data: { "edit-toggle-target": "field" }, disabled: true %>
+    </div>
+
+    <!-- タグ群は後で実装 -->
+    <div data-edit-toggle-target="tags" class="hidden">
+      <p class="text-sm text-gray-600 mb-2">タグ（仮）</p>
+      <!-- チェックボックス群をここに -->
+    </div>
+
+    <div>
+      <%= f.submit "変更を保存", class: "rounded-xl bg-blue-600 text-white px-5 py-2 hidden",
+            data: { "edit-toggle-target": "submit" } %>
+    </div>
+  </div>
+<% end %>
