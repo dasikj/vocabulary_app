@@ -1,5 +1,5 @@
 class VocabulariesController < ApplicationController
-  before_action :set_vocabulary, only: [:edit,:show, :update, :destroy]
+  before_action :set_vocabulary, only: [:show, :update, :destroy]
   before_action :normalize_vocabulary_search!, only: :index
   def new
     @vocabulary = Vocabulary.new
@@ -15,13 +15,12 @@ class VocabulariesController < ApplicationController
     end
   end
 
-  def index
-    @q = Vocabulary.ransack(params[:q])
-    @vocabularies = @q.result.order(created_at: :desc).page(params[:page]).per(10)
-  end
+def index
+  @q = Vocabulary.ransack(params[:q])
+  @vocabularies = search_scope.page(params[:page]).per(10)
+  @vocabulary_tags = VocabularyTag.where(user: current_user).order(:name)
+end
 
-  #editいらない可能性あり
-  def edit; end
   def show; end
 
   def update
@@ -59,5 +58,19 @@ end
     if q["created_at_lteq"].present?
       q["created_at_lteq"] = Time.zone.parse(q["created_at_lteq"]).end_of_day
     end
+  end
+  def search_scope
+    base = @q.result.includes(:vocabulary_tags).order(created_at: :desc)
+    ids = selected_tag_ids
+    return base if ids.empty?
+
+    base.joins(:vocabulary_taggings)
+        .where(vocabulary_taggings: { vocabulary_tag_id: ids })
+        .group("vocabularies.id")
+        .having("COUNT(DISTINCT vocabulary_taggings.vocabulary_tag_id) = ?", ids.size)
+  end
+
+  def selected_tag_ids
+    Array(params[:tag_ids]).map(&:to_i).uniq
   end
 end

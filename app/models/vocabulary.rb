@@ -20,9 +20,8 @@ class Vocabulary < ApplicationRecord
   def self.ransackable_attributes(_auth = nil)
     %w[word reading meaning example part_of_speech created_at]
   end
-
-  def self.ransackable_associations(_auth = nil)
-    []
-  end
   
+  def self.ransackable_associations(_auth = nil)
+    %w[vocabulary_tags]
+  end
 end

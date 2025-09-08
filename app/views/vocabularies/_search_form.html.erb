@@ -12,6 +12,7 @@
   <%= f.date_field :created_at_gteq, class: "rounded-xl border px-3 py-2" %>
   <%= f.date_field :created_at_lteq, class: "rounded-xl border px-3 py-2" %>
 
+<%# 検索ボタン %>
   <div class="md:col-span-4 flex gap-2">
     <%= f.submit "検索", class: "rounded-xl bg-blue-600 text-white px-4 py-2 hover:bg-blue-700 transition hover:shadow-lg active:translate-y-0.5 duration-150" %>
     <%= link_to "クリア", vocabularies_path, class: "hover:shadow-lg active:translate-y-0.5 transition duration-150 rounded-xl border bg-white px-4 py-2 hover:bg-gray-300" %>
