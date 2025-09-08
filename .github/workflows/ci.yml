@@ -1,4 +1,5 @@
 name: CI
+#テストを自動で実行しない。テストするなら、fixに自分でデータベースの値を入れる必要がある。
 
 on:
   workflow_dispatch:
