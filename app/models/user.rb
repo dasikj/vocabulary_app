@@ -2,6 +2,9 @@ class User < ApplicationRecord
   # sorceryによる認証機能を追加
   authenticates_with_sorcery!
 
+  has_many :vocabularies, dependent: :destroy
+  has_many :sentences, dependent: :destroy
+
   # 保存前に入力を整形する(前後スペース削除・メールを小文字化)
   before_validation :normalize
 

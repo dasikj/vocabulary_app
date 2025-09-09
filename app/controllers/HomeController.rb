@@ -1,5 +1,4 @@
 class HomeController < ApplicationController
-  before_action :require_login
 
   def index
     # month = (params[:month] || Date.current).to_date

@@ -1,13 +1,12 @@
 class VocabulariesController < ApplicationController
   before_action :set_vocabulary, only: [ :show, :update, :destroy ]
   before_action :normalize_vocabulary_search!, only: :index
-  before_action :require_login
   def new
     @vocabulary = Vocabulary.new
   end
 
   def create
-    @vocabulary = Vocabulary.new(vocabulary_params)
+    @vocabulary = current_user.vocabularies.build(vocabulary_params)
     if @vocabulary.save
       redirect_to vocabularies_path, notice: t("flash.vocabularies.create.success")
     else
@@ -17,7 +16,7 @@ class VocabulariesController < ApplicationController
   end
 
 def index
-  @q = Vocabulary.ransack(params[:q])
+  @q = current_user.vocabularies.ransack(params[:q])
   @vocabularies = search_scope.page(params[:page]).per(10)
   @vocabulary_tags = VocabularyTag.where(user: current_user).order(:name)
 end
@@ -46,7 +45,7 @@ end
   end
 
   def set_vocabulary
-    @vocabulary = Vocabulary.find(params[:id])
+    @vocabulary = current_user.vocabularies.find(params[:id])
   end
 
   def normalize_vocabulary_search!

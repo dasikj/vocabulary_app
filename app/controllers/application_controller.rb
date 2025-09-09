@@ -2,9 +2,10 @@ class ApplicationController < ActionController::Base
   # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
   allow_browser versions: :modern
   include Sorcery::Controller
+  before_action :require_login
 
   private
-  # ログインを要求するメソッド / ログインしていなければログイン画面へリダイレクト
+  # Sorcery: 未ログイン時の処理
   def not_authenticated
     redirect_to new_session_path, alert: t("flash.sessions.not_authenticated")
   end
