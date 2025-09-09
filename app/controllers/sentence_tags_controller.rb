@@ -34,6 +34,6 @@ class SentenceTagsController < ApplicationController
 
   private
   def sentence_tag_params
-    params.require(:sentence_tag).permit(:name)
+    params.require(:sentence_tag).permit(:name, :color)
   end
 end

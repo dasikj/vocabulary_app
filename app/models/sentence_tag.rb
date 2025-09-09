@@ -5,6 +5,10 @@ class SentenceTag < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 32 }
   validates :name, uniqueness: { scope: :user_id }   # 同一ユーザー内で一意
+  validates :color,
+            presence: true,
+            format: { with: /\A#(?:[0-9a-fA-F]{3}|[0-9a-fA-F]{6})\z/,
+            message: "は #RGB または #RRGGBB 形式で入力してください" }
 
   def self.ransackable_attributes(_ = nil)
     %w[id name user_id created_at updated_at]

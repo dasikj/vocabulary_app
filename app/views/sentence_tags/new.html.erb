@@ -7,6 +7,28 @@
       <p class="text-red-600 text-sm mt-1"><%= @sentence_tag.errors[:name].first %></p>
     <% end %>
   </div>
+  <div>
+    <%= f.label :color, "色", class: "block text-sm mb-1" %>
+    <% color_id = dom_id(@sentence_tag, :color) %>
+    <div class="flex items-center gap-3">
+      <%= f.color_field :color, id: color_id,
+            class: "h-9 w-14 rounded border",
+            oninput: "const p=this.parentElement; p.querySelector('[data-chip]').style.backgroundColor=this.value; const t=p.querySelector('[data-hex]'); if(t) t.value=this.value" %>
+
+      <%= text_field_tag :color_hex, @sentence_tag.color, 'data-hex': true,
+            placeholder: "#RRGGBB",
+            class: "w-32 rounded-xl border px-3 py-2",
+            oninput: "const c=document.getElementById('#{color_id}'); c.value=this.value; this.parentElement.querySelector('[data-chip]').style.backgroundColor=this.value" %>
+
+      <span data-chip class="inline-block h-6 w-6 rounded-full border" style="background-color:<%= @sentence_tag.color %>"></span>
+
+      <button type="button" class="rounded border px-2 py-1 text-sm"
+              onclick="const p=this.parentElement; p.querySelector('input[type=color]').value=''; const t=p.querySelector('[data-hex]'); if(t) t.value=''; p.querySelector('[data-chip]').style.backgroundColor='transparent'">
+        クリア
+      </button>
+    </div>
+    <p class="text-xs text-gray-500 mt-1">カラーピッカー or #RGB/#RRGGBB を入力</p>
+  </div>
   <%= f.submit "作成", class: "rounded-xl bg-blue-600 text-white px-4 py-2" %>
   <%= link_to "一覧へ戻る", sentence_tags_path, class: "ml-2 underline" %>
 <% end %>
