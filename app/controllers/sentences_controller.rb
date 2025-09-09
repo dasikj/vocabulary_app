@@ -1,6 +1,7 @@
 class SentencesController < ApplicationController
   before_action :set_sentence, only: [ :show, :update, :destroy ]
   before_action :normalize_sentence_search!, only: :index
+  before_action :require_login
   def new
     @sentence = Sentence.new
   end

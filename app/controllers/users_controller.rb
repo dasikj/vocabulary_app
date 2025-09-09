@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   # ログイン済みならトップページへリダイレクト（new, createアクションのみ）
   before_action :redirect_if_logged_in, only: %i[new create]
+  skip_before_action :require_login, only: %i[new create]
   # GET /users/new
   def new
     @user = User.new

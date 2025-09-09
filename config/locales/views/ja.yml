@@ -36,7 +36,7 @@ ja:
         failure: "メールアドレスまたはパスワードが違います。"
       destroy:
         success: "ログアウトしました。"
-      reequire_login: "ログインが必要です。"
+      not_authenticated: "ログインが必要です。"
       already_logged_in: "すでにログインしています。"
     vocabularies:
       create:
