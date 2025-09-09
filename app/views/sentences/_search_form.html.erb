@@ -22,7 +22,7 @@
     </button>
 
     <dialog id="sentenceTagDialog" class="p-0 w-full max-w-2xl rounded-2xl">
-      <form method="dialog" class="flex flex-col max-h-[70vh]">
+      <div class="flex flex-col max-h-[70vh]">
         <div class="px-4 py-3 border-b sticky top-0 bg-white rounded-t-2xl">
           <div class="font-semibold">タグを選択</div>
         </div>
@@ -58,13 +58,13 @@
               閉じる
             </button>
             <button type="button"
-                    onclick="document.getElementById('sentenceTagDialog').close(); this.closest('form').closest('form')?.requestSubmit()"
+                    onclick="document.getElementById('sentenceTagDialog').close()"
                     class="px-4 py-2 rounded-xl bg-orange-500 text-white">
               指定する
             </button>
           </div>
         </div>
-      </form>
+      </div>
     </dialog>
   </div>
 
