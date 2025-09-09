@@ -28,9 +28,10 @@
       <% if @sentence.sentence_tags.any? %>
         <div class="mt-3 flex flex-wrap gap-2">
           <% @sentence.sentence_tags.order(:name).each do |tag| %>
-          <%= link_to tag.name,
-                          sentences_path(q: { sentence_tags_id_in: [tag.id] }),
-                          class: "px-2 py-1 rounded-full border text-xs hover:bg-gray-100" %>
+            <%= link_to tag.name,
+                sentences_path(q: { sentence_tags_id_in: [tag.id] }),
+                class: "px-2 py-1 rounded-full border text-xs hover:opacity-80",
+                style: "background-color: #{tag.color.presence || '#000'}; color: #fff;" %>
           <% end %>
         </div>
       <% end %>
