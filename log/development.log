@@ -19906,3 +19906,859 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 12ms (Views: 9.6ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
 
 
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateSentenceTaggings (20250908231937)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "sentence_taggings" ("id" bigserial primary key, "sentence_id" bigint NOT NULL, "sentence_tag_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_7474661b04"
+FOREIGN KEY ("sentence_id")
+  REFERENCES "sentences" ("id")
+, CONSTRAINT "fk_rails_4e22a88136"
+FOREIGN KEY ("sentence_tag_id")
+  REFERENCES "sentence_tags" ("id")
+)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+Started GET "/vocabularies/new" for 192.168.65.1 at 2025-09-09 10:18:24 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 2 pending migrations:
+
+db/migrate/20250908231937_create_sentence_taggings.rb
+db/migrate/20250909011741_change_vocabularies_unique_index.rb
+
+
+):
+  
+activerecord (7.2.2.2) lib/active_record/migration.rb:756:in `check_pending_migrations'
+activerecord (7.2.2.2) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.2.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activesupport (7.2.2.2) lib/active_support/file_update_checker.rb:95:in `execute_if_updated'
+activerecord (7.2.2.2) lib/active_record/migration.rb:670:in `block in call'
+activerecord (7.2.2.2) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.2.2) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.2) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+request_store (1.7.0) lib/request_store/middleware.rb:19:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.2) lib/rails/engine.rb:535:in `call'
+puma (7.0.0) lib/puma/configuration.rb:297:in `call'
+puma (7.0.0) lib/puma/request.rb:101:in `block in handle_request'
+puma (7.0.0) lib/puma/thread_pool.rb:336:in `with_force_shutdown'
+puma (7.0.0) lib/puma/request.rb:100:in `handle_request'
+puma (7.0.0) lib/puma/server.rb:497:in `process_client'
+puma (7.0.0) lib/puma/server.rb:266:in `block in run'
+puma (7.0.0) lib/puma/thread_pool.rb:172:in `block in spawn_thread'
+Started GET "/top" for 192.168.65.1 at 2025-09-09 10:18:28 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 2 pending migrations:
+
+db/migrate/20250908231937_create_sentence_taggings.rb
+db/migrate/20250909011741_change_vocabularies_unique_index.rb
+
+
+):
+  
+activerecord (7.2.2.2) lib/active_record/migration.rb:756:in `check_pending_migrations'
+activerecord (7.2.2.2) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.2.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.2.2) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.2.2) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.2.2) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.2) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+request_store (1.7.0) lib/request_store/middleware.rb:19:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.2) lib/rails/engine.rb:535:in `call'
+puma (7.0.0) lib/puma/configuration.rb:297:in `call'
+puma (7.0.0) lib/puma/request.rb:101:in `block in handle_request'
+puma (7.0.0) lib/puma/thread_pool.rb:336:in `with_force_shutdown'
+puma (7.0.0) lib/puma/request.rb:100:in `handle_request'
+puma (7.0.0) lib/puma/server.rb:497:in `process_client'
+puma (7.0.0) lib/puma/server.rb:266:in `block in run'
+puma (7.0.0) lib/puma/thread_pool.rb:172:in `block in spawn_thread'
+Started GET "/top" for 192.168.65.1 at 2025-09-09 10:18:30 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 2 pending migrations:
+
+db/migrate/20250908231937_create_sentence_taggings.rb
+db/migrate/20250909011741_change_vocabularies_unique_index.rb
+
+
+):
+  
+activerecord (7.2.2.2) lib/active_record/migration.rb:756:in `check_pending_migrations'
+activerecord (7.2.2.2) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.2.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.2.2) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.2.2) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.2.2) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.2) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+request_store (1.7.0) lib/request_store/middleware.rb:19:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.2) lib/rails/engine.rb:535:in `call'
+puma (7.0.0) lib/puma/configuration.rb:297:in `call'
+puma (7.0.0) lib/puma/request.rb:101:in `block in handle_request'
+puma (7.0.0) lib/puma/thread_pool.rb:336:in `with_force_shutdown'
+puma (7.0.0) lib/puma/request.rb:100:in `handle_request'
+puma (7.0.0) lib/puma/server.rb:497:in `process_client'
+puma (7.0.0) lib/puma/server.rb:266:in `block in run'
+puma (7.0.0) lib/puma/thread_pool.rb:172:in `block in spawn_thread'
+Started GET "/top" for 192.168.65.1 at 2025-09-09 10:18:31 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 2 pending migrations:
+
+db/migrate/20250908231937_create_sentence_taggings.rb
+db/migrate/20250909011741_change_vocabularies_unique_index.rb
+
+
+):
+  
+activerecord (7.2.2.2) lib/active_record/migration.rb:756:in `check_pending_migrations'
+activerecord (7.2.2.2) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.2.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.2.2) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.2.2) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.2.2) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.2) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+request_store (1.7.0) lib/request_store/middleware.rb:19:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.2) lib/rails/engine.rb:535:in `call'
+puma (7.0.0) lib/puma/configuration.rb:297:in `call'
+puma (7.0.0) lib/puma/request.rb:101:in `block in handle_request'
+puma (7.0.0) lib/puma/thread_pool.rb:336:in `with_force_shutdown'
+puma (7.0.0) lib/puma/request.rb:100:in `handle_request'
+puma (7.0.0) lib/puma/server.rb:497:in `process_client'
+puma (7.0.0) lib/puma/server.rb:266:in `block in run'
+puma (7.0.0) lib/puma/thread_pool.rb:172:in `block in spawn_thread'
+Started GET "/top" for 192.168.65.1 at 2025-09-09 10:18:31 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 2 pending migrations:
+
+db/migrate/20250908231937_create_sentence_taggings.rb
+db/migrate/20250909011741_change_vocabularies_unique_index.rb
+
+
+):
+  
+activerecord (7.2.2.2) lib/active_record/migration.rb:756:in `check_pending_migrations'
+activerecord (7.2.2.2) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.2.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.2.2) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.2.2) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.2.2) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.2) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+request_store (1.7.0) lib/request_store/middleware.rb:19:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.2) lib/rails/engine.rb:535:in `call'
+puma (7.0.0) lib/puma/configuration.rb:297:in `call'
+puma (7.0.0) lib/puma/request.rb:101:in `block in handle_request'
+puma (7.0.0) lib/puma/thread_pool.rb:336:in `with_force_shutdown'
+puma (7.0.0) lib/puma/request.rb:100:in `handle_request'
+puma (7.0.0) lib/puma/server.rb:497:in `process_client'
+puma (7.0.0) lib/puma/server.rb:266:in `block in run'
+puma (7.0.0) lib/puma/thread_pool.rb:172:in `block in spawn_thread'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateSentenceTaggings (20250908231937)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250908231937') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeVocabulariesUniqueIndex (20250909011741)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP INDEX  "index_vocabularies_on_word"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_vocabularies_on_user_id_and_word" ON "vocabularies" ("user_id", "word")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250909011741') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/top" for 192.168.65.1 at 2025-09-09 10:20:06 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | GC: 0.1ms)
+Completed 200 OK in 29ms (Views: 13.5ms | ActiveRecord: 2.2ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/sentences" for 192.168.65.1 at 2025-09-09 10:20:07 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :sentence_category, {:metaphor=>0, :appearance=>1, :description=>2, :psychology=>3, :conversation=>4, :expression=>5, :logic=>6, :gag=>7, :other=>8}
+ (called from <class:Sentence> at /myapp/app/models/sentence.rb:3)
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  Rendered sentences/_search_form.html.erb (Duration: 2.5ms | GC: 0.0ms)
+  [1m[36mSentence Load (0.2ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" ORDER BY "sentences"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 6.6ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | GC: 0.0ms)
+Completed 200 OK in 25ms (Views: 10.8ms | ActiveRecord: 1.3ms (2 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/vocabularies/new" for 192.168.65.1 at 2025-09-09 10:20:08 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VocabulariesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :part_of_speech, {:noun=>0, :verb=>1, :adjective=>2, :adverb=>3, :idiom=>4, :phrase=>5, :other=>6}
+ (called from <class:Vocabulary> at /myapp/app/models/vocabulary.rb:4)
+  Rendering layout layouts/application.html.erb
+  Rendering vocabularies/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered vocabularies/new.html.erb within layouts/application (Duration: 3.4ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | GC: 0.0ms)
+Completed 200 OK in 19ms (Views: 8.3ms | ActiveRecord: 2.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/sentences" for 192.168.65.1 at 2025-09-09 10:20:08 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  Rendered sentences/_search_form.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  [1m[36mSentence Load (0.2ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" ORDER BY "sentences"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 3.4ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | GC: 0.6ms)
+Completed 200 OK in 14ms (Views: 9.1ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/vocabularies/new" for 192.168.65.1 at 2025-09-09 10:20:09 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VocabulariesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering vocabularies/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered vocabularies/new.html.erb within layouts/application (Duration: 3.7ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | GC: 0.4ms)
+Completed 200 OK in 19ms (Views: 16.2ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/sentences" for 192.168.65.1 at 2025-09-09 10:20:10 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  Rendered sentences/_search_form.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  [1m[36mSentence Load (0.2ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" ORDER BY "sentences"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 3.2ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | GC: 0.2ms)
+Completed 200 OK in 14ms (Views: 9.6ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/vocabularies" for 192.168.65.1 at 2025-09-09 10:20:10 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VocabulariesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering vocabularies/index.html.erb within layouts/application
+  Rendered vocabularies/_search_form.html.erb (Duration: 3.8ms | GC: 0.0ms)
+  [1m[36mVocabulary Load (0.4ms)[0m  [1m[34mSELECT "vocabularies".* FROM "vocabularies" WHERE "vocabularies"."user_id" = $1 ORDER BY "vocabularies"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 2], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/vocabularies/index.html.erb:7
+  [1m[36mVocabularyTagging Load (0.1ms)[0m  [1m[34mSELECT "vocabulary_taggings".* FROM "vocabulary_taggings" WHERE "vocabulary_taggings"."vocabulary_id" = $1[0m  [["vocabulary_id", 3]]
+  ↳ app/views/vocabularies/index.html.erb:7
+  Rendered vocabularies/index.html.erb within layouts/application (Duration: 17.3ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 21.4ms | GC: 0.0ms)
+Completed 200 OK in 34ms (Views: 20.0ms | ActiveRecord: 2.9ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/vocabularies/new" for 192.168.65.1 at 2025-09-09 10:20:11 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VocabulariesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering vocabularies/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered vocabularies/new.html.erb within layouts/application (Duration: 2.2ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 8.6ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/vocabularies" for 192.168.65.1 at 2025-09-09 10:20:15 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VocabulariesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "vocabulary"=>{"word"=>"灼熱", "reading"=>"しゃくねつ", "meaning"=>"", "example"=>"", "part_of_speech"=>"noun"}, "commit"=>"登録"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/vocabularies_controller.rb:10:in `create'
+  [1m[36mVocabulary Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "vocabularies" WHERE "vocabularies"."word" = $1 AND "vocabularies"."user_id" = $2 LIMIT $3[0m  [["word", "灼熱"], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/vocabularies_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/vocabularies_controller.rb:10:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering vocabularies/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered vocabularies/new.html.erb within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.7ms | GC: 0.4ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | GC: 0.4ms)
+Completed 422 Unprocessable Content in 17ms (Views: 6.7ms | ActiveRecord: 1.5ms (2 queries, 0 cached) | GC: 1.1ms)
+
+
+Started POST "/vocabularies" for 192.168.65.1 at 2025-09-09 10:20:20 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VocabulariesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "vocabulary"=>{"word"=>"灼熱", "reading"=>"しゃくねつ", "meaning"=>"ｋ", "example"=>"", "part_of_speech"=>"noun"}, "commit"=>"登録"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/vocabularies_controller.rb:10:in `create'
+  [1m[36mVocabulary Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "vocabularies" WHERE "vocabularies"."word" = $1 AND "vocabularies"."user_id" = $2 LIMIT $3[0m  [["word", "灼熱"], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/vocabularies_controller.rb:10:in `create'
+  [1m[36mVocabulary Create (0.3ms)[0m  [1m[32mINSERT INTO "vocabularies" ("word", "reading", "meaning", "example", "part_of_speech", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["word", "灼熱"], ["reading", "しゃくねつ"], ["meaning", "ｋ"], ["example", ""], ["part_of_speech", 0], ["created_at", "2025-09-09 10:20:20.093705"], ["updated_at", "2025-09-09 10:20:20.093705"], ["user_id", 2]]
+  ↳ app/controllers/vocabularies_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/vocabularies_controller.rb:10:in `create'
+Redirected to http://localhost:3000/vocabularies
+Completed 302 Found in 8ms (ActiveRecord: 1.7ms (3 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/vocabularies" for 192.168.65.1 at 2025-09-09 10:20:20 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VocabulariesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering vocabularies/index.html.erb within layouts/application
+  Rendered vocabularies/_search_form.html.erb (Duration: 1.6ms | GC: 0.6ms)
+  [1m[36mVocabulary Load (0.2ms)[0m  [1m[34mSELECT "vocabularies".* FROM "vocabularies" WHERE "vocabularies"."user_id" = $1 ORDER BY "vocabularies"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 2], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/vocabularies/index.html.erb:7
+  [1m[36mVocabularyTagging Load (0.2ms)[0m  [1m[34mSELECT "vocabulary_taggings".* FROM "vocabulary_taggings" WHERE "vocabulary_taggings"."vocabulary_id" IN ($1, $2)[0m  [["vocabulary_id", 6], ["vocabulary_id", 3]]
+  ↳ app/views/vocabularies/index.html.erb:7
+  Rendered vocabularies/index.html.erb within layouts/application (Duration: 4.5ms | GC: 0.6ms)
+  Rendered shared/_header.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | GC: 0.6ms)
+Completed 200 OK in 11ms (Views: 8.1ms | ActiveRecord: 0.5ms (3 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/vocabularies/3" for 192.168.65.1 at 2025-09-09 10:20:20 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VocabulariesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mVocabulary Load (0.2ms)[0m  [1m[34mSELECT "vocabularies".* FROM "vocabularies" WHERE "vocabularies"."user_id" = $1 AND "vocabularies"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/vocabularies_controller.rb:48:in `set_vocabulary'
+  Rendering layout layouts/application.html.erb
+  Rendering vocabularies/show.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered vocabularies/show.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 4.4ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/vocabularies/6" for 192.168.65.1 at 2025-09-09 10:20:20 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VocabulariesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mVocabulary Load (0.2ms)[0m  [1m[34mSELECT "vocabularies".* FROM "vocabularies" WHERE "vocabularies"."user_id" = $1 AND "vocabularies"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/vocabularies_controller.rb:48:in `set_vocabulary'
+  Rendering layout layouts/application.html.erb
+  Rendering vocabularies/show.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered vocabularies/show.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | GC: 0.3ms)
+Completed 200 OK in 11ms (Views: 4.7ms | ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 3.4ms)
+
+
+Started GET "/vocabularies/3" for 192.168.65.1 at 2025-09-09 10:20:21 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VocabulariesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mVocabulary Load (0.1ms)[0m  [1m[34mSELECT "vocabularies".* FROM "vocabularies" WHERE "vocabularies"."user_id" = $1 AND "vocabularies"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/vocabularies_controller.rb:48:in `set_vocabulary'
+  Rendering layout layouts/application.html.erb
+  Rendering vocabularies/show.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered vocabularies/show.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | GC: 0.2ms)
+Completed 200 OK in 7ms (Views: 4.2ms | ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/vocabularies/6" for 192.168.65.1 at 2025-09-09 10:20:21 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VocabulariesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mVocabulary Load (0.3ms)[0m  [1m[34mSELECT "vocabularies".* FROM "vocabularies" WHERE "vocabularies"."user_id" = $1 AND "vocabularies"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/vocabularies_controller.rb:48:in `set_vocabulary'
+  Rendering layout layouts/application.html.erb
+  Rendering vocabularies/show.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered vocabularies/show.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | GC: 0.0ms)
+Completed 200 OK in 14ms (Views: 8.2ms | ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/vocabularies/new" for 192.168.65.1 at 2025-09-09 10:20:23 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VocabulariesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering vocabularies/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered vocabularies/new.html.erb within layouts/application (Duration: 2.3ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | GC: 0.0ms)
+Completed 200 OK in 11ms (Views: 7.4ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/vocabularies" for 192.168.65.1 at 2025-09-09 10:20:31 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VocabulariesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "vocabulary"=>{"word"=>"俺", "reading"=>"あ", "meaning"=>"あ", "example"=>"", "part_of_speech"=>"noun"}, "commit"=>"登録"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/vocabularies_controller.rb:10:in `create'
+  [1m[36mVocabulary Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "vocabularies" WHERE "vocabularies"."word" = $1 AND "vocabularies"."user_id" = $2 LIMIT $3[0m  [["word", "俺"], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/vocabularies_controller.rb:10:in `create'
+  [1m[36mVocabulary Create (0.4ms)[0m  [1m[32mINSERT INTO "vocabularies" ("word", "reading", "meaning", "example", "part_of_speech", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["word", "俺"], ["reading", "あ"], ["meaning", "あ"], ["example", ""], ["part_of_speech", 0], ["created_at", "2025-09-09 10:20:31.265068"], ["updated_at", "2025-09-09 10:20:31.265068"], ["user_id", 2]]
+  ↳ app/controllers/vocabularies_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/vocabularies_controller.rb:10:in `create'
+Redirected to http://localhost:3000/vocabularies
+Completed 302 Found in 11ms (ActiveRecord: 2.5ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/vocabularies" for 192.168.65.1 at 2025-09-09 10:20:31 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VocabulariesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering vocabularies/index.html.erb within layouts/application
+  Rendered vocabularies/_search_form.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  [1m[36mVocabulary Load (0.1ms)[0m  [1m[34mSELECT "vocabularies".* FROM "vocabularies" WHERE "vocabularies"."user_id" = $1 ORDER BY "vocabularies"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 2], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/vocabularies/index.html.erb:7
+  [1m[36mVocabularyTagging Load (0.2ms)[0m  [1m[34mSELECT "vocabulary_taggings".* FROM "vocabulary_taggings" WHERE "vocabulary_taggings"."vocabulary_id" IN ($1, $2, $3)[0m  [["vocabulary_id", 7], ["vocabulary_id", 6], ["vocabulary_id", 3]]
+  ↳ app/views/vocabularies/index.html.erb:7
+  Rendered vocabularies/index.html.erb within layouts/application (Duration: 4.7ms | GC: 0.3ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | GC: 0.6ms)
+Completed 200 OK in 12ms (Views: 8.2ms | ActiveRecord: 0.4ms (3 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/vocabularies/3" for 192.168.65.1 at 2025-09-09 10:20:31 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VocabulariesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mVocabulary Load (0.2ms)[0m  [1m[34mSELECT "vocabularies".* FROM "vocabularies" WHERE "vocabularies"."user_id" = $1 AND "vocabularies"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/vocabularies_controller.rb:48:in `set_vocabulary'
+  Rendering layout layouts/application.html.erb
+  Rendering vocabularies/show.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered vocabularies/show.html.erb within layouts/application (Duration: 3.4ms | GC: 0.5ms)
+  Rendered shared/_header.html.erb (Duration: 0.5ms | GC: 0.3ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | GC: 0.8ms)
+Completed 200 OK in 14ms (Views: 8.4ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/vocabularies/6" for 192.168.65.1 at 2025-09-09 10:20:31 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VocabulariesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mVocabulary Load (0.2ms)[0m  [1m[34mSELECT "vocabularies".* FROM "vocabularies" WHERE "vocabularies"."user_id" = $1 AND "vocabularies"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/vocabularies_controller.rb:48:in `set_vocabulary'
+  Rendering layout layouts/application.html.erb
+  Rendering vocabularies/show.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered vocabularies/show.html.erb within layouts/application (Duration: 2.6ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | GC: 0.1ms)
+Completed 200 OK in 14ms (Views: 7.6ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.1ms)
+
+
+Started DELETE "/session?_method=delete" for 192.168.65.1 at 2025-09-09 10:20:35 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 192.168.65.1 at 2025-09-09 10:20:35 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.9ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/session" for 192.168.65.1 at 2025-09-09 10:20:38 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "commit"=>"ログイン"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = '321@com' ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/top
+Completed 302 Found in 115ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/top" for 192.168.65.1 at 2025-09-09 10:20:38 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomeController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | GC: 0.2ms)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/sentences" for 192.168.65.1 at 2025-09-09 10:20:41 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  Rendered sentences/_search_form.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  [1m[36mSentence Load (0.3ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" ORDER BY "sentences"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 3.5ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | GC: 0.4ms)
+Completed 200 OK in 17ms (Views: 9.6ms | ActiveRecord: 0.5ms (2 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/vocabularies" for 192.168.65.1 at 2025-09-09 10:20:42 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VocabulariesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering vocabularies/index.html.erb within layouts/application
+  Rendered vocabularies/_search_form.html.erb (Duration: 1.4ms | GC: 0.5ms)
+  [1m[36mVocabulary Load (0.2ms)[0m  [1m[34mSELECT "vocabularies".* FROM "vocabularies" WHERE "vocabularies"."user_id" = $1 ORDER BY "vocabularies"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/vocabularies/index.html.erb:7
+  [1m[36mVocabularyTagging Load (0.2ms)[0m  [1m[34mSELECT "vocabulary_taggings".* FROM "vocabulary_taggings" WHERE "vocabulary_taggings"."vocabulary_id" = $1[0m  [["vocabulary_id", 4]]
+  ↳ app/views/vocabularies/index.html.erb:7
+  Rendered vocabularies/index.html.erb within layouts/application (Duration: 5.5ms | GC: 0.5ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | GC: 0.5ms)
+Completed 200 OK in 15ms (Views: 10.0ms | ActiveRecord: 0.6ms (3 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/vocabularies/new" for 192.168.65.1 at 2025-09-09 10:20:42 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VocabulariesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering vocabularies/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered vocabularies/new.html.erb within layouts/application (Duration: 6.1ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 11.7ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/vocabularies" for 192.168.65.1 at 2025-09-09 10:20:43 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VocabulariesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering vocabularies/index.html.erb within layouts/application
+  Rendered vocabularies/_search_form.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  [1m[36mVocabulary Load (0.2ms)[0m  [1m[34mSELECT "vocabularies".* FROM "vocabularies" WHERE "vocabularies"."user_id" = $1 ORDER BY "vocabularies"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/vocabularies/index.html.erb:7
+  [1m[36mVocabularyTagging Load (0.2ms)[0m  [1m[34mSELECT "vocabulary_taggings".* FROM "vocabulary_taggings" WHERE "vocabulary_taggings"."vocabulary_id" = $1[0m  [["vocabulary_id", 4]]
+  ↳ app/views/vocabularies/index.html.erb:7
+  Rendered vocabularies/index.html.erb within layouts/application (Duration: 5.5ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 10.0ms | ActiveRecord: 0.7ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/vocabularies/new" for 192.168.65.1 at 2025-09-09 10:20:45 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VocabulariesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering vocabularies/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered vocabularies/new.html.erb within layouts/application (Duration: 1.6ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | GC: 0.4ms)
+Completed 200 OK in 14ms (Views: 10.8ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started POST "/vocabularies" for 192.168.65.1 at 2025-09-09 10:20:50 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VocabulariesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "vocabulary"=>{"word"=>"宵闇", "reading"=>"よいやみ", "meaning"=>"ｆ", "example"=>"", "part_of_speech"=>"noun"}, "commit"=>"登録"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/vocabularies_controller.rb:10:in `create'
+  [1m[36mVocabulary Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "vocabularies" WHERE "vocabularies"."word" = $1 AND "vocabularies"."user_id" = $2 LIMIT $3[0m  [["word", "宵闇"], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/vocabularies_controller.rb:10:in `create'
+  [1m[36mVocabulary Create (0.3ms)[0m  [1m[32mINSERT INTO "vocabularies" ("word", "reading", "meaning", "example", "part_of_speech", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["word", "宵闇"], ["reading", "よいやみ"], ["meaning", "ｆ"], ["example", ""], ["part_of_speech", 0], ["created_at", "2025-09-09 10:20:50.254924"], ["updated_at", "2025-09-09 10:20:50.254924"], ["user_id", 1]]
+  ↳ app/controllers/vocabularies_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/vocabularies_controller.rb:10:in `create'
+Redirected to http://localhost:3000/vocabularies
+Completed 302 Found in 11ms (ActiveRecord: 2.3ms (3 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/vocabularies" for 192.168.65.1 at 2025-09-09 10:20:50 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VocabulariesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering vocabularies/index.html.erb within layouts/application
+  Rendered vocabularies/_search_form.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  [1m[36mVocabulary Load (0.2ms)[0m  [1m[34mSELECT "vocabularies".* FROM "vocabularies" WHERE "vocabularies"."user_id" = $1 ORDER BY "vocabularies"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/vocabularies/index.html.erb:7
+  [1m[36mVocabularyTagging Load (0.2ms)[0m  [1m[34mSELECT "vocabulary_taggings".* FROM "vocabulary_taggings" WHERE "vocabulary_taggings"."vocabulary_id" IN ($1, $2)[0m  [["vocabulary_id", 8], ["vocabulary_id", 4]]
+  ↳ app/views/vocabularies/index.html.erb:7
+  Rendered vocabularies/index.html.erb within layouts/application (Duration: 5.1ms | GC: 0.2ms)
+  Rendered shared/_header.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | GC: 0.2ms)
+Completed 200 OK in 11ms (Views: 8.6ms | ActiveRecord: 0.5ms (3 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/vocabularies/8" for 192.168.65.1 at 2025-09-09 10:20:50 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VocabulariesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mVocabulary Load (0.2ms)[0m  [1m[34mSELECT "vocabularies".* FROM "vocabularies" WHERE "vocabularies"."user_id" = $1 AND "vocabularies"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/vocabularies_controller.rb:48:in `set_vocabulary'
+  Rendering layout layouts/application.html.erb
+  Rendering vocabularies/show.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered vocabularies/show.html.erb within layouts/application (Duration: 2.5ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 7.7ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/vocabularies/8" for 192.168.65.1 at 2025-09-09 10:20:53 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VocabulariesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mVocabulary Load (0.2ms)[0m  [1m[34mSELECT "vocabularies".* FROM "vocabularies" WHERE "vocabularies"."user_id" = $1 AND "vocabularies"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/vocabularies_controller.rb:48:in `set_vocabulary'
+  Rendering layout layouts/application.html.erb
+  Rendering vocabularies/show.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered vocabularies/show.html.erb within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 7.8ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
