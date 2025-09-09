@@ -1,4 +1,5 @@
 class SentencesController < ApplicationController
+  before_action :normalize_tag_filters_to_and!, only: :index
   before_action :set_sentence, only: [ :show, :update, :destroy ]
   before_action :normalize_sentence_search!, only: :index
   def new
@@ -73,4 +74,16 @@ end
   def selected_tag_ids
     Array(params[:tag_ids]).map(&:to_i).uniq
   end
+
+  def normalize_tag_filters_to_and!
+    return unless params[:q].is_a?(ActionController::Parameters) || params[:q].is_a?(Hash)
+
+    ids = Array(params[:q].delete(:sentence_tags_id_in)).reject(&:blank?)
+    return if ids.blank?
+
+    # Ransack の groupings + m='and' 形式に変換
+    params[:q][:m] = 'and'
+    params[:q][:groupings] = ids.map { |id| { sentence_tags_id_eq: id } }
+  end
+
 end

@@ -24408,3 +24408,313 @@ Processing by SentencesController#show as HTML
 Completed 200 OK in 13ms (Views: 8.7ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.8ms)
 
 
+Started GET "/sentences?q%5Bbody_cont%5D=&q%5Bsentence_category_eq%5D=0&q%5Bcreated_at_gteq%5D=&q%5Bcreated_at_lteq%5D=&commit=%E6%A4%9C%E7%B4%A2" for 192.168.65.1 at 2025-09-09 11:27:52 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as HTML
+  Parameters: {"q"=>{"body_cont"=>"", "sentence_category_eq"=>"0", "created_at_gteq"=>"", "created_at_lteq"=>""}, "commit"=>"検索"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :sentence_category, {:metaphor=>0, :appearance=>1, :description=>2, :psychology=>3, :conversation=>4, :expression=>5, :logic=>6, :gag=>7, :other=>8}
+ (called from <class:Sentence> at /myapp/app/models/sentence.rb:6)
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  [1m[36mSentenceTag Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "sentence_tags" WHERE "sentence_tags"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/sentences/_search_form.html.erb:16
+  Rendered sentences/_search_form.html.erb (Duration: 4.2ms | GC: 0.0ms)
+  [1m[36mSentence Load (0.2ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND "sentences"."sentence_category" = 0 ORDER BY "sentences"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 2], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  [1m[36mSentenceTagging Load (0.1ms)[0m  [1m[34mSELECT "sentence_taggings".* FROM "sentence_taggings" WHERE "sentence_taggings"."sentence_id" = $1[0m  [["sentence_id", 4]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 65.0ms | GC: 46.4ms)
+  Rendered shared/_header.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 72.4ms | GC: 47.3ms)
+Completed 200 OK in 116ms (Views: 72.6ms | ActiveRecord: 7.4ms (4 queries, 0 cached) | GC: 47.3ms)
+
+
+Started GET "/sentences/4" for 192.168.65.1 at 2025-09-09 11:27:58 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSentence Load (0.1ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND "sentences"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/sentences_controller.rb:49:in `set_sentence'
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/show.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered sentences/show.html.erb within layouts/application (Duration: 3.6ms | GC: 0.9ms)
+  Rendered shared/_header.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | GC: 0.9ms)
+Completed 200 OK in 10ms (Views: 6.8ms | ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/sentences/4" for 192.168.65.1 at 2025-09-09 11:28:00 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSentence Load (0.2ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND "sentences"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/sentences_controller.rb:49:in `set_sentence'
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/show.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered sentences/show.html.erb within layouts/application (Duration: 2.4ms | GC: 0.7ms)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | GC: 0.7ms)
+Completed 200 OK in 13ms (Views: 8.6ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/sentences/4" for 192.168.65.1 at 2025-09-09 11:28:03 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSentence Load (0.2ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND "sentences"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/sentences_controller.rb:49:in `set_sentence'
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/show.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered sentences/show.html.erb within layouts/application (Duration: 2.2ms | GC: 0.2ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | GC: 0.2ms)
+Completed 200 OK in 12ms (Views: 7.5ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/sentences?q%5Bbody_cont%5D=&q%5Bsentence_category_eq%5D=3&q%5Bcreated_at_gteq%5D=2025-09-08&q%5Bcreated_at_lteq%5D=2025-09-08&commit=%E6%A4%9C%E7%B4%A2" for 192.168.65.1 at 2025-09-09 11:28:04 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as HTML
+  Parameters: {"q"=>{"body_cont"=>"", "sentence_category_eq"=>"3", "created_at_gteq"=>"2025-09-08", "created_at_lteq"=>"2025-09-08"}, "commit"=>"検索"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  [1m[36mSentenceTag Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "sentence_tags" WHERE "sentence_tags"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/sentences/_search_form.html.erb:16
+  Rendered sentences/_search_form.html.erb (Duration: 4.0ms | GC: 0.0ms)
+  [1m[36mSentence Load (0.2ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND ("sentences"."sentence_category" = 3 AND "sentences"."created_at" >= '2025-09-08 00:00:00' AND "sentences"."created_at" <= '2025-09-08 23:59:59.999999') ORDER BY "sentences"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 2], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 7.8ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | GC: 0.0ms)
+Completed 200 OK in 24ms (Views: 12.0ms | ActiveRecord: 0.9ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/sentences?q%5Bbody_cont%5D=&q%5Bsentence_category_eq%5D=0&q%5Bcreated_at_gteq%5D=2025-09-08&q%5Bcreated_at_lteq%5D=2025-09-08&commit=%E6%A4%9C%E7%B4%A2" for 192.168.65.1 at 2025-09-09 11:28:07 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as HTML
+  Parameters: {"q"=>{"body_cont"=>"", "sentence_category_eq"=>"0", "created_at_gteq"=>"2025-09-08", "created_at_lteq"=>"2025-09-08"}, "commit"=>"検索"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  [1m[36mSentenceTag Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "sentence_tags" WHERE "sentence_tags"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/sentences/_search_form.html.erb:16
+  Rendered sentences/_search_form.html.erb (Duration: 3.3ms | GC: 0.0ms)
+  [1m[36mSentence Load (0.2ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND ("sentences"."sentence_category" = 0 AND "sentences"."created_at" >= '2025-09-08 00:00:00' AND "sentences"."created_at" <= '2025-09-08 23:59:59.999999') ORDER BY "sentences"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 2], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 5.4ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 10.2ms | ActiveRecord: 0.9ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/sentences?q%5Bbody_cont%5D=&q%5Bsentence_category_eq%5D=0&q%5Bcreated_at_gteq%5D=2025-09-08&q%5Bcreated_at_lteq%5D=2025-09-08&commit=%E6%A4%9C%E7%B4%A2" for 192.168.65.1 at 2025-09-09 11:28:07 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as HTML
+  Parameters: {"q"=>{"body_cont"=>"", "sentence_category_eq"=>"0", "created_at_gteq"=>"2025-09-08", "created_at_lteq"=>"2025-09-08"}, "commit"=>"検索"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  [1m[36mSentenceTag Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "sentence_tags" WHERE "sentence_tags"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/sentences/_search_form.html.erb:16
+  Rendered sentences/_search_form.html.erb (Duration: 2.6ms | GC: 0.0ms)
+  [1m[36mSentence Load (0.2ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND ("sentences"."sentence_category" = 0 AND "sentences"."created_at" >= '2025-09-08 00:00:00' AND "sentences"."created_at" <= '2025-09-08 23:59:59.999999') ORDER BY "sentences"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 2], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 4.6ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | GC: 0.7ms)
+Completed 200 OK in 31ms (Views: 9.1ms | ActiveRecord: 1.0ms (3 queries, 0 cached) | GC: 15.6ms)
+
+
+Started GET "/sentences?q%5Bbody_cont%5D=&q%5Bsentence_category_eq%5D=&q%5Bcreated_at_gteq%5D=2025-09-08&q%5Bcreated_at_lteq%5D=2025-09-08&commit=%E6%A4%9C%E7%B4%A2" for 192.168.65.1 at 2025-09-09 11:28:09 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as HTML
+  Parameters: {"q"=>{"body_cont"=>"", "sentence_category_eq"=>"", "created_at_gteq"=>"2025-09-08", "created_at_lteq"=>"2025-09-08"}, "commit"=>"検索"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  [1m[36mSentenceTag Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "sentence_tags" WHERE "sentence_tags"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/sentences/_search_form.html.erb:16
+  Rendered sentences/_search_form.html.erb (Duration: 1.8ms | GC: 0.3ms)
+  [1m[36mSentence Load (0.1ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND ("sentences"."created_at" >= '2025-09-08 00:00:00' AND "sentences"."created_at" <= '2025-09-08 23:59:59.999999') ORDER BY "sentences"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 2], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 3.0ms | GC: 0.3ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | GC: 0.6ms)
+Completed 200 OK in 9ms (Views: 6.0ms | ActiveRecord: 0.5ms (3 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/sentences?q%5Bbody_cont%5D=&q%5Bsentence_category_eq%5D=&q%5Bcreated_at_gteq%5D=2025-09-08&q%5Bcreated_at_lteq%5D=2025-09-08&commit=%E6%A4%9C%E7%B4%A2" for 192.168.65.1 at 2025-09-09 11:28:10 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as HTML
+  Parameters: {"q"=>{"body_cont"=>"", "sentence_category_eq"=>"", "created_at_gteq"=>"2025-09-08", "created_at_lteq"=>"2025-09-08"}, "commit"=>"検索"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  [1m[36mSentenceTag Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "sentence_tags" WHERE "sentence_tags"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/sentences/_search_form.html.erb:16
+  Rendered sentences/_search_form.html.erb (Duration: 2.3ms | GC: 0.0ms)
+  [1m[36mSentence Load (0.2ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND ("sentences"."created_at" >= '2025-09-08 00:00:00' AND "sentences"."created_at" <= '2025-09-08 23:59:59.999999') ORDER BY "sentences"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 2], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 4.2ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | GC: 0.2ms)
+Completed 200 OK in 19ms (Views: 8.9ms | ActiveRecord: 0.9ms (3 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/sentences?q%5Bbody_cont%5D=&q%5Bsentence_category_eq%5D=&q%5Bcreated_at_gteq%5D=2025-09-08&q%5Bcreated_at_lteq%5D=2025-09-08&commit=%E6%A4%9C%E7%B4%A2" for 192.168.65.1 at 2025-09-09 11:28:10 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as HTML
+  Parameters: {"q"=>{"body_cont"=>"", "sentence_category_eq"=>"", "created_at_gteq"=>"2025-09-08", "created_at_lteq"=>"2025-09-08"}, "commit"=>"検索"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  [1m[36mSentenceTag Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "sentence_tags" WHERE "sentence_tags"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/sentences/_search_form.html.erb:16
+  Rendered sentences/_search_form.html.erb (Duration: 2.8ms | GC: 0.1ms)
+  [1m[36mSentence Load (0.2ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND ("sentences"."created_at" >= '2025-09-08 00:00:00' AND "sentences"."created_at" <= '2025-09-08 23:59:59.999999') ORDER BY "sentences"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 2], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 4.8ms | GC: 0.1ms)
+  Rendered shared/_header.html.erb (Duration: 1.2ms | GC: 0.9ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | GC: 1.0ms)
+Completed 200 OK in 16ms (Views: 10.4ms | ActiveRecord: 0.9ms (3 queries, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/sentences?q%5Bbody_cont%5D=&q%5Bsentence_category_eq%5D=&q%5Bcreated_at_gteq%5D=2025-09-08&q%5Bcreated_at_lteq%5D=2025-09-08&commit=%E6%A4%9C%E7%B4%A2" for 192.168.65.1 at 2025-09-09 11:28:10 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as HTML
+  Parameters: {"q"=>{"body_cont"=>"", "sentence_category_eq"=>"", "created_at_gteq"=>"2025-09-08", "created_at_lteq"=>"2025-09-08"}, "commit"=>"検索"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  [1m[36mSentenceTag Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "sentence_tags" WHERE "sentence_tags"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/sentences/_search_form.html.erb:16
+  Rendered sentences/_search_form.html.erb (Duration: 2.6ms | GC: 0.0ms)
+  [1m[36mSentence Load (0.3ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND ("sentences"."created_at" >= '2025-09-08 00:00:00' AND "sentences"."created_at" <= '2025-09-08 23:59:59.999999') ORDER BY "sentences"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 2], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 4.8ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | GC: 0.0ms)
+Completed 200 OK in 18ms (Views: 9.5ms | ActiveRecord: 1.0ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/sentences?q%5Bbody_cont%5D=&q%5Bsentence_category_eq%5D=&q%5Bcreated_at_gteq%5D=2025-09-08&q%5Bcreated_at_lteq%5D=2025-09-08&commit=%E6%A4%9C%E7%B4%A2" for 192.168.65.1 at 2025-09-09 11:28:11 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as HTML
+  Parameters: {"q"=>{"body_cont"=>"", "sentence_category_eq"=>"", "created_at_gteq"=>"2025-09-08", "created_at_lteq"=>"2025-09-08"}, "commit"=>"検索"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  [1m[36mSentenceTag Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "sentence_tags" WHERE "sentence_tags"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/sentences/_search_form.html.erb:16
+  Rendered sentences/_search_form.html.erb (Duration: 3.0ms | GC: 0.0ms)
+  [1m[36mSentence Load (0.3ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND ("sentences"."created_at" >= '2025-09-08 00:00:00' AND "sentences"."created_at" <= '2025-09-08 23:59:59.999999') ORDER BY "sentences"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 2], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 4.9ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 10.8ms | ActiveRecord: 1.0ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/sentences?q%5Bbody_cont%5D=&q%5Bsentence_category_eq%5D=&q%5Bcreated_at_gteq%5D=2025-09-08&q%5Bcreated_at_lteq%5D=2025-09-08&commit=%E6%A4%9C%E7%B4%A2" for 192.168.65.1 at 2025-09-09 11:28:11 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as HTML
+  Parameters: {"q"=>{"body_cont"=>"", "sentence_category_eq"=>"", "created_at_gteq"=>"2025-09-08", "created_at_lteq"=>"2025-09-08"}, "commit"=>"検索"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  [1m[36mSentenceTag Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "sentence_tags" WHERE "sentence_tags"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/sentences/_search_form.html.erb:16
+  Rendered sentences/_search_form.html.erb (Duration: 3.8ms | GC: 0.9ms)
+  [1m[36mSentence Load (0.3ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND ("sentences"."created_at" >= '2025-09-08 00:00:00' AND "sentences"."created_at" <= '2025-09-08 23:59:59.999999') ORDER BY "sentences"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 2], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 6.5ms | GC: 0.9ms)
+  Rendered shared/_header.html.erb (Duration: 0.6ms | GC: 0.4ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | GC: 1.3ms)
+Completed 200 OK in 17ms (Views: 11.2ms | ActiveRecord: 1.0ms (3 queries, 0 cached) | GC: 1.3ms)
+
+
+Started GET "/sentences" for 192.168.65.1 at 2025-09-09 11:28:17 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  [1m[36mSentenceTag Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "sentence_tags" WHERE "sentence_tags"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/sentences/_search_form.html.erb:16
+  Rendered sentences/_search_form.html.erb (Duration: 3.7ms | GC: 0.7ms)
+  [1m[36mSentence Load (0.2ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 ORDER BY "sentences"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 2], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  [1m[36mSentenceTagging Load (0.3ms)[0m  [1m[34mSELECT "sentence_taggings".* FROM "sentence_taggings" WHERE "sentence_taggings"."sentence_id" IN ($1, $2)[0m  [["sentence_id", 4], ["sentence_id", 3]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 9.9ms | GC: 0.7ms)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | GC: 1.1ms)
+Completed 200 OK in 22ms (Views: 15.1ms | ActiveRecord: 1.2ms (4 queries, 0 cached) | GC: 1.1ms)
+
+
+Started GET "/sentences?q%5Bbody_cont%5D=&q%5Bsentence_category_eq%5D=&q%5Bcreated_at_gteq%5D=2025-09-09&q%5Bcreated_at_lteq%5D=2025-09-09&commit=%E6%A4%9C%E7%B4%A2" for 192.168.65.1 at 2025-09-09 11:28:17 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as HTML
+  Parameters: {"q"=>{"body_cont"=>"", "sentence_category_eq"=>"", "created_at_gteq"=>"2025-09-09", "created_at_lteq"=>"2025-09-09"}, "commit"=>"検索"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  [1m[36mSentenceTag Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "sentence_tags" WHERE "sentence_tags"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/sentences/_search_form.html.erb:16
+  Rendered sentences/_search_form.html.erb (Duration: 2.6ms | GC: 0.2ms)
+  [1m[36mSentence Load (0.2ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND ("sentences"."created_at" >= '2025-09-09 00:00:00' AND "sentences"."created_at" <= '2025-09-09 23:59:59.999999') ORDER BY "sentences"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 2], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  [1m[36mSentenceTagging Load (0.2ms)[0m  [1m[34mSELECT "sentence_taggings".* FROM "sentence_taggings" WHERE "sentence_taggings"."sentence_id" IN ($1, $2)[0m  [["sentence_id", 4], ["sentence_id", 3]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 7.2ms | GC: 0.2ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | GC: 0.4ms)
+Completed 200 OK in 19ms (Views: 12.1ms | ActiveRecord: 1.0ms (4 queries, 0 cached) | GC: 1.1ms)
+
+
+Started GET "/sentences?q%5Bbody_cont%5D=&q%5Bsentence_category_eq%5D=0&q%5Bcreated_at_gteq%5D=2025-09-09&q%5Bcreated_at_lteq%5D=2025-09-09&commit=%E6%A4%9C%E7%B4%A2" for 192.168.65.1 at 2025-09-09 11:28:20 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as HTML
+  Parameters: {"q"=>{"body_cont"=>"", "sentence_category_eq"=>"0", "created_at_gteq"=>"2025-09-09", "created_at_lteq"=>"2025-09-09"}, "commit"=>"検索"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  [1m[36mSentenceTag Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "sentence_tags" WHERE "sentence_tags"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/sentences/_search_form.html.erb:16
+  Rendered sentences/_search_form.html.erb (Duration: 2.9ms | GC: 0.0ms)
+  [1m[36mSentence Load (0.2ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND ("sentences"."sentence_category" = 0 AND "sentences"."created_at" >= '2025-09-09 00:00:00' AND "sentences"."created_at" <= '2025-09-09 23:59:59.999999') ORDER BY "sentences"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 2], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  [1m[36mSentenceTagging Load (0.2ms)[0m  [1m[34mSELECT "sentence_taggings".* FROM "sentence_taggings" WHERE "sentence_taggings"."sentence_id" = $1[0m  [["sentence_id", 4]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 7.0ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | GC: 0.0ms)
+Completed 200 OK in 22ms (Views: 11.4ms | ActiveRecord: 1.2ms (4 queries, 0 cached) | GC: 1.7ms)
+
+
