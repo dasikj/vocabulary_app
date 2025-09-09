@@ -6,7 +6,7 @@ class SentencesController < ApplicationController
   end
 
   def create
-    @sentence = Sentence.new(sentence_params)
+    @sentence = current_user.sentences.build(sentence_params)
     if @sentence.save
       redirect_to sentences_path, notice: t("flash.sentences.create.success")
     else
@@ -16,7 +16,7 @@ class SentencesController < ApplicationController
   end
 
 def index
-  @q = Sentence.ransack(params[:q])
+  @q = current_user.sentences.ransack(params[:q])
   @sentences = search_scope.page(params[:page]).per(10)
   @sentence_tags = SentenceTag.where(user: current_user).order(:name)
 end
@@ -45,7 +45,7 @@ end
   end
 
   def set_sentence
-    @sentence = Sentence.find(params[:id])
+    @sentence = current_user.sentences.find(params[:id])
   end
 
   def normalize_sentence_search!

@@ -20762,3 +20762,1388 @@ Completed 200 OK in 13ms (Views: 7.8ms | ActiveRecord: 0.4ms (2 queries, 0 cache
 
 
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/vocabularies/8" for 192.168.65.1 at 2025-09-09 10:22:27 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VocabulariesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mVocabulary Load (0.2ms)[0m  [1m[34mSELECT "vocabularies".* FROM "vocabularies" WHERE "vocabularies"."user_id" = $1 AND "vocabularies"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/vocabularies_controller.rb:48:in `set_vocabulary'
+  Rendering layout layouts/application.html.erb
+  Rendering vocabularies/show.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered vocabularies/show.html.erb within layouts/application (Duration: 1.6ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | GC: 0.4ms)
+Completed 200 OK in 13ms (Views: 7.2ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/vocabularies/new" for 192.168.65.1 at 2025-09-09 10:22:28 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VocabulariesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering vocabularies/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered vocabularies/new.html.erb within layouts/application (Duration: 1.6ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | GC: 0.4ms)
+Completed 200 OK in 10ms (Views: 6.9ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/sentences/new" for 192.168.65.1 at 2025-09-09 10:22:29 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered sentences/new.html.erb within layouts/application (Duration: 3.6ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | GC: 0.1ms)
+Completed 200 OK in 19ms (Views: 8.7ms | ActiveRecord: 1.7ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/vocabularies/new" for 192.168.65.1 at 2025-09-09 10:22:29 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VocabulariesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering vocabularies/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered vocabularies/new.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/sentences" for 192.168.65.1 at 2025-09-09 10:22:30 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  Rendered sentences/_search_form.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  [1m[36mSentence Load (0.3ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" ORDER BY "sentences"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 3.2ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 8.3ms | ActiveRecord: 0.5ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/vocabularies" for 192.168.65.1 at 2025-09-09 10:22:30 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VocabulariesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering vocabularies/index.html.erb within layouts/application
+  Rendered vocabularies/_search_form.html.erb (Duration: 2.0ms | GC: 0.0ms)
+  [1m[36mVocabulary Load (0.2ms)[0m  [1m[34mSELECT "vocabularies".* FROM "vocabularies" WHERE "vocabularies"."user_id" = $1 ORDER BY "vocabularies"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/vocabularies/index.html.erb:7
+  [1m[36mVocabularyTagging Load (0.3ms)[0m  [1m[34mSELECT "vocabulary_taggings".* FROM "vocabulary_taggings" WHERE "vocabulary_taggings"."vocabulary_id" IN ($1, $2)[0m  [["vocabulary_id", 8], ["vocabulary_id", 4]]
+  ↳ app/views/vocabularies/index.html.erb:7
+  Rendered vocabularies/index.html.erb within layouts/application (Duration: 7.7ms | GC: 0.5ms)
+  Rendered shared/_header.html.erb (Duration: 0.7ms | GC: 0.4ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | GC: 0.9ms)
+Completed 200 OK in 17ms (Views: 12.4ms | ActiveRecord: 0.7ms (3 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/vocabularies/new" for 192.168.65.1 at 2025-09-09 10:22:31 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VocabulariesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering vocabularies/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered vocabularies/new.html.erb within layouts/application (Duration: 3.2ms | GC: 0.5ms)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | GC: 0.5ms)
+Completed 200 OK in 13ms (Views: 9.3ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/sentences/new" for 192.168.65.1 at 2025-09-09 10:22:32 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered sentences/new.html.erb within layouts/application (Duration: 1.6ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | GC: 0.2ms)
+Completed 200 OK in 10ms (Views: 6.9ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started POST "/sentences" for 192.168.65.1 at 2025-09-09 10:22:35 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "sentence"=>{"body"=>"粉雪舞い散る桜の上で、今日も僕はひとり君を待っていた。", "sentence_category"=>"metaphor"}, "commit"=>"登録"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sentences_controller.rb:10:in `create'
+  [1m[36mSentence Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "sentences" WHERE "sentences"."body" = $1 LIMIT $2[0m  [["body", "粉雪舞い散る桜の上で、今日も僕はひとり君を待っていた。"], ["LIMIT", 1]]
+  ↳ app/controllers/sentences_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/sentences_controller.rb:10:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered sentences/new.html.erb within layouts/application (Duration: 2.2ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | GC: 0.0ms)
+Completed 422 Unprocessable Content in 28ms (Views: 5.7ms | ActiveRecord: 1.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/sentences" for 192.168.65.1 at 2025-09-09 10:23:11 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  Rendered sentences/_search_form.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  [1m[36mSentence Load (0.2ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" ORDER BY "sentences"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 2.9ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 4.0ms | GC: 3.8ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | GC: 3.8ms)
+Completed 200 OK in 16ms (Views: 11.3ms | ActiveRecord: 0.5ms (2 queries, 0 cached) | GC: 3.8ms)
+
+
+Started GET "/vocabularies/new" for 192.168.65.1 at 2025-09-09 10:23:11 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VocabulariesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering vocabularies/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered vocabularies/new.html.erb within layouts/application (Duration: 2.7ms | GC: 0.6ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | GC: 0.6ms)
+Completed 200 OK in 11ms (Views: 7.8ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+Started POST "/vocabularies" for 192.168.65.1 at 2025-09-09 10:23:15 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VocabulariesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "vocabulary"=>{"word"=>"灼熱", "reading"=>"a", "meaning"=>"a", "example"=>"", "part_of_speech"=>"noun"}, "commit"=>"登録"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/vocabularies_controller.rb:10:in `create'
+  [1m[36mVocabulary Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "vocabularies" WHERE "vocabularies"."word" = $1 AND "vocabularies"."user_id" = $2 LIMIT $3[0m  [["word", "灼熱"], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/vocabularies_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/vocabularies_controller.rb:10:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering vocabularies/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered vocabularies/new.html.erb within layouts/application (Duration: 1.9ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | GC: 0.3ms)
+Completed 422 Unprocessable Content in 18ms (Views: 8.1ms | ActiveRecord: 1.8ms (2 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/sentences/new" for 192.168.65.1 at 2025-09-09 10:24:33 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :sentence_category, {:metaphor=>0, :appearance=>1, :description=>2, :psychology=>3, :conversation=>4, :expression=>5, :logic=>6, :gag=>7, :other=>8}
+ (called from <class:Sentence> at /myapp/app/models/sentence.rb:3)
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.7ms | GC: 0.3ms)
+  Rendered sentences/new.html.erb within layouts/application (Duration: 4.6ms | GC: 0.3ms)
+  Rendered shared/_header.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | GC: 0.5ms)
+Completed 200 OK in 37ms (Views: 11.8ms | ActiveRecord: 2.8ms (1 query, 0 cached) | GC: 5.1ms)
+
+
+Started POST "/sentences" for 192.168.65.1 at 2025-09-09 10:24:36 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "sentence"=>{"body"=>"粉雪舞い散る桜の上で、今日も僕はひとり君を待っていた。", "sentence_category"=>"metaphor"}, "commit"=>"登録"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sentences_controller.rb:10:in `create'
+  [1m[36mSentence Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "sentences" WHERE "sentences"."body" = $1 LIMIT $2[0m  [["body", "粉雪舞い散る桜の上で、今日も僕はひとり君を待っていた。"], ["LIMIT", 1]]
+  ↳ app/controllers/sentences_controller.rb:10:in `create'
+  [1m[36mSentence Create (0.8ms)[0m  [1m[32mINSERT INTO "sentences" ("body", "user_id", "sentence_category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "粉雪舞い散る桜の上で、今日も僕はひとり君を待っていた。"], ["user_id", 1], ["sentence_category", 0], ["created_at", "2025-09-09 10:24:36.160245"], ["updated_at", "2025-09-09 10:24:36.160245"]]
+  ↳ app/controllers/sentences_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sentences_controller.rb:10:in `create'
+Redirected to http://localhost:3000/sentences
+Completed 302 Found in 20ms (ActiveRecord: 3.2ms (3 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/sentences" for 192.168.65.1 at 2025-09-09 10:24:36 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  Rendered sentences/_search_form.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  [1m[36mSentence Load (0.1ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 ORDER BY "sentences"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 6.4ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | GC: 0.6ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.8ms (2 queries, 0 cached) | GC: 0.7ms)
+
+
+  
+ActionView::Template::Error (Association named 'sentence_tags' was not found on Sentence; perhaps you misspelled it?):
+
+Causes:
+ActiveRecord::AssociationNotFoundError (Association named 'sentence_tags' was not found on Sentence; perhaps you misspelled it?)
+    4:   <%= render "search_form", q: @q %>
+    5:   <%# 語彙表示 %>
+    6:   <div class="rounded-2xl bg-white text-gray-900 shadow divide-y overflow-hidden">
+    7:     <% @sentences.each do |v| %>
+    8:       <div class="relative p-4 flex items-start justify-between gap-4 hover:bg-gray-200 cursor-pointer">
+    9:         <div>
+   10:           <div class="font-semibold text-lg"><%= v.body %></div>
+  
+app/views/sentences/index.html.erb:7
+Started GET "/sentences/new" for 192.168.65.1 at 2025-09-09 10:26:36 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :sentence_category, {:metaphor=>0, :appearance=>1, :description=>2, :psychology=>3, :conversation=>4, :expression=>5, :logic=>6, :gag=>7, :other=>8}
+ (called from <class:Sentence> at /myapp/app/models/sentence.rb:6)
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered sentences/new.html.erb within layouts/application (Duration: 4.8ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | GC: 0.0ms)
+Completed 200 OK in 34ms (Views: 14.0ms | ActiveRecord: 3.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/sentences" for 192.168.65.1 at 2025-09-09 10:26:38 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  Rendered sentences/_search_form.html.erb (Duration: 1.7ms | GC: 0.0ms)
+  [1m[36mSentence Load (0.2ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 ORDER BY "sentences"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  [1m[36mSentenceTagging Load (0.3ms)[0m  [1m[34mSELECT "sentence_taggings".* FROM "sentence_taggings" WHERE "sentence_taggings"."sentence_id" = $1[0m  [["sentence_id", 1]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 14.4ms | GC: 1.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | GC: 1.0ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 2.8ms (3 queries, 0 cached) | GC: 8.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `reading' for an instance of Sentence):
+
+Causes:
+NoMethodError (undefined method `reading' for an instance of Sentence)
+     9:         <div>
+    10:           <div class="font-semibold text-lg"><%= v.body %></div>
+    11:           <div class="text-sm text-gray-500">
+    12:             <%= v.reading.presence || t(".reading_none") %> /
+    13:             <%= t("enums.sentence.sentence_category.#{v.sentence_category}") %>
+    14:           </div>
+    15:         </div>
+  
+app/views/sentences/index.html.erb:12
+app/views/sentences/index.html.erb:7
+Started GET "/sentences" for 192.168.65.1 at 2025-09-09 10:27:30 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :sentence_category, {:metaphor=>0, :appearance=>1, :description=>2, :psychology=>3, :conversation=>4, :expression=>5, :logic=>6, :gag=>7, :other=>8}
+ (called from <class:Sentence> at /myapp/app/models/sentence.rb:6)
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  Rendered sentences/_search_form.html.erb (Duration: 2.0ms | GC: 0.0ms)
+  [1m[36mSentence Load (0.2ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 ORDER BY "sentences"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  [1m[36mSentenceTagging Load (0.1ms)[0m  [1m[34mSELECT "sentence_taggings".* FROM "sentence_taggings" WHERE "sentence_taggings"."sentence_id" = $1[0m  [["sentence_id", 1]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 12.7ms | GC: 0.2ms)
+  Rendered shared/_header.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.4ms | GC: 0.3ms)
+Completed 200 OK in 45ms (Views: 19.6ms | ActiveRecord: 4.3ms (3 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/sentences/1" for 192.168.65.1 at 2025-09-09 10:27:31 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSentence Load (0.2ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND "sentences"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sentences_controller.rb:48:in `set_sentence'
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/show.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 1.1ms | GC: 0.8ms)
+  Rendered sentences/show.html.erb within layouts/application (Duration: 6.2ms | GC: 3.3ms)
+  Rendered shared/_header.html.erb (Duration: 0.7ms | GC: 0.4ms)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | GC: 8.9ms)
+Completed 200 OK in 32ms (Views: 15.5ms | ActiveRecord: 0.9ms (2 queries, 0 cached) | GC: 16.9ms)
+
+
+Started GET "/sentences/1" for 192.168.65.1 at 2025-09-09 10:27:35 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSentence Load (0.3ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND "sentences"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sentences_controller.rb:48:in `set_sentence'
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/show.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered sentences/show.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | GC: 0.4ms)
+Completed 200 OK in 30ms (Views: 5.0ms | ActiveRecord: 0.5ms (2 queries, 0 cached) | GC: 20.5ms)
+
+
+Started PATCH "/sentences/1" for 192.168.65.1 at 2025-09-09 10:27:44 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "sentence"=>{"body"=>"粉雪舞い散る桜の上で", "sentence_category"=>"metaphor"}, "commit"=>"変更を保存", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSentence Load (0.2ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND "sentences"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sentences_controller.rb:48:in `set_sentence'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sentences_controller.rb:27:in `update'
+  [1m[36mSentence Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "sentences" WHERE "sentences"."body" = $1 AND "sentences"."id" != $2 LIMIT $3[0m  [["body", "粉雪舞い散る桜の上で"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sentences_controller.rb:27:in `update'
+  [1m[36mSentence Update (1.4ms)[0m  [1m[33mUPDATE "sentences" SET "body" = $1, "updated_at" = $2 WHERE "sentences"."id" = $3[0m  [["body", "粉雪舞い散る桜の上で"], ["updated_at", "2025-09-09 10:27:44.513148"], ["id", 1]]
+  ↳ app/controllers/sentences_controller.rb:27:in `update'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sentences_controller.rb:27:in `update'
+Redirected to http://localhost:3000/sentences
+Completed 302 Found in 21ms (ActiveRecord: 3.5ms (4 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/sentences" for 192.168.65.1 at 2025-09-09 10:27:44 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  Rendered sentences/_search_form.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mSentence Load (0.2ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 ORDER BY "sentences"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  [1m[36mSentenceTagging Load (0.1ms)[0m  [1m[34mSELECT "sentence_taggings".* FROM "sentence_taggings" WHERE "sentence_taggings"."sentence_id" = $1[0m  [["sentence_id", 1]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 3.8ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | GC: 0.2ms)
+Completed 200 OK in 10ms (Views: 7.4ms | ActiveRecord: 0.4ms (3 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/sentences/1" for 192.168.65.1 at 2025-09-09 10:27:45 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSentence Load (0.3ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND "sentences"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sentences_controller.rb:48:in `set_sentence'
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/show.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered sentences/show.html.erb within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | GC: 0.2ms)
+Completed 200 OK in 14ms (Views: 8.6ms | ActiveRecord: 0.5ms (2 queries, 0 cached) | GC: 0.2ms)
+
+
+Started PATCH "/sentences/1" for 192.168.65.1 at 2025-09-09 10:27:49 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "sentence"=>{"body"=>"", "sentence_category"=>"metaphor"}, "commit"=>"変更を保存", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSentence Load (0.3ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND "sentences"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sentences_controller.rb:48:in `set_sentence'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sentences_controller.rb:27:in `update'
+  [1m[36mSentence Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "sentences" WHERE "sentences"."body" = $1 AND "sentences"."id" != $2 LIMIT $3[0m  [["body", ""], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sentences_controller.rb:27:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/sentences_controller.rb:27:in `update'
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/show.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered sentences/show.html.erb within layouts/application (Duration: 2.3ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | GC: 0.0ms)
+Completed 422 Unprocessable Content in 20ms (Views: 7.4ms | ActiveRecord: 2.0ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/sentences/1" for 192.168.65.1 at 2025-09-09 10:28:01 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "sentence"=>{"body"=>"粉雪舞い散る桜の上で", "sentence_category"=>"expression"}, "commit"=>"変更を保存", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSentence Load (0.2ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND "sentences"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sentences_controller.rb:48:in `set_sentence'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sentences_controller.rb:27:in `update'
+  [1m[36mSentence Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "sentences" WHERE "sentences"."body" = $1 AND "sentences"."id" != $2 LIMIT $3[0m  [["body", "粉雪舞い散る桜の上で"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sentences_controller.rb:27:in `update'
+  [1m[36mSentence Update (0.2ms)[0m  [1m[33mUPDATE "sentences" SET "sentence_category" = $1, "updated_at" = $2 WHERE "sentences"."id" = $3[0m  [["sentence_category", 5], ["updated_at", "2025-09-09 10:28:01.776336"], ["id", 1]]
+  ↳ app/controllers/sentences_controller.rb:27:in `update'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sentences_controller.rb:27:in `update'
+Redirected to http://localhost:3000/sentences
+Completed 302 Found in 20ms (ActiveRecord: 12.1ms (4 queries, 0 cached) | GC: 7.2ms)
+
+
+Started GET "/sentences" for 192.168.65.1 at 2025-09-09 10:28:01 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  Rendered sentences/_search_form.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mSentence Load (0.2ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 ORDER BY "sentences"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  [1m[36mSentenceTagging Load (0.1ms)[0m  [1m[34mSELECT "sentence_taggings".* FROM "sentence_taggings" WHERE "sentence_taggings"."sentence_id" = $1[0m  [["sentence_id", 1]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 4.2ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | GC: 0.4ms)
+Completed 200 OK in 10ms (Views: 7.8ms | ActiveRecord: 0.4ms (3 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/sentences/1" for 192.168.65.1 at 2025-09-09 10:28:02 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSentence Load (0.2ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND "sentences"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sentences_controller.rb:48:in `set_sentence'
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/show.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered sentences/show.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | GC: 0.3ms)
+Completed 200 OK in 12ms (Views: 6.9ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/sentences/1" for 192.168.65.1 at 2025-09-09 10:28:05 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSentence Load (0.2ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND "sentences"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sentences_controller.rb:48:in `set_sentence'
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/show.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered sentences/show.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | GC: 0.0ms)
+Completed 200 OK in 11ms (Views: 6.2ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/sentences/1" for 192.168.65.1 at 2025-09-09 10:28:06 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSentence Load (0.2ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND "sentences"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sentences_controller.rb:48:in `set_sentence'
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/show.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered sentences/show.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 7.1ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/sentences" for 192.168.65.1 at 2025-09-09 10:28:25 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  Rendered sentences/_search_form.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  [1m[36mSentence Load (0.3ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 ORDER BY "sentences"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  [1m[36mSentenceTagging Load (0.2ms)[0m  [1m[34mSELECT "sentence_taggings".* FROM "sentence_taggings" WHERE "sentence_taggings"."sentence_id" = $1[0m  [["sentence_id", 1]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 5.2ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 10.2ms | ActiveRecord: 0.7ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/sentences/1" for 192.168.65.1 at 2025-09-09 10:28:27 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSentence Load (0.2ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND "sentences"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sentences_controller.rb:48:in `set_sentence'
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/show.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered sentences/show.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | GC: 0.4ms)
+Completed 200 OK in 9ms (Views: 5.9ms | ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/vocabularies" for 192.168.65.1 at 2025-09-09 10:28:36 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VocabulariesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :part_of_speech, {:noun=>0, :verb=>1, :adjective=>2, :adverb=>3, :idiom=>4, :phrase=>5, :other=>6}
+ (called from <class:Vocabulary> at /myapp/app/models/vocabulary.rb:4)
+  Rendering layout layouts/application.html.erb
+  Rendering vocabularies/index.html.erb within layouts/application
+  Rendered vocabularies/_search_form.html.erb (Duration: 1.6ms | GC: 0.2ms)
+  [1m[36mVocabulary Load (0.2ms)[0m  [1m[34mSELECT "vocabularies".* FROM "vocabularies" WHERE "vocabularies"."user_id" = $1 ORDER BY "vocabularies"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/vocabularies/index.html.erb:7
+  [1m[36mVocabularyTagging Load (0.1ms)[0m  [1m[34mSELECT "vocabulary_taggings".* FROM "vocabulary_taggings" WHERE "vocabulary_taggings"."vocabulary_id" IN ($1, $2)[0m  [["vocabulary_id", 8], ["vocabulary_id", 4]]
+  ↳ app/views/vocabularies/index.html.erb:7
+  Rendered vocabularies/index.html.erb within layouts/application (Duration: 12.0ms | GC: 0.3ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | GC: 0.4ms)
+Completed 200 OK in 33ms (Views: 15.1ms | ActiveRecord: 3.6ms (3 queries, 0 cached) | GC: 1.2ms)
+
+
+Started GET "/vocabularies/new" for 192.168.65.1 at 2025-09-09 10:28:36 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VocabulariesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering vocabularies/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered vocabularies/new.html.erb within layouts/application (Duration: 4.2ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | GC: 0.0ms)
+Completed 200 OK in 14ms (Views: 9.7ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/sentences" for 192.168.65.1 at 2025-09-09 10:28:36 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  Rendered sentences/_search_form.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  [1m[36mSentence Load (0.2ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 ORDER BY "sentences"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  [1m[36mSentenceTagging Load (0.2ms)[0m  [1m[34mSELECT "sentence_taggings".* FROM "sentence_taggings" WHERE "sentence_taggings"."sentence_id" = $1[0m  [["sentence_id", 1]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 5.6ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 10.6ms | ActiveRecord: 0.7ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/sentences/new" for 192.168.65.1 at 2025-09-09 10:28:37 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered sentences/new.html.erb within layouts/application (Duration: 2.2ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 7.8ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/sentences" for 192.168.65.1 at 2025-09-09 10:28:40 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "sentence"=>{"body"=>"粉雪舞い散る桜の上で", "sentence_category"=>"metaphor"}, "commit"=>"登録"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sentences_controller.rb:10:in `create'
+  [1m[36mSentence Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "sentences" WHERE "sentences"."body" = $1 LIMIT $2[0m  [["body", "粉雪舞い散る桜の上で"], ["LIMIT", 1]]
+  ↳ app/controllers/sentences_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/sentences_controller.rb:10:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered sentences/new.html.erb within layouts/application (Duration: 2.4ms | GC: 0.6ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | GC: 0.6ms)
+Completed 422 Unprocessable Content in 22ms (Views: 6.5ms | ActiveRecord: 1.9ms (2 queries, 0 cached) | GC: 7.8ms)
+
+
+Started GET "/sentences" for 192.168.65.1 at 2025-09-09 10:29:29 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  Rendered sentences/_search_form.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  [1m[36mSentence Load (0.2ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 ORDER BY "sentences"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  [1m[36mSentenceTagging Load (0.1ms)[0m  [1m[34mSELECT "sentence_taggings".* FROM "sentence_taggings" WHERE "sentence_taggings"."sentence_id" = $1[0m  [["sentence_id", 1]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 6.7ms | GC: 0.6ms)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | GC: 0.8ms)
+Completed 200 OK in 17ms (Views: 11.9ms | ActiveRecord: 0.6ms (3 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/vocabularies/new" for 192.168.65.1 at 2025-09-09 10:30:25 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VocabulariesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering vocabularies/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered vocabularies/new.html.erb within layouts/application (Duration: 2.1ms | GC: 0.4ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | GC: 0.4ms)
+Completed 200 OK in 11ms (Views: 6.7ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/sentences" for 192.168.65.1 at 2025-09-09 10:30:25 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  Rendered sentences/_search_form.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  [1m[36mSentence Load (0.2ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 ORDER BY "sentences"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  [1m[36mSentenceTagging Load (0.1ms)[0m  [1m[34mSELECT "sentence_taggings".* FROM "sentence_taggings" WHERE "sentence_taggings"."sentence_id" = $1[0m  [["sentence_id", 1]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 8.6ms | GC: 1.2ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | GC: 1.2ms)
+Completed 200 OK in 19ms (Views: 14.0ms | ActiveRecord: 0.6ms (3 queries, 0 cached) | GC: 1.2ms)
+
+
+Started GET "/vocabularies/new" for 192.168.65.1 at 2025-09-09 10:30:54 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VocabulariesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering vocabularies/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered vocabularies/new.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 7.0ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/sentences" for 192.168.65.1 at 2025-09-09 10:30:57 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  Rendered sentences/_search_form.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  [1m[36mSentence Load (0.2ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 ORDER BY "sentences"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  [1m[36mSentenceTagging Load (0.1ms)[0m  [1m[34mSELECT "sentence_taggings".* FROM "sentence_taggings" WHERE "sentence_taggings"."sentence_id" = $1[0m  [["sentence_id", 1]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 10.0ms | GC: 4.9ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | GC: 4.9ms)
+Completed 200 OK in 23ms (Views: 16.3ms | ActiveRecord: 0.6ms (3 queries, 0 cached) | GC: 4.9ms)
+
+
+Started GET "/sentences/new" for 192.168.65.1 at 2025-09-09 10:31:01 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered sentences/new.html.erb within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | GC: 0.6ms)
+Completed 200 OK in 11ms (Views: 7.9ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/vocabularies/new" for 192.168.65.1 at 2025-09-09 10:31:02 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VocabulariesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering vocabularies/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered vocabularies/new.html.erb within layouts/application (Duration: 1.9ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | GC: 0.4ms)
+Completed 200 OK in 13ms (Views: 8.4ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/sentences/new" for 192.168.65.1 at 2025-09-09 10:31:03 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered sentences/new.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | GC: 0.2ms)
+Completed 200 OK in 11ms (Views: 7.5ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/sentences" for 192.168.65.1 at 2025-09-09 10:31:06 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  Rendered sentences/_search_form.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  [1m[36mSentence Load (0.2ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 ORDER BY "sentences"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  [1m[36mSentenceTagging Load (0.1ms)[0m  [1m[34mSELECT "sentence_taggings".* FROM "sentence_taggings" WHERE "sentence_taggings"."sentence_id" = $1[0m  [["sentence_id", 1]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 7.6ms | GC: 0.9ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | GC: 0.9ms)
+Completed 200 OK in 17ms (Views: 12.4ms | ActiveRecord: 0.6ms (3 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/vocabularies/new" for 192.168.65.1 at 2025-09-09 10:31:06 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VocabulariesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering vocabularies/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered vocabularies/new.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 6.9ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/vocabularies/new" for 192.168.65.1 at 2025-09-09 10:31:08 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VocabulariesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering vocabularies/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered vocabularies/new.html.erb within layouts/application (Duration: 2.3ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | GC: 0.0ms)
+Completed 200 OK in 11ms (Views: 8.2ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/sentences/new" for 192.168.65.1 at 2025-09-09 10:31:09 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered sentences/new.html.erb within layouts/application (Duration: 1.6ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | GC: 0.6ms)
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/sentences/new" for 192.168.65.1 at 2025-09-09 10:32:18 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :sentence_category, {:metaphor=>0, :appearance=>1, :description=>2, :psychology=>3, :conversation=>4, :expression=>5, :logic=>6, :gag=>7, :other=>8}
+ (called from <class:Sentence> at /myapp/app/models/sentence.rb:6)
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered sentences/new.html.erb within layouts/application (Duration: 7.5ms | GC: 3.8ms)
+  Rendered shared/_header.html.erb (Duration: 1.6ms | GC: 1.0ms)
+  Rendered shared/_flash.html.erb (Duration: 1.1ms | GC: 0.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 26.1ms | GC: 14.3ms)
+Completed 200 OK in 99ms (Views: 28.7ms | ActiveRecord: 3.0ms (1 query, 0 cached) | GC: 21.7ms)
+
+
+Started POST "/sentences" for 192.168.65.1 at 2025-09-09 10:32:22 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "sentence"=>{"body"=>"粉雪舞い散る桜の上で、今日も僕はひとり君を待っていた。", "sentence_category"=>"metaphor"}, "commit"=>"登録"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sentences_controller.rb:10:in `create'
+  [1m[36mSentence Exists? (4.5ms)[0m  [1m[34mSELECT 1 AS one FROM "sentences" WHERE "sentences"."body" = $1 LIMIT $2[0m  [["body", "粉雪舞い散る桜の上で、今日も僕はひとり君を待っていた。"], ["LIMIT", 1]]
+  ↳ app/controllers/sentences_controller.rb:10:in `create'
+  [1m[36mSentence Create (0.3ms)[0m  [1m[32mINSERT INTO "sentences" ("body", "user_id", "sentence_category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "粉雪舞い散る桜の上で、今日も僕はひとり君を待っていた。"], ["user_id", 1], ["sentence_category", 0], ["created_at", "2025-09-09 10:32:22.282643"], ["updated_at", "2025-09-09 10:32:22.282643"]]
+  ↳ app/controllers/sentences_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sentences_controller.rb:10:in `create'
+Redirected to http://localhost:3000/sentences
+Completed 302 Found in 27ms (ActiveRecord: 6.0ms (3 queries, 0 cached) | GC: 16.5ms)
+
+
+Started GET "/sentences" for 192.168.65.1 at 2025-09-09 10:32:22 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  Rendered sentences/_search_form.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  [1m[36mSentence Load (0.1ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 ORDER BY "sentences"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  [1m[36mSentenceTagging Load (0.1ms)[0m  [1m[34mSELECT "sentence_taggings".* FROM "sentence_taggings" WHERE "sentence_taggings"."sentence_id" IN ($1, $2)[0m  [["sentence_id", 2], ["sentence_id", 1]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 8.8ms | GC: 0.5ms)
+  Rendered shared/_header.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | GC: 0.5ms)
+Completed 200 OK in 17ms (Views: 10.7ms | ActiveRecord: 1.7ms (3 queries, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/sentences/2" for 192.168.65.1 at 2025-09-09 10:32:22 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSentence Load (0.1ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND "sentences"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sentences_controller.rb:48:in `set_sentence'
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/show.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered sentences/show.html.erb within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | GC: 0.2ms)
+Completed 200 OK in 13ms (Views: 7.1ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/sentences/2" for 192.168.65.1 at 2025-09-09 10:32:25 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSentence Load (0.2ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND "sentences"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sentences_controller.rb:48:in `set_sentence'
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/show.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered sentences/show.html.erb within layouts/application (Duration: 1.6ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 6.5ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/sentences/1" for 192.168.65.1 at 2025-09-09 10:32:28 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSentence Load (0.2ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND "sentences"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sentences_controller.rb:48:in `set_sentence'
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/show.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered sentences/show.html.erb within layouts/application (Duration: 1.9ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 7.5ms | ActiveRecord: 0.5ms (2 queries, 0 cached) | GC: 1.2ms)
+
+
+Started GET "/sentences/1" for 192.168.65.1 at 2025-09-09 10:32:29 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSentence Load (0.2ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND "sentences"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sentences_controller.rb:48:in `set_sentence'
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/show.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered sentences/show.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | GC: 0.0ms)
+Completed 200 OK in 11ms (Views: 6.0ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/sentences/new" for 192.168.65.1 at 2025-09-09 10:32:32 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered sentences/new.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | GC: 0.4ms)
+Completed 200 OK in 18ms (Views: 7.3ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 7.8ms)
+
+
+Started GET "/vocabularies/new" for 192.168.65.1 at 2025-09-09 10:32:34 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VocabulariesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :part_of_speech, {:noun=>0, :verb=>1, :adjective=>2, :adverb=>3, :idiom=>4, :phrase=>5, :other=>6}
+ (called from <class:Vocabulary> at /myapp/app/models/vocabulary.rb:4)
+  Rendering layout layouts/application.html.erb
+  Rendering vocabularies/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered vocabularies/new.html.erb within layouts/application (Duration: 3.2ms | GC: 0.2ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | GC: 0.5ms)
+Completed 200 OK in 19ms (Views: 8.2ms | ActiveRecord: 1.6ms (1 query, 0 cached) | GC: 1.2ms)
+
+
+Started GET "/vocabularies/new" for 192.168.65.1 at 2025-09-09 10:32:34 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VocabulariesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering vocabularies/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered vocabularies/new.html.erb within layouts/application (Duration: 2.2ms | GC: 0.2ms)
+  Rendered shared/_header.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | GC: 0.2ms)
+Completed 200 OK in 11ms (Views: 7.7ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/vocabularies/new" for 192.168.65.1 at 2025-09-09 10:33:16 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VocabulariesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering vocabularies/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered vocabularies/new.html.erb within layouts/application (Duration: 2.7ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | GC: 0.1ms)
+Completed 200 OK in 14ms (Views: 9.2ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/sentences" for 192.168.65.1 at 2025-09-09 10:33:17 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  Rendered sentences/_search_form.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  [1m[36mSentence Load (0.2ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 ORDER BY "sentences"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  [1m[36mSentenceTagging Load (0.3ms)[0m  [1m[34mSELECT "sentence_taggings".* FROM "sentence_taggings" WHERE "sentence_taggings"."sentence_id" IN ($1, $2)[0m  [["sentence_id", 2], ["sentence_id", 1]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 8.8ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | GC: 0.0ms)
+Completed 200 OK in 19ms (Views: 12.8ms | ActiveRecord: 0.8ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/sentences?q%5Bbody_cont%5D=%E6%A1%9C&q%5Bsentence_category_eq%5D=&q%5Bcreated_at_gteq%5D=&q%5Bcreated_at_lteq%5D=&commit=%E6%A4%9C%E7%B4%A2" for 192.168.65.1 at 2025-09-09 10:33:23 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as HTML
+  Parameters: {"q"=>{"body_cont"=>"桜", "sentence_category_eq"=>"", "created_at_gteq"=>"", "created_at_lteq"=>""}, "commit"=>"検索"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  Rendered sentences/_search_form.html.erb (Duration: 2.6ms | GC: 0.0ms)
+  [1m[36mSentence Load (0.5ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND "sentences"."body" ILIKE '%桜%' ORDER BY "sentences"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  [1m[36mSentenceTagging Load (0.2ms)[0m  [1m[34mSELECT "sentence_taggings".* FROM "sentence_taggings" WHERE "sentence_taggings"."sentence_id" IN ($1, $2)[0m  [["sentence_id", 2], ["sentence_id", 1]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 7.6ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 25.3ms | GC: 13.5ms)
+Completed 200 OK in 46ms (Views: 31.6ms | ActiveRecord: 1.0ms (3 queries, 0 cached) | GC: 13.5ms)
+
+
+Started GET "/sentences?q%5Bbody_cont%5D=%E4%BB%8A%E6%97%A5&q%5Bsentence_category_eq%5D=&q%5Bcreated_at_gteq%5D=&q%5Bcreated_at_lteq%5D=&commit=%E6%A4%9C%E7%B4%A2" for 192.168.65.1 at 2025-09-09 10:33:28 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as HTML
+  Parameters: {"q"=>{"body_cont"=>"今日", "sentence_category_eq"=>"", "created_at_gteq"=>"", "created_at_lteq"=>""}, "commit"=>"検索"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  Rendered sentences/_search_form.html.erb (Duration: 1.7ms | GC: 0.6ms)
+  [1m[36mSentence Load (0.3ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND "sentences"."body" ILIKE '%今日%' ORDER BY "sentences"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  [1m[36mSentenceTagging Load (0.1ms)[0m  [1m[34mSELECT "sentence_taggings".* FROM "sentence_taggings" WHERE "sentence_taggings"."sentence_id" = $1[0m  [["sentence_id", 2]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 5.5ms | GC: 0.6ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | GC: 1.1ms)
+Completed 200 OK in 18ms (Views: 12.0ms | ActiveRecord: 0.7ms (3 queries, 0 cached) | GC: 1.1ms)
+
+
+Started GET "/sentences?q%5Bbody_cont%5D=%E4%BB%8A%E6%97%A5&q%5Bsentence_category_eq%5D=0&q%5Bcreated_at_gteq%5D=&q%5Bcreated_at_lteq%5D=&commit=%E6%A4%9C%E7%B4%A2" for 192.168.65.1 at 2025-09-09 10:33:32 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as HTML
+  Parameters: {"q"=>{"body_cont"=>"今日", "sentence_category_eq"=>"0", "created_at_gteq"=>"", "created_at_lteq"=>""}, "commit"=>"検索"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  Rendered sentences/_search_form.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  [1m[36mSentence Load (0.3ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND ("sentences"."body" ILIKE '%今日%' AND "sentences"."sentence_category" = 0) ORDER BY "sentences"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  [1m[36mSentenceTagging Load (0.1ms)[0m  [1m[34mSELECT "sentence_taggings".* FROM "sentence_taggings" WHERE "sentence_taggings"."sentence_id" = $1[0m  [["sentence_id", 2]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 9.1ms | GC: 0.3ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | GC: 0.3ms)
+Completed 200 OK in 25ms (Views: 16.9ms | ActiveRecord: 0.7ms (3 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/sentences?q%5Bbody_cont%5D=&q%5Bsentence_category_eq%5D=0&q%5Bcreated_at_gteq%5D=&q%5Bcreated_at_lteq%5D=&commit=%E6%A4%9C%E7%B4%A2" for 192.168.65.1 at 2025-09-09 10:33:35 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as HTML
+  Parameters: {"q"=>{"body_cont"=>"", "sentence_category_eq"=>"0", "created_at_gteq"=>"", "created_at_lteq"=>""}, "commit"=>"検索"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  Rendered sentences/_search_form.html.erb (Duration: 1.3ms | GC: 0.3ms)
+  [1m[36mSentence Load (0.3ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND "sentences"."sentence_category" = 0 ORDER BY "sentences"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  [1m[36mSentenceTagging Load (0.1ms)[0m  [1m[34mSELECT "sentence_taggings".* FROM "sentence_taggings" WHERE "sentence_taggings"."sentence_id" = $1[0m  [["sentence_id", 2]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 9.1ms | GC: 0.3ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | GC: 0.3ms)
+Completed 200 OK in 19ms (Views: 13.2ms | ActiveRecord: 0.6ms (3 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/sentences?q%5Bbody_cont%5D=&q%5Bsentence_category_eq%5D=0&q%5Bcreated_at_gteq%5D=&q%5Bcreated_at_lteq%5D=&commit=%E6%A4%9C%E7%B4%A2" for 192.168.65.1 at 2025-09-09 10:33:36 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as HTML
+  Parameters: {"q"=>{"body_cont"=>"", "sentence_category_eq"=>"0", "created_at_gteq"=>"", "created_at_lteq"=>""}, "commit"=>"検索"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  Rendered sentences/_search_form.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  [1m[36mSentence Load (0.3ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND "sentences"."sentence_category" = 0 ORDER BY "sentences"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  [1m[36mSentenceTagging Load (0.2ms)[0m  [1m[34mSELECT "sentence_taggings".* FROM "sentence_taggings" WHERE "sentence_taggings"."sentence_id" = $1[0m  [["sentence_id", 2]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 4.3ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 8.6ms | ActiveRecord: 0.7ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/sentences?q%5Bbody_cont%5D=&q%5Bsentence_category_eq%5D=0&q%5Bcreated_at_gteq%5D=&q%5Bcreated_at_lteq%5D=&commit=%E6%A4%9C%E7%B4%A2" for 192.168.65.1 at 2025-09-09 10:33:36 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as HTML
+  Parameters: {"q"=>{"body_cont"=>"", "sentence_category_eq"=>"0", "created_at_gteq"=>"", "created_at_lteq"=>""}, "commit"=>"検索"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  Rendered sentences/_search_form.html.erb (Duration: 1.7ms | GC: 0.0ms)
+  [1m[36mSentence Load (0.4ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND "sentences"."sentence_category" = 0 ORDER BY "sentences"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  [1m[36mSentenceTagging Load (0.2ms)[0m  [1m[34mSELECT "sentence_taggings".* FROM "sentence_taggings" WHERE "sentence_taggings"."sentence_id" = $1[0m  [["sentence_id", 2]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 13.9ms | GC: 8.2ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | GC: 8.8ms)
+Completed 200 OK in 24ms (Views: 18.9ms | ActiveRecord: 0.8ms (3 queries, 0 cached) | GC: 8.8ms)
+
+
+Started GET "/sentences?q%5Bbody_cont%5D=&q%5Bsentence_category_eq%5D=0&q%5Bcreated_at_gteq%5D=&q%5Bcreated_at_lteq%5D=&commit=%E6%A4%9C%E7%B4%A2" for 192.168.65.1 at 2025-09-09 10:33:36 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as HTML
+  Parameters: {"q"=>{"body_cont"=>"", "sentence_category_eq"=>"0", "created_at_gteq"=>"", "created_at_lteq"=>""}, "commit"=>"検索"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  Rendered sentences/_search_form.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  [1m[36mSentence Load (0.4ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND "sentences"."sentence_category" = 0 ORDER BY "sentences"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  [1m[36mSentenceTagging Load (0.1ms)[0m  [1m[34mSELECT "sentence_taggings".* FROM "sentence_taggings" WHERE "sentence_taggings"."sentence_id" = $1[0m  [["sentence_id", 2]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 4.8ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | GC: 0.6ms)
+Completed 200 OK in 16ms (Views: 9.7ms | ActiveRecord: 0.8ms (3 queries, 0 cached) | GC: 1.4ms)
+
+
+Started GET "/sentences?q%5Bbody_cont%5D=&q%5Bsentence_category_eq%5D=0&q%5Bcreated_at_gteq%5D=&q%5Bcreated_at_lteq%5D=&commit=%E6%A4%9C%E7%B4%A2" for 192.168.65.1 at 2025-09-09 10:33:37 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as HTML
+  Parameters: {"q"=>{"body_cont"=>"", "sentence_category_eq"=>"0", "created_at_gteq"=>"", "created_at_lteq"=>""}, "commit"=>"検索"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  Rendered sentences/_search_form.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  [1m[36mSentence Load (0.4ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND "sentences"."sentence_category" = 0 ORDER BY "sentences"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  [1m[36mSentenceTagging Load (0.1ms)[0m  [1m[34mSELECT "sentence_taggings".* FROM "sentence_taggings" WHERE "sentence_taggings"."sentence_id" = $1[0m  [["sentence_id", 2]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 6.4ms | GC: 0.3ms)
+  Rendered shared/_header.html.erb (Duration: 0.7ms | GC: 0.3ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | GC: 0.6ms)
+Completed 200 OK in 18ms (Views: 11.8ms | ActiveRecord: 0.8ms (3 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/sentences?q%5Bbody_cont%5D=&q%5Bsentence_category_eq%5D=0&q%5Bcreated_at_gteq%5D=&q%5Bcreated_at_lteq%5D=&commit=%E6%A4%9C%E7%B4%A2" for 192.168.65.1 at 2025-09-09 10:33:37 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as HTML
+  Parameters: {"q"=>{"body_cont"=>"", "sentence_category_eq"=>"0", "created_at_gteq"=>"", "created_at_lteq"=>""}, "commit"=>"検索"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  Rendered sentences/_search_form.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  [1m[36mSentence Load (0.3ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND "sentences"."sentence_category" = 0 ORDER BY "sentences"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  [1m[36mSentenceTagging Load (0.1ms)[0m  [1m[34mSELECT "sentence_taggings".* FROM "sentence_taggings" WHERE "sentence_taggings"."sentence_id" = $1[0m  [["sentence_id", 2]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 6.3ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | GC: 0.4ms)
+Completed 200 OK in 17ms (Views: 10.8ms | ActiveRecord: 0.6ms (3 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/sentences?q%5Bbody_cont%5D=&q%5Bsentence_category_eq%5D=&q%5Bcreated_at_gteq%5D=&q%5Bcreated_at_lteq%5D=&commit=%E6%A4%9C%E7%B4%A2" for 192.168.65.1 at 2025-09-09 10:33:40 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as HTML
+  Parameters: {"q"=>{"body_cont"=>"", "sentence_category_eq"=>"", "created_at_gteq"=>"", "created_at_lteq"=>""}, "commit"=>"検索"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  Rendered sentences/_search_form.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  [1m[36mSentence Load (0.2ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 ORDER BY "sentences"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  [1m[36mSentenceTagging Load (0.4ms)[0m  [1m[34mSELECT "sentence_taggings".* FROM "sentence_taggings" WHERE "sentence_taggings"."sentence_id" IN ($1, $2)[0m  [["sentence_id", 2], ["sentence_id", 1]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 5.8ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | GC: 0.0ms)
+Completed 200 OK in 14ms (Views: 9.4ms | ActiveRecord: 0.9ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/sentences" for 192.168.65.1 at 2025-09-09 10:33:41 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  Rendered sentences/_search_form.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  [1m[36mSentence Load (0.2ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 ORDER BY "sentences"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  [1m[36mSentenceTagging Load (0.2ms)[0m  [1m[34mSELECT "sentence_taggings".* FROM "sentence_taggings" WHERE "sentence_taggings"."sentence_id" IN ($1, $2)[0m  [["sentence_id", 2], ["sentence_id", 1]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 5.2ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | GC: 0.8ms)
+Completed 200 OK in 25ms (Views: 12.3ms | ActiveRecord: 0.7ms (3 queries, 0 cached) | GC: 6.3ms)
+
+
+Started GET "/sentences/1" for 192.168.65.1 at 2025-09-09 10:33:44 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSentence Load (0.2ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND "sentences"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sentences_controller.rb:48:in `set_sentence'
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/show.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered sentences/show.html.erb within layouts/application (Duration: 2.2ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | GC: 0.4ms)
+Completed 200 OK in 17ms (Views: 8.4ms | ActiveRecord: 0.5ms (2 queries, 0 cached) | GC: 1.7ms)
+
+
+Started GET "/sentences/2" for 192.168.65.1 at 2025-09-09 10:33:44 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSentence Load (0.1ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND "sentences"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sentences_controller.rb:48:in `set_sentence'
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/show.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered sentences/show.html.erb within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | GC: 0.7ms)
+Completed 200 OK in 17ms (Views: 12.3ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 1.3ms)
+
+
+Started GET "/sentences/1" for 192.168.65.1 at 2025-09-09 10:33:45 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSentence Load (0.2ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND "sentences"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sentences_controller.rb:48:in `set_sentence'
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/show.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered sentences/show.html.erb within layouts/application (Duration: 10.9ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | GC: 0.0ms)
+Completed 200 OK in 20ms (Views: 15.4ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/sentences/2" for 192.168.65.1 at 2025-09-09 10:33:46 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSentence Load (0.1ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND "sentences"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sentences_controller.rb:48:in `set_sentence'
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/show.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered sentences/show.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | GC: 0.0ms)
+Completed 200 OK in 11ms (Views: 6.7ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/sentences" for 192.168.65.1 at 2025-09-09 10:33:47 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  Rendered sentences/_search_form.html.erb (Duration: 4.1ms | GC: 0.0ms)
+  [1m[36mSentence Load (0.4ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 ORDER BY "sentences"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  [1m[36mSentenceTagging Load (0.3ms)[0m  [1m[34mSELECT "sentence_taggings".* FROM "sentence_taggings" WHERE "sentence_taggings"."sentence_id" IN ($1, $2)[0m  [["sentence_id", 2], ["sentence_id", 1]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 9.8ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 18.7ms | GC: 3.1ms)
+Completed 200 OK in 23ms (Views: 18.4ms | ActiveRecord: 1.0ms (3 queries, 0 cached) | GC: 3.1ms)
+
+
+Started GET "/sentences/1" for 192.168.65.1 at 2025-09-09 10:33:50 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSentence Load (0.2ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND "sentences"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sentences_controller.rb:48:in `set_sentence'
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/show.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered sentences/show.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | GC: 0.5ms)
+Completed 200 OK in 11ms (Views: 7.1ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/sentences" for 192.168.65.1 at 2025-09-09 10:34:03 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/index.html.erb within layouts/application
+  Rendered sentences/_search_form.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  [1m[36mSentence Load (0.3ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 ORDER BY "sentences"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/sentences/index.html.erb:7
+  [1m[36mSentenceTagging Load (0.4ms)[0m  [1m[34mSELECT "sentence_taggings".* FROM "sentence_taggings" WHERE "sentence_taggings"."sentence_id" IN ($1, $2)[0m  [["sentence_id", 2], ["sentence_id", 1]]
+  ↳ app/views/sentences/index.html.erb:7
+  Rendered sentences/index.html.erb within layouts/application (Duration: 6.3ms | GC: 0.3ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | GC: 0.3ms)
+Completed 200 OK in 17ms (Views: 11.2ms | ActiveRecord: 1.0ms (3 queries, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/sentences/2" for 192.168.65.1 at 2025-09-09 10:34:39 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SentencesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSentence Load (0.2ms)[0m  [1m[34mSELECT "sentences".* FROM "sentences" WHERE "sentences"."user_id" = $1 AND "sentences"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sentences_controller.rb:48:in `set_sentence'
+  Rendering layout layouts/application.html.erb
+  Rendering sentences/show.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered sentences/show.html.erb within layouts/application (Duration: 5.7ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | GC: 0.2ms)
+Completed 200 OK in 17ms (Views: 11.7ms | ActiveRecord: 0.5ms (2 queries, 0 cached) | GC: 0.2ms)
+
+

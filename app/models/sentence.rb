@@ -1,5 +1,8 @@
 class Sentence < ApplicationRecord
   belongs_to :user
+  has_many :sentence_taggings, dependent: :destroy
+  has_many :sentence_tags, through: :sentence_taggings
+  
   enum sentence_category: {
     metaphor: 0,        # 比喩
     appearance: 1,      # 人物・容姿

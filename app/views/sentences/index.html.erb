@@ -9,7 +9,6 @@
         <div>
           <div class="font-semibold text-lg"><%= v.body %></div>
           <div class="text-sm text-gray-500">
-            <%= v.reading.presence || t(".reading_none") %> /
             <%= t("enums.sentence.sentence_category.#{v.sentence_category}") %>
           </div>
         </div>
