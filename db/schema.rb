@@ -10,9 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_09_08_082234) do
+ActiveRecord::Schema[7.2].define(version: 2025_09_09_073517) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "sentence_taggings", force: :cascade do |t|
+    t.bigint "sentence_id", null: false
+    t.bigint "sentence_tag_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["sentence_id", "sentence_tag_id"], name: "index_sentence_taggings_on_sentence_id_and_sentence_tag_id", unique: true
+    t.index ["sentence_id"], name: "index_sentence_taggings_on_sentence_id"
+    t.index ["sentence_tag_id"], name: "index_sentence_taggings_on_sentence_tag_id"
+  end
+
+  create_table "sentence_tags", force: :cascade do |t|
+    t.string "name"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "color"
+    t.index ["user_id", "name"], name: "index_sentence_tags_on_user_id_and_name", unique: true
+    t.index ["user_id"], name: "index_sentence_tags_on_user_id"
+  end
+
+  create_table "sentences", force: :cascade do |t|
+    t.text "body"
+    t.bigint "user_id", null: false
+    t.integer "sentence_category", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "body"], name: "index_sentences_on_user_id_and_body", unique: true
+    t.index ["user_id"], name: "index_sentences_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
@@ -35,7 +65,9 @@ ActiveRecord::Schema[7.2].define(version: 2025_09_08_082234) do
     t.integer "part_of_speech"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["word"], name: "index_vocabularies_on_word", unique: true
+    t.bigint "user_id", null: false
+    t.index ["user_id", "word"], name: "index_vocabularies_on_user_id_and_word", unique: true
+    t.index ["user_id"], name: "index_vocabularies_on_user_id"
   end
 
   create_table "vocabulary_taggings", force: :cascade do |t|
@@ -57,6 +89,11 @@ ActiveRecord::Schema[7.2].define(version: 2025_09_08_082234) do
     t.index ["user_id"], name: "index_vocabulary_tags_on_user_id"
   end
 
+  add_foreign_key "sentence_taggings", "sentence_tags"
+  add_foreign_key "sentence_taggings", "sentences"
+  add_foreign_key "sentence_tags", "users"
+  add_foreign_key "sentences", "users"
+  add_foreign_key "vocabularies", "users"
   add_foreign_key "vocabulary_taggings", "vocabularies"
   add_foreign_key "vocabulary_taggings", "vocabulary_tags"
   add_foreign_key "vocabulary_tags", "users"

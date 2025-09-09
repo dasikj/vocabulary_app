@@ -6,6 +6,6 @@ class CreateVocabularyTaggings < ActiveRecord::Migration[7.2]
 
       t.timestamps
     end
-    add_index :vocabulary_taggings, [:vocabulary_tag_id, :vocabulary_id], unique: true
+    add_index :vocabulary_taggings, [ :vocabulary_tag_id, :vocabulary_id ], unique: true
   end
 end

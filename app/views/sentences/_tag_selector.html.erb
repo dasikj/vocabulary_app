@@ -1,0 +1,26 @@
+<% tags = SentenceTag.where(user: current_user).order(:name) %>
+<%= f.label :sentence_tag_ids, t(".tag"), class: "block text-sm mb-1" %>
+
+<% if tags.any? %>
+  <% if editable %>
+    <div class="grid grid-cols-2 gap-2">
+      <% tags.each do |tag| %>
+        <label class="flex items-center gap-2 text-sm">
+          <%= check_box_tag "sentence[sentence_tag_ids][]",
+                            tag.id,
+                            @sentence.sentence_tag_ids.include?(tag.id),
+                            id: dom_id(tag) %>
+          <span><%= tag.name %></span>
+        </label>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="flex flex-wrap gap-2">
+      <% tags.each do |tag| %>
+        <span class="px-2 py-1 rounded-full border text-sm"><%= tag.name %></span>
+      <% end %>
+    </div>
+  <% end %>
+<% else %>
+  <p class="text-gray-500 text-sm"><%= t(".tag_none") %></p>
+<% end %>

@@ -8546,15 +8546,16 @@ var hello_controller_default = class extends Controller {
 
 // app/javascript/controllers/edit_toggle_controller.js
 var edit_toggle_controller_default = class extends Controller {
+  // 複数行・複数ボタン対応（既存ページとも互換）
   static targets = ["field", "submit", "tags"];
   toggle(e) {
     const on = e.target.checked;
-    this.fieldTargets.forEach((el) => el.disabled = !on);
+    this.fieldTargets.forEach((el) => el.toggleAttribute("disabled", !on));
     if (this.hasSubmitTarget) {
-      this.submitTarget.classList.toggle("invisible", !on);
+      this.submitTargets.forEach((el) => el.classList.toggle("invisible", !on));
     }
     if (this.hasTagsTarget) {
-      this.tagsTarget.classList.toggle("invisible", !on);
+      this.tagsTargets.forEach((el) => el.classList.toggle("invisible", !on));
     }
   }
 };

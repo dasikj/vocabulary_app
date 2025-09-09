@@ -11,16 +11,17 @@ class Vocabulary < ApplicationRecord
     other: 6        # その他
   }
 
-  validates :word, presence: true, length: { maximum: 100 }, uniqueness: true
   validates :reading, length: { maximum: 100 }, allow_blank: true
   validates :meaning, presence: true
   validates :example, length: { maximum: 1000 }, allow_blank: true
   validates :part_of_speech, presence: true
 
+  validates :word, presence: true, length: { maximum: 100 }, uniqueness: { scope: :user_id }
+
   def self.ransackable_attributes(_auth = nil)
     %w[word reading meaning example part_of_speech created_at]
   end
-  
+
   def self.ransackable_associations(_auth = nil)
     %w[vocabulary_tags]
   end
