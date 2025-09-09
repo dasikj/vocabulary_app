@@ -6,6 +6,6 @@ class CreateSentenceTaggings < ActiveRecord::Migration[7.2]
 
       t.timestamps
     end
-    add_index :sentences_taggings, [ :sentence_id, :sentence_tag_id ], unique: true
+    add_index :sentence_taggings, [ :sentence_id, :sentence_tag_id ], unique: true
   end
 end
