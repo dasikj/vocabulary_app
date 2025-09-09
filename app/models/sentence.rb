@@ -17,6 +17,7 @@ class Sentence < ApplicationRecord
 
   validates :body, presence: true, length: { maximum: 400 }, uniqueness: true
   validates :sentence_category, presence: true
+  validate :limit_sentence_tags_count
 
   def self.ransackable_associations(_ = nil)
     %w[sentence_taggings sentence_tags user]
@@ -24,5 +25,14 @@ class Sentence < ApplicationRecord
 
   def self.ransackable_attributes(_ = nil)
     %w[body sentence_category created_at updated_at]
+  end
+
+  private
+
+  def limit_sentence_tags_count
+    max = 10  # 例: 最大10個
+    if sentence_tag_ids.uniq.size > max
+      errors.add(:sentence_tags, "は最大#{max}個までです")
+    end
   end
 end

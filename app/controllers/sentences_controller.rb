@@ -18,7 +18,7 @@ class SentencesController < ApplicationController
 
 def index
   @q = current_user.sentences.ransack(params[:q])
-  @sentences = search_scope.page(params[:page]).per(10)
+  @sentences = search_scope.includes(:sentence_tags).page(params[:page]).per(10)
   @sentence_tags = SentenceTag.where(user: current_user).order(:name)
 end
 

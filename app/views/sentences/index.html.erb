@@ -12,6 +12,17 @@
             <%= t("enums.sentence.sentence_category.#{v.sentence_category}") %>
           </div>
         </div>
+        <%# タグを表示 %>
+        <% if v.sentence_tags.any? %>
+          <div class="mt-2 flex flex-wrap gap-2">
+            <% v.sentence_tags.order(:name).each do |tag| %>
+            <%= link_to tag.name,
+                            sentences_path(q: { sentence_tags_id_in: [tag.id] }),
+                            class: "px-2 py-1 rounded-full border text-xs hover:bg-gray-100" %>
+            <% end %>
+          </div>
+        <% end %>
+        <%# 作成日を表示 %>
         <div class="text-xs text-gray-500 whitespace-nowrap"><%= l v.created_at, format: :short %></div>
         <%= link_to "", sentence_path(v), class: "absolute inset-0", aria: { label: v.body } %>
       </div>

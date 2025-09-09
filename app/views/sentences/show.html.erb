@@ -24,9 +24,18 @@
               data: { "edit-toggle-target": "field" }, disabled: true %>
       </div>
 
-      <!-- タグ群は後で実装 -->
-      <!-- チェックボックス群をここに -->
-
+      <%# タグ表示 %>
+      <% if @sentence.sentence_tags.any? %>
+        <div class="mt-3 flex flex-wrap gap-2">
+          <% @sentence.sentence_tags.order(:name).each do |tag| %>
+          <%= link_to tag.name,
+                          sentences_path(q: { sentence_tags_id_in: [tag.id] }),
+                          class: "px-2 py-1 rounded-full border text-xs hover:bg-gray-100" %>
+          <% end %>
+        </div>
+      <% end %>
+      
+      <%# 編集チェック時に出現する削除、変更ボタン %>
       <div class="flex items-center gap-3 min-h-[44px] invisible" data-edit-toggle-target="submit">
         <%= link_to t("sentences.destroy.button"),
               sentence_path(@sentence),
