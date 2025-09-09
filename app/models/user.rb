@@ -4,6 +4,8 @@ class User < ApplicationRecord
 
   has_many :vocabularies, dependent: :destroy
   has_many :sentences, dependent: :destroy
+  has_many :sentence_tags, dependent: :destroy
+  
 
   # 保存前に入力を整形する(前後スペース削除・メールを小文字化)
   before_validation :normalize

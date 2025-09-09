@@ -1,0 +1,40 @@
+<div data-controller="edit-toggle">
+  <div class="flex items-center justify-between mb-4">
+    <h1 class="text-lg font-bold">タグ一覧</h1>
+    <label class="flex items-center gap-2 text-base">
+      <input type="checkbox" data-action="edit-toggle#toggle">
+      編集
+    </label>
+  </div>
+
+  <div class="space-y-2" data-edit-toggle-target="container">
+    <% @sentence_tags.each do |tag| %>
+      <%= form_with model: tag, url: sentence_tag_path(tag), method: :patch, local: true, data: { "edit-toggle-target": "form" } do |f| %>
+        <div class="flex items-center justify-between rounded-xl border px-3 py-2 gap-3">
+          <div class="flex-1 min-w-0">
+            <%= f.text_field :name,
+                  class: "w-full rounded-xl border px-3 py-2",
+                  data: { "edit-toggle-target": "field" },
+                  disabled: true %>
+          </div>
+
+          <div class="flex items-center gap-2 invisible" data-edit-toggle-target="submit">
+            <%= link_to "削除", sentence_tag_path(tag),
+                  data: { turbo_method: :delete, turbo_confirm: "削除しますか？" },
+                  class: "rounded-xl bg-red-600 text-white px-4 py-2 hover:bg-red-700 hover:shadow-lg active:translate-y-0.5 transition duration-150" %>
+            <%= f.submit "変更",
+                  class: "rounded-xl bg-blue-600 text-white px-4 py-2 hover:bg-blue-700 hover:shadow-lg active:translate-y-0.5 transition duration-150" %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+
+    <% if @sentence_tags.empty? %>
+      <p class="text-gray-500 text-sm">タグがありません</p>
+    <% end %>
+  </div>
+
+  <div class="mt-4">
+    <%= link_to "新規作成", new_sentence_tag_path, class: "inline-block rounded-xl border px-4 py-2" %>
+  </div>
+</div>

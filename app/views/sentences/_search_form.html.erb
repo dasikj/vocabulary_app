@@ -9,28 +9,63 @@
         Sentence.sentence_categories.map { |k, v| [t("enums.sentence.sentence_category.#{k}"), v] },
         { include_blank: t(".all_sentence_category") }, class: "rounded-xl border px-3 py-2" %>
 
-  <%# タグ絞り込み（複数選択可 AND想定・OR挙動は後で調整可） %>
+  <%# タグ選択（モーダル／大量・長文対応） %>
   <div class="md:col-span-2">
-    <%= f.label :sentence_tags_id_in, "タグ", class: "block text-sm mb-1" %>
     <% tags = SentenceTag.where(user: current_user).order(:name) %>
-    <% if tags.any? %>
-      <div class="border rounded-xl p-2 max-h-40 overflow-y-auto">
-        <div class="grid grid-cols-2 gap-2">
-          <% selected = Array(params.dig(:q, :sentence_tags_id_in)).map(&:to_s) %>
-          <% tags.each do |tag| %>
-            <label class="flex items-center gap-2 text-sm">
-              <%= check_box_tag "q[sentence_tags_id_in][]",
-                                tag.id,
-                                selected.include?(tag.id.to_s),
-                                id: dom_id(tag) %>
-              <span><%= tag.name %></span>
-            </label>
+    <% selected = Array(params.dig(:q, :sentence_tags_id_in)).map(&:to_s) %>
+
+    <button type="button"
+            onclick="document.getElementById('sentenceTagDialog').showModal()"
+            class="rounded-xl border px-3 py-2 w-full text-left hover:bg-gray-100">
+      タグを選択
+      <span class="ml-2 text-xs text-gray-500">(<%= selected.size %>件選択)</span>
+    </button>
+
+    <dialog id="sentenceTagDialog" class="p-0 w-full max-w-2xl rounded-2xl">
+      <form method="dialog" class="flex flex-col max-h-[70vh]">
+        <div class="px-4 py-3 border-b sticky top-0 bg-white rounded-t-2xl">
+          <div class="font-semibold">タグを選択</div>
+        </div>
+
+        <div class="p-4 overflow-y-auto">
+          <% if tags.any? %>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <% tags.each do |tag| %>
+                <label class="flex items-start gap-2 text-sm">
+                  <%= check_box_tag "q[sentence_tags_id_in][]",
+                                    tag.id,
+                                    selected.include?(tag.id.to_s),
+                                    id: dom_id(tag) %>
+                  <span class="break-words whitespace-normal leading-5"><%= tag.name %></span>
+                </label>
+              <% end %>
+            </div>
+          <% else %>
+            <p class="text-gray-500 text-sm">タグがありません</p>
           <% end %>
         </div>
-      </div>
-    <% else %>
-      <p class="text-sm">タグがありません</p>
-    <% end %>
+
+        <div class="px-4 py-3 border-t bg-white sticky bottom-0 rounded-b-2xl flex justify-between">
+          <button type="button"
+                  onclick="(function(d){d.querySelectorAll('input[type=checkbox]').forEach(c=>c.checked=false)})(document.getElementById('sentenceTagDialog'))"
+                  class="px-4 py-2 rounded-xl border bg-white">
+            リセット
+          </button>
+          <div class="space-x-2">
+            <button type="button"
+                    onclick="document.getElementById('sentenceTagDialog').close()"
+                    class="px-4 py-2 rounded-xl border bg-white">
+              閉じる
+            </button>
+            <button type="button"
+                    onclick="document.getElementById('sentenceTagDialog').close(); this.closest('form').closest('form')?.requestSubmit()"
+                    class="px-4 py-2 rounded-xl bg-orange-500 text-white">
+              指定する
+            </button>
+          </div>
+        </div>
+      </form>
+    </dialog>
   </div>
 
 <%# 検索ボタン + 日付絞り込み（下段） %>
