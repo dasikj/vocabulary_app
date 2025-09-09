@@ -18,11 +18,11 @@ class Sentence < ApplicationRecord
   validates :body, presence: true, length: { maximum: 400 }, uniqueness: true
   validates :sentence_category, presence: true
 
-  def self.ransackable_attributes(_auth = nil)
-    %w[body sentence_category created_at]
+  def self.ransackable_associations(_ = nil)
+    %w[sentence_taggings sentence_tags user]
   end
 
-  def self.ransackable_associations(_auth = nil)
-    %w[sentence_tags]
+  def self.ransackable_attributes(_ = nil)
+    %w[body sentence_category created_at updated_at]
   end
 end

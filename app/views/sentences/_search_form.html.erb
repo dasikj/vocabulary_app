@@ -9,12 +9,44 @@
         Sentence.sentence_categories.map { |k, v| [t("enums.sentence.sentence_category.#{k}"), v] },
         { include_blank: t(".all_sentence_category") }, class: "rounded-xl border px-3 py-2" %>
 
-  <%= f.date_field :created_at_gteq, class: "rounded-xl border px-3 py-2" %>
-  <%= f.date_field :created_at_lteq, class: "rounded-xl border px-3 py-2" %>
+  <%# タグ絞り込み（複数選択可 AND想定・OR挙動は後で調整可） %>
+  <div class="md:col-span-2">
+    <%= f.label :sentence_tags_id_in, "タグ", class: "block text-sm mb-1" %>
+    <% tags = SentenceTag.where(user: current_user).order(:name) %>
+    <% if tags.any? %>
+      <div class="border rounded-xl p-2 max-h-40 overflow-y-auto">
+        <div class="grid grid-cols-2 gap-2">
+          <% selected = Array(params.dig(:q, :sentence_tags_id_in)).map(&:to_s) %>
+          <% tags.each do |tag| %>
+            <label class="flex items-center gap-2 text-sm">
+              <%= check_box_tag "q[sentence_tags_id_in][]",
+                                tag.id,
+                                selected.include?(tag.id.to_s),
+                                id: dom_id(tag) %>
+              <span><%= tag.name %></span>
+            </label>
+          <% end %>
+        </div>
+      </div>
+    <% else %>
+      <p class="text-sm">タグがありません</p>
+    <% end %>
+  </div>
 
-<%# 検索ボタン %>
-  <div class="md:col-span-4 flex gap-2">
-    <%= f.submit "検索", class: "rounded-xl bg-blue-600 text-white px-4 py-2 hover:bg-blue-700 transition hover:shadow-lg active:translate-y-0.5 duration-150" %>
-    <%= link_to "クリア", sentences_path, class: "hover:shadow-lg active:translate-y-0.5 transition duration-150 rounded-xl border bg-white px-4 py-2 hover:bg-gray-300" %>
+<%# 検索ボタン + 日付絞り込み（下段） %>
+  <div class="md:col-span-4 grid grid-cols-1 md:grid-cols-4 gap-3 items-end">
+    <div class="flex gap-2">
+      <%= f.submit "検索", class: "rounded-xl bg-blue-600 text-white px-4 py-2 hover:bg-blue-700 transition hover:shadow-lg active:translate-y-0.5 duration-150" %>
+      <%= link_to "クリア", sentences_path, class: "hover:shadow-lg active:translate-y-0.5 transition duration-150 rounded-xl border bg-white px-4 py-2 hover:bg-gray-300" %>
+    </div>
+    <div>
+      <%= f.label :created_at_gteq, "作成日(From)", class: "block text-sm mb-1" %>
+      <%= f.date_field :created_at_gteq, class: "rounded-xl border px-3 py-2 w-full" %>
+    </div>
+    <div>
+      <%= f.label :created_at_lteq, "作成日(To)", class: "block text-sm mb-1" %>
+      <%= f.date_field :created_at_lteq, class: "rounded-xl border px-3 py-2 w-full" %>
+    </div>
+    <div></div>
   </div>
 <% end %>

@@ -41,7 +41,7 @@ end
   private
 
   def sentence_params
-    params.require(:sentence).permit(:body, :sentence_category)
+    params.require(:sentence).permit(:body, :sentence_category, sentence_tag_ids: [])
   end
 
   def set_sentence

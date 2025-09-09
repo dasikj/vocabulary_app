@@ -122,3 +122,6 @@ ja:
       edit: "編集"
     search_form:
       all_sentence_category: "種類全て"
+    tag_selector:
+      tag: "タグ"
+      tag_none: "タグがありません"
