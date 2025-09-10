@@ -21,5 +21,6 @@ ja:
         confirm: "本当に削除しますか？"
       sentence:
         body: "文"
-        sentence_category: "種類" 
+        sentence_category: "種類"
+        sentence_tags: "タグ"
         

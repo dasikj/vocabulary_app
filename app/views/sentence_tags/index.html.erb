@@ -1,15 +1,20 @@
+<%# 編集チェックボックス、見出し%>
 <div data-controller="edit-toggle">
   <div class="max-w-[840px] mx-auto">
     <div class="flex items-center justify-between mb-4">
-      <h1 class="text-lg font-bold">タグ一覧</h1>
+      <h1 class="text-lg font-bold"><%= t(".title") %></h1>
       <label class="flex items-center gap-2 text-base">
         <input type="checkbox" data-action="edit-toggle#toggle">
-        編集
+        <%= t("common.edit") %>
       </label>
     </div>
   </div>
-
+  <%# タグネーム %>
   <div class="space-y-2 max-w-[840px] mx-auto" data-edit-toggle-target="container">
+    <div class="font-bold">
+      <%= t(".tag_name") %>
+    </div>
+    <%# タグ一覧を出力 %>    
     <% @sentence_tags.each do |tag| %>
       <%= form_with model: tag, url: sentence_tag_path(tag), method: :patch, local: true, data: { "edit-toggle-target": "form" } do |f| %>
         <div class="flex items-center rounded-xl border px-3 py-2 gap-3">
@@ -19,6 +24,7 @@
                   data: { "edit-toggle-target": "field" },
                   disabled: true %>
           </div>
+          <%# カラーピッカー %>          
           <div class="flex items-center gap-3">
             <% color_id = dom_id(tag, :color) %>
             <%= f.color_field :color, id: color_id,
@@ -28,24 +34,29 @@
                   oninput: "this.nextElementSibling.style.backgroundColor=this.value" %>
             <span class="inline-block h-5 w-5 rounded-full border" style="background-color:<%= tag.color %>"></span>
           </div>
-
+          <%# 削除ボタン %>
           <div class="flex items-center gap-2 invisible" data-edit-toggle-target="submit">
-            <%= link_to "削除", sentence_tag_path(tag),
-                  data: { turbo_method: :delete, turbo_confirm: "削除しますか？" },
+            <%= link_to t("common.destroy"), sentence_tag_path(tag),
+                  data: { turbo_method: :delete, turbo_confirm: t("activerecord.attributes.form.confirm") },
                   class: "rounded-xl bg-red-600 text-white px-4 py-2 hover:bg-red-700 hover:shadow-lg active:translate-y-0.5 transition duration-150" %>
-            <%= f.submit "変更",
+            <%= f.submit t("common.change"),
                   class: "rounded-xl bg-blue-600 text-white px-4 py-2 hover:bg-blue-700 hover:shadow-lg active:translate-y-0.5 transition duration-150" %>
           </div>
         </div>
       <% end %>
     <% end %>
-
+    <%# タグが一つもない場合 %>
     <% if @sentence_tags.empty? %>
-      <p class="text-gray-500 text-sm">タグがありません</p>
+      <p class="text-sm"><%= t(".tag_none") %></p>
     <% end %>
   </div>
-
+  <%# 作成ボタン %>
   <div class="mt-4 flex justify-center">
-    <%= link_to "新規作成", new_sentence_tag_path, class: "inline-block rounded-xl border bg-green-600 text-white px-4 py-2 hover:bg-green-700 hover:shadow-lg active:translate-y-0.5 transition duration-150" %>
+    <%= link_to t("common.new_create"), new_sentence_tag_path, class: "inline-block rounded-xl border bg-green-600 text-white px-4 py-2 hover:bg-green-700 hover:shadow-lg active:translate-y-0.5 transition duration-150" %>
+    <%= link_to t("common.return"), tags_path, class: "px-4 py-2 ml-2 underline" %>
   </div>
+  <%# ページネーション %>
+  <div class="mt-4 flex justify-center">
+    <%= paginate @sentence_tags %>
+  </div>  
 </div>

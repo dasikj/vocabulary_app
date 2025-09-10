@@ -1,7 +1,10 @@
 class SentenceTagsController < ApplicationController
 
   def index
-    @sentence_tags = current_user.sentence_tags.order(:name)
+    @sentence_tags = current_user.sentence_tags
+                                 .order(created_at: :desc)
+                                 .page(params[:page]) 
+                                 .per(20) 
   end
 
   def new

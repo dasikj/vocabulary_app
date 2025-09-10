@@ -1,4 +1,26 @@
 ja:
+  common:
+    create: "作成"
+    new_create: "新規作成"
+    submit: "登録"
+    destroy: "削除"
+    edit: "編集"
+    change: "変更"
+    back: "戻る"
+    color: "色"
+    clear: "クリア"
+    search: "検索"
+    color_picker: "カラーを選択 または#RGB/#RRGGBBで入力"
+    return: "戻る"
+    tag: "タグ"
+    choice_tag: "タグを選択"
+    tag_none: "タグがありません"
+    specify: "指定する"
+    reset: "リセット"
+    close: "閉じる"
+    from: "作成日(FROM)"
+    to: "作成日(TO)"
+
   shared:
     header:
       logout: "ログアウト"
@@ -18,7 +40,6 @@ ja:
   users:
     new:
       title: "ユーザー登録"
-      submit: "作成"
       return_login: "ログインページへ戻る"
   sessions:
     new:
@@ -46,7 +67,7 @@ ja:
         success: "語彙を更新しました"
         failure: "語彙の更新に失敗しました。"
       destroy:
-        success: "削除しました"
+        success: "語彙を削除しました"
     sentences:
       create:
         success: "文章を登録しました。"
@@ -55,7 +76,7 @@ ja:
         success: "文章を更新しました"
         failure: "文章の更新に失敗しました。"
       destroy:
-        success: "削除しました"
+        success: "文章を削除しました"
   home:
     index:
       title: "トップページ"
@@ -80,6 +101,13 @@ ja:
         logic: "論理"          
         gag: "ギャグ"            
         other: "その他"          
+  tags:
+    index:
+      title: "タグ管理"
+      add_vocabulary_tag: "語彙タグの追加"
+      edit_vocabulary_tag: "語彙タグの編集・削除"
+      add_sentence_tag : "文章タグの追加"
+      edit_sentence_tag: "文章タグの編集・削除"
   vocabularies:
     index:
       title: "語彙一覧"
@@ -88,13 +116,10 @@ ja:
       example_label: "用例："
     new:
       title: "語彙登録"
-      submit: "登録"
       return_index: "語彙一覧へ戻る" 
     destroy:
-      button: "削除"
       success: "語彙を削除しました"
     update:
-      submit: "変更を保存"
       success: "語彙を更新しました"
       failure: "語彙の更新に失敗しました"
     show:
@@ -108,20 +133,22 @@ ja:
       empty: "まだ登録がありません"
     new:
       title: "文章登録"
-      submit: "登録"
       return_index: "文章一覧へ戻る" 
     destroy:
-      button: "削除"
       success: "文章を削除しました"
     update:
-      submit: "変更を保存"
       success: "文章を更新しました"
       failure: "文章の更新に失敗しました"
     show:
       title: "文章詳細"
-      edit: "編集"
     search_form:
       all_sentence_category: "種類全て"
-    tag_selector:
-      tag: "タグ"
+  sentence_tags:
+    index:
+      title: "文章タグ一覧・編集" 
+      tag_name: "タグ名"
       tag_none: "タグがありません"
+    new:
+      title: "文章タグ新規作成"
+      tag_name: "タグ名"
+      return_sentence_tag_index: "文章タグ一覧へ戻る"
