@@ -1,4 +1,4 @@
-<div class="max-w-4xl mx-auto mt-6 space-y-4">
+<div class="max-w-8xl mx-auto mt-6 space-y-4">
   <h1 class="text-xl font-semibold"><%= t(".title") %></h1>
   <%# 検索フォーム %>
   <%= render "search_form", q: @q %>
@@ -7,24 +7,35 @@
     <% @vocabularies.each do |v| %>
       <div class="relative p-4 flex items-start justify-between gap-4 hover:bg-gray-200 cursor-pointer">
         <div>
-          <div class="font-semibold text-lg"><%= v.word %></div>
-          <div class="text-sm text-gray-500">
-            <%= v.reading.presence || t(".reading_none") %> /
-            <%= t("enums.vocabulary.part_of_speech.#{v.part_of_speech}") %>
-          </div>
-          <div class="mt-2 text-sm"><%= simple_format(v.meaning) %></div>
+          <div class="font-semibold text-lg inline"><%= v.word %></div>
+          <span class="text-sm text-gray-500 ml-1"><%= v.reading.presence || t(".reading_none") %> / <%= t("enums.vocabulary.part_of_speech.#{v.part_of_speech}") %></span>
+          <div class="mt-2 text-sm text-gray-500"><%= t(".mean_label") %><%= simple_format(v.meaning) %></div>
           <% if v.example.present? %>
             <div class="mt-1 text-xs text-gray-600"><%= t(".example_label") %><%= v.example %></div>
           <% end %>
-        </div>
+        <%# タグを表示 (本文の下・内部スクロールで崩れ防止) %>
+          <% if v.vocabulary_tags.any? %>
+            <div class="relative z-50 pointer-events-auto mt-2 flex flex-wrap gap-2 max-h-16 overflow-y-auto">
+              <% v.vocabulary_tags.order(:name).each do |tag| %>
+                <%= link_to tag.name,
+                    vocabularies_path(q: { vocabulary_tags_id_in: [tag.id] }),
+                    class: "px-2 py-1 rounded-full border text-xs hover:opacity-80",
+                    style: "background-color: #{tag.color.presence || '#000'}; color: #fff;" %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>  
+        <%# 作成日を表示 %>
         <div class="text-xs text-gray-500 whitespace-nowrap"><%= l v.created_at, format: :short %></div>
         <%= link_to "", vocabulary_path(v), class: "absolute inset-0", aria: { label: v.word } %>
       </div>
     <% end %>
+    <%# 登録がない場合 %>
     <% if @vocabularies.empty? %>
       <div class="p-6 text-center text-gray-500"><%= t(".empty") %></div>
     <% end %>
   </div>
   <%# ページネーション %>
   <%= paginate @vocabularies %>
+  <%= link_to t("common.return"), top_path, class: "ml-2 underline" %>
 </div>

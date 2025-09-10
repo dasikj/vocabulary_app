@@ -44,9 +44,8 @@
         <label class="block text-sm mb-1"><%= t("common.tag") %></label>
         <button type="button"
                 onclick="document.getElementById('sentenceTagPickerShow').showModal()"
-                class="rounded-xl border px-3 py-2 text-left hover:bg-gray-100">
+                class="rounded-xl flex border px-3 py-2 text-left hover:bg-gray-100">
           <%= t("common.choice_tag") %>
-          <span class="ml-2 text-xs text-gray-500">(<%= selected_ids.size %>件選択)</span>
         </button>
 
         <dialog id="sentenceTagPickerShow" class="p-0 w-full max-w-2xl rounded-2xl">

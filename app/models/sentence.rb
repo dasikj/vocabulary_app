@@ -29,10 +29,11 @@ class Sentence < ApplicationRecord
 
   private
 
+  # 紐付けできるタグを制限する
   def limit_sentence_tags_count
-    max = 10  # 例: 最大10個
+    max = 10 # 最大10個まで
     if sentence_tag_ids.uniq.size > max
-      errors.add(:sentence_tags, "は最大#{max}個までです")
+    errors.add(:sentence_tags, :too_many_tags, count: max)
     end
   end
 end

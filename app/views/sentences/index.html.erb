@@ -2,7 +2,7 @@
   <h1 class="text-xl font-semibold"><%= t(".title") %></h1>
   <%# 検索フォーム %>
   <%= render "search_form", q: @q %>
-  <%# 語彙表示 %>
+  <%# 文章表示 %>
   <div class="rounded-2xl bg-white text-gray-900 shadow divide-y overflow-hidden">
     <% @sentences.each do |v| %>
       <div class="relative p-4 flex items-start justify-between gap-4 hover:bg-gray-200 cursor-pointer">
@@ -29,10 +29,12 @@
         <%= link_to "", sentence_path(v), class: "absolute inset-0 z-10 block" %>
       </div>
     <% end %>
+    <%# 登録がない場合 %>
     <% if @sentences.empty? %>
       <div class="p-6 text-center text-gray-500"><%= t(".empty") %></div>
     <% end %>
   </div>
   <%# ページネーション %>
   <%= paginate @sentences %>
+  <%= link_to t("common.return"), top_path, class: "ml-2 underline" %>
 </div>

@@ -20,7 +20,10 @@ ja:
     close: "閉じる"
     from: "作成日(FROM)"
     to: "作成日(TO)"
-
+  errors:
+    messages:
+      invalid_color_format: "#RGB または #RRGGBB 形式で入力してください" 
+      too_many_tags: "は最大%{count}個までです"
   shared:
     header:
       logout: "ログアウト"
@@ -77,6 +80,24 @@ ja:
         failure: "文章の更新に失敗しました。"
       destroy:
         success: "文章を削除しました"
+    sentence_tags:
+      create:
+        success: "タグを作成しました。"
+        failure: "タグの作成に失敗しました。"
+      update:
+        success: "タグを更新しました"
+        failure: "タグの更新に失敗しました"
+      destroy:
+        success: "タグを削除しました"
+    vocabulary_tags:
+      create:
+        success: "語彙タグを作成しました。"
+        failure: "語彙タグの作成に失敗しました。"
+      update:
+        success: "語彙タグを更新しました"
+        failure: "語彙タグの更新に失敗しました"
+      destroy:
+        success: "語彙タグを削除しました"
   home:
     index:
       title: "トップページ"
@@ -114,6 +135,7 @@ ja:
       empty: "まだ登録がありません"
       reading_none: "（読みなし）"
       example_label: "用例："
+      mean_label: "意味"
     new:
       title: "語彙登録"
       return_index: "語彙一覧へ戻る" 
@@ -152,3 +174,13 @@ ja:
       title: "文章タグ新規作成"
       tag_name: "タグ名"
       return_sentence_tag_index: "文章タグ一覧へ戻る"
+  vocabulary_tags:
+    index:  
+      title: "語彙タグ一覧・編集" 
+      tag_name: "タグ名"
+      tag_none: "タグがありません"
+    new:
+      title: "語彙タグ新規作成"
+      tag_name: "タグ名"
+      return_vocabulary_tag_index: "語彙タグ一覧へ戻る"
+

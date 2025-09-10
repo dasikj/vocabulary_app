@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root "sessions#new"
   # ログイン後のトップ画面
   get "top", to: "home#index", as: "top"
-  # 文章タグ、語彙タグ追加編集へのリンクページ
+  # 文章タグ/語彙タグ追加編集へのリンクページ
   get "/tags", to: "tags#index"
   # ユーザー登録
   resources :users, only: [ :new, :create, :create ]
@@ -11,8 +11,10 @@ Rails.application.routes.draw do
   resources :vocabularies, only: [ :new, :create, :index, :update, :destroy, :show ]
   # 文章
   resources :sentences, only: [ :new, :create, :index, :update, :destroy, :show ]
-  # 文章タグ
+  # 文章タグ/語彙タグ
   resources :sentence_tags, only: %i[index new create update destroy]
+  resources :vocabulary_tags, only: %i[index new create update destroy]
+
   # ログイン/ログアウト
   resource :session, only: [ :new, :create, :destroy ]
   # カレンダーに日毎の登録数を表示するダッシュボード
