@@ -1,10 +1,9 @@
 class VocabularyTagsController < ApplicationController
-
   def index
     @vocabulary_tags = current_user.vocabulary_tags
                                  .order(created_at: :desc)
-                                 .page(params[:page]) 
-                                 .per(20) 
+                                 .page(params[:page])
+                                 .per(20)
   end
 
   def new

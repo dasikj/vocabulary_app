@@ -14,7 +14,7 @@ class Vocabulary < ApplicationRecord
   }
 
   validates :reading, length: { maximum: 100 }, allow_blank: true
-  validates :meaning, presence: true, length:{ maximum: 300}
+  validates :meaning, presence: true, length: { maximum: 300 }
   validates :example, length: { maximum: 500 }, allow_blank: true
   validates :part_of_speech, presence: true
   validates :word, presence: true, length: { maximum: 100 }, uniqueness: { scope: :user_id }
@@ -36,5 +36,4 @@ class Vocabulary < ApplicationRecord
     errors.add(:vocabulary_tags, :too_many_tags, count: max)
     end
   end
-
 end

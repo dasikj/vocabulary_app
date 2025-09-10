@@ -2,7 +2,7 @@ class Sentence < ApplicationRecord
   belongs_to :user
   has_many :sentence_taggings, dependent: :destroy
   has_many :sentence_tags, through: :sentence_taggings
-  
+
   enum sentence_category: {
     metaphor: 0,        # 比喩
     appearance: 1,      # 人物・容姿
@@ -11,8 +11,8 @@ class Sentence < ApplicationRecord
     conversation: 4,    # 会話
     expression: 5,      # 表現
     logic: 6,           # 論理
-    gag: 7,             #ギャグ
-    other: 8,           #その他
+    gag: 7,             # ギャグ
+    other: 8           # その他
   }
 
   validates :body, presence: true, length: { maximum: 500 }, uniqueness: true

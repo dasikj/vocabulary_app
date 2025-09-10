@@ -82,8 +82,7 @@ end
     return if ids.blank?
 
     # Ransack の groupings + m='and' 形式に変換
-    params[:q][:m] = 'and'
+    params[:q][:m] = "and"
     params[:q][:groupings] = ids.map { |id| { sentence_tags_id_eq: id } }
   end
-
 end

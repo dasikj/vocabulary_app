@@ -1,5 +1,4 @@
 class HomeController < ApplicationController
-
   def index
     # month = (params[:month] || Date.current).to_date
     # @first, @last = month.beginning_of_month, month.end_of_month
