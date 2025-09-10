@@ -42,12 +42,12 @@
       <!-- チェックボックス群をここに -->
 
       <div class="flex items-center gap-3 min-h-[44px] invisible" data-edit-toggle-target="submit">
-        <%= link_to t("vocabularies.destroy.button"),
+        <%= link_to t("common.destroy"),
               vocabulary_path(@vocabulary),
               data: { "turbo-method": :delete, "turbo-confirm": t("activerecord.attributes.form.confirm") },
               class: "rounded-xl bg-red-600 text-white px-5 py-2 hover:bg-red-700 hover:shadow-lg active:translate-y-0.5 transition duration-150" %>
 
-        <%= f.submit t("vocabularies.update.submit"),
+        <%= f.submit t("common.change"),
               class: "rounded-xl bg-blue-600 text-white px-5 py-2 hover:bg-blue-700 hover:shadow-lg
               active:translate-y-0.5
               transition duration-150" %>

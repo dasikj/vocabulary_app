@@ -1,3 +1,4 @@
+<%# 使ってない %>
 <% tags = SentenceTag.where(user: current_user).order(:name) %>
 <%= f.label :sentence_tag_ids, t(".tag"), class: "block text-sm mb-1" %>
 
