@@ -39,8 +39,72 @@
       </div>
 
       <!-- タグ群は後で実装 -->
-      <!-- チェックボックス群をここに -->
 
+      <%# タグ表示 %>
+      <% if @vocabulary.vocabulary_tags.any? %>
+        <div class="mt-3 flex flex-wrap gap-2">
+          <% @vocabulary.vocabulary_tags.order(:name).each do |tag| %>
+            <%= link_to tag.name,
+                vocabularies_path(q: { vocabulary_tags_id_in: [tag.id] }),
+                class: "px-2 py-1 rounded-full border text-xs hover:opacity-80",
+                style: "background-color: #{tag.color.presence || '#000'}; color: #fff;" %>
+          <% end %>
+        </div>
+      <% end %>
+
+      <%# タグ付け替え（編集時のみ表示／モーダル選択） %>
+      <div class="invisible" data-edit-toggle-target="submit">
+        <% tags = VocabularyTag.where(user: current_user).order(:name) %>
+        <% selected_ids = Array(@vocabulary.vocabulary_tag_ids).map(&:to_s) %>
+
+        <label class="block text-sm mb-1"><%= t("common.tag") %></label>
+        <button type="button"
+                onclick="document.getElementById('vocabularyTagPickerShow').showModal()"
+                class="rounded-xl flex border px-3 py-2 text-left hover:bg-gray-100">
+          <%= t("common.choice_tag") %>
+        </button>
+
+        <dialog id="vocabularyTagPickerShow" class="p-0 w-full max-w-2xl rounded-2xl">
+          <div class="flex flex-col max-h-[70vh]">
+            <div class="px-4 py-3 border-b sticky top-0 bg-white rounded-t-2xl">
+              <div class="font-semibold"><%= t("common.choice_tag") %></div>
+            </div>
+
+            <div class="p-4 overflow-y-auto">
+              <% if tags.any? %>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <% tags.each do |tag| %>
+                    <label class="flex items-start gap-2 text-sm">
+                      <%= check_box_tag "vocabulary[vocabulary_tag_ids][]", tag.id,
+                                        selected_ids.include?(tag.id.to_s), id: dom_id(tag) %>
+                      <span class="break-words whitespace-normal leading-5">
+                        <%= tag.name %>
+                      </span>
+                    </label>
+                  <% end %>
+                </div>
+              <% else %>
+                <p class="text-gray-500 text-sm"><%= t("common.tag_none") %></p>
+              <% end %>
+            </div>
+
+            <div class="px-4 py-3 border-t bg-white sticky bottom-0 rounded-b-2xl flex justify-end">
+              <button type="button"
+                      onclick="document.getElementById('vocabularyTagPickerShow').close()"
+                      class="px-4 py-2 rounded-xl border bg-white">
+                <%= t("common.close") %>
+              </button>
+              <button type="button"
+                      onclick="document.getElementById('vocabularyTagPickerShow').close()"
+                      class="ml-2 px-4 py-2 rounded-xl bg-orange-500 text-white">
+                <%= t("common.specify") %>
+              </button>
+            </div>
+          </div>
+        </dialog>
+      </div>
+
+      <%# 編集チェック時に出現する削除、変更ボタン %>
       <div class="flex items-center gap-3 min-h-[44px] invisible" data-edit-toggle-target="submit">
         <%= link_to t("common.destroy"),
               vocabulary_path(@vocabulary),
@@ -54,4 +118,5 @@
       </div>
     </div>
   <% end %>
+  <%= link_to t("common.return"), vocabularies_path, class: "ml-2 underline" %>
 </div>

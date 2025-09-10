@@ -14,8 +14,9 @@ class SentenceTagsController < ApplicationController
   def create
     @sentence_tag = current_user.sentence_tags.new(sentence_tag_params)
     if @sentence_tag.save
-      redirect_to sentence_tags_path, notice: "タグを作成しました"
+      redirect_to sentence_tags_path, notice: t("flash.sentence_tags.create.success")
     else
+      flash.now[:alert] = t("flash.sentence_tags.create.failure")
       render :new, status: :unprocessable_entity
     end
   end
@@ -23,16 +24,16 @@ class SentenceTagsController < ApplicationController
   def update
     tag = current_user.sentence_tags.find(params[:id])
     if tag.update(sentence_tag_params)
-      redirect_to sentence_tags_path, notice: "更新しました"
+      redirect_to sentence_tags_path, notice: t("flash.sentence_tags.update.success")
     else
-      redirect_to sentence_tags_path, alert: "更新に失敗しました"
+      redirect_to sentence_tags_path, alert: t("flash.sentence_tags.update.failure")
     end
   end
 
   def destroy
     tag = current_user.sentence_tags.find(params[:id])
     tag.destroy
-    redirect_to sentence_tags_path, notice: "削除しました"
+    redirect_to sentence_tags_path, notice: t("flash.sentence_tags.destroy.success")
   end
 
   private
