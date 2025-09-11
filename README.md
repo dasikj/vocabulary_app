@@ -1,4 +1,4 @@
-# 語彙登録アプリ　「Vocabulary log」
+# 語彙登録アプリ　「Vocabulary log」 
 
 
 ## サービス概要
