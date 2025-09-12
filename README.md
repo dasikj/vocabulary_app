@@ -67,18 +67,18 @@ MVP段階で実装予定
 ## 使用する技術スタック
 * フレームワーク Ruby on Rails 7.2.1
 * データベース　PostgrelSQL
-* デプロイ先 AWSを想定(renderの可能性あり)
+* デプロイ先 renderで初期検証後、将来的にはAWSでの運用を想定(MVP時はrenderの可能性高)
 * Javascriptでの動的な検索機能（トグル、ダイアログなど）
 * stimulus-autocomplete機能を使った検索時に入力予測機能の搭載 
   
 使用予定のgem
 * tailwindcss　3.4.17 (CSS)  
-* sorcery (認証機能)  
+* devise (認証機能、ハッシュはbcryptを採用)  
 * kaminari (ページャー)  
 * ransack (検索機能)  
 * i18n (言語互換、現状日本語専用アプリなのでいらないかもしれないが一応)  
 * gretel (ぱんくずリスト)  
 * pry-byebug (デバッグ)  
 * rubocop (コード整理)  
-* whenever
-* ActionMailer
+* ActionMailer (パスワードリセットメール送信)
+* letter_opener (パスワードリセット検証用)
