@@ -1,6 +1,5 @@
-<div data-controller="edit-toggle">
-  <div class="flex items-center justify-between">
-    <h1 class="text-xl font-semibold"><%= t(".title") %></h1>
+<div class="max-w-3xl mx-auto" data-controller="edit-toggle">
+  <div class="flex items-center justify-end">
       <label class="flex items-center gap-2 text-base">
       <input type="checkbox" data-action="edit-toggle#toggle"> <%= t(".edit") %>
     </label>
@@ -10,6 +9,7 @@
 
   <%= form_with model: @vocabulary, url: vocabulary_path(@vocabulary), method: :patch, local: true, data: { "edit-toggle-target": "form" } do |f| %>
     <div class="rounded-2xl bg-white text-gray-900 shadow p-6 space-y-4" data-edit-toggle-target="container">
+      <h1 class="text-xl font-semibold"><%= t(".title") %></h1>
       <div>
         <%= f.label :word, class: "block text-sm mb-1" %>
         <%= f.text_field :word, class: "w-full rounded-xl border px-3 py-2",

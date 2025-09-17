@@ -1,14 +1,25 @@
 <div class="max-w-8xl mx-auto mt-6 space-y-4">
-  <h1 class="text-xl font-semibold"><%= t(".title") %></h1>
+  <h1 class="text-2xl text-center font-semibold"><%= t(".title") %></h1>
   <%# 検索フォーム %>
   <%= render "search_form", q: @q %>
+  <div class="flex justify-end gap-4 my-2 text-sm">
+    <span><%= t("common.sort") %></span>
+    <%= link_to t("common.update_desc"), url_for(params.permit!.to_h.merge(sort: 'updated_desc', page: nil)), class: 'underline' %>
+    <%= link_to t("common.update_asc"), url_for(params.permit!.to_h.merge(sort: 'updated_asc',  page: nil)), class: 'underline' %>
+    <%= link_to t("common.create_desc"), url_for(params.permit!.to_h.merge(sort: 'created_desc', page: nil)), class: 'underline' %>
+    <%= link_to t("common.create_asc"), url_for(params.permit!.to_h.merge(sort: 'created_asc',  page: nil)), class: 'underline' %>
+  </div>
   <%# 文章表示 %>
   <div class="rounded-2xl bg-white text-gray-900 shadow divide-y overflow-hidden">
     <% @sentences.each do |v| %>
-      <div class="relative p-4 flex items-start justify-between gap-4 hover:bg-gray-200 cursor-pointer">
+      <div id="s<%= v.id %>" class="relative p-4 flex items-start justify-between gap-4 hover:bg-gray-200 cursor-pointer">
         <div class="relative">
           <% body_text = v.body.to_s.gsub(/\A[[:space:]\u3000]+/, "") %>
-          <div class="text-[15px] md:text-base leading-7 tracking-[0.01em] antialiased whitespace-pre-line break-words"><%= truncate(body_text, length: 440, omission: "...") %></div>
+          <div class="pl-3 border-l-4 border-blue-200">
+            <div class="text-sm text-gray-700 leading-relaxed tracking-[0.01em] antialiased break-words">
+              <%= clamp_lines(body_text, max_lines: 5) %>
+            </div>
+          </div>
           <div class="mt-1 text-xs text-gray-500">
             <%= t("enums.sentence.sentence_category.#{v.sentence_category}") %>
           </div>
@@ -25,7 +36,12 @@
           <% end %>
         </div>
         <%# 作成日を表示 %>
-        <div class="text-xs text-gray-500 whitespace-nowrap"><%= l v.created_at, format: :short %></div>
+        <div class="text-xs text-gray-500 text-right whitespace-nowrap">
+          <div><%= t("common.created_day") %></div>
+          <div><%= v.created_at.strftime("%Y/%m/%d %H:%M") %></div><br>
+          <div><%= t("common.updated_day") %></div>
+          <div><%= v.updated_at.strftime("%Y/%m/%d %H:%M") %></div>
+        </div>
         <%= link_to "", sentence_path(v), class: "absolute inset-0 z-10 block" %>
       </div>
     <% end %>

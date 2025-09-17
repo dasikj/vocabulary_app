@@ -74,11 +74,11 @@
       <%= link_to "クリア", sentences_path, class: "hover:shadow-lg active:translate-y-0.5 transition duration-150 rounded-xl border bg-white px-4 py-2 hover:bg-gray-300" %>
     </div>
     <div>
-      <%= f.label :created_at_gteq, "作成日(From)", class: "block text-sm mb-1" %>
+      <%= f.label :created_at_gteq, t("common.from"), class: "block text-sm mb-1" %>
       <%= f.date_field :created_at_gteq, class: "rounded-xl border px-3 py-2 w-full" %>
     </div>
     <div>
-      <%= f.label :created_at_lteq, "作成日(To)", class: "block text-sm mb-1" %>
+      <%= f.label :created_at_lteq, t("common.to"), class: "block text-sm mb-1" %>
       <%= f.date_field :created_at_lteq, class: "rounded-xl border px-3 py-2 w-full" %>
     </div>
     <div></div>
