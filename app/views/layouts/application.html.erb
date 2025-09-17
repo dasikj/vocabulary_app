@@ -6,6 +6,8 @@
   <%# ↑ 更新時にキャッシュを保持して反映が遅くならないように。デバッグ後は消すこと %>
   <title><%= full_title(t("#{controller_path}.#{action_name}.title", default: t("titles.default"))) %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
