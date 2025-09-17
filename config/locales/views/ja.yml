@@ -20,6 +20,13 @@ ja:
     close: "閉じる"
     from: "作成日(FROM)"
     to: "作成日(TO)"
+    create_asc: "作成日昇順"
+    create_desc: "作成日降順"
+    update_asc: "更新日昇順"
+    update_desc: "更新日降順"
+    sort: "並び替え: "
+    created_day: "作成日"
+    updated_day: "更新日"
   errors:
     messages:
       invalid_color_format: "#RGB または #RRGGBB 形式で入力してください" 
@@ -134,7 +141,7 @@ ja:
       title: "語彙一覧"
       empty: "まだ登録がありません"
       reading_none: "（読みなし）"
-      example_label: "用例："
+      example_label: "用例"
       mean_label: "意味"
     new:
       title: "語彙登録"

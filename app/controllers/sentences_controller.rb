@@ -1,5 +1,4 @@
 class SentencesController < ApplicationController
-  before_action :normalize_tag_filters_to_and!, only: :index
   before_action :set_sentence, only: [ :show, :update, :destroy ]
   before_action :normalize_sentence_search!, only: :index
   def new
@@ -18,7 +17,10 @@ class SentencesController < ApplicationController
 
 def index
   @q = current_user.sentences.ransack(params[:q])
-  @sentences = search_scope.includes(:sentence_tags).page(params[:page]).per(10)
+  scope = search_scope
+  @sentences = scope.order(ordering_params)
+                    .includes(:sentence_tags)
+                    .page(params[:page]).per(10)
   @sentence_tags = SentenceTag.where(user: current_user).order(:name)
 end
 
@@ -26,7 +28,7 @@ end
 
   def update
     if @sentence.update(sentence_params)
-      redirect_to sentences_path, notice: t("sentences.update.success")
+      redirect_to sentences_path(sort: params[:sort].presence || 'updated_desc', anchor: "s#{@sentence.id}"), notice: t("sentences.update.success")
     else
       @sentence.restore_attributes
       flash.now[:alert] = t("sentences.update.failure")
@@ -35,7 +37,7 @@ end
   end
 
 def destroy
-  @sentence.destroy
+  @sentence.destroy!
   redirect_to sentences_path, notice: t("sentences.destroy.success")
 end
 
@@ -61,29 +63,34 @@ end
     end
   end
   def search_scope
-    base = @q.result.includes(:sentence_tags).order(created_at: :desc)
-    ids = selected_tag_ids
-    return base if ids.empty?
+    base = @q.result.includes(:sentence_tags)
 
-    base.joins(:sentence_taggings)
-        .where(sentence_taggings: { sentence_tag_id: ids })
-        .group("sentences.id")
-        .having("COUNT(DISTINCT sentence_taggings.sentence_tag_id) = ?", ids.size)
+    ids = selected_tag_ids
+    return base if ids.blank?
+
+    if ids.size == 1
+      base.joins(:sentence_taggings).where(sentence_taggings: { sentence_tag_id: ids.first }).distinct
+    else
+      base.joins(:sentence_taggings)
+          .where(sentence_taggings: { sentence_tag_id: ids })
+          .group('sentences.id')
+          .having('COUNT(DISTINCT sentence_taggings.sentence_tag_id) = ?', ids.size)
+    end
   end
 
   def selected_tag_ids
-    Array(params[:tag_ids]).map(&:to_i).uniq
+    ids_from_q     = Array(params.dig(:q, :sentence_tags_id_in))
+    ids_from_plain = Array(params[:tag_ids])
+    (ids_from_q + ids_from_plain).compact.reject(&:blank?).map(&:to_i).uniq
   end
 
-  def normalize_tag_filters_to_and!
-    return unless params[:q].is_a?(ActionController::Parameters) || params[:q].is_a?(Hash)
-
-    ids = Array(params[:q].delete(:sentence_tags_id_in)).reject(&:blank?)
-    return if ids.blank?
-
-    # Ransack の groupings + m='and' 形式に変換
-    params[:q][:m] = 'and'
-    params[:q][:groupings] = ids.map { |id| { sentence_tags_id_eq: id } }
+  def ordering_params
+    case params[:sort]
+    when 'updated_asc' then { updated_at: :asc }
+    when 'created_desc' then { created_at: :desc }
+    when 'created_asc' then { created_at: :asc }
+    else { updated_at: :desc }
+    end
   end
 
 end

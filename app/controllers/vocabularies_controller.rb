@@ -1,5 +1,4 @@
 class VocabulariesController < ApplicationController
-  before_action :normalize_tag_filters_to_and!, only: :index
   before_action :set_vocabulary, only: [ :show, :update, :destroy ]
   before_action :normalize_vocabulary_search!, only: :index
   def new
@@ -18,7 +17,7 @@ class VocabulariesController < ApplicationController
 
 def index
   @q = current_user.vocabularies.ransack(params[:q])
-  @vocabularies = search_scope.includes(:vocabulary_tags).page(params[:page]).per(10)
+  @vocabularies = search_scope.order(ordering_params).includes(:vocabulary_tags).page(params[:page]).per(10)
   @vocabulary_tags = VocabularyTag.where(user: current_user).order(:name)
 end
 
@@ -26,7 +25,7 @@ end
 
   def update
     if @vocabulary.update(vocabulary_params)
-      redirect_to vocabularies_path, notice: t("vocabularies.update.success")
+      redirect_to vocabularies_path(sort: params[:sort].presence || 'updated_desc', anchor: "v#{@vocabulary.id}"), notice: t("vocabularies.update.success")
     else
       @vocabulary.restore_attributes
       flash.now[:alert] = t("vocabularies.update.failure")
@@ -61,7 +60,7 @@ end
     end
   end
   def search_scope
-    base = @q.result.includes(:vocabulary_tags).order(created_at: :desc)
+    base = @q.result.includes(:vocabulary_tags)
     ids = selected_tag_ids
     return base if ids.empty?
 
@@ -72,7 +71,9 @@ end
   end
 
   def selected_tag_ids
-    Array(params[:tag_ids]).map(&:to_i).uniq
+    ids_from_q = Array(params.dig(:q, :vocabulary_tags_id_in))
+    ids_from_plain = Array(params[:tag_ids])
+    (ids_from_q + ids_from_plain).compact.reject(&:blank?).map(&:to_i).uniq
   end
 
   def normalize_tag_filters_to_and!
@@ -84,6 +85,15 @@ end
     # Ransack の groupings + m='and' 形式に変換
     params[:q][:m] = 'and'
     params[:q][:groupings] = ids.map { |id| { vocabulary_tags_id_eq: id } }
+  end
+
+  def ordering_params
+    case params[:sort]
+    when 'updated_asc' then { updated_at: :asc }
+    when 'created_desc' then { created_at: :desc }
+    when 'created_asc' then { created_at: :asc }
+    else { updated_at: :desc }
+    end
   end
 
 end

@@ -20,7 +20,7 @@
         <div class="flex items-center rounded-xl border px-3 py-2 gap-3">
           <div class="min-w-0">
             <%= f.text_field :name,
-                  class: "w-[44ch] md:w-[48ch] rounded-xl border px-3 py-2",
+                  class: "w-[44ch] md:w-[48ch] rounded-xl border px-3 py-2 bg-gray-100 disabled:bg-gray-200",
                   data: { "edit-toggle-target": "field" },
                   disabled: true %>
           </div>
@@ -32,7 +32,7 @@
                   data: { "edit-toggle-target": "field" },
                   disabled: true,
                   oninput: "this.nextElementSibling.style.backgroundColor=this.value" %>
-            <span class="inline-block h-5 w-5 rounded-full border" style="background-color:<%= tag.color %>"></span>
+            <span class="hidden inline-block h-5 w-5 rounded-full border" style="background-color:<%= tag.color %>"></span>
           </div>
           <%# 削除ボタン %>
           <div class="flex items-center gap-2 invisible" data-edit-toggle-target="submit">
