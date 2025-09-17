@@ -27,10 +27,19 @@ ja:
     sort: "並び替え: "
     created_day: "作成日"
     updated_day: "更新日"
+  passwords:
+    edit:
+      title: "新しいパスワードを設定"
+      description: "新しいパスワードを入力してください。"
+      new_password_label: "新しいパスワード"
+      new_password_confirmation_label: "新しいパスワード（確認）"
+      submit: "パスワードを変更"
+      link_to_signin: "ログインページへ"  
   errors:
     messages:
       invalid_color_format: "#RGB または #RRGGBB 形式で入力してください" 
       too_many_tags: "は最大%{count}個までです"
+      not_found: "メールアドレスが見つかりません"
   shared:
     header:
       logout: "ログアウト"
@@ -41,6 +50,7 @@ ja:
       tag_edit: "タグ追加・編集"
       bookmark: "お気に入り"
       user_show: "ユーザー詳細"
+      confirm_logout: "ログアウトしますか？"
   placeholders:
     email: "メールアドレスを入力"
     password: "パスワード（8文字以上）"
@@ -56,6 +66,11 @@ ja:
       title: "ログイン"
       login: "ログイン"
       link_to_signup: "新規登録"
+      email_label: "メールアドレス"
+      password_label: "パスワード"
+      remember_me: "ログイン状態を保持する"
+      forgot_password: "パスワードをお忘れの方はこちら"
+      submit: "ログイン"
   flash:
     users:
       create:
@@ -191,3 +206,74 @@ ja:
       tag_name: "タグ名"
       return_vocabulary_tag_index: "語彙タグ一覧へ戻る"
 
+  devise:
+    shared:
+      minimum_password_length: "最低%{count}文字"
+    confirmations:
+      confirmed: "アカウントの確認が完了しました。"
+      send_instructions: "アカウントの確認方法を数分以内にメールでご案内します。"
+      send_paranoid_instructions: "もしメールアドレスが登録済みであれば、数分以内に確認方法をご案内します。"
+    failure:
+      already_authenticated: "すでにログインしています。"
+      inactive: "アカウントが有効化されていません。"
+      invalid: "メールアドレスまたはパスワードが違います。"
+      locked: "アカウントがロックされています。"
+      last_attempt: "残り1回誤るとアカウントがロックされます。"
+      not_found_in_database: "メールアドレスまたはパスワードが違います。"
+      timeout: "ログイン情報の有効期限が切れました。もう一度ログインしてください。"
+      unauthenticated: "ログインが必要です。"
+      unconfirmed: "アカウントの確認が必要です。メールをご確認ください。"
+    mailer:
+      reset_password_instructions:
+        greeting: "%{email} 様"
+        message: "パスワード再設定のご依頼を受け付けました。以下のリンクから新しいパスワードを設定してください。"
+        link_text: "パスワードを再設定する"
+        ignore: "もしこのメールに心当たりがない場合は、このメールを無視してください。"
+        note: "リンクにアクセスして新しいパスワードを登録するまでは、パスワードは変更されません。"
+        subject: "パスワード再設定手順"
+      confirmation_instructions:
+        subject: "アカウントの確認手順"
+      unlock_instructions:
+        subject: "アカウントのロック解除手順"
+      email_changed:
+        subject: "メールアドレス変更のお知らせ"
+      password_change:
+        subject: "パスワード変更のお知らせ"
+    omniauth_callbacks:
+      success: "%{kind} アカウントによる認証に成功しました。"
+      failure: "%{kind} による認証に失敗しました: %{reason}"
+    passwords:
+      no_token: "このページにはパスワード再設定メールのリンクからアクセスしてください。"
+      send_instructions: "パスワード再設定方法を数分以内にメールでご案内します。"
+      send_paranoid_instructions: "もしメールアドレスが登録済みであれば、数分以内にパスワード再設定方法をご案内します。"
+      updated: "パスワードが変更されました。ログインしています。"
+      updated_not_active: "パスワードが変更されました。"
+      new:
+        title: "パスワード再設定"
+      edit:
+        title: "新しいパスワードを設定"
+    registrations:
+      destroyed: "アカウントを削除しました。またのご利用をお待ちしています。"
+      signed_up: "アカウント登録が完了しました。"
+      signed_up_but_unconfirmed: "確認メールを送信しました。確認完了後にログインできます。"
+      signed_up_but_inactive: "アカウントが有効化されていないためログインできません。"
+      signed_up_but_locked: "アカウントがロックされているためログインできません。"
+      updated: "アカウント情報を更新しました。"
+      update_needs_confirmation: "メールアドレス変更の確認メールを送信しました。確認完了後に反映されます。"
+      new:
+        title: "新規登録"
+    sessions:
+      signed_in: "ログインしました。"
+      signed_out: "ログアウトしました。"
+      already_signed_out: "すでにログアウトしています。"
+      new:
+        title: "ログイン"
+
+  helpers:
+    submit:
+      user:
+        create: "登録"
+        update: "更新"
+        submit: "保存"
+        sign_in: "ログイン"
+        sign_up: "登録"

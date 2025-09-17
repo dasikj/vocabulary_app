@@ -1,6 +1,8 @@
 class User < ApplicationRecord
-  # sorceryによる認証機能を追加
-  authenticates_with_sorcery!
+  # sorceryによる認証機能を追加 → Deviseに移行
+  #authenticates_with_sorcery!
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
 
   has_many :vocabularies, dependent: :destroy
   has_many :sentences, dependent: :destroy
