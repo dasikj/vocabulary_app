@@ -4,7 +4,7 @@
   <%# ↓ 更新時にキャッシュを保持して反映が遅くならないように。デバッグ後は消すこと %>
   <%# <meta name="turbo-cache-control" content="no-cache"> %>
   <%# ↑ 更新時にキャッシュを保持して反映が遅くならないように。デバッグ後は消すこと %>
-  <title><%= full_title(t("#{controller_path}.#{action_name}.title", default: t("titles.default"))) %></title>
+  <title><%= full_title(t("#{controller_path.tr('/', '.')}.#{action_name}.title", default: t("titles.default"))) %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
@@ -21,7 +21,7 @@
 </head>
 
 <body class="min-h-screen flex flex-col text-neutral-900 antialiased leading-7" style="background-color:#E8DFCA;">
-  <% unless controller_name == "sessions" || (controller_name == "users" && action_name == "new") %>
+  <% unless devise_controller? %>
     <%= render "shared/header" %>
   <% end %>
 

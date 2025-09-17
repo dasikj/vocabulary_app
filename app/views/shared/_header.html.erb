@@ -10,8 +10,8 @@
       <%= link_to t(".bookmark"), "#", class: "hover:underline" %>
     </nav>
     <nav class="flex space-x-4">
-      <%= link_to t(".user_show"), "#", class: "hover:underline" %>
-      <%= link_to "ログアウト", session_path, data: { "turbo-method": :delete, "turbo-confirm": "ログアウトしますか？" }, class: "hover:underline" %>
+      <%= link_to t(".user_show"), edit_user_registration_path, class: "hover:underline" %>
+      <%= link_to t(".logout"), destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: t(".confirm_logout") }, class: "hover:underline" %>
     </nav>
   </div>
 </header>

@@ -60,14 +60,18 @@ end
 gem "tailwindcss-rails"
 gem "tailwindcss-ruby", "3.4.17"
 
-gem "sorcery"
 gem "kaminari"
 gem "draper"
 gem "ransack"
-gem "turbo-rails"
 gem "pry-byebug"
 gem "gretel"
 gem "rails-i18n"
 gem "rubocop", require: false
 gem "rubocop-capybara", require: false
 gem "rubocop-rails", require: false
+
+gem "devise"
+group :development do
+  gem "letter_opener"
+  gem "letter_opener_web"
+end
