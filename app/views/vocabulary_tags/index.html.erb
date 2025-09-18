@@ -9,46 +9,47 @@
       </label>
     </div>
   </div>
-  <%# タグネーム %>
-  <div class="space-y-2 max-w-[840px] mx-auto" data-edit-toggle-target="container">
-    <div class="font-bold">
-      <%= t(".tag_name") %>
+  <%# タグリスト（ページ内10件）カード %>
+  <div class="max-w-[800px] mx-auto">
+    <div class="rounded-2xl bg-white shadow p-6 ring-1 ring-black/5" data-edit-toggle-target="container">
+      <div class="font-bold mb-2"><%= t(".tag_name") %></div>
+      <div class="space-y-2">
+        <% @vocabulary_tags.each do |tag| %>
+          <%= form_with model: tag, url: vocabulary_tag_path(tag), method: :patch, local: true, data: { "edit-toggle-target": "form" } do |f| %>
+            <div class="flex items-center rounded-xl px-3 py-2 gap-3">
+              <div class="min-w-0">
+                <%= f.text_field :name,
+                      class: "w-[44ch] md:w-[48ch] rounded-xl border px-3 py-2 bg-white disabled:bg-gray-100",
+                      data: { "edit-toggle-target": "field" },
+                      disabled: true %>
+              </div>
+              <%# カラーピッカー %>
+              <div class="flex items-center gap-3">
+                <% color_id = dom_id(tag, :color) %>
+                <%= f.color_field :color, id: color_id,
+                      class: "h-8 w-12 rounded border",
+                      data: { "edit-toggle-target": "field" },
+                      disabled: true,
+                      oninput: "this.nextElementSibling.style.backgroundColor=this.value" %>
+                <span class="hidden inline-block h-5 w-5 rounded-full border" style="background-color:<%= tag.color %>"></span>
+              </div>
+              <%# 削除ボタン %>
+              <div class="ml-auto flex items-center gap-2 invisible" data-edit-toggle-target="submit">
+                <%= link_to t("common.destroy"), vocabulary_tag_path(tag),
+                      data: { turbo_method: :delete, turbo_confirm: t("activerecord.attributes.form.confirm") },
+                      class: "rounded-xl bg-red-600 text-white px-4 py-2 hover:bg-red-700 hover:shadow-lg active:translate-y-0.5 transition duration-150" %>
+                <%= f.submit t("common.change"),
+                      class: "rounded-xl bg-blue-600 text-white px-4 py-2 hover:bg-blue-700 hover:shadow-lg active:translate-y-0.5 transition duration-150" %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+
+        <% if @vocabulary_tags.empty? %>
+          <p class="text-sm"><%= t(".tag_none") %></p>
+        <% end %>
+      </div>
     </div>
-    <%# タグ一覧を出力 %>    
-    <% @vocabulary_tags.each do |tag| %>
-      <%= form_with model: tag, url: vocabulary_tag_path(tag), method: :patch, local: true, data: { "edit-toggle-target": "form" } do |f| %>
-        <div class="flex items-center rounded-xl border px-3 py-2 gap-3">
-          <div class="min-w-0">
-            <%= f.text_field :name,
-                  class: "w-[44ch] md:w-[48ch] rounded-xl border px-3 py-2 bg-gray-100 disabled:bg-gray-200",
-                  data: { "edit-toggle-target": "field" },
-                  disabled: true %>
-          </div>
-          <%# カラーピッカー %>          
-          <div class="flex items-center gap-3">
-            <% color_id = dom_id(tag, :color) %>
-            <%= f.color_field :color, id: color_id,
-                  class: "h-8 w-12 rounded border",
-                  data: { "edit-toggle-target": "field" },
-                  disabled: true,
-                  oninput: "this.nextElementSibling.style.backgroundColor=this.value" %>
-            <span class="hidden inline-block h-5 w-5 rounded-full border" style="background-color:<%= tag.color %>"></span>
-          </div>
-          <%# 削除ボタン %>
-          <div class="flex items-center gap-2 invisible" data-edit-toggle-target="submit">
-            <%= link_to t("common.destroy"), vocabulary_tag_path(tag),
-                  data: { turbo_method: :delete, turbo_confirm: t("activerecord.attributes.form.confirm") },
-                  class: "rounded-xl bg-red-600 text-white px-4 py-2 hover:bg-red-700 hover:shadow-lg active:translate-y-0.5 transition duration-150" %>
-            <%= f.submit t("common.change"),
-                  class: "rounded-xl bg-blue-600 text-white px-4 py-2 hover:bg-blue-700 hover:shadow-lg active:translate-y-0.5 transition duration-150" %>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
-    <%# タグが一つもない場合 %>
-    <% if @vocabulary_tags.empty? %>
-      <p class="text-sm"><%= t(".tag_none") %></p>
-    <% end %>
   </div>
   <%# 作成ボタン %>
   <div class="mt-4 flex justify-center">

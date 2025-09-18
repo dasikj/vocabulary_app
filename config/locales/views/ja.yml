@@ -121,6 +121,13 @@ ja:
         failure: "語彙タグの更新に失敗しました"
       destroy:
         success: "語彙タグを削除しました"
+    bookmarks:
+      create:
+        success: "お気に入りに追加しました"
+        failure: "お気に入りに追加できませんでした"
+      destroy:
+        success: "お気に入りを削除しました"    
+
   home:
     index:
       title: "トップページ"
@@ -151,7 +158,7 @@ ja:
       title: "タグ管理"
       add_vocabulary_tag: "語彙タグの追加"
       edit_vocabulary_tag: "語彙タグの編集・削除"
-      add_sentence_tag : "文章タグの追加"
+      add_sentence_tag: "文章タグの追加"
       edit_sentence_tag: "文章タグの編集・削除"
   vocabularies:
     index:
@@ -221,14 +228,6 @@ ja:
       remove: "お気に入り解除"
     confirm:
       remove: "解除しますか？"
-  flash:
-    bookmarks:
-      create:
-        success: "お気に入りに追加しました"
-        failure: "お気に入りに追加できませんでした"
-      destroy:
-        success: "お気に入りを削除しました"    
-
   devise:
     shared:
       minimum_password_length: "最低%{count}文字"
