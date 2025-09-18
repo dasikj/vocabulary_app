@@ -21,51 +21,51 @@
     <% else %>
       <ul class="space-y-3">
         <% @bookmarks.each do |bm| %>
-          <li class="rounded-2xl border bg-white p-4 shadow hover:shadow-md transition flex items-start justify-between gap-4">
-            <div class="pr-3 max-w-[85%]">
+          <li class="relative rounded-2xl border bg-white p-4 shadow hover:shadow-md transition flex items-start justify-between gap-4">
+            <% if bm.bookmarkable_type == "Vocabulary" && bm.bookmarkable.present? %>
+              <%= link_to "", vocabulary_path(bm.bookmarkable), class: "absolute inset-0 z-10", data: { turbo_frame: "_top" }, aria: { label: bm.bookmarkable.word } %>
+            <% elsif bm.bookmarkable_type == "Sentence" && bm.bookmarkable.present? %>
+              <%= link_to "", sentence_path(bm.bookmarkable), class: "absolute inset-0 z-10", data: { turbo_frame: "_top" }, aria: { label: t("bookmarks.index.sentence") } %>
+            <% end %>
+            <div class="pr-3 max-w-[85%] relative z-20 pointer-events-none">
               <% if bm.bookmarkable_type == "Vocabulary" %>
-                <%= link_to polymorphic_path(bm.bookmarkable), class: "block" do %>
-                  <div class="font-semibold text-lg inline"><%= truncate(bm.bookmarkable.word.to_s, length: 24, omission: "…") %></div>
-                  <span class="text-sm text-gray-500 ml-1">
-                    <%= truncate((bm.bookmarkable.reading.presence || t("vocabularies.index.reading_none")).to_s, length: 48, omission: "…") %>
-                    /
-                    <%= t("enums.vocabulary.part_of_speech.#{bm.bookmarkable.part_of_speech}") %>
-                  </span>
+                <div class="font-semibold text-lg inline"><%= truncate(bm.bookmarkable.word.to_s, length: 24, omission: "…") %></div>
+                <span class="text-sm text-gray-500 ml-1">
+                  <%= truncate((bm.bookmarkable.reading.presence || t("vocabularies.index.reading_none")).to_s, length: 48, omission: "…") %>
+                  /
+                  <%= t("enums.vocabulary.part_of_speech.#{bm.bookmarkable.part_of_speech}") %>
+                </span>
 
-                  <div class="mt-2 pl-3 border-l-4 border-blue-300">
-                    <div class="text-[11px] font-semibold text-blue-700 tracking-wide uppercase"><%= t("vocabularies.index.mean_label") %></div>
-                    <div class="mt-1 text-sm text-gray-800 leading-relaxed break-words">
-                      <%= clamp_lines(bm.bookmarkable.meaning, max_lines: 3) %>
+                <div class="mt-2 pl-3 border-l-4 border-blue-300">
+                  <div class="text-[11px] font-semibold text-blue-700 tracking-wide uppercase"><%= t("vocabularies.index.mean_label") %></div>
+                  <div class="mt-1 text-sm text-gray-800 leading-relaxed break-words">
+                    <%= clamp_lines(bm.bookmarkable.meaning, max_lines: 3) %>
+                  </div>
+                </div>
+
+                <% if bm.bookmarkable.example.present? %>
+                  <div class="mt-2 pl-3 border-l-4 border-green-300">
+                    <div class="text-[11px] font-semibold text-green-700 tracking-wide uppercase"><%= t("vocabularies.index.example_label") %></div>
+                    <div class="mt-1 text-xs text-gray-600 leading-relaxed break-words">
+                      <%= clamp_lines(bm.bookmarkable.example, max_lines: 3) %>
                     </div>
                   </div>
-
-                  <% if bm.bookmarkable.example.present? %>
-                    <div class="mt-2 pl-3 border-l-4 border-green-300">
-                      <div class="text-[11px] font-semibold text-green-700 tracking-wide uppercase"><%= t("vocabularies.index.example_label") %></div>
-                      <div class="mt-1 text-xs text-gray-600 leading-relaxed break-words">
-                        <%= clamp_lines(bm.bookmarkable.example, max_lines: 3) %>
-                      </div>
-                    </div>
-                  <% end %>
                 <% end %>
 
                 <%# タグ（語彙）: 一覧と同じ色付きチップ＋リンク %>
                 <% if bm.bookmarkable.respond_to?(:vocabulary_tags) && bm.bookmarkable.vocabulary_tags.any? %>
-                  <div class="relative z-50 pointer-events-auto mt-2 flex flex-wrap gap-2 max-h-16 overflow-y-auto">
+                  <div class="relative z-50 pointer-events-none mt-2 flex flex-wrap gap-2 max-h-16 overflow-y-auto">
                     <% bm.bookmarkable.vocabulary_tags.order(:name).each do |tag| %>
-                      <%= link_to tag.name,
-                          vocabularies_path(q: { vocabulary_tags_id_in: [tag.id] }),
-                          class: "px-2 py-1 rounded-full border text-xs hover:opacity-80",
-                          style: "background-color: #{tag.color.presence || '#000'}; color: #fff;" %>
+                      <span class="px-2 py-1 rounded-full border text-xs opacity-90 cursor-default select-none"
+                            style="background-color: <%= tag.color.presence || '#000' %>; color: #fff;"
+                            aria-disabled="true"><%= tag.name %></span>
                     <% end %>
                   </div>
                 <% end %>
 
               <% else %>
-                <%= link_to polymorphic_path(bm.bookmarkable), class: "block" do %>
-                  <div class="text-sm text-gray-500 mb-1"><%= t("bookmarks.index.sentence") %></div>
-                  <div class="text-base font-semibold leading-snug"><%= clamp_lines(bm.bookmarkable.body, max_lines: 3) %></div>
-                <% end %>
+                <div class="text-sm text-gray-500 mb-1"><%= t("bookmarks.index.sentence") %></div>
+                <div class="text-base font-semibold leading-snug"><%= clamp_lines(bm.bookmarkable.body, max_lines: 3) %></div>
 
                 <%# 種類（文章） %>
                 <% raw_cat = bm.bookmarkable.try(:sentence_category) %>
@@ -78,19 +78,18 @@
 
                 <%# タグ（文章）: 色付きチップ＋リンク（文章一覧のフィルタへ） %>
                 <% if bm.bookmarkable.respond_to?(:sentence_tags) && bm.bookmarkable.sentence_tags.any? %>
-                  <div class="relative z-50 pointer-events-auto mt-2 flex flex-wrap gap-2 max-h-16 overflow-y-auto">
+                  <div class="relative z-50 pointer-events-none mt-2 flex flex-wrap gap-2 max-h-16 overflow-y-auto">
                     <% bm.bookmarkable.sentence_tags.order(:name).each do |tag| %>
-                      <%= link_to tag.name,
-                          sentences_path(q: { sentence_tags_id_in: [tag.id] }),
-                          class: "px-2 py-1 rounded-full border text-xs hover:opacity-80",
-                          style: "background-color: #{tag.color.presence || '#000'}; color: #fff;" %>
+                      <span class="px-2 py-1 rounded-full border text-xs opacity-90 cursor-default select-none"
+                            style="background-color: <%= tag.color.presence || '#000' %>; color: #fff;"
+                            aria-disabled="true"><%= tag.name %></span>
                     <% end %>
                   </div>
                 <% end %>
               <% end %>
             </div>
 
-            <div class="shrink-0 pl-3">
+            <div class="shrink-0 pl-3 relative z-20 pointer-events-auto">
               <%= render "bookmarks/star", record: bm.bookmarkable %>
             </div>
           </li>
