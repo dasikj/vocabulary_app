@@ -2,7 +2,8 @@ class Vocabulary < ApplicationRecord
   belongs_to :user
   has_many :vocabulary_taggings, dependent: :destroy
   has_many :vocabulary_tags, through: :vocabulary_taggings
-
+  has_many :bookmarks, as: :bookmarkable, dependent: :destroy
+  #品詞タグ
   enum part_of_speech: {
     noun: 0,        # 名詞
     verb: 1,        # 動詞
@@ -20,6 +21,8 @@ class Vocabulary < ApplicationRecord
   validates :word, presence: true, length: { maximum: 100 }, uniqueness: { scope: :user_id }
   validate :limit_vocabulary_tags_count
 
+
+  #ransackアクセス許可
   def self.ransackable_attributes(_auth = nil)
     %w[word reading meaning example part_of_speech created_at updated_at]
   end

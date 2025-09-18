@@ -1,0 +1,14 @@
+<span id="<%= dom_id(record, :bookmark_star) %>">
+  <% bookmarked = bookmarked?(record) %>
+  <% bm = bookmark_for(record) %>
+
+  <% if bookmarked %>
+    <%= button_to "⭐️", bookmark_path(bm), method: :delete,
+          class: "text-yellow-400 text-xl",
+          form: { data: { turbo_confirm: t("common.remove") } } %>
+  <% else %>
+    <%= button_to "☆", bookmarks_path(bookmarkable_id: record.id, bookmarkable_type: record.class.name),
+          method: :post,
+          class: "text-gray-400 text-xl" %>
+  <% end %>
+</span>

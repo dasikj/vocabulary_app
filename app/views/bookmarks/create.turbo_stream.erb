@@ -1,0 +1,3 @@
+<%= turbo_stream.replace dom_id(@record, :bookmark_star) do %>
+  <%= render "bookmarks/star", record: @record %>
+<% end %>
