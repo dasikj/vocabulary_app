@@ -8,6 +8,8 @@
 
   <%= render "shared/error_messages", object: @sentence %>
 
+  <%= render "bookmarks/star", record: @sentence %>
+
   <%= form_with model: @sentence, url: sentence_path(@sentence), method: :patch, local: true, data: { "edit-toggle-target": "form" } do |f| %>
     <div class="rounded-2xl bg-white text-gray-900 shadow p-6 space-y-4" data-edit-toggle-target="container">
       <div>

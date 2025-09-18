@@ -1,0 +1,190 @@
+tags:
+  - name: "故事成語"
+  - name: "夏目漱石"
+  - name: "坊ちゃん"
+  - name: "中国"
+  - name: "仏教"
+  - name: "神"
+  - name: "ファンタジー"
+  - name: "軍事"
+  - name: "宗教"
+  - name: "日常"
+  - name: "心理"
+  - name: "情景"
+
+vocabularies:
+  - word: "灼熱"
+    reading: "しゃくねつ"
+    part_of_speech: "noun"
+    meaning: "焼けつくように熱いこと"
+    example: "灼熱の午後だった。"
+    vocabulary_tags: ["情景"]
+
+  - word: "瞬発"
+    reading: "しゅんぱつ"
+    part_of_speech: "noun"
+    meaning: "瞬間的に発動する力"
+    example: "瞬発力が勝負を決める。"
+    vocabulary_tags: ["日常"]
+
+  - word: "円転滑脱"
+    reading: "えんてんかつだつ"
+    part_of_speech: "idiom"
+    meaning: "滞りなく自由自在であること"
+    example: "彼は円転滑脱に自身の仕事を全うした。"
+    vocabulary_tags: ["故事成語"]
+
+  - word: "とっくりと"
+    reading: ""
+    part_of_speech: "adverb"
+    meaning: "念を込めて物事を丁寧に行う様子"
+    example: "彼はとっくりと陛下に頭を垂れた。"
+    vocabulary_tags: ["日常"]
+
+  - word: "油を売る"
+    reading: "あぶらをうる"
+    part_of_speech: "phrase"
+    meaning: "仕事をサボって、話し込んでいるさま"
+    example: "お客と話し込んでいたら、上司に油を売るなと怒られてしまった。"
+    vocabulary_tags: ["日常"]
+
+  - word: "塞翁が馬"
+    reading: "さいおうがうま"
+    part_of_speech: "phrase"
+    meaning: "人生の禍福は転々として予測できないこと"
+    example: "人生塞翁が馬。何が起こるかなんてわからないものさ。"
+    vocabulary_tags: ["故事成語","中国"]
+
+  - word: "無鉄砲"
+    reading: "むてっぽう"
+    part_of_speech: "adjective"
+    meaning: "是非や結果を考えずにむやみに行動すること。そのさまや、そのような人。"
+    example: "彼は昔から無鉄砲な性格で、まわりをかえりみなかった。"
+    vocabulary_tags: ["夏目漱石","坊ちゃん"]
+
+  - word: "韋駄天"
+    reading: "いだてん"
+    part_of_speech: "noun"
+    meaning: |
+      ①早く走ること、またはその人自身を指す。
+      ②増長天の八代将軍の一。仏法の守護神
+    example: "韋駄天の如く疾走した。"
+    vocabulary_tags: ["仏教","神"]
+
+  - word: "要衝"
+    reading: "ようしょう"
+    part_of_speech: "noun"
+    meaning: "軍事・交通・産業のうえで大切な地点、要所。"
+    example: "この地は我が軍にとって重要な要衝のひとつだ。"
+    vocabulary_tags: ["ファンタジー","軍事"]
+
+  - word: "猊下"
+    reading: "げいか"
+    part_of_speech: "noun"
+    meaning: |
+      ①一つの宗派の管長に対する敬称
+      ②高僧に対する敬称
+      ③高僧のそば
+      ④僧に送る書面の脇付けに用いる語
+    example: "猊下はこの宗派の頂点であり象徴だ。"
+    vocabulary_tags: ["ファンタジー","宗教"]
+
+  # ---- ここから日常的な追加 ----
+  - word: "快晴"
+    reading: "かいせい"
+    part_of_speech: "noun"
+    meaning: "雲ひとつない晴れ渡った空模様。"
+    example: "今日は快晴で気持ちがいい。"
+    vocabulary_tags: ["日常","情景"]
+
+  - word: "微睡む"
+    reading: "まどろむ"
+    part_of_speech: "verb"
+    meaning: "うとうとと眠る。浅い眠りにつく。"
+    example: "午後の光の中で微睡んでいた。"
+    vocabulary_tags: ["日常"]
+
+  - word: "煌めき"
+    reading: "きらめき"
+    part_of_speech: "noun"
+    meaning: "光が瞬くように輝くこと。"
+    example: "波間に星の煌めきが映る。"
+    vocabulary_tags: ["情景"]
+
+  - word: "独白"
+    reading: "どくはく"
+    part_of_speech: "noun"
+    meaning: "一人で声に出して言うこと。心の内を語ること。"
+    example: "舞台で彼は長い独白をした。"
+    vocabulary_tags: ["文学","心理"]
+
+  - word: "憧憬"
+    reading: "しょうけい"
+    part_of_speech: "noun"
+    meaning: "あこがれること。強い思いを寄せること。"
+    example: "彼の瞳は未来への憧憬に満ちていた。"
+    vocabulary_tags: ["心理"]
+
+  - word: "慈悲"
+    reading: "じひ"
+    part_of_speech: "noun"
+    meaning: "人を憐れみ、苦しみを救おうとする心。"
+    example: "僧は慈悲の心で人々を導いた。"
+    vocabulary_tags: ["宗教"]
+
+  - word: "灯火"
+    reading: "ともしび"
+    part_of_speech: "noun"
+    meaning: "灯されたあかり。光明。"
+    example: "暗闇に小さな灯火が揺れる。"
+    vocabulary_tags: ["情景"]
+
+  - word: "風花"
+    reading: "かざはな"
+    part_of_speech: "noun"
+    meaning: "晴れているのに雪が舞う現象。"
+    example: "冬空に風花が舞っていた。"
+    vocabulary_tags: ["情景"]
+
+  - word: "無常"
+    reading: "むじょう"
+    part_of_speech: "noun"
+    meaning: "この世のものは常に変化し、永続しないこと。"
+    example: "人生の無常を感じる。"
+    vocabulary_tags: ["文学","宗教"]
+
+  - word: "悠然"
+    reading: "ゆうぜん"
+    part_of_speech: "adverb"
+    meaning: "落ち着いてゆったりとした様子。"
+    example: "彼は悠然と歩いていた。"
+    vocabulary_tags: ["日常"]
+
+  - word: "驟雨"
+    reading: "しゅうう"
+    part_of_speech: "noun"
+    meaning: "急に降ってすぐにやむ雨。にわか雨。"
+    example: "夏の午後、驟雨に見舞われた。"
+    vocabulary_tags: ["情景"]
+
+  - word: "脈動"
+    reading: "みゃくどう"
+    part_of_speech: "noun"
+    meaning: "脈を打つこと。規則正しい動き。"
+    example: "大地の脈動を感じる。"
+    vocabulary_tags: ["心理"]
+
+  - word: "輪廻"
+    reading: "りんね"
+    part_of_speech: "noun"
+    meaning: "生死を繰り返すこと。仏教思想の一つ。"
+    example: "魂は輪廻を繰り返す。"
+    vocabulary_tags: ["宗教"]
+
+  - word: "萌芽"
+    reading: "ほうが"
+    part_of_speech: "noun"
+    meaning: "芽が出はじめること。物事の始まり。"
+    example: "新しい思想の萌芽。"
+    vocabulary_tags: ["日常"]
+    

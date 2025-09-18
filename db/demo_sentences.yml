@@ -1,0 +1,139 @@
+tags:
+  - name: "ワンピース"
+  - name: "ゴールド・ロジャー"
+  - name: "ルフィ"
+  - name: "ゾロ"
+  - name: "ドラゴンボール"
+  - name: "孫悟空"
+  - name: "ナルト"
+  - name: "うずまきナルト"
+  - name: "BLEACH"
+  - name: "黒崎一護"
+  - name: "進撃の巨人"
+  - name: "リヴァイ"
+  - name: "エレン"
+  - name: "エヴァンゲリオン"
+  - name: "碇シンジ"
+  - name: "渚カヲル"
+  - name: "グレンラガン"
+  - name: "シモン"
+  - name: "銀魂"
+  - name: "坂田銀時"
+  - name: "コードギアス"
+  - name: "ルルーシュ"
+  - name: "シュタインズ・ゲート"
+  - name: "岡部倫太郎"
+  - name: "リゼロ"
+  - name: "スバル"
+  - name: "ジョジョ"
+  - name: "ディオ"
+  - name: "夏目漱石"
+  - name: "こころ"
+  - name: "草枕"
+  - name: "太宰治"
+  - name: "人間失格"
+  - name: "芥川龍之介"
+  - name: "羅生門"
+  - name: "宮沢賢治"
+  - name: "銀河鉄道の夜"
+
+sentences:
+  - body: "探せ！この世の全てをそこに置いてきた！"
+    sentence_category: "conversation"
+    sentence_tags: ["ワンピース","ゴールド・ロジャー"]
+
+  - body: "海賊王に!!! 俺はなるっ!!!"
+    sentence_category: "conversation"
+    sentence_tags: ["ワンピース","ルフィ"]
+
+  - body: "背中の傷は剣士の恥だ。"
+    sentence_category: "logic"
+    sentence_tags: ["ワンピース","ゾロ"]
+
+  - body: "オラわくわくすっぞ！"
+    sentence_category: "expression"
+    sentence_tags: ["ドラゴンボール","孫悟空"]
+
+  - body: "俺は火影になるってばよ！誰にも笑わせやしねぇ！"
+    sentence_category: "conversation"
+    sentence_tags: ["ナルト","うずまきナルト"]
+
+  - body: "護るためだろ？護りたいものがあるから俺は斬るんだ！"
+    sentence_category: "logic"
+    sentence_tags: ["BLEACH","黒崎一護"]
+
+  - body: "俺が仕留める。お前らは心臓を捧げろ。"
+    sentence_category: "logic"
+    sentence_tags: ["進撃の巨人","リヴァイ"]
+
+  - body: "駆逐してやる！この世から一匹残らず！"
+    sentence_category: "expression"
+    sentence_tags: ["進撃の巨人","エレン"]
+
+  - body: "逃げちゃダメだ、逃げちゃダメだ、逃げちゃダメだ！"
+    sentence_category: "psychology"
+    sentence_tags: ["エヴァンゲリオン","碇シンジ"]
+
+  - body: "君は死ぬために生きているわけじゃない。生きるために生きるんだよ。"
+    sentence_category: "psychology"
+    sentence_tags: ["エヴァンゲリオン","渚カヲル"]
+
+  - body: "俺を誰だと思ってやがる！天を突くドリル、グレン団のシモン様だ！"
+    sentence_category: "expression"
+    sentence_tags: ["グレンラガン","シモン"]
+
+  - body: "俺の後ろに立つな。"
+    sentence_category: "conversation"
+    sentence_tags: ["銀魂","坂田銀時"]
+
+  - body: "撃っていいのは、撃たれる覚悟のある奴だけだ。"
+    sentence_category: "logic"
+    sentence_tags: ["コードギアス","ルルーシュ"]
+
+  - body: "この世界は選ばれし観測者によって収束する！我が名は鳳凰院凶真！"
+    sentence_category: "expression"
+    sentence_tags: ["シュタインズ・ゲート","岡部倫太郎"]
+
+  - body: "俺が必ずお前を救ってみせる！何度でもやり直して！"
+    sentence_category: "expression"
+    sentence_tags: ["リゼロ","スバル"]
+
+  - body: "無駄無駄無駄無駄ァ！！"
+    sentence_category: "expression"
+    sentence_tags: ["ジョジョ","ディオ"]
+
+  - body: "私はその人を常に先生と呼んでいた。"
+    sentence_category: "description"
+    sentence_tags: ["夏目漱石","こころ"]
+
+  - body: "山路を登りながら、こう考えた。智に働けば角が立つ。情に棹させば流される。"
+    sentence_category: "psychology"
+    sentence_tags: ["夏目漱石","草枕"]
+
+  - body: "恥の多い生涯を送ってきました。"
+    sentence_category: "psychology"
+    sentence_tags: ["太宰治","人間失格"]
+
+  - body: "生まれて、すみません。"
+    sentence_category: "psychology"
+    sentence_tags: ["太宰治","人間失格"]
+
+  - body: "ある日の暮れ方の事である。一人の下人が、羅生門の下で雨やみを待っていた。"
+    sentence_category: "description"
+    sentence_tags: ["芥川龍之介","羅生門"]
+
+  - body: "あの大きな時計の針が、二人の時間を刻んでいるように思えた。"
+    sentence_category: "appearance"
+    sentence_tags: ["文学","情景"]
+
+  - body: "誰がために鐘は鳴るか。鐘は汝のために鳴る。"
+    sentence_category: "psychology"
+    sentence_tags: ["文学","宗教"]
+
+  - body: "星めぐりの歌をうたいながら、ジョバンニとカムパネルラは銀河鉄道に乗った。"
+    sentence_category: "description"
+    sentence_tags: ["宮沢賢治","銀河鉄道の夜"]
+
+  - body: "おまえはもう死んでいる。"
+    sentence_category: "conversation"
+    sentence_tags: ["北斗の拳","ケンシロウ"]

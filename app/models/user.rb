@@ -1,13 +1,17 @@
 class User < ApplicationRecord
-  # sorceryによる認証機能を追加 → Deviseに移行
-  #authenticates_with_sorcery!
+  #devise
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
+  #語彙、文章
   has_many :vocabularies, dependent: :destroy
   has_many :sentences, dependent: :destroy
+  #タグ
   has_many :sentence_tags, dependent: :destroy
   has_many :vocabulary_tags, dependent: :destroy
+  #bookmark
+  has_many :bookmarks, dependent: :destroy
+  has_many :bookmark_vocabularies, through: :bookmarks, source: :bookmarkable, source_type: "Vocabulary"
+  has_many :bookmark_sentences, through: :bookmarks, source: :bookmarkable, source_type: "Sentence"
   
 
   # 保存前に入力を整形する(前後スペース削除・メールを小文字化)

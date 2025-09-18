@@ -37,12 +37,15 @@
         </div>
         <%# 作成日を表示 %>
         <div class="text-xs text-gray-500 text-right whitespace-nowrap">
+          <div class="mb-2 relative z-20 pointer-events-auto">
+            <%= render "bookmarks/star", record: v %>
+          </div>
           <div><%= t("common.created_day") %></div>
           <div><%= v.created_at.strftime("%Y/%m/%d %H:%M") %></div><br>
           <div><%= t("common.updated_day") %></div>
           <div><%= v.updated_at.strftime("%Y/%m/%d %H:%M") %></div>
         </div>
-        <%= link_to "", sentence_path(v), class: "absolute inset-0 z-10 block" %>
+        <%= link_to "", sentence_path(v), class: "absolute inset-0 z-0 block" %>
       </div>
     <% end %>
     <%# 登録がない場合 %>

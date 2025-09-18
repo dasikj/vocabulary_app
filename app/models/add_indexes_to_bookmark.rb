@@ -1,0 +1,2 @@
+class AddIndexesToBookmark < ApplicationRecord
+end

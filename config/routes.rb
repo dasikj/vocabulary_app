@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   # 文章タグ/語彙タグ
   resources :sentence_tags, only: %i[index new create update destroy]
   resources :vocabulary_tags, only: %i[index new create update destroy]
+  # bookmark
+  resources :bookmarks, only: [:index, :create, :destroy]
   # カレンダーに日毎の登録数を表示するダッシュボード
   resource :dashboard, only: [ :show ]
   # letter_opener
