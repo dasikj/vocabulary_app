@@ -11,180 +11,753 @@ tags:
   - name: "日常"
   - name: "心理"
   - name: "情景"
+  - name: "こころ"
+  - name: "文学"
+  - name: "太宰治"
+  - name: "人間失格"
 
 vocabularies:
-  - word: "灼熱"
-    reading: "しゃくねつ"
+
+  - word: "懊悩"
+    reading: "おうのう"
     part_of_speech: "noun"
-    meaning: "焼けつくように熱いこと"
-    example: "灼熱の午後だった。"
-    vocabulary_tags: ["情景"]
+    meaning: "悩み苦しむこと。"
+    example: "彼は過去の過ちに懊悩した。"
+    vocabulary_tags: ["夏目漱石","こころ","心理","文学"]
 
-  - word: "瞬発"
-    reading: "しゅんぱつ"
+  - word: "寂寞"
+    reading: "せきばく"
     part_of_speech: "noun"
-    meaning: "瞬間的に発動する力"
-    example: "瞬発力が勝負を決める。"
-    vocabulary_tags: ["日常"]
+    meaning: "もの寂しいさま。"
+    example: "夜の帳に包まれた町は寂寞としていた。"
+    vocabulary_tags: ["夏目漱石","こころ","情景","文学"]
 
-  - word: "円転滑脱"
-    reading: "えんてんかつだつ"
-    part_of_speech: "idiom"
-    meaning: "滞りなく自由自在であること"
-    example: "彼は円転滑脱に自身の仕事を全うした。"
-    vocabulary_tags: ["故事成語"]
+  - word: "煩悶"
+    reading: "はんもん"
+    part_of_speech: "noun"
+    meaning: "心を悩ませること。"
+    example: "煩悶の末に彼は答えを出した。"
+    vocabulary_tags: ["夏目漱石","こころ","心理","文学"]
 
-  - word: "とっくりと"
-    reading: ""
-    part_of_speech: "adverb"
-    meaning: "念を込めて物事を丁寧に行う様子"
-    example: "彼はとっくりと陛下に頭を垂れた。"
-    vocabulary_tags: ["日常"]
+  - word: "憂愁"
+    reading: "ゆうしゅう"
+    part_of_speech: "noun"
+    meaning: "心が晴れず沈んでいること。"
+    example: "彼女の眼差しには憂愁が漂っていた。"
+    vocabulary_tags: ["夏目漱石","こころ","心理","文学"]
 
-  - word: "油を売る"
-    reading: "あぶらをうる"
-    part_of_speech: "phrase"
-    meaning: "仕事をサボって、話し込んでいるさま"
-    example: "お客と話し込んでいたら、上司に油を売るなと怒られてしまった。"
-    vocabulary_tags: ["日常"]
+  - word: "孤寂"
+    reading: "こじゃく"
+    part_of_speech: "noun"
+    meaning: "孤独で寂しいこと。"
+    example: "山寺の庭は孤寂としていた。"
+    vocabulary_tags: ["夏目漱石","こころ","情景","文学"]
 
-  - word: "塞翁が馬"
-    reading: "さいおうがうま"
-    part_of_speech: "phrase"
-    meaning: "人生の禍福は転々として予測できないこと"
-    example: "人生塞翁が馬。何が起こるかなんてわからないものさ。"
-    vocabulary_tags: ["故事成語","中国"]
+  - word: "憐憫"
+    reading: "れんびん"
+    part_of_speech: "noun"
+    meaning: "あわれみの心。"
+    example: "彼は憐憫の情を示した。"
+    vocabulary_tags: ["夏目漱石","こころ","心理","文学"]
 
-  - word: "無鉄砲"
-    reading: "むてっぽう"
+  - word: "懐疑"
+    reading: "かいぎ"
+    part_of_speech: "noun"
+    meaning: "疑いをいだくこと。"
+    example: "彼は懐疑の目でそれを見た。"
+    vocabulary_tags: ["夏目漱石","こころ","心理","文学"]
+
+  - word: "倦怠"
+    reading: "けんたい"
+    part_of_speech: "noun"
+    meaning: "飽きて嫌になること。"
+    example: "長い日常に倦怠を覚える。"
+    vocabulary_tags: ["夏目漱石","こころ","日常","文学"]
+
+  - word: "脆弱"
+    reading: "ぜいじゃく"
     part_of_speech: "adjective"
-    meaning: "是非や結果を考えずにむやみに行動すること。そのさまや、そのような人。"
-    example: "彼は昔から無鉄砲な性格で、まわりをかえりみなかった。"
-    vocabulary_tags: ["夏目漱石","坊ちゃん"]
+    meaning: "もろくて弱いこと。"
+    example: "彼の決意は脆弱だった。"
+    vocabulary_tags: ["夏目漱石","こころ","心理","文学"]
 
-  - word: "韋駄天"
-    reading: "いだてん"
+  - word: "懊悔"
+    reading: "おうかい"
     part_of_speech: "noun"
-    meaning: |
-      ①早く走ること、またはその人自身を指す。
-      ②増長天の八代将軍の一。仏法の守護神
-    example: "韋駄天の如く疾走した。"
-    vocabulary_tags: ["仏教","神"]
+    meaning: "深く後悔すること。"
+    example: "彼は懊悔の涙を流した。"
+    vocabulary_tags: ["夏目漱石","こころ","心理","文学"]
 
-  - word: "要衝"
-    reading: "ようしょう"
+  - word: "頽廃"
+    reading: "たいはい"
     part_of_speech: "noun"
-    meaning: "軍事・交通・産業のうえで大切な地点、要所。"
-    example: "この地は我が軍にとって重要な要衝のひとつだ。"
-    vocabulary_tags: ["ファンタジー","軍事"]
+    meaning: "生活や気力がくずれていること。"
+    example: "彼の生活は頽廃していた。"
+    vocabulary_tags: ["夏目漱石","こころ","日常","文学"]
 
-  - word: "猊下"
-    reading: "げいか"
-    part_of_speech: "noun"
-    meaning: |
-      ①一つの宗派の管長に対する敬称
-      ②高僧に対する敬称
-      ③高僧のそば
-      ④僧に送る書面の脇付けに用いる語
-    example: "猊下はこの宗派の頂点であり象徴だ。"
-    vocabulary_tags: ["ファンタジー","宗教"]
-
-  # ---- ここから日常的な追加 ----
-  - word: "快晴"
-    reading: "かいせい"
-    part_of_speech: "noun"
-    meaning: "雲ひとつない晴れ渡った空模様。"
-    example: "今日は快晴で気持ちがいい。"
-    vocabulary_tags: ["日常","情景"]
-
-  - word: "微睡む"
-    reading: "まどろむ"
+  - word: "彷徨"
+    reading: "ほうこう"
     part_of_speech: "verb"
-    meaning: "うとうとと眠る。浅い眠りにつく。"
-    example: "午後の光の中で微睡んでいた。"
-    vocabulary_tags: ["日常"]
+    meaning: "あてもなく歩きまわること。"
+    example: "彼は街を彷徨していた。"
+    vocabulary_tags: ["夏目漱石","こころ","日常","文学"]
 
-  - word: "煌めき"
-    reading: "きらめき"
+  - word: "断腸"
+    reading: "だんちょう"
     part_of_speech: "noun"
-    meaning: "光が瞬くように輝くこと。"
-    example: "波間に星の煌めきが映る。"
-    vocabulary_tags: ["情景"]
+    meaning: "はらわたがちぎれるほどの悲しみ。"
+    example: "断腸の思いで彼は別れを告げた。"
+    vocabulary_tags: ["夏目漱石","こころ","心理","文学"]
 
-  - word: "独白"
-    reading: "どくはく"
+  - word: "惆悵"
+    reading: "ちゅうちょう"
     part_of_speech: "noun"
-    meaning: "一人で声に出して言うこと。心の内を語ること。"
-    example: "舞台で彼は長い独白をした。"
-    vocabulary_tags: ["文学","心理"]
+    meaning: "心が晴れずもの思うさま。"
+    example: "彼は惆悵の情に沈んでいた。"
+    vocabulary_tags: ["夏目漱石","こころ","心理","文学"]
 
-  - word: "憧憬"
-    reading: "しょうけい"
+  - word: "邂逅"
+    reading: "かいこう"
     part_of_speech: "noun"
-    meaning: "あこがれること。強い思いを寄せること。"
-    example: "彼の瞳は未来への憧憬に満ちていた。"
-    vocabulary_tags: ["心理"]
+    meaning: "思いがけず出会うこと。"
+    example: "旅先で旧友と邂逅した。"
+    vocabulary_tags: ["夏目漱石","こころ","日常","文学"]
 
-  - word: "慈悲"
-    reading: "じひ"
+  - word: "茫漠"
+    reading: "ぼうばく"
     part_of_speech: "noun"
-    meaning: "人を憐れみ、苦しみを救おうとする心。"
-    example: "僧は慈悲の心で人々を導いた。"
-    vocabulary_tags: ["宗教"]
+    meaning: "広々として果てしないさま。"
+    example: "砂漠が茫漠と広がっていた。"
+    vocabulary_tags: ["夏目漱石","こころ","情景","文学"]
 
-  - word: "灯火"
-    reading: "ともしび"
+  - word: "虚栄"
+    reading: "きょえい"
     part_of_speech: "noun"
-    meaning: "灯されたあかり。光明。"
-    example: "暗闇に小さな灯火が揺れる。"
-    vocabulary_tags: ["情景"]
+    meaning: "見栄をはること。"
+    example: "彼は虚栄にとらわれていた。"
+    vocabulary_tags: ["夏目漱石","こころ","心理","文学"]
 
-  - word: "風花"
-    reading: "かざはな"
+  - word: "慙愧"
+    reading: "ざんき"
     part_of_speech: "noun"
-    meaning: "晴れているのに雪が舞う現象。"
-    example: "冬空に風花が舞っていた。"
-    vocabulary_tags: ["情景"]
+    meaning: "恥じて悔いること。"
+    example: "彼は慙愧の念にかられた。"
+    vocabulary_tags: ["夏目漱石","こころ","心理","文学"]
 
-  - word: "無常"
-    reading: "むじょう"
+  - word: "逼塞"
+    reading: "ひっそく"
     part_of_speech: "noun"
-    meaning: "この世のものは常に変化し、永続しないこと。"
-    example: "人生の無常を感じる。"
-    vocabulary_tags: ["文学","宗教"]
+    meaning: "閉じこもること。"
+    example: "彼は部屋に逼塞していた。"
+    vocabulary_tags: ["夏目漱石","こころ","日常","文学"]
 
-  - word: "悠然"
-    reading: "ゆうぜん"
+  - word: "懶惰"
+    reading: "らんだ"
+    part_of_speech: "noun"
+    meaning: "怠けること。"
+    example: "懶惰な日々を過ごした。"
+    vocabulary_tags: ["夏目漱石","こころ","日常","文学"]
+
+  - word: "悄然"
+    reading: "しょうぜん"
     part_of_speech: "adverb"
-    meaning: "落ち着いてゆったりとした様子。"
-    example: "彼は悠然と歩いていた。"
+    meaning: "しょんぼりするさま。"
+    example: "彼は悄然と座っていた。"
+    vocabulary_tags: ["夏目漱石","こころ","心理","文学"]
+
+  - word: "荒涼"
+    reading: "こうりょう"
+    part_of_speech: "noun"
+    meaning: "荒れはてて寂しいさま。"
+    example: "荒涼とした荒野が広がっていた。"
+    vocabulary_tags: ["夏目漱石","こころ","情景","文学"]
+
+  - word: "慚愧"
+    reading: "ざんき"
+    part_of_speech: "noun"
+    meaning: "恥じて悔いること。"
+    example: "彼は慚愧の念に耐えられなかった。"
+    vocabulary_tags: ["夏目漱石","こころ","心理","文学"]
+
+  - word: "孤独"
+    reading: "こどく"
+    part_of_speech: "noun"
+    meaning: "ひとりでさびしいこと。"
+    example: "孤独に打ちひしがれる。"
+    vocabulary_tags: ["夏目漱石","こころ","心理","文学"]
+
+  - word: "感傷"
+    reading: "かんしょう"
+    part_of_speech: "noun"
+    meaning: "物事に感じて心を動かすこと。"
+    example: "感傷にふける秋の夜。"
+    vocabulary_tags: ["夏目漱石","こころ","心理","文学"]
+  - word: "破滅"
+    reading: "はめつ"
+    part_of_speech: "noun"
+    meaning: "完全に滅びること。"
+    example: "彼の人生は破滅へと向かっていた。"
+    vocabulary_tags: ["太宰治","人間失格","心理","文学"]
+
+  - word: "無頼"
+    reading: "ぶらい"
+    part_of_speech: "noun"
+    meaning: "品行がわるくならず者のようであること。"
+    example: "彼は無頼の徒として生きていた。"
+    vocabulary_tags: ["太宰治","人間失格","日常","文学"]
+
+  - word: "虚無"
+    reading: "きょむ"
+    part_of_speech: "noun"
+    meaning: "むなしく、意味が感じられないこと。"
+    example: "心に虚無が広がっていた。"
+    vocabulary_tags: ["太宰治","人間失格","心理","文学"]
+
+  - word: "憔悴"
+    reading: "しょうすい"
+    part_of_speech: "noun"
+    meaning: "やつれて弱ること。"
+    example: "彼は憔悴しきった顔をしていた。"
+    vocabulary_tags: ["太宰治","人間失格","情景","文学"]
+
+  - word: "頽落"
+    reading: "たいらく"
+    part_of_speech: "noun"
+    meaning: "落ちぶれて堕落すること。"
+    example: "彼は頽落の道を歩んだ。"
+    vocabulary_tags: ["太宰治","人間失格","心理","文学"]
+
+  - word: "憂鬱"
+    reading: "ゆううつ"
+    part_of_speech: "noun"
+    meaning: "気分が晴れないこと。"
+    example: "憂鬱な日々が続いた。"
+    vocabulary_tags: ["太宰治","人間失格","心理","文学"]
+
+  - word: "懦弱"
+    reading: "だじゃく"
+    part_of_speech: "noun"
+    meaning: "意気地がなく弱々しいこと。"
+    example: "懦弱な性格を恥じていた。"
+    vocabulary_tags: ["太宰治","人間失格","心理","文学"]
+
+  - word: "放蕩"
+    reading: "ほうとう"
+    part_of_speech: "noun"
+    meaning: "身を持ち崩すような遊びや生活をすること。"
+    example: "彼は放蕩三昧の日々を送った。"
+    vocabulary_tags: ["太宰治","人間失格","日常","文学"]
+
+  - word: "荒廃"
+    reading: "こうはい"
+    part_of_speech: "noun"
+    meaning: "荒れてすたれること。"
+    example: "心は荒廃していた。"
+    vocabulary_tags: ["太宰治","人間失格","心理","文学"]
+
+  - word: "頽勢"
+    reading: "たいせい"
+    part_of_speech: "noun"
+    meaning: "物事が衰えていく傾向。"
+    example: "頽勢を立て直すことはできなかった。"
+    vocabulary_tags: ["太宰治","人間失格","文学"]
+
+  - word: "悲哀"
+    reading: "ひあい"
+    part_of_speech: "noun"
+    meaning: "悲しくて哀しいこと。"
+    example: "彼の表情には深い悲哀があった。"
+    vocabulary_tags: ["太宰治","人間失格","心理","文学"]
+
+
+  - word: "頽廃美"
+    reading: "たいはいび"
+    part_of_speech: "noun"
+    meaning: "堕落や退廃の中にある美。"
+    example: "その姿には頽廃美すら漂っていた。"
+    vocabulary_tags: ["太宰治","人間失格","文学"]
+
+  - word: "空虚"
+    reading: "くうきょ"
+    part_of_speech: "noun"
+    meaning: "中身がなく、むなしいこと。"
+    example: "空虚な笑いがこだました。"
+    vocabulary_tags: ["太宰治","人間失格","心理","文学"]
+
+  - word: "欺瞞"
+    reading: "ぎまん"
+    part_of_speech: "noun"
+    meaning: "人をだますこと。"
+    example: "彼の生活は欺瞞に満ちていた。"
+    vocabulary_tags: ["太宰治","人間失格","日常","文学"]
+
+  - word: "自嘲"
+    reading: "じちょう"
+    part_of_speech: "noun"
+    meaning: "自分をあざけり笑うこと。"
+    example: "自嘲の微笑を浮かべた。"
+    vocabulary_tags: ["太宰治","人間失格","心理","文学"]
+
+  - word: "幻滅"
+    reading: "げんめつ"
+    part_of_speech: "noun"
+    meaning: "夢や希望を失うこと。"
+    example: "人間に幻滅していた。"
+    vocabulary_tags: ["太宰治","人間失格","心理","文学"]
+
+  - word: "孤絶"
+    reading: "こぜつ"
+    part_of_speech: "noun"
+    meaning: "孤立していること。"
+    example: "彼は社会から孤絶していた。"
+    vocabulary_tags: ["太宰治","人間失格","心理","文学"]
+
+  - word: "憎悪"
+    reading: "ぞうお"
+    part_of_speech: "noun"
+    meaning: "激しく憎むこと。"
+    example: "憎悪の念にかられる。"
+    vocabulary_tags: ["太宰治","人間失格","心理","文学"]
+
+  - word: "怠惰"
+    reading: "たいだ"
+    part_of_speech: "noun"
+    meaning: "なまけてだらしないこと。"
+    example: "怠惰な生活を送っていた。"
+    vocabulary_tags: ["太宰治","人間失格","日常","文学"]
+
+  - word: "呻吟"
+    reading: "しんぎん"
+    part_of_speech: "verb"
+    meaning: "苦しみうめくこと。"
+    example: "彼は呻きながら呻吟していた。"
+    vocabulary_tags: ["太宰治","人間失格","文学"]
+
+  - word: "徒労"
+    reading: "とろう"
+    part_of_speech: "noun"
+    meaning: "無駄な努力。"
+    example: "すべては徒労に終わった。"
+    vocabulary_tags: ["太宰治","人間失格","日常","文学"]
+
+  - word: "悔恨"
+    reading: "かいこん"
+    part_of_speech: "noun"
+    meaning: "悔やみ悲しむこと。"
+    example: "悔恨の情にさいなまれる。"
+    vocabulary_tags: ["太宰治","人間失格","心理","文学"]
+
+  - word: "憔悴感"
+    reading: "しょうすいかん"
+    part_of_speech: "noun"
+    meaning: "ひどくやつれた感じ。"
+    example: "その顔には憔悴感がにじんでいた。"
+    vocabulary_tags: ["太宰治","人間失格","情景","文学"]
+
+  - word: "無感覚"
+    reading: "むかんかく"
+    part_of_speech: "noun"
+    meaning: "感じないこと。"
+    example: "無感覚に近い状態だった。"
+    vocabulary_tags: ["太宰治","人間失格","心理","文学"]
+ 
+  - word: "青天の霹靂"
+    reading: "せいてんのへきれき"
+    part_of_speech: "idiom"
+    meaning: "思いがけない出来事。"
+    example: "突然の解雇は青天の霹靂だった。"
     vocabulary_tags: ["日常"]
 
-  - word: "驟雨"
-    reading: "しゅうう"
-    part_of_speech: "noun"
-    meaning: "急に降ってすぐにやむ雨。にわか雨。"
-    example: "夏の午後、驟雨に見舞われた。"
-    vocabulary_tags: ["情景"]
-
-  - word: "脈動"
-    reading: "みゃくどう"
-    part_of_speech: "noun"
-    meaning: "脈を打つこと。規則正しい動き。"
-    example: "大地の脈動を感じる。"
+  - word: "雲をつかむよう"
+    reading: "くもをつかむよう"
+    part_of_speech: "idiom"
+    meaning: "実体がなく、はっきりしないこと。"
+    example: "彼の説明は雲をつかむようだった。"
     vocabulary_tags: ["心理"]
 
-  - word: "輪廻"
-    reading: "りんね"
-    part_of_speech: "noun"
-    meaning: "生死を繰り返すこと。仏教思想の一つ。"
-    example: "魂は輪廻を繰り返す。"
-    vocabulary_tags: ["宗教"]
-
-  - word: "萌芽"
-    reading: "ほうが"
-    part_of_speech: "noun"
-    meaning: "芽が出はじめること。物事の始まり。"
-    example: "新しい思想の萌芽。"
+  - word: "猫の手も借りたい"
+    reading: "ねこのてもかりたい"
+    part_of_speech: "idiom"
+    meaning: "非常に忙しいこと。"
+    example: "年度末は猫の手も借りたいほどだ。"
     vocabulary_tags: ["日常"]
-    
+
+  - word: "石の上にも三年"
+    reading: "いしのうえにもさんねん"
+    part_of_speech: "idiom"
+    meaning: "辛抱すれば成功につながること。"
+    example: "石の上にも三年でついに成果が出た。"
+    vocabulary_tags: ["人生訓"]
+
+  - word: "後の祭り"
+    reading: "あとのまつり"
+    part_of_speech: "idiom"
+    meaning: "手遅れで無駄になること。"
+    example: "提出期限を過ぎては後の祭りだ。"
+    vocabulary_tags: ["日常"]
+
+  - word: "針のむしろ"
+    reading: "はりのむしろ"
+    part_of_speech: "idiom"
+    meaning: "居心地の悪い状況。"
+    example: "会議中は針のむしろの思いだった。"
+    vocabulary_tags: ["心理"]
+
+  - word: "骨が折れる"
+    reading: "ほねがおれる"
+    part_of_speech: "idiom"
+    meaning: "苦労が多いこと。"
+    example: "この仕事は骨が折れるがやりがいがある。"
+    vocabulary_tags: ["日常"]
+
+  - word: "口が滑る"
+    reading: "くちがすべる"
+    part_of_speech: "idiom"
+    meaning: "うっかり秘密を話すこと。"
+    example: "つい口が滑ってしまった。"
+    vocabulary_tags: ["日常"]
+
+  - word: "足を引っ張る"
+    reading: "あしをひっぱる"
+    part_of_speech: "idiom"
+    meaning: "人の邪魔をすること。"
+    example: "彼の失敗がチームの足を引っ張った。"
+    vocabulary_tags: ["日常"]
+
+  - word: "寝耳に水"
+    reading: "ねみみにみず"
+    part_of_speech: "idiom"
+    meaning: "突然の出来事に驚くこと。"
+    example: "転勤の話は寝耳に水だった。"
+    vocabulary_tags: ["日常"]
+
+  - word: "花を持たせる"
+    reading: "はなをもたせる"
+    part_of_speech: "idiom"
+    meaning: "相手に名誉を譲ること。"
+    example: "今回は彼に花を持たせた。"
+    vocabulary_tags: ["心理"]
+
+  - word: "胸を張る"
+    reading: "むねをはる"
+    part_of_speech: "idiom"
+    meaning: "自信を持つこと。"
+    example: "胸を張って結果を報告した。"
+    vocabulary_tags: ["心理"]
+
+  - word: "首を長くする"
+    reading: "くびをながくする"
+    part_of_speech: "idiom"
+    meaning: "待ち望むさま。"
+    example: "結果発表を首を長くして待つ。"
+    vocabulary_tags: ["心理"]
+
+  - word: "後ろ髪を引かれる"
+    reading: "うしろがみをひかれる"
+    part_of_speech: "idiom"
+    meaning: "未練を感じること。"
+    example: "友人を残して帰るのは後ろ髪を引かれる思いだった。"
+    vocabulary_tags: ["心理"]
+
+  - word: "肩の荷が下りる"
+    reading: "かたのにがおりる"
+    part_of_speech: "idiom"
+    meaning: "責任や負担がなくなり楽になること。"
+    example: "発表が終わり肩の荷が下りた。"
+    vocabulary_tags: ["心理"]
+
+  - word: "尻に火がつく"
+    reading: "しりにひがつく"
+    part_of_speech: "idiom"
+    meaning: "切迫した状況になること。"
+    example: "締切直前で尻に火がついた。"
+    vocabulary_tags: ["日常"]
+
+  - word: "手を打つ"
+    reading: "てをうつ"
+    part_of_speech: "idiom"
+    meaning: "対策を講じること。"
+    example: "問題解決に早めに手を打つ。"
+    vocabulary_tags: ["日常"]
+
+  - word: "顔を立てる"
+    reading: "かおをたてる"
+    part_of_speech: "idiom"
+    meaning: "相手の面目を保たせること。"
+    example: "彼の顔を立てて発言を控えた。"
+    vocabulary_tags: ["心理"]
+
+  - word: "腹を割る"
+    reading: "はらをわる"
+    part_of_speech: "idiom"
+    meaning: "本心を打ち明けること。"
+    example: "互いに腹を割って話した。"
+    vocabulary_tags: ["心理"]
+
+  - word: "水に流す"
+    reading: "みずにながす"
+    part_of_speech: "idiom"
+    meaning: "過去のことをなかったことにする。"
+    example: "昔の喧嘩を水に流した。"
+    vocabulary_tags: ["心理"]
+
+  - word: "骨の髄まで"
+    reading: "ほねのずいまで"
+    part_of_speech: "idiom"
+    meaning: "徹底的に。"
+    example: "彼は骨の髄まで正直者だ。"
+    vocabulary_tags: ["心理"]
+
+  - word: "息の根を止める"
+    reading: "いきのねをとめる"
+    part_of_speech: "idiom"
+    meaning: "完全に終わらせる。"
+    example: "新製品が競合の息の根を止めた。"
+    vocabulary_tags: ["比喩"]
+
+  - word: "糸口をつかむ"
+    reading: "いとぐちをつかむ"
+    part_of_speech: "idiom"
+    meaning: "解決の手がかりを得ること。"
+    example: "事件の糸口をつかんだ。"
+    vocabulary_tags: ["日常"]
+
+  - word: "血も涙もない"
+    reading: "ちもなみだもない"
+    part_of_speech: "idiom"
+    meaning: "情けや思いやりが全くないこと。"
+    example: "彼は血も涙もない仕打ちをした。"
+    vocabulary_tags: ["心理"]
+
+  - word: "頭が上がらない"
+    reading: "あたまがあがらない"
+    part_of_speech: "idiom"
+    meaning: "立場が弱く逆らえないこと。"
+    example: "彼には借りがあり頭が上がらない。"
+    vocabulary_tags: ["心理"]
+
+  # --- 四字熟語 (25件) ---
+  - word: "起死回生"
+    reading: "きしかいせい"
+    part_of_speech: "idiom"
+    meaning: "絶望的な状況から立ち直ること。"
+    example: "起死回生の一打を放った。"
+    vocabulary_tags: ["比喩"]
+
+  - word: "以心伝心"
+    reading: "いしんでんしん"
+    part_of_speech: "idiom"
+    meaning: "言葉を使わず心が通じること。"
+    example: "二人は以心伝心で理解し合っていた。"
+    vocabulary_tags: ["心理"]
+
+  - word: "一石二鳥"
+    reading: "いっせきにちょう"
+    part_of_speech: "idiom"
+    meaning: "一つの行為で二つの利益を得ること。"
+    example: "通勤で歩けば健康と節約の一石二鳥だ。"
+    vocabulary_tags: ["日常"]
+
+  - word: "晴耕雨読"
+    reading: "せいこううどく"
+    part_of_speech: "idiom"
+    meaning: "悠々自適に暮らすこと。"
+    example: "老後は晴耕雨読の生活を送りたい。"
+    vocabulary_tags: ["日常"]
+
+  - word: "臨機応変"
+    reading: "りんきおうへん"
+    part_of_speech: "idiom"
+    meaning: "状況に応じて対応すること。"
+    example: "臨機応変に行動した。"
+    vocabulary_tags: ["日常"]
+
+  - word: "自業自得"
+    reading: "じごうじとく"
+    part_of_speech: "idiom"
+    meaning: "自分の行為の結果を受けること。"
+    example: "失敗は自業自得だ。"
+    vocabulary_tags: ["心理"]
+
+  - word: "千載一遇"
+    reading: "せんざいいちぐう"
+    part_of_speech: "idiom"
+    meaning: "滅多にない好機。"
+    example: "千載一遇のチャンスを逃すな。"
+    vocabulary_tags: ["日常"]
+
+  - word: "右往左往"
+    reading: "うおうさおう"
+    part_of_speech: "idiom"
+    meaning: "混乱してあちこち動くこと。"
+    example: "会場で右往左往していた。"
+    vocabulary_tags: ["日常"]
+
+  - word: "花鳥風月"
+    reading: "かちょうふうげつ"
+    part_of_speech: "idiom"
+    meaning: "自然の美しい風物。"
+    example: "花鳥風月を愛でる。"
+    vocabulary_tags: ["情景"]
+
+  - word: "電光石火"
+    reading: "でんこうせっか"
+    part_of_speech: "idiom"
+    meaning: "非常に素早いこと。"
+    example: "電光石火の早業。"
+    vocabulary_tags: ["比喩"]
+
+  - word: "一期一会"
+    reading: "いちごいちえ"
+    part_of_speech: "idiom"
+    meaning: "一生に一度の出会いを大切にすること。"
+    example: "一期一会の気持ちで接する。"
+    vocabulary_tags: ["心理"]
+
+  - word: "有名無実"
+    reading: "ゆうめいむじつ"
+    part_of_speech: "idiom"
+    meaning: "名ばかりで実態がないこと。"
+    example: "その制度は有名無実だった。"
+    vocabulary_tags: ["日常"]
+
+  - word: "一心同体"
+    reading: "いっしんどうたい"
+    part_of_speech: "idiom"
+    meaning: "心や目的を一つにすること。"
+    example: "一心同体で戦った。"
+    vocabulary_tags: ["心理"]
+
+  - word: "喜怒哀楽"
+    reading: "きどあいらく"
+    part_of_speech: "idiom"
+    meaning: "人間の感情全般。"
+    example: "喜怒哀楽を表現する。"
+    vocabulary_tags: ["心理"]
+
+  - word: "一網打尽"
+    reading: "いちもうだじん"
+    part_of_speech: "idiom"
+    meaning: "一度にまとめて捕らえること。"
+    example: "犯人グループを一網打尽にした。"
+    vocabulary_tags: ["軍事"]
+
+  - word: "百戦錬磨"
+    reading: "ひゃくせんれんま"
+    part_of_speech: "idiom"
+    meaning: "多くの経験を積み強くなること。"
+    example: "百戦錬磨の兵士。"
+    vocabulary_tags: ["軍事"]
+
+  - word: "弱肉強食"
+    reading: "じゃくにくきょうしょく"
+    part_of_speech: "idiom"
+    meaning: "弱者が強者に滅ぼされること。"
+    example: "社会は弱肉強食だ。"
+    vocabulary_tags: ["比喩"]
+
+  - word: "大器晩成"
+    reading: "たいきばんせい"
+    part_of_speech: "idiom"
+    meaning: "大成する人は成長が遅いこと。"
+    example: "彼は大器晩成型だ。"
+    vocabulary_tags: ["心理"]
+
+  - word: "波瀾万丈"
+    reading: "はらんばんじょう"
+    part_of_speech: "idiom"
+    meaning: "変化や出来事が多いこと。"
+    example: "波瀾万丈の人生を送る。"
+    vocabulary_tags: ["人生"]
+
+  - word: "温故知新"
+    reading: "おんこちしん"
+    part_of_speech: "idiom"
+    meaning: "古きを学んで新しきを知ること。"
+    example: "温故知新の精神を大切にする。"
+    vocabulary_tags: ["学問"]
+
+  - word: "神出鬼没"
+    reading: "しんしゅつきぼつ"
+    part_of_speech: "idiom"
+    meaning: "行動が自由自在で予測できないこと。"
+    example: "神出鬼没の活躍を見せた。"
+    vocabulary_tags: ["比喩"]
+
+  - word: "融通無碍"
+    reading: "ゆうずうむげ"
+    part_of_speech: "idiom"
+    meaning: "考えや行動が自由であること。"
+    example: "融通無碍な発想。"
+    vocabulary_tags: ["心理"]
+
+  - word: "盛者必衰"
+    reading: "じょうしゃひっすい"
+    part_of_speech: "idiom"
+    meaning: "栄えたものは必ず衰えること。"
+    example: "盛者必衰の理を思う。"
+    vocabulary_tags: ["人生"]
+
+  - word: "疾風迅雷"
+    reading: "しっぷうじんらい"
+    part_of_speech: "idiom"
+    meaning: "非常に速く激しいこと。"
+    example: "疾風迅雷の勢いで攻め込む。"
+    vocabulary_tags: ["軍事"]
+
+  - word: "質実剛健"
+    reading: "しつじつごうけん"
+    part_of_speech: "idiom"
+    meaning: "飾り気がなくまじめで強いこと。"
+    example: "質実剛健な校風。"
+    vocabulary_tags: ["日常"]
+
+  # --- 副詞 (25件) ---
+  - word: "しばしば"
+    reading: "しばしば"
+    part_of_speech: "adverb"
+    meaning: "何度も繰り返すさま。"
+    example: "彼はしばしば遅刻した。"
+    vocabulary_tags: ["日常"]
+
+  - word: "やがて"
+    reading: "やがて"
+    part_of_speech: "adverb"
+    meaning: "そのうちに。"
+    example: "やがて春が来る。"
+    vocabulary_tags: ["日常"]
+
+  - word: "たちまち"
+    reading: "たちまち"
+    part_of_speech: "adverb"
+    meaning: "すぐに。"
+    example: "空はたちまち曇った。"
+    vocabulary_tags: ["情景"]
+
+  - word: "ひとまず"
+    reading: "ひとまず"
+    part_of_speech: "adverb"
+    meaning: "いったん。"
+    example: "ひとまず落ち着こう。"
+    vocabulary_tags: ["日常"]
+
+  - word: "なかなか"
+    reading: "なかなか"
+    part_of_speech: "adverb"
+    meaning: "予想以上に。"
+    example: "この本はなかなか面白い。"
+    vocabulary_tags: ["日常"]
+
+  - word: "すこぶる"
+    reading: "すこぶる"
+    part_of_speech: "adverb"
+    meaning: "非常に。"
+    example: "彼の調子はすこぶる良い。"
+    vocabulary_tags: ["心理"]
+
+  - word: "うっかり"
+    reading: "うっかり"
+    part_of_speech: "adverb"
+    meaning: "注意がそれて失敗するさま。"
+    example: "うっかりミスをした。"
+    vocabulary_tags: ["日常"]

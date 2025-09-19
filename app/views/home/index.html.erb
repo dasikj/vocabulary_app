@@ -2,29 +2,29 @@
 <div class="max-w-5xl mx-auto space-y-8">
   <!-- サマリー：語彙/文章 登録数 -->
   <section class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-    <div class="rounded-2xl bg-white shadow p-5 text-gray-900">
-      <p class="text-sm text-gray-500">語彙登録数</p>
-      <p class="mt-1 text-3xl font-bold tracking-tight">123</p> <!-- ダミー -->
+    <div class="rounded-2xl border border-rose-200 bg-rose-50 shadow p-5 text-rose-900">
+      <p class="text-sm text-gray-500"><%= t(".vocab_count_label") %></p>
+      <p class="mt-1 text-3xl font-bold tracking-tight"><%= current_user.vocabularies.count %></p>
     </div>
-    <div class="rounded-2xl bg-white shadow p-5 text-gray-900">
-      <p class="text-sm text-gray-500">文章登録数</p>
-      <p class="mt-1 text-3xl font-bold tracking-tight">45</p> <!-- ダミー -->
+    <div class="rounded-2xl border border-sky-200 bg-sky-50 shadow p-5 text-sky-900">
+      <p class="text-sm text-gray-500"><%= t(".sentence_count_label") %></p>
+      <p class="mt-1 text-3xl font-bold tracking-tight"><%= current_user.sentences.count %></p>
     </div>
   </section>
 
   <!-- 検索ブロック（トグルで 文章 / 語彙 切替） -->
   <section class="rounded-2xl bg-white shadow p-6 space-y-4 text-gray-900"
            data-controller="search-toggle" data-search-toggle-default-value="sentence">
-    <h2 class="text-lg font-semibold">登録した言葉を検索</h2>
+    <h2 class="text-lg font-semibold"><%= t(".search_section_title") %></h2>
 
     <!-- 文章 / 語彙 トグル -->
     <div class="inline-flex rounded-xl border overflow-hidden">
       <button type="button" data-search-toggle-target="tab" data-kind="sentence"
               data-action="click->search-toggle#select"
-              class="px-4 py-2 text-sm font-medium text-gray-600">文章</button>
+              class="px-4 py-2 text-sm font-medium text-gray-600"><%= t(".tab_sentence") %></button>
       <button type="button" data-search-toggle-target="tab" data-kind="vocabulary"
               data-action="click->search-toggle#select"
-              class="px-4 py-2 text-sm font-medium text-gray-600">語彙</button>
+              class="px-4 py-2 text-sm font-medium text-gray-600"><%= t(".tab_vocabulary") %></button>
     </div>
 
     <!-- パネル：文章検索 -->
@@ -40,27 +40,73 @@
 
   <!-- アクション：問題 / 振り返り -->
   <section class="grid grid-cols-1 md:grid-cols-2 gap-4">
-    <a href="<%= new_vocab_quiz_path %>" class="rounded-2xl bg-white shadow p-6 hover:shadow-md transition text-gray-900">
-      <h3 class="font-semibold">語彙をランダムに問題にする</h3>
-      <p class="text-sm text-gray-500 mt-1">当日以外から出題（例：10問）</p>
+    <a href="<%= new_vocab_quiz_path %>" 
+       class="w-full text-center rounded-xl bg-gradient-to-r from-rose-500 to-pink-500 text-white py-3 font-semibold
+              shadow-md hover:from-rose-600 hover:to-pink-600 hover:shadow-lg
+              active:translate-y-0.5 transition duration-200">
+      <%= t(".action_quiz_title") %>
     </a>
-    <a href="#" class="rounded-2xl bg-white shadow p-6 hover:shadow-md transition text-gray-900">
-      <h3 class="font-semibold">文章をランダムに振り返る</h3>
-      <p class="text-sm text-gray-500 mt-1">過去登録からランダム抽出</p>
+
+    <a href="<%= new_sentence_review_path %>" 
+       class="w-full text-center rounded-xl bg-gradient-to-r from-sky-400 to-cyan-500 text-white py-3 font-semibold
+              shadow-md hover:from-sky-500 hover:to-cyan-600 hover:shadow-lg
+              active:translate-y-0.5 transition duration-200">
+      <%= t(".action_review_title") %>
     </a>
   </section>
 
-  <!-- カレンダー（ヒートマップ想定） -->
-  <section class="rounded-2xl bg-white shadow p-6 text-gray-800">
+  <!-- カレンダー（ヒートマップ） -->
+<section class="rounded-2xl bg-white shadow p-6 text-gray-800">
   <div class="flex items-center justify-between">
-    <button type="button" class="px-3 py-1 rounded-lg border">&larr;</button>
-    <h2 class="text-lg font-semibold">2025年 9月</h2>
-    <button type="button" class="px-3 py-1 rounded-lg border">&rarr;</button>
-  </div>
-  <div class="mt-4 grid grid-cols-7 gap-1 max-w-md mx-auto">
-    <% 35.times do %>
-      <div class="h-8 w-8 rounded bg-gray-200"></div>
+    <%# 左矢印（サインアップ月より前は無効） %>
+    <% if @can_prev %>
+      <%= link_to "←", top_path(month: @prev_month.strftime("%Y-%m")),
+            class: "px-3 py-1 rounded-lg border hover:bg-gray-50",
+            aria: { label: t("home.index.calendar_prev") } %>
+    <% else %>
+      <span class="px-3 py-1 rounded-lg border opacity-40" aria-disabled="true">←</span>
+    <% end %>
+
+    <h2 class="text-lg font-semibold">
+      <%= t("home.index.calendar_title", year: @month_date.year, month: @month_date.month) %>
+    </h2>
+
+    <%# 右矢印（今月より先は無効） %>
+    <% if @can_next %>
+      <%= link_to "→", top_path(month: @next_month.strftime("%Y-%m")),
+            class: "px-3 py-1 rounded-lg border hover:bg-gray-50",
+            aria: { label: t("home.index.calendar_next") } %>
+    <% else %>
+      <span class="px-3 py-1 rounded-lg border opacity-40" aria-disabled="true">→</span>
     <% end %>
   </div>
-  </section>
+
+  <%# 曜日ヘッダ %>
+  <div class="mt-4 grid grid-cols-7 gap-1 max-w-md sm:max-w-lg md:max-w-2xl mx-auto text-xs text-gray-600">
+    <% %w[日 月 火 水 木 金 土].each do |w| %>
+      <div class="h-6 flex items-center justify-center"><%= w %></div>
+    <% end %>
+  </div>
+
+  <%# 日付グリッド（6週分） %>
+  <div class="mt-1 grid grid-cols-7 gap-1 max-w-md sm:max-w-lg md:max-w-2xl mx-auto overflow-visible">
+    <% (@grid_start..@grid_end).each do |d| %>
+      <% in_month = (d.month == @month_date.month) %>
+      <% stat = @day_stats[d] || {vocab: 0, sentence: 0, total: 0} %>
+      <% level = heat_level(stat[:total]) %>
+      <% klass = "#{heat_bg_class(level)} #{in_month ? '' : 'opacity-40'}" %>
+
+      <div class="relative group h-8 w-8">
+        <div class="h-8 w-8 rounded flex items-center justify-center text-[11px] <%= klass %>"
+             title="<%= t('home.index.calendar_tooltip', date: l(d, format: :short), v: stat[:vocab], s: stat[:sentence], t: stat[:total]) %>"
+             aria-label="<%= t('home.index.calendar_tooltip', date: l(d, format: :short), v: stat[:vocab], s: stat[:sentence], t: stat[:total]) %>">
+          <%= d.day %>
+        </div>
+        <div class="pointer-events-none absolute -top-7 left-1/2 -translate-x-1/2 whitespace-pre rounded-lg bg-gray-900 bg-opacity-90 text-white text-[10px] px-2 py-0.5 shadow-lg opacity-0 group-hover:opacity-100 transition z-50">
+          <%= t('home.index.calendar_tooltip', date: l(d, format: :short), v: stat[:vocab], s: stat[:sentence], t: stat[:total]) %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>
 </div>

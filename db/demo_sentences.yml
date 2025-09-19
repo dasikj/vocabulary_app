@@ -1,139 +1,418 @@
 tags:
-  - name: "ワンピース"
-  - name: "ゴールド・ロジャー"
-  - name: "ルフィ"
-  - name: "ゾロ"
-  - name: "ドラゴンボール"
-  - name: "孫悟空"
-  - name: "ナルト"
-  - name: "うずまきナルト"
-  - name: "BLEACH"
-  - name: "黒崎一護"
-  - name: "進撃の巨人"
-  - name: "リヴァイ"
-  - name: "エレン"
-  - name: "エヴァンゲリオン"
-  - name: "碇シンジ"
-  - name: "渚カヲル"
-  - name: "グレンラガン"
-  - name: "シモン"
-  - name: "銀魂"
-  - name: "坂田銀時"
-  - name: "コードギアス"
-  - name: "ルルーシュ"
-  - name: "シュタインズ・ゲート"
-  - name: "岡部倫太郎"
-  - name: "リゼロ"
-  - name: "スバル"
-  - name: "ジョジョ"
-  - name: "ディオ"
+  - name: "文学"
   - name: "夏目漱石"
+  - name: "吾輩は猫である"
   - name: "こころ"
   - name: "草枕"
-  - name: "太宰治"
-  - name: "人間失格"
-  - name: "芥川龍之介"
-  - name: "羅生門"
-  - name: "宮沢賢治"
-  - name: "銀河鉄道の夜"
+  - name: "坊っちゃん"
+  - name: "アニメ"
+  - name: "ワンピース"
+  - name: "ルフィ"
+  - name: "ゾロ"
+  - name: "サンジ"
+  - name: "ゴールド・ロジャー"
+  - name: "ドラゴンボール"
+  - name: "孫悟空"
+  - name: "ベジータ"
+  - name: "ピッコロ"
+  - name: "ナルト"
+  - name: "うずまきナルト"
+  - name: "うちはサスケ"
+  - name: "はたけカカシ"
+
 
 sentences:
-  - body: "探せ！この世の全てをそこに置いてきた！"
-    sentence_category: "lines"
-    sentence_tags: ["ワンピース","ゴールド・ロジャー"]
+  - body: "吾輩は猫である。名前はまだ無い。"
+    sentence_category: "description"
+    sentence_tags: ["夏目漱石","吾輩は猫である","文学"]
 
-  - body: "海賊王に!!! 俺はなるっ!!!"
-    sentence_category: "lines"
-    sentence_tags: ["ワンピース","ルフィ"]
+  - body: "人間というものは、どこまで行っても人間である。"
+    sentence_category: "psychology"
+    sentence_tags: ["夏目漱石","吾輩は猫である","文学"]
 
-  - body: "背中の傷は剣士の恥だ。"
-    sentence_category: "lines"
-    sentence_tags: ["ワンピース","ゾロ"]
-
-  - body: "オラわくわくすっぞ！"
-    sentence_category: "lines"
-    sentence_tags: ["ドラゴンボール","孫悟空"]
-
-  - body: "俺は火影になるってばよ！誰にも笑わせやしねぇ！"
-    sentence_category: "lines"
-    sentence_tags: ["ナルト","うずまきナルト"]
-
-  - body: "護るためだろ？護りたいものがあるから俺は斬るんだ！"
-    sentence_category: "lines"
-    sentence_tags: ["BLEACH","黒崎一護"]
-
-  - body: "俺が仕留める。お前らは心臓を捧げろ。"
-    sentence_category: "lines"
-    sentence_tags: ["進撃の巨人","リヴァイ"]
-
-  - body: "駆逐してやる！この世から一匹残らず！"
-    sentence_category: "lines"
-    sentence_tags: ["進撃の巨人","エレン"]
-
-  - body: "逃げちゃダメだ、逃げちゃダメだ、逃げちゃダメだ！"
-    sentence_category: "lines"
-    sentence_tags: ["エヴァンゲリオン","碇シンジ"]
-
-  - body: "君は死ぬために生きているわけじゃない。生きるために生きるんだよ。"
-    sentence_category: "lines"
-    sentence_tags: ["エヴァンゲリオン","渚カヲル"]
-
-  - body: "俺を誰だと思ってやがる！天を突くドリル、グレン団のシモン様だ！"
-    sentence_category: "lines"
-    sentence_tags: ["グレンラガン","シモン"]
-
-  - body: "俺の後ろに立つな。"
-    sentence_category: "lines"
-    sentence_tags: ["銀魂","坂田銀時"]
-
-  - body: "撃っていいのは、撃たれる覚悟のある奴だけだ。"
-    sentence_category: "lines"
-    sentence_tags: ["コードギアス","ルルーシュ"]
-
-  - body: "この世界は選ばれし観測者によって収束する！我が名は鳳凰院凶真！"
-    sentence_category: "lines"
-    sentence_tags: ["シュタインズ・ゲート","岡部倫太郎"]
-
-  - body: "俺が必ずお前を救ってみせる！何度でもやり直して！"
-    sentence_category: "lines"
-    sentence_tags: ["リゼロ","スバル"]
-
-  - body: "無駄無駄無駄無駄ァ！！"
-    sentence_category: "lines"
-    sentence_tags: ["ジョジョ","ディオ"]
+  - body: "先生と私との関係は、常に一方的であった。"
+    sentence_category: "description"
+    sentence_tags: ["夏目漱石","こころ","文学"]
 
   - body: "私はその人を常に先生と呼んでいた。"
     sentence_category: "description"
-    sentence_tags: ["夏目漱石","こころ"]
+    sentence_tags: ["夏目漱石","こころ","文学"]
 
-  - body: "山路を登りながら、こう考えた。智に働けば角が立つ。情に棹させば流される。"
+  - body: "智に働けば角が立つ。情に棹させば流される。"
     sentence_category: "psychology"
-    sentence_tags: ["夏目漱石","草枕"]
+    sentence_tags: ["夏目漱石","草枕","文学"]
 
-  - body: "恥の多い生涯を送ってきました。"
-    sentence_category: "psychology"
-    sentence_tags: ["太宰治","人間失格"]
-
-  - body: "生まれて、すみません。"
-    sentence_category: "psychology"
-    sentence_tags: ["太宰治","人間失格"]
-
-  - body: "ある日の暮れ方の事である。一人の下人が、羅生門の下で雨やみを待っていた。"
-    sentence_category: "description"
-    sentence_tags: ["芥川龍之介","羅生門"]
-
-  - body: "あの大きな時計の針が、二人の時間を刻んでいるように思えた。"
+  - body: "山路を登りながら、こう考えた。"
     sentence_category: "appearance"
-    sentence_tags: ["文学","情景"]
+    sentence_tags: ["夏目漱石","草枕","文学"]
 
-  - body: "誰がために鐘は鳴るか。鐘は汝のために鳴る。"
-    sentence_category: "psychology"
-    sentence_tags: ["文学","宗教"]
-
-  - body: "星めぐりの歌をうたいながら、ジョバンニとカムパネルラは銀河鉄道に乗った。"
+  - body: "清は実に正直であった。"
     sentence_category: "description"
-    sentence_tags: ["宮沢賢治","銀河鉄道の夜"]
+    sentence_tags: ["夏目漱石","坊っちゃん","文学"]
 
-  - body: "おまえはもう死んでいる。"
-    sentence_category: "conversation"
-    sentence_tags: ["北斗の拳","ケンシロウ"]
+  - body: "人を馬鹿にするものは、必ず自分が馬鹿にされる。"
+    sentence_category: "psychology"
+    sentence_tags: ["夏目漱石","坊っちゃん","文学"]
+
+  - body: "月は東に、日は西に。"
+    sentence_category: "appearance"
+    sentence_tags: ["夏目漱石","草枕","文学"]
+
+  - body: "愛は人間にとって最大の慰めである。"
+    sentence_category: "psychology"
+    sentence_tags: ["夏目漱石","こころ","文学"]
+
+  - body: "人の心は複雑で、容易に知ることはできない。"
+    sentence_category: "psychology"
+    sentence_tags: ["夏目漱石","こころ","文学"]
+
+  - body: "私は寂しさを胸に抱いて生きている。"
+    sentence_category: "psychology"
+    sentence_tags: ["夏目漱石","こころ","文学"]
+
+  - body: "芸術は人間の慰めである。"
+    sentence_category: "psychology"
+    sentence_tags: ["夏目漱石","草枕","文学"]
+
+  - body: "自然の美しさを描くことが芸術の第一歩である。"
+    sentence_category: "appearance"
+    sentence_tags: ["夏目漱石","草枕","文学"]
+
+  - body: "坊っちゃんはいつも正義感を胸に行動した。"
+    sentence_category: "description"
+    sentence_tags: ["夏目漱石","坊っちゃん","文学"]
+
+  - body: "義理人情に生きるのが人間である。"
+    sentence_category: "psychology"
+    sentence_tags: ["夏目漱石","坊っちゃん","文学"]
+
+  - body: "文明が進んでも人間の心は変わらない。"
+    sentence_category: "psychology"
+    sentence_tags: ["夏目漱石","吾輩は猫である","文学"]
+
+  - body: "私は孤独という言葉の意味を、深く知っている。"
+    sentence_category: "psychology"
+    sentence_tags: ["夏目漱石","こころ","文学"]
+
+  - body: "死は人間にとって最大の謎である。"
+    sentence_category: "psychology"
+    sentence_tags: ["夏目漱石","こころ","文学"]
+
+  - body: "恋は人を狂わせる力を持つ。"
+    sentence_category: "psychology"
+    sentence_tags: ["夏目漱石","こころ","文学"]
+
+  - body: "人生は思うようにはならない。"
+    sentence_category: "psychology"
+    sentence_tags: ["夏目漱石","草枕","文学"]
+
+  - body: "自然に触れることで心は癒される。"
+    sentence_category: "appearance"
+    sentence_tags: ["夏目漱石","草枕","文学"]
+
+  - body: "人の心は時に冷たく、時に温かい。"
+    sentence_category: "psychology"
+    sentence_tags: ["夏目漱石","坊っちゃん","文学"]
+
+  - body: "笑いは人生の救いである。"
+    sentence_category: "psychology"
+    sentence_tags: ["夏目漱石","坊っちゃん","文学"]
+
+  - body: "猫は人間の愚かさを冷静に見ている。"
+    sentence_category: "description"
+    sentence_tags: ["夏目漱石","吾輩は猫である","文学"]
+
+  - body: "人間失格は、自分を見失った男の物語である。"
+    sentence_category: "description"
+    sentence_tags: ["太宰治","人間失格","文学"]
+
+  - body: "走れメロスは友情と信頼の力を描いている。"
+    sentence_category: "psychology"
+    sentence_tags: ["太宰治","走れメロス","文学"]
+
+  - body: "ヴィヨンの妻は複雑な人間関係を繊細に描写する。"
+    sentence_category: "description"
+    sentence_tags: ["太宰治","ヴィヨンの妻","文学"]
+
+  - body: "桜桃は儚い命の美しさを象徴している。"
+    sentence_category: "appearance"
+    sentence_tags: ["太宰治","桜桃","文学"]
+
+  - body: "人間失格の主人公は自己嫌悪に苦しむ。"
+    sentence_category: "psychology"
+    sentence_tags: ["太宰治","人間失格","文学"]
+
+  - body: "走れメロスは信念を貫く勇気を示している。"
+    sentence_category: "psychology"
+    sentence_tags: ["太宰治","走れメロス","文学"]
+
+  - body: "ヴィヨンの妻は愛と裏切りの葛藤を描く。"
+    sentence_category: "psychology"
+    sentence_tags: ["太宰治","ヴィヨンの妻","文学"]
+
+  - body: "桜桃の赤い実は人生の儚さを象徴する。"
+    sentence_category: "appearance"
+    sentence_tags: ["太宰治","桜桃","文学"]
+
+  - body: "人間失格は孤独と絶望の深淵を探る。"
+    sentence_category: "psychology"
+    sentence_tags: ["太宰治","人間失格","文学"]
+
+  - body: "走れメロスは友情の尊さを強調する物語だ。"
+    sentence_category: "description"
+    sentence_tags: ["太宰治","走れメロス","文学"]
+
+  - body: "ヴィヨンの妻は人間の弱さと強さを織り交ぜる。"
+    sentence_category: "psychology"
+    sentence_tags: ["太宰治","ヴィヨンの妻","文学"]
+
+  - body: "桜桃は短い人生の輝きを映し出す。"
+    sentence_category: "appearance"
+    sentence_tags: ["太宰治","桜桃","文学"]
+
+  - body: "人間失格は自己破壊の物語として知られる。"
+    sentence_category: "description"
+    sentence_tags: ["太宰治","人間失格","文学"]
+
+  - body: "走れメロスは友情の試練を描く感動的な話。"
+    sentence_category: "description"
+    sentence_tags: ["太宰治","走れメロス","文学"]
+
+  - body: "ヴィヨンの妻は複雑な感情の絡まりを表現する。"
+    sentence_category: "psychology"
+    sentence_tags: ["太宰治","ヴィヨンの妻","文学"]
+
+  - body: "桜桃は自然の美と儚さを同時に示す。"
+    sentence_category: "appearance"
+    sentence_tags: ["太宰治","桜桃","文学"]
+
+  - body: "人間失格の主人公は社会から孤立している。"
+    sentence_category: "psychology"
+    sentence_tags: ["太宰治","人間失格","文学"]
+
+  - body: "走れメロスは信頼と勇気の物語である。"
+    sentence_category: "psychology"
+    sentence_tags: ["太宰治","走れメロス","文学"]
+
+  - body: "ヴィヨンの妻は愛の苦悩を深く描いている。"
+    sentence_category: "psychology"
+    sentence_tags: ["太宰治","ヴィヨンの妻","文学"]
+
+  - body: "桜桃の赤い色は情熱と儚さを象徴する。"
+    sentence_category: "appearance"
+    sentence_tags: ["太宰治","桜桃","文学"]
+
+  - body: "人間失格は自己嫌悪と絶望の物語だ。"
+    sentence_category: "psychology"
+    sentence_tags: ["太宰治","人間失格","文学"]
+
+  - body: "走れメロスは友情の力を信じる話である。"
+    sentence_category: "psychology"
+    sentence_tags: ["太宰治","走れメロス","文学"]
+
+  - body: "ヴィヨンの妻は人間の複雑な感情を描写する。"
+    sentence_category: "psychology"
+    sentence_tags: ["太宰治","ヴィヨンの妻","文学"]
+
+  - body: "桜桃は人生の儚さと美しさを表現している。"
+    sentence_category: "appearance"
+    sentence_tags: ["太宰治","桜桃","文学"]
+  - body: "海賊王に、俺はなる！"
+    sentence_category: "lines"
+    sentence_tags: ["ワンピース","ルフィ","アニメ"]
+
+  - body: "背中の傷は剣士の恥だ。"
+    sentence_category: "lines"
+    sentence_tags: ["ワンピース","ゾロ","アニメ"]
+
+  - body: "女の涙は拭うもんだ。"
+    sentence_category: "lines"
+    sentence_tags: ["ワンピース","サンジ","アニメ"]
+
+  - body: "この世の全てをそこに置いてきた。"
+    sentence_category: "lines"
+    sentence_tags: ["ワンピース","ゴールド・ロジャー","アニメ"]
+
+  - body: "オラ、わくわくすっぞ！"
+    sentence_category: "lines"
+    sentence_tags: ["ドラゴンボール","孫悟空","アニメ"]
+
+  - body: "カカロット…俺は超えてみせる。"
+    sentence_category: "lines"
+    sentence_tags: ["ドラゴンボール","ベジータ","アニメ"]
+
+  - body: "悟飯、怒れ！"
+    sentence_category: "lines"
+    sentence_tags: ["ドラゴンボール","ピッコロ","アニメ"]
+
+  - body: "俺は火影になるってばよ！"
+    sentence_category: "lines"
+    sentence_tags: ["ナルト","うずまきナルト","アニメ"]
+
+  - body: "復讐は、俺の生きる理由だ。"
+    sentence_category: "lines"
+    sentence_tags: ["ナルト","うちはサスケ","アニメ"]
+
+  - body: "写輪眼は見逃さない。"
+    sentence_category: "lines"
+    sentence_tags: ["ナルト","はたけカカシ","アニメ"]
+
+  - body: "仲間がいるから、強くなれる。"
+    sentence_category: "lines"
+    sentence_tags: ["ワンピース","ルフィ","アニメ"]
+
+  - body: "限界は、超えるためにある。"
+    sentence_category: "lines"
+    sentence_tags: ["ドラゴンボール","孫悟空","アニメ"]
+
+  - body: "信じる心が、力だ。"
+    sentence_category: "lines"
+    sentence_tags: ["ナルト","うずまきナルト","アニメ"]
+
+  - body: "努力した者がすべて報われるとは限らん。しかし、成功した者は皆すべからく努力しておる。"
+    sentence_category: "lines"
+    sentence_tags: ["ナルト","はたけカカシ","アニメ"]
+
+  - body: "海賊には夢がある！"
+    sentence_category: "lines"
+    sentence_tags: ["ワンピース","ルフィ","アニメ"]
+
+  - body: "俺は剣で仲間を守る！"
+    sentence_category: "lines"
+    sentence_tags: ["ワンピース","ゾロ","アニメ"]
+
+  - body: "女は守るものだ、料理もな。"
+    sentence_category: "lines"
+    sentence_tags: ["ワンピース","サンジ","アニメ"]
+
+  - body: "自由こそが宝だ。"
+    sentence_category: "lines"
+    sentence_tags: ["ワンピース","ルフィ","アニメ"]
+
+  - body: "カカロット！俺は誇り高きサイヤ人だ！"
+    sentence_category: "lines"
+    sentence_tags: ["ドラゴンボール","ベジータ","アニメ"]
+
+  - body: "仲間を信じる、それが忍の道だ。"
+    sentence_category: "lines"
+    sentence_tags: ["ナルト","うずまきナルト","アニメ"]
+
+  - body: "力じゃねえ、心だ。"
+    sentence_category: "lines"
+    sentence_tags: ["ナルト","はたけカカシ","アニメ"]
+
+  - body: "海は広い、夢も広い。"
+    sentence_category: "lines"
+    sentence_tags: ["ワンピース","ルフィ","アニメ"]
+
+  - body: "諦めたら、そこで試合終了だ。"
+    sentence_category: "lines"
+    sentence_tags: ["スラムダンク","安西先生","アニメ"]
+
+  - body: "天才とは努力を続けられる人のことだ。"
+    sentence_category: "lines"
+    sentence_tags: ["ナルト","はたけカカシ","アニメ"]
+
+  - body: "奇跡を待つより、捨て身の努力だ。"
+    sentence_category: "lines"
+    sentence_tags: ["ワンピース","ルフィ","アニメ"]
+  - body: "諦めない、それが俺の忍道だ！"
+    sentence_category: "lines"
+    sentence_tags: ["ナルト","うずまきナルト","アニメ"]
+
+  - body: "オレは宇宙一だ！"
+    sentence_category: "lines"
+    sentence_tags: ["ドラゴンボール","ベジータ","アニメ"]
+
+  - body: "仲間を守るためなら命も惜しくない！"
+    sentence_category: "lines"
+    sentence_tags: ["ワンピース","ゾロ","アニメ"]
+
+  - body: "ラーメンは心のエネルギーだってばよ。"
+    sentence_category: "lines"
+    sentence_tags: ["ナルト","うずまきナルト","アニメ"]
+
+  - body: "俺の財宝か？欲しけりゃくれてやる。探せ！"
+    sentence_category: "lines"
+    sentence_tags: ["ワンピース","ゴールド・ロジャー","アニメ"]
+
+  - body: "戦わなければ勝てない！"
+    sentence_category: "lines"
+    sentence_tags: ["ドラゴンボール","孫悟空","アニメ"]
+
+  - body: "影は光があるから生まれる。"
+    sentence_category: "lines"
+    sentence_tags: ["ナルト","はたけカカシ","アニメ"]
+
+  - body: "俺は料理で世界一になる！"
+    sentence_category: "lines"
+    sentence_tags: ["ワンピース","サンジ","アニメ"]
+
+  - body: "仲間がいればどんな困難も乗り越えられる。"
+    sentence_category: "lines"
+    sentence_tags: ["ワンピース","ルフィ","アニメ"]
+
+  - body: "誇りを失ったらサイヤ人じゃねえ。"
+    sentence_category: "lines"
+    sentence_tags: ["ドラゴンボール","ベジータ","アニメ"]
+
+  - body: "俺は諦めない男だ！"
+    sentence_category: "lines"
+    sentence_tags: ["ナルト","うずまきナルト","アニメ"]
+
+  - body: "友情は最強の力だ！"
+    sentence_category: "lines"
+    sentence_tags: ["ワンピース","ルフィ","アニメ"]
+
+  - body: "涙は強さの証だ。"
+    sentence_category: "lines"
+    sentence_tags: ["ワンピース","ゾロ","アニメ"]
+
+  - body: "守りたいものがあるから強くなる。"
+    sentence_category: "lines"
+    sentence_tags: ["ドラゴンボール","孫悟空","アニメ"]
+
+  - body: "教え子を信じるのが師匠の役目だ。"
+    sentence_category: "lines"
+    sentence_tags: ["ナルト","はたけカカシ","アニメ"]
+
+  - body: "料理も戦いも命を懸ける価値がある。"
+    sentence_category: "lines"
+    sentence_tags: ["ワンピース","サンジ","アニメ"]
+
+  - body: "夢を諦めるな！"
+    sentence_category: "lines"
+    sentence_tags: ["ワンピース","ルフィ","アニメ"]
+
+  - body: "俺は仲間を信じてる！"
+    sentence_category: "lines"
+    sentence_tags: ["ワンピース","ゾロ","アニメ"]
+
+  - body: "勝負は気合いだ！"
+    sentence_category: "lines"
+    sentence_tags: ["ドラゴンボール","孫悟空","アニメ"]
+
+  - body: "本気を出せば奇跡だって起こせる。"
+    sentence_category: "lines"
+    sentence_tags: ["ナルト","うずまきナルト","アニメ"]
+
+  - body: "誇りを持って生きろ。"
+    sentence_category: "lines"
+    sentence_tags: ["ドラゴンボール","ベジータ","アニメ"]
+
+  - body: "仲間を裏切る奴は許さねえ！"
+    sentence_category: "lines"
+    sentence_tags: ["ワンピース","ルフィ","アニメ"]
+
+  - body: "戦いは覚悟だ。"
+    sentence_category: "lines"
+    sentence_tags: ["ナルト","はたけカカシ","アニメ"]
+
+  - body: "料理は愛だ。"
+    sentence_category: "lines"
+    sentence_tags: ["ワンピース","サンジ","アニメ"]
+
+  - body: "限界を越えるのは心だ！"
+    sentence_category: "lines"
+    sentence_tags: ["ドラゴンボール","孫悟空","アニメ"]
+    

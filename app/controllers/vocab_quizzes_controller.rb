@@ -110,6 +110,9 @@ class VocabQuizzesController < ApplicationController
       redirect_to new_vocab_quiz_path, alert: t("flash.vocab_quiz.no_session", default: "問題が未作成です") and return
     end
 
+    # ← ここで完了カウント
+    current_user.increment!(:quiz_uses_count)
+
     @score = data["score"]
     @total = data["q_ids"].size
     @answers = data["answers"]
@@ -117,7 +120,6 @@ class VocabQuizzesController < ApplicationController
     records = current_user.vocabularies.where(id: ids).index_by(&:id)
     @vocabularies = ids.map { |i| records[i] }.compact
 
-    # Expose last used conditions for view and clear only quiz payload
     @cond = session[:vocab_quiz_cond] || {}
     session.delete(QUIZ_KEY)
   end
