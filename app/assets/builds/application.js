@@ -6668,13 +6668,13 @@ var AttributeObserver = class {
   }
 };
 function add(map, key, value) {
-  fetch(map, key).add(value);
+  fetch2(map, key).add(value);
 }
 function del(map, key, value) {
-  fetch(map, key).delete(value);
+  fetch2(map, key).delete(value);
   prune(map, key);
 }
-function fetch(map, key) {
+function fetch2(map, key) {
   let values = map.get(key);
   if (!values) {
     values = /* @__PURE__ */ new Set();
@@ -8649,11 +8649,96 @@ var dropdown_controller_default = class extends Controller {
   }
 };
 
+// app/javascript/controllers/autocomplete_controller.js
+var autocomplete_controller_default = class extends Controller {
+  static targets = ["input", "list"];
+  static values = { url: String };
+  #aborter = null;
+  #selectedIndex = -1;
+  connect() {
+    this.close();
+  }
+  async search() {
+    const q = (this.inputTarget.value || "").trim();
+    if (!this.urlValue) return;
+    if (this.#aborter) this.#aborter.abort();
+    this.#aborter = new AbortController();
+    if (q.length === 0) {
+      this.close();
+      return;
+    }
+    try {
+      const res = await fetch(`${this.urlValue}?term=${encodeURIComponent(q)}`, { signal: this.#aborter.signal });
+      if (!res.ok) return;
+      const items = await res.json();
+      this.render(items);
+    } catch (_) {
+    }
+  }
+  render(items) {
+    this.listTarget.innerHTML = "";
+    if (!items || items.length === 0) {
+      this.close();
+      return;
+    }
+    items.forEach(({ id, label }, i) => {
+      const li = document.createElement("li");
+      li.className = "px-3 py-2 cursor-pointer hover:bg-gray-100";
+      li.textContent = label;
+      li.dataset.index = i;
+      li.addEventListener("mousedown", (e) => {
+        e.preventDefault();
+        this.choose(label);
+      });
+      this.listTarget.appendChild(li);
+    });
+    this.open();
+    this.#selectedIndex = -1;
+  }
+  choose(text) {
+    this.inputTarget.value = text;
+    this.close();
+    this.inputTarget.dispatchEvent(new Event("change"));
+  }
+  keydown(event) {
+    if (this.listTarget.classList.contains("hidden")) return;
+    const items = Array.from(this.listTarget.children);
+    if (event.key === "ArrowDown") {
+      event.preventDefault();
+      this.#selectedIndex = Math.min(items.length - 1, this.#selectedIndex + 1);
+      this.highlight(items);
+    } else if (event.key === "ArrowUp") {
+      event.preventDefault();
+      this.#selectedIndex = Math.max(0, this.#selectedIndex - 1);
+      this.highlight(items);
+    } else if (event.key === "Enter") {
+      if (this.#selectedIndex >= 0) {
+        event.preventDefault();
+        this.choose(items[this.#selectedIndex].textContent);
+      }
+    } else if (event.key === "Escape") {
+      this.close();
+    }
+  }
+  highlight(items) {
+    items.forEach((el, i) => el.classList.toggle("bg-gray-100", i === this.#selectedIndex));
+    if (this.#selectedIndex >= 0) items[this.#selectedIndex].scrollIntoView({ block: "nearest" });
+  }
+  open() {
+    this.listTarget.classList.remove("hidden");
+  }
+  close() {
+    this.listTarget.classList.add("hidden");
+    this.listTarget.innerHTML = "";
+  }
+};
+
 // app/javascript/controllers/index.js
 application.register("hello", hello_controller_default);
 application.register("edit-toggle", edit_toggle_controller_default);
 application.register("tag-picker", tag_picker_controller_default);
 application.register("dropdown", dropdown_controller_default);
+application.register("autocomplete", autocomplete_controller_default);
 /*! Bundled license information:
 
 @hotwired/turbo/dist/turbo.es2017-esm.js:

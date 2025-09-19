@@ -2,8 +2,17 @@
 <%= search_form_for q, url: sentences_path, method: :get,
       class: "mb-4 grid grid-cols-1 md:grid-cols-4 gap-3" do |f| %>
 <%# キーワード入力欄 %>
-  <%= f.search_field :body_cont,
-        placeholder: t("placeholders.keyword"), class: "rounded-xl border px-3 py-2" %>
+  <div data-controller="autocomplete"
+       data-autocomplete-url-value="/autocomplete/sentences"
+       class="relative">
+    <%= f.search_field :body_cont,
+          placeholder: t("placeholders.keyword"),
+          class: "w-full rounded-xl border px-3 py-2",
+          autocomplete: "off",
+          data: { autocomplete_target: "input", action: "input->autocomplete#search keydown->autocomplete#keydown" } %>
+    <ul data-autocomplete-target="list"
+        class="absolute z-20 mt-1 w-full rounded-xl bg-white shadow ring-1 ring-black/5 hidden max-h-60 overflow-auto"></ul>
+  </div>
 
   <%= f.select :sentence_category_eq,
         Sentence.sentence_categories.map { |k, v| [t("enums.sentence.sentence_category.#{k}"), v] },
