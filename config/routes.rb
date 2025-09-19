@@ -32,18 +32,27 @@ Rails.application.routes.draw do
   # お気に入り
   resources :bookmarks, only: [:index, :create, :destroy]
 
+  # 語彙クイズ
+  authenticate :user do
+    resources :vocab_quizzes, only: [:new, :create, :show, :update] do
+      collection do
+        get :result
+      end
+    end
+  end
+
   # ダッシュボード
   resource :dashboard, only: [:show]
 
   # オートコンプリート
-authenticate :user do
-  namespace :autocomplete, defaults: { format: :json } do
-    get 'vocabularies',     to: 'vocabularies#index'
-    get 'sentences',        to: 'sentences#index'
-    get 'vocabulary_tags',  to: 'vocabulary_tags#index'
-    get 'sentence_tags',    to: 'sentence_tags#index'
+  authenticate :user do
+    namespace :autocomplete, defaults: { format: :json } do
+      get 'vocabularies',     to: 'vocabularies#index'
+      get 'sentences',        to: 'sentences#index'
+      get 'vocabulary_tags',  to: 'vocabulary_tags#index'
+      get 'sentence_tags',    to: 'sentence_tags#index'
+    end
   end
-end
 
   # letter_opener (dev only)
   if Rails.env.development?
