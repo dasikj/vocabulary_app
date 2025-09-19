@@ -109,7 +109,7 @@ ja:
         failure: "文章の登録に失敗しました。"
       update:
         success: "文章を更新しました"
-        failure: "文章の更新に失敗しました。"
+        failure: "文章の更新に失敗しました"
       destroy:
         success: "文章を削除しました"
     sentence_tags:
@@ -136,10 +136,25 @@ ja:
         failure: "お気に入りに追加できませんでした"
       destroy:
         success: "お気に入りを削除しました"    
-
+    sentence_reviews:
+      too_few: "登録されている文章が少なすぎます（10個以上必要）"
+      no_session: "復習が未作成です"
   home:
     index:
       title: "トップページ"
+      vocab_count_label: "語彙登録数"
+      sentence_count_label: "文章登録数"
+      search_section_title: "登録した言葉を検索"
+      tab_sentence: "文章"
+      tab_vocabulary: "語彙"
+      action_quiz_title: "語彙をランダムに問題にする"
+      action_quiz_desc: "登録した言葉を問題にして出題します"
+      action_review_title: "文章をランダムに振り返る"
+      action_review_desc: "過去登録した文章をランダムに抽出して振り返りましょう"
+      calendar_prev: "前の月"
+      calendar_next: "次の月"
+      calendar_title: "%{year}年 %{month}月"
+      calendar_tooltip: "%{date}\n語彙: %{v} 件 / 文章: %{s} 件\n合計: %{t} 件"
   enums:
     vocabulary:
       part_of_speech:
@@ -318,10 +333,10 @@ ja:
       pattern: "出題パターン"
       pattern_choice: "この語句の意味は？（4択）"
       pattern_input: "この意味の語句は？（入力）"
-      from: "期間（FROM）"
-      to: "期間（TO）"
-      tags: "タグで絞り込み(AND)"
-      start: "10問を作成"
+      from: "期間で指定（FROM)"
+      to: "期間で指定（TO）"
+      tags: "タグで絞り込み(AND方式)"
+      start: "問題を作成(10問)"
       back: "戻る"
     show:
       title: "語彙クイズ"
@@ -342,3 +357,18 @@ ja:
       your: "あなたの回答"
       retry: "同条件で再挑戦"
       back_home: "トップへ"
+  sentence_reviews:
+    new:
+      title: "文章を振り返る"
+      heading: "文章の復習を開始"
+      from: "期間で指定（FROM）"
+      to: "期間で指定（TO）"
+      tags: "タグで絞り込み(AND方式)"
+      start: "文章を振り返る(10件)"
+    show:
+      title: "文章を振り返り中"
+      heading: "文章を振り返り中"
+      progress: "項目 %{n}/%{t}"
+      next: "次へ"
+      quit: "中断"
+      finish: "終了"

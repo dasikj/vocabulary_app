@@ -1,0 +1,58 @@
+<% content_for :title, full_title(t("sentence_reviews.show.title", default: "文章を振り返り中")) %>
+
+<div class="max-w-3xl mx-auto rounded-2xl bg-white shadow p-6 space-y-6">
+  <div class="flex items-center justify-between">
+    <h1 class="text-xl font-semibold"><%= t("sentence_reviews.show.heading", default: "文章を振り返り中") %></h1>
+    <div class="text-sm text-gray-600"><%= t("sentence_reviews.show.progress", default: "項目 %{n}/%{t}", n: @index, t: @total) %></div>
+  </div>
+
+  <article class="relative rounded-2xl border bg-gradient-to-b from-white to-gray-50 p-8 shadow-sm">
+    <!-- Decorative quotes -->
+    <span aria-hidden="true" class="pointer-events-none select-none absolute -top-3 -left-1 text-6xl leading-none text-gray-200">“</span>
+    <span aria-hidden="true" class="pointer-events-none select-none absolute -bottom-6 right-2 text-6xl leading-none text-gray-200">”</span>
+
+    <blockquote class="text-center">
+      <p class="whitespace-pre-wrap text-xl md:text-2xl leading-relaxed text-gray-900 animate-fadeIn opacity-0 [animation-fill-mode:forwards]">
+        <%= @sentence.body %>
+      </p>
+    </blockquote>
+
+    <div class="mt-6 flex flex-wrap items-center justify-center gap-2 text-xs">
+      <% if @sentence.respond_to?(:sentence_category) && @sentence.sentence_category.present? %>
+        <span class="inline-flex items-center gap-1 rounded-full border px-2 py-0.5 bg-white text-gray-700">
+          <span class="opacity-70">カテゴリー:</span>
+          <span class="font-medium">
+            <%= t("enums.sentence.sentence_category.#{@sentence.sentence_category}", default: @sentence.sentence_category.to_s.humanize) %>
+          </span>
+        </span>
+      <% end %>
+      <% if @sentence.respond_to?(:sentence_tags) %>
+        <% @sentence.sentence_tags.each do |tag| %>
+          <span class="inline-flex items-center gap-1 rounded-full px-2 py-0.5"
+                style="background-color: <%= tag.color.presence || '#000' %>; color: #fff;">
+            #<%= tag.name %>
+          </span>
+        <% end %>
+      <% end %>
+    </div>
+  </article>
+
+  <div class="flex gap-2">
+    
+    <% if @last %>
+      <%= form_with url: complete_sentence_reviews_path, method: :post, class: "inline" do %>
+        <button class="rounded-xl bg-blue-600 text-white px-4 py-2 hover:bg-blue-700 transition hover:shadow-lg active:translate-y-0.5 duration-150">
+        <%= t("sentence_reviews.show.finish", default: "終了") %>
+        </button>
+      <% end %>
+    <% else %>
+      <%= link_to t("sentence_reviews.show.next", default: "次へ"),
+            sentence_review_path(id: "run", q: @index + 1),
+            class: "rounded-xl bg-blue-600 text-white px-4 py-2 hover:bg-blue-700 transition hover:shadow-lg active:translate-y-0.5 duration-150" %>
+    <% end %>
+
+    <%= link_to t("sentence_reviews.show.quit", default: "中断"),
+          new_sentence_review_path,
+          class: "rounded-xl border px-4 py-2 hover:bg-gray-100" %>
+  </div>
+</div>

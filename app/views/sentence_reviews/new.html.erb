@@ -1,0 +1,43 @@
+<% content_for :title, full_title(t("sentence_reviews.new.title", default: "文章を振り返る")) %>
+
+<div class="max-w-3xl mx-auto rounded-2xl bg-white shadow p-6 space-y-6 text-gray-900">
+  <h1 class="text-xl font-semibold"><%= t("sentence_reviews.new.heading", default: "文章の復習を開始") %></h1>
+
+  <%= form_with url: sentence_reviews_path, method: :post, data: { turbo: true } do %>
+    <div class="space-y-6">
+      <!-- 期間 / タグ 絞り込み -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">
+        <div>
+          <label class="block text-sm text-gray-600 mb-1"><%= t("sentence_reviews.new.from", default: "期間（FROM）") %></label>
+          <%= date_field_tag :from, nil, class: "w-full rounded-xl border px-3 py-2" %>
+        </div>
+        <div>
+          <label class="block text-sm text-gray-600 mb-1"><%= t("sentence_reviews.new.to", default: "期間（TO）") %></label>
+          <%= date_field_tag :to, nil, class: "w-full rounded-xl border px-3 py-2" %>
+        </div>
+        <div>
+          <label class="block text-sm text-gray-600 mb-1"><%= t("sentence_reviews.new.tags", default: "タグで絞り込み") %></label>
+          <button type="button" onclick="document.getElementById('reviewSentenceTagDialog').showModal()"
+                  class="w-full rounded-xl border px-3 py-2 hover:bg-gray-50 bg-white text-left">
+            <%= t("common.choice_tag", default: "タグを選択") %>
+          </button>
+        </div>
+      </div>
+
+      <div class="flex gap-2">
+        <button class="rounded-xl bg-blue-600 text-white px-4 py-2 hover:bg-blue-700 transition hover:shadow-lg active:translate-y-0.5 duration-150">
+          <%= t("sentence_reviews.new.start", default: "10件で振り返る") %>
+        </button>
+        <%= link_to t("common.back", default: "戻る"), top_path, class: "rounded-xl border px-4 py-2 hover:bg-gray-100" %>
+      </div>
+
+      <%# 文章タグピッカー（フォーム内に配置して送信対象にする） %>
+      <%= render "shared/tag_picker",
+            id: "reviewSentenceTagDialog",
+            field_name: "sentence_tags_id_in[]",
+            tags: @sentence_tags,
+            selected_ids: [],
+            title: t("common.choice_tag", default: "タグを選択") %>
+    </div>
+  <% end %>
+</div>

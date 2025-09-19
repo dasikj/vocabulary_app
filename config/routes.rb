@@ -41,6 +41,15 @@ Rails.application.routes.draw do
     end
   end
 
+  # 文章振り返り
+  authenticate :user do
+    resources :sentence_reviews, only: [:new, :create, :show] do
+      collection do
+        post :complete   #（helper: complete_sentence_reviews_path）
+      end
+    end
+  end
+
   # ダッシュボード
   resource :dashboard, only: [:show]
 

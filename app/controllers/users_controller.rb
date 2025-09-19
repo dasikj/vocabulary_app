@@ -3,11 +3,8 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
-    # ダミーデータ
-    @vocab_count    = 0
-    @sentence_count = 0
-    @quiz_count     = 0
-    @review_count   = 0
+    @vocab_count = @user.vocabularies.count
+    @sentence_count = @user.sentences.count
   end
 
   def update
