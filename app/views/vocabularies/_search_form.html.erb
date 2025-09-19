@@ -1,41 +1,50 @@
 <%# 検索フォーム %>
 <%= search_form_for q, url: vocabularies_path, method: :get,
       class: "mb-4 grid grid-cols-1 md:grid-cols-4 gap-3" do |f| %>
-<%# キーワード入力欄 %>
-  <%= f.search_field :word_or_meaning_cont,
-        placeholder: t("placeholders.keyword"), class: "rounded-xl border px-3 py-2" %>
+  <div class="md:col-span-4 flex flex-wrap items-start gap-3">
+    <div data-controller="autocomplete"
+         data-autocomplete-url-value="/autocomplete/vocabularies"
+         class="relative flex-1 min-w-[200px] max-w-[800px]">
+      <%= f.search_field :word_or_meaning_cont,
+            placeholder: t("placeholders.keyword"),
+            class: "w-full rounded-xl border px-3 py-2",
+            autocomplete: "off",
+            data: { autocomplete_target: "input", action: "input->autocomplete#search keydown->autocomplete#keydown" } %>
+      <ul data-autocomplete-target="list"
+          class="absolute z-20 mt-1 w-full rounded-xl bg-white shadow ring-1 ring-black/5 hidden max-h-60 overflow-auto"></ul>
+    </div>
 
-  <%= f.select :part_of_speech_eq,
-        Vocabulary.part_of_speeches.map { |k, v| [t("enums.vocabulary.part_of_speech.#{k}"), v] },
-        { include_blank: t(".all_part_of_speech") }, class: "rounded-xl border px-3 py-2" %>
+    <div class="flex items-start gap-2">
+      <%= f.select :part_of_speech_eq,
+            Vocabulary.part_of_speeches.map { |k, v| [t("enums.vocabulary.part_of_speech.#{k}"), v] },
+            { include_blank: t(".all_part_of_speech") }, class: "w-40 rounded-xl border px-3 py-2" %>
 
-  <%# タグ選択（モーダル／大量・長文対応） %>
-  <div class="md:col-span-2">
-    <% tags = VocabularyTag.where(user: current_user).order(:name) %>
-    <% selected = Array(params.dig(:q, :vocabulary_tags_id_in)).map(&:to_s) %>
-
-    <button type="button"
-            onclick="document.getElementById('vocabularyTagDialog').showModal()"
-            class="rounded-xl border px-3 py-2 flex bg-white text-left hover:bg-gray-100">
-      <%= t("common.choice_tag") %>
-    </button>
-    <% tags = VocabularyTag.where(user: current_user).order(:name) %>
-    <% selected = Array(params.dig(:q, :vocabulary_tags_id_in)).map(&:to_s) %>
-    <% sorted_tags = tags.sort_by { |t| selected.include?(t.id.to_s) ? 0 : 1 } %>
-
-    <%= render "shared/tag_picker",
-            id: "vocabularyTagDialog",
-            field_name: "q[vocabulary_tags_id_in][]",
-            tags: sorted_tags,
-            selected_ids: selected,
-            title: t("common.choice_tag") %>
+      <button type="button"
+              onclick="document.getElementById('vocabularyTagDialog').showModal()"
+              class="rounded-xl border px-3 py-2 flex bg-white text-left hover:bg-gray-100">
+        <%= t("common.choice_tag") %>
+      </button>
+    </div>
   </div>
+
+  <% tags = VocabularyTag.where(user: current_user).order(:name) %>
+  <% selected = Array(params.dig(:q, :vocabulary_tags_id_in)).map(&:to_s) %>
+  <% sorted_tags = tags.sort_by { |t| selected.include?(t.id.to_s) ? 0 : 1 } %>
+
+  <%= render "shared/tag_picker",
+          id: "vocabularyTagDialog",
+          field_name: "q[vocabulary_tags_id_in][]",
+          tags: sorted_tags,
+          selected_ids: selected,
+          title: t("common.choice_tag") %>
 
 <%# 検索ボタン + 日付絞り込み（下段） %>
   <div class="md:col-span-4 grid grid-cols-1 md:grid-cols-4 gap-3 items-end">
     <div class="flex gap-2">
       <%= f.submit "検索", class: "rounded-xl bg-blue-600 text-white px-4 py-2 hover:bg-blue-700 transition hover:shadow-lg active:translate-y-0.5 duration-150" %>
-      <%= link_to "クリア", vocabularies_path, class: "hover:shadow-lg active:translate-y-0.5 transition duration-150 rounded-xl border bg-white px-4 py-2 hover:bg-gray-300" %>
+      <%# クリアの遷移先を現在ページで自動判定（TOPならTOP、一覧なら一覧） %>
+      <% default_clear_path = (defined?(top_path) && current_page?(top_path)) ? top_path : vocabularies_path %>
+      <%= link_to "クリア", (local_assigns[:clear_path] || default_clear_path), class: "hover:shadow-lg active:translate-y-0.5 transition duration-150 rounded-xl border bg-white px-4 py-2 hover:bg-gray-300" %>
     </div>
     <div>
       <%= f.label :created_at_gteq, t("common.from"), class: "block text-sm mb-1" %>

@@ -12,3 +12,8 @@ import TagPickerController from "./tag_picker_controller"
 application.register("tag-picker", TagPickerController)
 import DropdownController from "./dropdown_controller"
 application.register("dropdown", DropdownController)
+import AutocompleteController from "./autocomplete_controller"
+application.register("autocomplete", AutocompleteController)
+
+import SearchToggleController from "./search_toggle_controller"
+application.register("search-toggle", SearchToggleController)

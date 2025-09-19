@@ -25,11 +25,25 @@
   <% end %>
 
   <!-- ユーザーステータス -->
-  <div class="rounded-2xl bg-white shadow p-6 grid grid-cols-2 gap-4">
-    <div><%= t(".vocab_count", default: "登録語彙数") %>: <%= @vocab_count %></div>
-    <div><%= t(".sentence_count", default: "登録文章数") %>: <%= @sentence_count %></div>
-    <div><%= t(".quiz_count", default: "語彙問題挑戦回数") %>: <%= @quiz_count %></div>
-    <div><%= t(".review_count", default: "文章振り返り回数") %>: <%= @review_count %></div>
+  <div class="rounded-2xl bg-white shadow p-6">
+    <div class="grid grid-cols-2 gap-4">
+      <div class="rounded-xl border bg-gray-50 p-4">
+        <div class="text-xs text-gray-500 mb-1"><%= t(".vocab_count", default: "登録語彙数") %></div>
+        <div class="text-2xl font-semibold"><%= @vocab_count %></div>
+      </div>
+      <div class="rounded-xl border bg-gray-50 p-4">
+        <div class="text-xs text-gray-500 mb-1"><%= t(".sentence_count", default: "登録文章数") %></div>
+        <div class="text-2xl font-semibold"><%= @sentence_count %></div>
+      </div>
+      <div class="rounded-xl border bg-gray-50 p-4">
+        <div class="text-xs text-gray-500 mb-1"><%= t(".quiz_count", default: "語彙問題挑戦回数") %></div>
+        <div class="text-2xl font-semibold"><%= @quiz_count %></div>
+      </div>
+      <div class="rounded-xl border bg-gray-50 p-4">
+        <div class="text-xs text-gray-500 mb-1"><%= t(".review_count", default: "文章振り返り回数") %></div>
+        <div class="text-2xl font-semibold"><%= @review_count %></div>
+      </div>
+    </div>
   </div>
 
   <!-- トグル起動ボタン -->
