@@ -320,7 +320,7 @@ ja:
       pattern_input: "この意味の語句は？（入力）"
       from: "期間（FROM）"
       to: "期間（TO）"
-      tags: "タグで絞り込み(ANDのみ対応)"
+      tags: "タグで絞り込み(AND)"
       start: "10問を作成"
       back: "戻る"
     show:
