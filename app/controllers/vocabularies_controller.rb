@@ -41,7 +41,9 @@ end
   private
 
   def vocabulary_params
-    params.require(:vocabulary).permit(:word, :reading, :meaning, :example, :part_of_speech, vocabulary_tag_ids: [])
+    p = params.require(:vocabulary).permit(:word, :reading, :meaning, :example, :part_of_speech, vocabulary_tag_ids: [])
+    p[:vocabulary_tag_ids] ||= []
+    p
   end
 
   def set_vocabulary

@@ -8558,11 +8558,102 @@ var edit_toggle_controller_default = class extends Controller {
       this.tagsTargets.forEach((el) => el.classList.toggle("invisible", !on));
     }
   }
+  // ユーザー詳細用
+  enable() {
+    this.fieldTargets.forEach((el) => el.toggleAttribute("disabled", false));
+    if (this.hasSubmitTarget) {
+      this.submitTargets.forEach((el) => el.classList.remove("invisible"));
+    }
+  }
+  disable() {
+    this.fieldTargets.forEach((el) => el.toggleAttribute("disabled", true));
+    if (this.hasSubmitTarget) {
+      this.submitTargets.forEach((el) => el.classList.add("invisible"));
+    }
+  }
+};
+
+// app/javascript/controllers/tag_picker_controller.js
+var tag_picker_controller_default = class extends Controller {
+  static targets = ["search", "list"];
+  connect() {
+    this.sortSelectedOnTop();
+  }
+  filter() {
+    if (!this.hasListTarget) return;
+    const keyword = ((this.hasSearchTarget ? this.searchTarget.value : "") || "").toLowerCase().trim();
+    const labels = this.listTarget.querySelectorAll("label");
+    if (!keyword) {
+      labels.forEach((l) => l.style.display = "");
+      this.sortSelectedOnTop();
+      return;
+    }
+    labels.forEach((label) => {
+      const text = (label.innerText || "").toLowerCase();
+      label.style.display = text.includes(keyword) ? "" : "none";
+    });
+    this.sortSelectedOnTop();
+  }
+  sortSelectedOnTop() {
+    if (!this.hasListTarget) return;
+    const grid = this.listTarget.querySelector(".grid") || this.listTarget;
+    const labels = Array.from(grid.querySelectorAll("label"));
+    labels.sort((a, b) => {
+      const aChecked = a.querySelector('input[type="checkbox"]')?.checked ? 0 : 1;
+      const bChecked = b.querySelector('input[type="checkbox"]')?.checked ? 0 : 1;
+      if (aChecked !== bChecked) return aChecked - bChecked;
+      const aText = (a.innerText || "").trim().toLowerCase();
+      const bText = (b.innerText || "").trim().toLowerCase();
+      return aText.localeCompare(bText, "ja");
+    });
+    const frag = document.createDocumentFragment();
+    labels.forEach((l) => frag.appendChild(l));
+    grid.appendChild(frag);
+  }
+  // 検索クリア
+  clear() {
+    if (this.hasSearchTarget) {
+      this.searchTarget.value = "";
+      this.filter();
+      try {
+        this.searchTarget.focus();
+      } catch (_) {
+      }
+    }
+  }
+};
+
+// app/javascript/controllers/dropdown_controller.js
+var dropdown_controller_default = class extends Controller {
+  static targets = ["menu"];
+  toggle(event) {
+    event.preventDefault();
+    const hiddenNow = this.menuTarget.classList.toggle("hidden");
+    const expanded = !hiddenNow;
+    try {
+      const btn = event.currentTarget;
+      if (btn?.setAttribute) btn.setAttribute("aria-expanded", String(expanded));
+    } catch (_) {
+    }
+  }
+  outside(event) {
+    if (!this.element.contains(event.target)) this.close();
+  }
+  closeOnEscape(event) {
+    if (event.key === "Escape") this.close();
+  }
+  close() {
+    this.menuTarget.classList.add("hidden");
+    const btn = this.element.querySelector("button[aria-haspopup='menu']");
+    if (btn) btn.setAttribute("aria-expanded", "false");
+  }
 };
 
 // app/javascript/controllers/index.js
 application.register("hello", hello_controller_default);
 application.register("edit-toggle", edit_toggle_controller_default);
+application.register("tag-picker", tag_picker_controller_default);
+application.register("dropdown", dropdown_controller_default);
 /*! Bundled license information:
 
 @hotwired/turbo/dist/turbo.es2017-esm.js:

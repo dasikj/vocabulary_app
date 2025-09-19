@@ -8,3 +8,7 @@ import HelloController from "./hello_controller"
 import EditToggleController from "./edit_toggle_controller"
 application.register("hello", HelloController)
 application.register("edit-toggle", EditToggleController)
+import TagPickerController from "./tag_picker_controller"
+application.register("tag-picker", TagPickerController)
+import DropdownController from "./dropdown_controller"
+application.register("dropdown", DropdownController)

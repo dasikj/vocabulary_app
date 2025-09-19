@@ -28,58 +28,17 @@
                 class="rounded-xl border px-3 py-2 w-full text-left hover:bg-gray-100">
           <%= t("common.choice_tag") %>
         </button>
+        <% tags = SentenceTag.where(user: current_user).order(:name) %>
+        <% selected_ids = Array(@sentence.sentence_tag_ids).map(&:to_s) %>
+        <% sorted_tags = tags.sort_by { |t| selected_ids.include?(t.id.to_s) ? 0 : 1 } %>
 
-        <dialog id="sentenceTagPickerNew" class="p-0 w-full max-w-2xl rounded-2xl">
-          <div class="flex flex-col max-h-[70vh]">
-            <div class="px-4 py-3 border-b sticky top-0 bg-white rounded-t-2xl">
-              <div class="font-semibold"><%= t("common.choice_tag") %></div>
-            </div>
-
-            <div class="p-4 overflow-y-auto">
-              <% if tags.any? %>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <% tags.each do |tag| %>
-                    <label class="flex items-start gap-2 text-sm">
-                      <%= check_box_tag "sentence[sentence_tag_ids][]", tag.id,
-                                        selected_ids.include?(tag.id.to_s), id: dom_id(tag) %>
-                      <span class="break-words whitespace-normal leading-5">
-                        <%= tag.name %>
-                      </span>
-                    </label>
-                  <% end %>
-                </div>
-              <% else %>
-                <p class="text-gray-500 text-sm"><%= t("common.tag_none") %></p>
-              <% end %>
-            </div>
-
-            <div class="px-4 py-3 border-t bg-white sticky bottom-0 rounded-b-2xl flex justify-between">
-              <button type="button"
-                      onclick="(function(d){d.querySelectorAll('input[type=checkbox]').forEach(c=>c.checked=false)})(document.getElementById('sentenceTagPickerNew'))"
-                      class="px-4 py-2 rounded-xl border bg-white hover:shadow-lg
-                               active:translate-y-0.5
-                               transition duration-150">
-                <%= t("common.reset") %>
-              </button>
-              <div class="space-x-2">
-                <button type="button"
-                        onclick="document.getElementById('sentenceTagPickerNew').close()"
-                        class="px-4 py-2 rounded-xl border bg-white hover:shadow-lg
-                               active:translate-y-0.5
-                               transition duration-150">
-                  <%= t("common.close") %>
-                </button>
-                <button type="button"
-                        onclick="document.getElementById('sentenceTagPickerNew').close()"
-                        class="px-4 py-2 rounded-xl bg-orange-500 text-white hover:shadow-lg
-                               active:translate-y-0.5
-                               transition duration-150">
-                  <%= t("common.specify") %>
-                </button>
-              </div>
-            </div>
-          </div>
-        </dialog>
+        <%= render "shared/tag_picker",
+            id: "sentenceTagPickerNew",
+            field_name: "sentence[sentence_tag_ids][]",
+            tags: sorted_tags,
+            selected_ids: selected_ids,
+            title: t("common.choice_tag") %>
+            
       </div>
       <%# 作成ボタン %>
       <div class="pt-2">

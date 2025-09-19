@@ -20,4 +20,17 @@ export default class extends Controller {
       this.tagsTargets.forEach(el => el.classList.toggle("invisible", !on))
     }
   }
+  // ユーザー詳細用
+  enable() {
+  this.fieldTargets.forEach(el => el.toggleAttribute("disabled", false))
+  if (this.hasSubmitTarget) {
+    this.submitTargets.forEach(el => el.classList.remove("invisible"))
+    }
+  }
+    disable() {
+      this.fieldTargets.forEach(el => el.toggleAttribute("disabled", true))
+      if (this.hasSubmitTarget) {
+        this.submitTargets.forEach(el => el.classList.add("invisible"))
+    }
+  }
 }

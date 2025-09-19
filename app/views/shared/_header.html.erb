@@ -9,9 +9,24 @@
       <%= link_to t(".tag_edit"), tags_path, class: "hover:underline" %>
       <%= link_to t(".bookmark"), bookmarks_path, class: "hover:underline" %>
     </nav>
-    <nav class="flex space-x-4">
-      <%= link_to t(".user_show"), edit_user_registration_path, class: "hover:underline" %>
-      <%= link_to t(".logout"), destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: t(".confirm_logout") }, class: "hover:underline" %>
-    </nav>
+    <div data-controller="dropdown" class="relative">
+      <button type="button" class="flex items-center justify-center w-9 h-9 rounded-full bg-gray-200"
+              aria-haspopup="menu" aria-expanded="false"
+              data-action="click->dropdown#toggle click@window->dropdown#outside">
+        <span class="text-lg">👤</span>
+      </button>
+
+      <div class="absolute right-0 mt-2 w-44 rounded-xl bg-white shadow ring-1 ring-black/5 hidden overflow-hidden"
+           data-dropdown-target="menu" role="menu">
+        <%= link_to t(".user_show"), user_path,
+                    class: "block px-4 py-2 text-sm hover:bg-gray-50",
+                    role: "menuitem" %>
+        <%= button_to t(".logout"), destroy_user_session_path,
+                      method: :delete,
+                      form: { "data-turbo-confirm": t(".confirm_logout"), class: "m-0" },
+                      class: "w-full text-left block px-4 py-2 text-sm hover:bg-gray-50",
+                      role: "menuitem" %>
+      </div>
+    </div>
   </div>
 </header>

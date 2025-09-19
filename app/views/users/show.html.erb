@@ -1,0 +1,43 @@
+<div class="max-w-xl mx-auto space-y-6" data-controller="edit-toggle">
+  <h1 class="text-xl font-bold mb-4"><%= t(".title", default: "ユーザー情報") %></h1>
+
+  <%= form_with model: @user, url: user_path, method: :patch do |f| %>
+    <div class="rounded-2xl bg-white shadow p-6 space-y-4">
+      <!-- 名前 -->
+      <div>
+        <%= f.label :name, t(".name", default: "名前"), class: "block text-sm text-gray-600 mb-1" %>
+        <%= f.text_field :name,
+              class: "w-full rounded-xl border px-3 py-2",
+              disabled: true,
+              data: { "edit-toggle-target": "field" } %>
+      </div>
+
+      <!-- 編集ボタン群 -->
+      <div class="flex gap-2 invisible" data-edit-toggle-target="submit">
+        <%= f.submit t("common.update", default: "更新"), class: "w-full rounded-xl bg-blue-600 text-white py-2 hover:bg-blue-700 hover:shadow-lg active:translate-y-0.5 transition duration-150" %>
+        <button type="button"
+                class="w-full rounded-xl bg-white text-gray-900 py-2 hover:bg-gray-100 hover:shadow-lg active:translate-y-0.5 transition duration-150 border"
+                data-action="click->edit-toggle#disable">
+          <%= t("common.cancel", default: "キャンセル") %>
+        </button>
+      </div>
+    </div>
+  <% end %>
+
+  <!-- ユーザーステータス -->
+  <div class="rounded-2xl bg-white shadow p-6 grid grid-cols-2 gap-4">
+    <div><%= t(".vocab_count", default: "登録語彙数") %>: <%= @vocab_count %></div>
+    <div><%= t(".sentence_count", default: "登録文章数") %>: <%= @sentence_count %></div>
+    <div><%= t(".quiz_count", default: "語彙問題挑戦回数") %>: <%= @quiz_count %></div>
+    <div><%= t(".review_count", default: "文章振り返り回数") %>: <%= @review_count %></div>
+  </div>
+
+  <!-- トグル起動ボタン -->
+  <div>
+    <button type="button"
+            class="w-full rounded-xl bg-green-600 text-white py-2 hover:bg-green-700 hover:shadow-lg active:translate-y-0.5 transition duration-150"
+            data-action="click->edit-toggle#enable">
+      <%= t(".edit_name") %>
+    </button>
+  </div>
+</div>

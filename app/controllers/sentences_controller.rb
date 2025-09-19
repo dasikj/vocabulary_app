@@ -44,7 +44,9 @@ end
   private
 
   def sentence_params
-    params.require(:sentence).permit(:body, :sentence_category, sentence_tag_ids: [])
+    p = params.require(:sentence).permit(:body, :sentence_category, sentence_tag_ids: [])
+    p[:sentence_tag_ids] ||= []
+    p
   end
 
   def set_sentence

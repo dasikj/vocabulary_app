@@ -14,7 +14,9 @@ class Sentence < ApplicationRecord
     logic: 6,           # 論理
     gag: 7,             # ギャグ
     philosophy: 8,      # 哲学
-    other: 9           # その他
+    lines: 9,           # 台詞
+    explanation: 10,    # 説明
+    other: 11           # その他
   }
 
   validates :body, presence: true, length: { maximum: 500 }, uniqueness: true
