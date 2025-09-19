@@ -1,0 +1,56 @@
+<% content_for :title, full_title(t("vocab_quizzes.show.title", default: "語彙クイズ")) %>
+
+<div class="max-w-3xl mx-auto rounded-2xl bg-white shadow p-6 space-y-6 text-gray-900">
+  <div class="flex items-center justify-between">
+    <div class="text-sm text-gray-600">
+      <%= t("vocab_quizzes.show.progress", default: "問題 %{n}/%{t}", n: @index, t: @total) %>
+    </div>
+    <%= link_to t("vocab_quizzes.show.quit", default: "中断"), new_vocab_quiz_path, class: "text-sm text-gray-500 hover:underline" %>
+  </div>
+
+  <% if @pattern == "choice" %>
+    <h2 class="text-lg font-semibold"><%= t("vocab_quizzes.show.q_choice", default: "この語句の意味は？") %></h2>
+    <div class="text-2xl font-bold"><%= @vocab.word %></div>
+
+    <%= form_with url: vocab_quiz_path(id: "run", q: @index), method: :patch, data: { turbo: true } do %>
+      <div class="grid grid-cols-1 gap-3 mt-4">
+        <% @choices.each do |choice| %>
+          <label class="rounded-xl border px-4 py-3 hover:bg-gray-50 flex items-start gap-3 cursor-pointer">
+            <%= radio_button_tag :answer, choice, false, class: "mt-1 accent-blue-600" %>
+            <span><%= choice %></span>
+          </label>
+        <% end %>
+      </div>
+      <div class="mt-6">
+        <button class="rounded-xl bg-blue-600 text-white px-4 py-2 hover:bg-blue-700 transition hover:shadow-lg active:translate-y-0.5 duration-150">
+          <%= @index == @total ? t("vocab_quizzes.show.to_result", default: "結果を見る") : t("vocab_quizzes.show.next", default: "次へ") %>
+        </button>
+      </div>
+    <% end %>
+
+  <% else %>
+    <h2 class="text-lg font-semibold"><%= t("vocab_quizzes.show.q_input", default: "この意味の語句は？") %></h2>
+    <div class="rounded-xl border bg-gray-50 px-4 py-3"><%= @vocab.meaning %></div>
+    <% if @vocab.respond_to?(:part_of_speech) && @vocab.part_of_speech.present? %>
+      <div class="mt-2 text-xs text-gray-600">
+        <span class="inline-flex items-center gap-1 rounded-full border px-2 py-0.5 bg-white">
+          <span class="opacity-70"><%= t("bookmarks.index.part_of_speech", default: "品詞") %>:</span>
+          <span class="font-medium">
+            <%= t("enums.vocabulary.part_of_speech.#{@vocab.part_of_speech}", default: @vocab.part_of_speech.humanize) %>
+          </span>
+        </span>
+      </div>
+    <% end %>
+
+    <%= form_with url: vocab_quiz_path(id: "run", q: @index), method: :patch, data: { turbo: true } do %>
+      <div class="mt-4">
+        <%= text_field_tag :answer, "", class: "w-full rounded-xl border px-3 py-2", placeholder: t("vocab_quizzes.show.placeholder_word", default: "語彙を入力") %>
+      </div>
+      <div class="mt-6">
+        <button class="rounded-xl bg-blue-600 text-white px-4 py-2 hover:bg-blue-700 transition hover:shadow-lg active:translate-y-0.5 duration-150">
+          <%= @index == @total ? t("vocab_quizzes.show.to_result", default: "結果を見る") : t("vocab_quizzes.show.next", default: "次へ") %>
+        </button>
+      </div>
+    <% end %>
+  <% end %>
+</div>

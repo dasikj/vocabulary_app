@@ -1,0 +1,44 @@
+<% content_for :title, full_title(t("vocab_quizzes.result.title", default: "結果")) %>
+
+<div class="max-w-3xl mx-auto rounded-2xl bg-white shadow p-6 space-y-6">
+  <h1 class="text-xl font-semibold"><%= t("vocab_quizzes.result.heading", default: "結果") %></h1>
+  <p class="text-2xl"><%= t("vocab_quizzes.result.score", default: "正答率：%{s}/%{t}", s: @score, t: @total) %></p>
+
+  <details class="mt-2">
+    <summary class="cursor-pointer text-sm text-gray-600"><%= t("vocab_quizzes.result.detail", default: "回答詳細を表示") %></summary>
+    <ul class="mt-2 space-y-2">
+      <% @vocabularies.each_with_index do |v, i| %>
+        <% a = @answers[(i+1).to_s] %>
+        <li class="rounded-xl border px-4 py-3">
+          <div class="font-semibold"><%= v.word %></div>
+          <div class="text-sm text-gray-600"><%= v.meaning %></div>
+          <div class="mt-1 text-sm">
+            <% if a&.dig("correct") %>
+              <span class="text-green-600">✔ <%= t("vocab_quizzes.result.correct", default: "正解") %></span>
+            <% else %>
+              <span class="text-red-600">✘ <%= t("vocab_quizzes.result.wrong", default: "不正解") %></span>
+              <% if a %>
+                <span class="ml-2 text-gray-600"><%= t("vocab_quizzes.result.your", default: "あなたの回答") %>：<%= a["user_answer"] %></span>
+              <% end %>
+            <% end %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </details>
+
+  <div class="flex gap-2">
+    <% cond = (@cond || {}).with_indifferent_access %>
+    <%= form_with url: vocab_quizzes_path, method: :post, class: "inline" do %>
+      <%= hidden_field_tag :pattern, cond[:pattern] %>
+      <% Array(cond[:vocabulary_tags_id_in]).each do |tid| %>
+        <%= hidden_field_tag "vocabulary_tags_id_in[]", tid %>
+      <% end %>
+      <%= hidden_field_tag :from, cond[:from] %>
+      <%= hidden_field_tag :to,   cond[:to] %>
+      <button class="rounded-xl border px-4 py-2 hover:bg-gray-100"><%= t("vocab_quizzes.result.retry", default: "同条件で再挑戦") %></button>
+    <% end %>
+
+    <%= link_to t("vocab_quizzes.result.back_home", default: "トップへ"), top_path, class: "rounded-xl bg-blue-600 text-white px-4 py-2 hover:bg-blue-700" %>
+  </div>
+</div>

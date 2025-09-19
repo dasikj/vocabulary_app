@@ -1,0 +1,58 @@
+<% content_for :title, full_title(t("vocab_quizzes.new.title", default: "語彙クイズを作成")) %>
+
+<div class="max-w-3xl mx-auto rounded-2xl bg-white shadow p-6 space-y-6 text-gray-900">
+  <h1 class="text-xl font-semibold"><%= t("vocab_quizzes.new.heading", default: "語彙の問題を作成") %></h1>
+
+  <%= form_with url: vocab_quizzes_path, method: :post, data: { turbo: true } do %>
+    <div class="space-y-6">
+      <!-- 出題パターン -->
+      <div>
+        <label class="block text-sm text-gray-600 mb-2"><%= t("vocab_quizzes.new.pattern", default: "出題パターン") %></label>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <label class="inline-flex items-center gap-2 cursor-pointer">
+            <%= radio_button_tag :pattern, "choice", true, class: "accent-blue-600" %>
+            <span><%= t("vocab_quizzes.new.pattern_choice", default: "この語句の意味は？（4択）") %></span>
+          </label>
+          <label class="inline-flex items-center gap-2 cursor-pointer">
+            <%= radio_button_tag :pattern, "input", false, class: "accent-blue-600" %>
+            <span><%= t("vocab_quizzes.new.pattern_input", default: "この意味の語句は？（入力）") %></span>
+          </label>
+        </div>
+      </div>
+
+      <!-- 期間 / タグ 絞り込み -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">
+        <div>
+          <label class="block text-sm text-gray-600 mb-1"><%= t("vocab_quizzes.new.from", default: "期間（FROM）") %></label>
+          <%= date_field_tag :from, nil, class: "w-full rounded-xl border px-3 py-2" %>
+        </div>
+        <div>
+          <label class="block text-sm text-gray-600 mb-1"><%= t("vocab_quizzes.new.to", default: "期間（TO）") %></label>
+          <%= date_field_tag :to, nil, class: "w-full rounded-xl border px-3 py-2" %>
+        </div>
+        <div>
+          <label class="block text-sm text-gray-600 mb-1"><%= t("vocab_quizzes.new.tags", default: "タグで絞り込み") %></label>
+          <button type="button" onclick="document.getElementById('quizVocabTagDialog').showModal()"
+                  class="w-full rounded-xl border px-3 py-2 hover:bg-gray-50 bg-white text-left">
+            <%= t("common.choice_tag", default: "タグを選択") %>
+          </button>
+        </div>
+      </div>
+
+      <div class="flex gap-2">
+        <button class="rounded-xl bg-blue-600 text-white px-4 py-2 hover:bg-blue-700 transition hover:shadow-lg active:translate-y-0.5 duration-150">
+          <%= t("vocab_quizzes.new.start", default: "10問を作成") %>
+        </button>
+        <%= link_to t("vocab_quizzes.new.back", default: "戻る"), top_path, class: "rounded-xl border px-4 py-2 hover:bg-gray-100" %>
+      </div>
+
+      <%# 語彙タグピッカー（フォーム内に配置して送信対象にする） %>
+      <%= render "shared/tag_picker",
+            id: "quizVocabTagDialog",
+            field_name: "vocabulary_tags_id_in[]",
+            tags: @vocabulary_tags,
+            selected_ids: [],
+            title: t("common.choice_tag", default: "タグを選択") %>
+    </div>
+  <% end %>
+</div>
