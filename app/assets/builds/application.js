@@ -8733,12 +8733,40 @@ var autocomplete_controller_default = class extends Controller {
   }
 };
 
+// app/javascript/controllers/search_toggle_controller.js
+var search_toggle_controller_default = class extends Controller {
+  static targets = ["tab", "panel"];
+  static values = { default: { type: String, default: "sentence" } };
+  connect() {
+    const params = new URLSearchParams(window.location.search);
+    const urlTab = params.get("tab");
+    const initial = urlTab || this.defaultValue;
+    this.show(initial);
+  }
+  select(event) {
+    const kind = event.currentTarget.dataset.kind;
+    this.show(kind);
+  }
+  show(kind) {
+    this.tabTargets.forEach((el) => {
+      const active = el.dataset.kind === kind;
+      el.classList.toggle("bg-gray-100", active);
+      el.classList.toggle("text-gray-900", active);
+      el.classList.toggle("text-gray-600", !active);
+    });
+    this.panelTargets.forEach((el) => {
+      el.classList.toggle("hidden", el.dataset.kind !== kind);
+    });
+  }
+};
+
 // app/javascript/controllers/index.js
 application.register("hello", hello_controller_default);
 application.register("edit-toggle", edit_toggle_controller_default);
 application.register("tag-picker", tag_picker_controller_default);
 application.register("dropdown", dropdown_controller_default);
 application.register("autocomplete", autocomplete_controller_default);
+application.register("search-toggle", search_toggle_controller_default);
 /*! Bundled license information:
 
 @hotwired/turbo/dist/turbo.es2017-esm.js:

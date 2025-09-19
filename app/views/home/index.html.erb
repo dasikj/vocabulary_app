@@ -12,41 +12,29 @@
     </div>
   </section>
 
-  <!-- 検索ブロック -->
-  <section class="rounded-2xl bg-white shadow p-6 space-y-4 text-gray-900">
+  <!-- 検索ブロック（トグルで 文章 / 語彙 切替） -->
+  <section class="rounded-2xl bg-white shadow p-6 space-y-4 text-gray-900"
+           data-controller="search-toggle" data-search-toggle-default-value="sentence">
     <h2 class="text-lg font-semibold">登録した言葉を検索</h2>
 
     <!-- 文章 / 語彙 トグル -->
     <div class="inline-flex rounded-xl border overflow-hidden">
-      <button type="button" class="px-4 py-2 text-sm font-medium bg-gray-100">文章</button>
-      <button type="button" class="px-4 py-2 text-sm font-medium">語彙</button>
+      <button type="button" data-search-toggle-target="tab" data-kind="sentence"
+              data-action="click->search-toggle#select"
+              class="px-4 py-2 text-sm font-medium text-gray-600">文章</button>
+      <button type="button" data-search-toggle-target="tab" data-kind="vocabulary"
+              data-action="click->search-toggle#select"
+              class="px-4 py-2 text-sm font-medium text-gray-600">語彙</button>
     </div>
 
-    <!-- フリーワード -->
-    <div>
-      <input type="text" placeholder="検索したい語彙 / 文章を入力"
-             class="w-full rounded-xl border px-4 py-2 placeholder-gray-400" />
+    <!-- パネル：文章検索 -->
+    <div data-search-toggle-target="panel" data-kind="sentence" class="w-full">
+      <%= render "sentences/search_form", q: @q_sentence, clear_path: top_path %>
     </div>
 
-    <!-- カテゴリ（語彙=品詞 / 文章=種類） -->
-    <div class="flex items-center gap-3">
-      <label class="text-sm text-gray-700">カテゴリ</label>
-      <select class="rounded-xl border px-3 py-2">
-        <option>絞らない</option>
-      </select>
-    </div>
-
-    <!-- タグ展開（AND/ORは後でJS） -->
-    <div class="space-y-2">
-      <button type="button" class="text-sm text-blue-600 hover:underline">+ タグ</button>
-      <div class="hidden border rounded-xl p-3" id="tag-panel">
-        <p class="text-sm text-gray-500">タグを選んで絞り込み（AND / OR 対応予定）</p>
-      </div>
-    </div>
-
-    <!-- 検索ボタン -->
-    <div>
-      <button type="button" class="rounded-xl bg-blue-600 text-white px-6 py-2">検索</button>
+    <!-- パネル：語彙検索 -->
+    <div data-search-toggle-target="panel" data-kind="vocabulary" class="hidden w-full">
+      <%= render "vocabularies/search_form", q: @q_vocab, clear_path: top_path %>
     </div>
   </section>
 
