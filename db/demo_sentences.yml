@@ -39,67 +39,67 @@ tags:
 
 sentences:
   - body: "探せ！この世の全てをそこに置いてきた！"
-    sentence_category: "conversation"
+    sentence_category: "lines"
     sentence_tags: ["ワンピース","ゴールド・ロジャー"]
 
   - body: "海賊王に!!! 俺はなるっ!!!"
-    sentence_category: "conversation"
+    sentence_category: "lines"
     sentence_tags: ["ワンピース","ルフィ"]
 
   - body: "背中の傷は剣士の恥だ。"
-    sentence_category: "logic"
+    sentence_category: "lines"
     sentence_tags: ["ワンピース","ゾロ"]
 
   - body: "オラわくわくすっぞ！"
-    sentence_category: "expression"
+    sentence_category: "lines"
     sentence_tags: ["ドラゴンボール","孫悟空"]
 
   - body: "俺は火影になるってばよ！誰にも笑わせやしねぇ！"
-    sentence_category: "conversation"
+    sentence_category: "lines"
     sentence_tags: ["ナルト","うずまきナルト"]
 
   - body: "護るためだろ？護りたいものがあるから俺は斬るんだ！"
-    sentence_category: "logic"
+    sentence_category: "lines"
     sentence_tags: ["BLEACH","黒崎一護"]
 
   - body: "俺が仕留める。お前らは心臓を捧げろ。"
-    sentence_category: "logic"
+    sentence_category: "lines"
     sentence_tags: ["進撃の巨人","リヴァイ"]
 
   - body: "駆逐してやる！この世から一匹残らず！"
-    sentence_category: "expression"
+    sentence_category: "lines"
     sentence_tags: ["進撃の巨人","エレン"]
 
   - body: "逃げちゃダメだ、逃げちゃダメだ、逃げちゃダメだ！"
-    sentence_category: "psychology"
+    sentence_category: "lines"
     sentence_tags: ["エヴァンゲリオン","碇シンジ"]
 
   - body: "君は死ぬために生きているわけじゃない。生きるために生きるんだよ。"
-    sentence_category: "psychology"
+    sentence_category: "lines"
     sentence_tags: ["エヴァンゲリオン","渚カヲル"]
 
   - body: "俺を誰だと思ってやがる！天を突くドリル、グレン団のシモン様だ！"
-    sentence_category: "expression"
+    sentence_category: "lines"
     sentence_tags: ["グレンラガン","シモン"]
 
   - body: "俺の後ろに立つな。"
-    sentence_category: "conversation"
+    sentence_category: "lines"
     sentence_tags: ["銀魂","坂田銀時"]
 
   - body: "撃っていいのは、撃たれる覚悟のある奴だけだ。"
-    sentence_category: "logic"
+    sentence_category: "lines"
     sentence_tags: ["コードギアス","ルルーシュ"]
 
   - body: "この世界は選ばれし観測者によって収束する！我が名は鳳凰院凶真！"
-    sentence_category: "expression"
+    sentence_category: "lines"
     sentence_tags: ["シュタインズ・ゲート","岡部倫太郎"]
 
   - body: "俺が必ずお前を救ってみせる！何度でもやり直して！"
-    sentence_category: "expression"
+    sentence_category: "lines"
     sentence_tags: ["リゼロ","スバル"]
 
   - body: "無駄無駄無駄無駄ァ！！"
-    sentence_category: "expression"
+    sentence_category: "lines"
     sentence_tags: ["ジョジョ","ディオ"]
 
   - body: "私はその人を常に先生と呼んでいた。"

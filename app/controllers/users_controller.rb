@@ -1,25 +1,28 @@
 class UsersController < ApplicationController
-  # ログイン済みならトップページへリダイレクト（new, createアクションのみ）
-  before_action :redirect_if_logged_in, only: %i[new create]
-  skip_before_action :require_login, only: %i[new create]
-  # GET /users/new
-  def new
-    @user = User.new
+  before_action :authenticate_user!
+
+  def show
+    @user = current_user
+    # ダミーデータ
+    @vocab_count    = 0
+    @sentence_count = 0
+    @quiz_count     = 0
+    @review_count   = 0
   end
-  # POST /users
-  def create
-    @user = User.new(user_params)
-    if @user.save
-      redirect_to new_session_path, notice: t("flash.users.create.success")
+
+  def update
+    @user = current_user
+    if @user.update(user_params)
+      redirect_to user_path, notice: t("flash.users.update.success", default: "ユーザー情報を更新しました")
     else
-      flash.now[:alert] = t("flash.users.create.failure")
-      render :new, status: :unprocessable_entity
+      flash.now[:alert] = t("flash.users.update.failure", default: "更新に失敗しました")
+      render :show, status: :unprocessable_entity
     end
   end
 
   private
-  # Strong Parametersで許可するパラメータを指定
+
   def user_params
-    params.require(:user).permit(:email, :name, :password, :password_confirmation)
+    params.require(:user).permit(:name)
   end
 end

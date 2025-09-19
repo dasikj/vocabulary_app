@@ -19,52 +19,16 @@
             class="rounded-xl border px-3 py-2 flex bg-white text-left hover:bg-gray-100">
       <%= t("common.choice_tag") %>
     </button>
+    <% tags = VocabularyTag.where(user: current_user).order(:name) %>
+    <% selected = Array(params.dig(:q, :vocabulary_tags_id_in)).map(&:to_s) %>
+    <% sorted_tags = tags.sort_by { |t| selected.include?(t.id.to_s) ? 0 : 1 } %>
 
-    <dialog id="vocabularyTagDialog" class="p-0 w-full max-w-2xl rounded-2xl">
-      <div class="flex flex-col max-h-[70vh]">
-        <div class="px-4 py-3 border-b sticky top-0 bg-white rounded-t-2xl">
-          <div class="font-semibold"><%= t("common.choice_tag") %></div>
-        </div>
-
-        <div class="p-4 overflow-y-auto">
-          <% if tags.any? %>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <% tags.each do |tag| %>
-                <label class="flex items-start gap-2 text-sm">
-                  <%= check_box_tag "q[vocabulary_tags_id_in][]",
-                                    tag.id,
-                                    selected.include?(tag.id.to_s),
-                                    id: dom_id(tag) %>
-                  <span class="break-words whitespace-normal leading-5"><%= tag.name %></span>
-                </label>
-              <% end %>
-            </div>
-          <% else %>
-            <p class="text-gray-500 text-sm"><%= t("common.tag_none") %></p>
-          <% end %>
-        </div>
-
-        <div class="px-4 py-3 border-t bg-white sticky bottom-0 rounded-b-2xl flex justify-between">
-          <button type="button"
-                  onclick="(function(d){d.querySelectorAll('input[type=checkbox]').forEach(c=>c.checked=false)})(document.getElementById('vocabularyTagDialog'))"
-                  class="px-4 py-2 rounded-xl border bg-white hover:shadow-lg active:translate-y-0.5 transition duration-150">
-            <%= t("common.reset")%>
-          </button>
-          <div class="space-x-2">
-            <button type="button"
-                    onclick="document.getElementById('vocabularyTagDialog').close()"
-                    class="px-4 py-2 rounded-xl border bg-white hover:shadow-lg active:translate-y-0.5 transition duration-150">
-              <%= t("common.close")%>
-            </button>
-            <button type="button"
-                    onclick="document.getElementById('vocabularyTagDialog').close()"
-                    class="px-4 py-2 rounded-xl bg-orange-500 text-white hover:shadow-lg active:translate-y-0.5 transition duration-150">
-              <%= t("common.specify")%>
-            </button>
-          </div>
-        </div>
-      </div>
-    </dialog>
+    <%= render "shared/tag_picker",
+            id: "vocabularyTagDialog",
+            field_name: "q[vocabulary_tags_id_in][]",
+            tags: sorted_tags,
+            selected_ids: selected,
+            title: t("common.choice_tag") %>
   </div>
 
 <%# 検索ボタン + 日付絞り込み（下段） %>

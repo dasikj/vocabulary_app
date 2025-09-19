@@ -28,6 +28,10 @@ ja:
     created_day: "作成日"
     updated_day: "更新日"
     remove: "解除しますか？"
+    search_tag: "タグを検索"
+    clear_search: "検索文字クリア"
+    update: "更新"
+    cancel: "キャンセル"
   passwords:
     edit:
       title: "新しいパスワードを設定"
@@ -59,9 +63,14 @@ ja:
     name: "ユーザー名を入力"
     keyword: "キーワードを入力"
   users:
-    new:
-      title: "ユーザー登録"
-      return_login: "ログインページへ戻る"
+    show:
+      title: "ユーザー情報"
+      name: "名前"
+      edit_name: "ユーザー名を変更"
+      vocab_count: "登録語彙数"
+      sentence_count: "登録文章数"
+      quiz_count: "語彙問題挑戦回数"
+      review_count: "文章振り返り回数"
   sessions:
     new:
       title: "ログイン"
@@ -151,7 +160,9 @@ ja:
         expression: "表現"     
         logic: "論理"          
         gag: "ギャグ"
-        philosophy: "哲学"            
+        philosophy: "哲学"
+        lines: "台詞"  
+        explanation: "説明"          
         other: "その他"          
   tags:
     index:

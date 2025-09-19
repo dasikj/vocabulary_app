@@ -1,0 +1,67 @@
+<%# 共通タグピッカー: 呼び出し側から以下のローカル変数を渡すこと
+  id:           dialog の HTML id（例: "vocabularyTagPickerNew"）
+  field_name:   チェックボックス name 属性（例: "vocabulary[vocabulary_tag_ids][]" / "q[vocabulary_tags_id_in][]"）
+  tags:         表示するタグ配列（呼び出し側で selected_ids を元に sort_by 済みがオススメ）
+  selected_ids: 既に選択済みのID配列（文字列配列）
+  title:        タイトル（省略時は t('common.choice_tag')）
+%>
+
+<dialog id="<%= id %>" class="p-0 w-full max-w-2xl rounded-2xl" data-controller="tag-picker">
+  <div class="flex flex-col h-[70vh]">
+    <!-- ヘッダー: タイトル + 検索ボックス -->
+    <div class="px-4 py-3 border-b sticky top-0 bg-white rounded-t-2xl">
+      <div class="font-semibold"><%= title || t("common.choice_tag") %></div>
+      <input type="text"
+             placeholder="<%= t('common.search_tag') %>"
+             data-tag-picker-target="search"
+             data-action="input->tag-picker#filter"
+             class="w-full mt-2 rounded-xl border px-3 py-2 text-sm" />
+      <div class="mt-1 flex justify-end">
+        <button type="button"
+                data-action="tag-picker#clear"
+                class="text-xs text-gray-500 hover:text-gray-700">
+          <%= t("common.clear_search") %>
+        </button>
+      </div>
+    </div>
+
+    <!-- 一覧 -->
+    <div class="p-4 overflow-y-auto flex-1 min-h-[240px]" style="scrollbar-gutter: stable;" data-tag-picker-target="list">
+      <% if tags.any? %>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <% tags.each do |tag| %>
+            <label class="flex items-start gap-2 text-sm">
+              <%= check_box_tag field_name, tag.id,
+                                selected_ids.include?(tag.id.to_s),
+                                id: dom_id(tag) %>
+              <span class="break-words whitespace-normal leading-5"><%= tag.name %></span>
+            </label>
+          <% end %>
+        </div>
+      <% else %>
+        <p class="text-gray-500 text-sm"><%= t("common.tag_none") %></p>
+      <% end %>
+    </div>
+
+    <!-- フッター -->
+    <div class="px-4 py-3 border-t bg-white sticky bottom-0 rounded-b-2xl flex justify-between">
+      <button type="button"
+              onclick="(function(d){d.querySelectorAll('input[type=checkbox]').forEach(c=>c.checked=false)})(document.getElementById('<%= id %>'))"
+              class="px-4 py-2 rounded-xl border bg-white hover:shadow-lg active:translate-y-0.5 transition duration-150">
+        <%= t("common.reset") %>
+      </button>
+      <div class="space-x-2">
+        <button type="button"
+                onclick="document.getElementById('<%= id %>').close()"
+                class="px-4 py-2 rounded-xl border bg-white hover:shadow-lg active:translate-y-0.5 transition duration-150">
+          <%= t("common.close") %>
+        </button>
+        <button type="button"
+                onclick="document.getElementById('<%= id %>').close()"
+                class="px-4 py-2 rounded-xl bg-orange-500 text-white hover:shadow-lg active:translate-y-0.5 transition duration-150">
+          <%= t("common.specify") %>
+        </button>
+      </div>
+    </div>
+  </div>
+</dialog>

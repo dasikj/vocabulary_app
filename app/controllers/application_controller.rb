@@ -20,10 +20,4 @@ class ApplicationController < ActionController::Base
   end
 
   private
-  # ログイン済みならトップページへリダイレクト
-  def redirect_if_logged_in
-    if user_signed_in?
-      redirect_to top_path, notice: t("flash.sessions.already_logged_in")
-    end
-  end
 end
