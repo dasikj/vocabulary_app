@@ -7,7 +7,7 @@ class CreateSentenceTaggings < ActiveRecord::Migration[7.2]
       t.references :sentence_tag,  null: false, foreign_key: true
       t.timestamps
     end
-    add_index :sentence_taggings, [:sentence_id, :sentence_tag_id], unique: true
+    add_index :sentence_taggings, [ :sentence_id, :sentence_tag_id ], unique: true
   end
 
   def down

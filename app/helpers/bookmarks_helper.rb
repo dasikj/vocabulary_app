@@ -8,7 +8,7 @@ module BookmarksHelper
     current_user&.bookmarks&.find_by(bookmarkable: record)
   end
 
-    # タグ名の配列化（モデル差異を吸収）
+  # タグ名の配列化（モデル差異を吸収）
   def tags_for(record)
     if record.respond_to?(:tags)
       Array(record.tags).map { |t| t.respond_to?(:name) ? t.name : t.to_s }

@@ -1,6 +1,5 @@
 module Autocomplete
   class BaseController < ApplicationController
-    before_action :authenticate_user!
     private
     def term
       params[:term].to_s.strip
