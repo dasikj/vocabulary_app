@@ -9,11 +9,13 @@ ja:
     back: "戻る"
     color: "色"
     clear: "クリア"
+    color_clear: "色をクリア"
     search: "検索"
     color_picker: "カラーを選択 または#RGB/#RRGGBBで入力"
     return: "戻る"
     tag: "タグ"
     choice_tag: "タグを選択(AND検索)"
+    new_choice_tag: "タグを選択(最大10個まで)"
     tag_none: "タグがありません"
     specify: "指定する"
     reset: "リセット"
@@ -32,6 +34,8 @@ ja:
     clear_search: "検索文字クリア"
     update: "更新"
     cancel: "キャンセル"
+    return_index: "タグ一覧/編集ページへ"
+    return_tag_index: "各種タグメニューへ戻る"
   passwords:
     edit:
       title: "新しいパスワードを設定"
@@ -71,6 +75,8 @@ ja:
       sentence_count: "登録文章数"
       quiz_count: "語彙問題挑戦回数"
       review_count: "文章振り返り回数"
+    new:
+      return_login: "ログインページへ戻る"  
   sessions:
     new:
       title: "ログイン"
@@ -139,6 +145,7 @@ ja:
     sentence_reviews:
       too_few: "登録されている文章が少なすぎます（10個以上必要）"
       no_session: "復習が未作成です"
+
   home:
     index:
       title: "トップページ"
@@ -338,6 +345,8 @@ ja:
       tags: "タグで絞り込み(AND方式)"
       start: "問題を作成(10問)"
       back: "戻る"
+      only_favorites: "お気に入りのみ"
+
     show:
       title: "語彙クイズ"
       progress: "問題 %{n}/%{t}"
@@ -365,6 +374,7 @@ ja:
       to: "期間で指定（TO）"
       tags: "タグで絞り込み(AND方式)"
       start: "文章を振り返る(10件)"
+      only_favorites: "お気に入りのみ"
     show:
       title: "文章を振り返り中"
       heading: "文章を振り返り中"

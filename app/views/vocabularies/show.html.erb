@@ -86,5 +86,5 @@
       </div>
     </div>
   <% end %>
-  <%= link_to t("common.return"), vocabularies_path, class: "ml-2 underline" %>
+  <%= link_to t("common.return"), (request.referer.presence || vocabularies_path), class: "ml-2 underline" %>
 </div>

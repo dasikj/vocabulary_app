@@ -12,8 +12,28 @@ class VocabQuizzesController < ApplicationController
     tag_ids = Array(params[:vocabulary_tags_id_in]).map(&:to_i).reject(&:zero?)
     from    = params[:from].presence
     to      = params[:to].presence
+    only_favorites = params[:only_favorites].present?
 
     scope = current_user.vocabularies
+
+    # お気に入りのみ（ユーザーのブックマーク）に絞る（存在する関連に応じて安全に絞り込み）
+    if only_favorites
+      if current_user.respond_to?(:favorite_vocabularies)
+        # 典型: has_many :favorite_vocabularies
+        scope = current_user.favorite_vocabularies.merge(scope)
+      elsif Vocabulary.reflect_on_association(:vocabulary_bookmarks)
+        # 典型: Vocabulary has_many :vocabulary_bookmarks (user_id, vocabulary_id)
+        scope = scope.joins(:vocabulary_bookmarks).where(vocabulary_bookmarks: { user_id: current_user.id })
+      elsif defined?(VocabularyFavorite)
+        # 典型: 中間テーブル VocabularyFavorite(user_id, vocabulary_id)
+        scope = scope.where(id: VocabularyFavorite.where(user_id: current_user.id).select(:vocabulary_id))
+      elsif defined?(Bookmark)
+        # 典型: ポリモーフィック Bookmark
+        scope = scope.where(id: Bookmark.where(user_id: current_user.id, bookmarkable_type: "Vocabulary").select(:bookmarkable_id))
+      else
+        # 何もしない（関連が不明）
+      end
+    end
 
     # 期間フィルタ
     scope = scope.where("vocabularies.created_at >= ?", from.to_date.beginning_of_day) if from
@@ -53,7 +73,8 @@ class VocabQuizzesController < ApplicationController
       pattern: pattern,
       vocabulary_tags_id_in: tag_ids,
       from: from,
-      to: to
+      to: to,
+      only_favorites: only_favorites
     }
 
     redirect_to vocab_quiz_path(id: "run", q: 1)

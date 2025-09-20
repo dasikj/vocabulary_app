@@ -71,5 +71,5 @@
       </div>
     </div>
   <% end %>
-   <%= link_to t("common.return"), sentences_path, class: "ml-2 underline" %>
+    <%= link_to t("common.return"), (request.referer.presence || sentences_path), class: "ml-2 underline" %>
 </div>
