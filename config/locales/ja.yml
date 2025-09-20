@@ -18,9 +18,16 @@ ja:
         update: "更新"
         delete: "削除"
         vocabulary_tag: "タグ"
+        vocabulary_tag_ids: "タグ"
+        vocabulary_tags: "タグ"
       form:
         confirm: "本当に削除しますか？"
       sentence:
         body: "文"
         sentence_category: "種類"
         sentence_tags: "タグ"
+  activemodel:
+    attributes:
+      vocabulary:
+        vocabulary_tags: "タグ"
+        vocabulary_tag_ids: "タグ"      

@@ -22,11 +22,12 @@
 
         <button type="button" class="rounded border border-gray-300 bg-white px-3 py-1.5 text-sm text-gray-700 hover:bg-gray-100 hover:shadow-sm active:translate-y-0.5 transition duration-150"
                 onclick="const p=this.parentElement; p.querySelector('input[type=color]').value=''; const t=p.querySelector('[data-hex]'); if(t) t.value=''; const chip=p.querySelector('[data-chip]'); if(chip) chip.style.backgroundColor='transparent'">
-          <%= t("common.clear") %>
+          <%= t("common.color_clear") %>
         </button>
       </div>
       <p class="text-xs text-white mt-1"><%=t("common.color_picker")%></p>
     <%= f.submit t("common.create"), class: "w-40 rounded-xl bg-green-600 text-white px-6 py-2 hover:bg-green-700 hover:shadow-lg active:translate-y-0.5 transition duration-150" %>
-    <%= link_to t("common.return"), tags_path, class: "ml-2 underline" %>
+    <%= link_to t("common.return_tag_index"), tags_path, class: "ml-2 underline" %>
+    <%= link_to t("common.return_index"), vocabulary_tags_path, class: "ml-2 underline" %>
   <% end %>
 </div>
