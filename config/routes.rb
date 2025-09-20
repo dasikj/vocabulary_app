@@ -1,70 +1,65 @@
 Rails.application.routes.draw do
   # Devise: disable registrations edit/update, keep sign up (new/create)
-  devise_for :users, skip: [:registrations]
+  devise_for :users, skip: [ :registrations ]
   as :user do
-    get  'users/sign_up', to: 'devise/registrations#new',    as: :new_user_registration
-    post 'users',         to: 'devise/registrations#create', as: :user_registration
+    get  "users/sign_up", to: "devise/registrations#new",    as: :new_user_registration
+    post "users",         to: "devise/registrations#create", as: :user_registration
   end
 
   # ユーザー詳細（自分用）
-  resource :user, only: [:show, :update]
+  resource :user, only: [ :show, :update ]
 
   # ログイン状態別 root
   authenticated :user do
-    root to: 'home#index', as: :authenticated_root
+    root to: "home#index", as: :authenticated_root
   end
   devise_scope :user do
-    root to: 'devise/sessions#new', as: :unauthenticated_root
+    root to: "devise/sessions#new", as: :unauthenticated_root
   end
 
   # 既存のページ
-  get 'top', to: 'home#index', as: 'top'
-  get '/tags', to: 'tags#index'
+  get "top", to: "home#index", as: "top"
+  get "/tags", to: "tags#index"
 
   # 語彙/文章
-  resources :vocabularies, only: [:new, :create, :index, :update, :destroy, :show]
-  resources :sentences,    only: [:new, :create, :index, :update, :destroy, :show]
+  resources :vocabularies, only: [ :new, :create, :index, :update, :destroy, :show ]
+  resources :sentences,    only: [ :new, :create, :index, :update, :destroy, :show ]
 
   # タグ
   resources :sentence_tags,   only: %i[index new create update destroy]
   resources :vocabulary_tags, only: %i[index new create update destroy]
 
   # お気に入り
-  resources :bookmarks, only: [:index, :create, :destroy]
+  resources :bookmarks, only: [ :index, :create, :destroy ]
 
   # 語彙クイズ
-  authenticate :user do
-    resources :vocab_quizzes, only: [:new, :create, :show, :update] do
-      collection do
-        get :result
-      end
+  resources :vocab_quizzes, only: [ :new, :create, :show, :update ] do
+    collection do
+      get :result
     end
   end
 
+
   # 文章振り返り
-  authenticate :user do
-    resources :sentence_reviews, only: [:new, :create, :show] do
-      collection do
-        post :complete   #（helper: complete_sentence_reviews_path）
-      end
+  resources :sentence_reviews, only: [ :new, :create, :show ] do
+    collection do
+      post :complete   # （helper: complete_sentence_reviews_path）
     end
   end
 
   # ダッシュボード
-  resource :dashboard, only: [:show]
+  resource :dashboard, only: [ :show ]
 
   # オートコンプリート
-  authenticate :user do
-    namespace :autocomplete, defaults: { format: :json } do
-      get 'vocabularies',     to: 'vocabularies#index'
-      get 'sentences',        to: 'sentences#index'
-      get 'vocabulary_tags',  to: 'vocabulary_tags#index'
-      get 'sentence_tags',    to: 'sentence_tags#index'
-    end
+  namespace :autocomplete, defaults: { format: :json } do
+    get "vocabularies",     to: "vocabularies#index"
+    get "sentences",        to: "sentences#index"
+    get "vocabulary_tags",  to: "vocabulary_tags#index"
+    get "sentence_tags",    to: "sentence_tags#index"
   end
 
   # letter_opener (dev only)
   if Rails.env.development?
-    mount LetterOpenerWeb::Engine, at: '/letter_opener'
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
 end

@@ -84,5 +84,4 @@ class SentenceReviewsController < ApplicationController
       redirect_to new_sentence_review_path, alert: t("flash.sentence_reviews.no_session", default: "復習が未作成です")
     end
   end
-
 end

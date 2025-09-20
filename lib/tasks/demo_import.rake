@@ -70,5 +70,5 @@ namespace :demo do
   end
 
   desc "Reset demo data"
-  task reset_yaml: [:clear_yaml, :import_yaml]
+  task reset_yaml: [ :clear_yaml, :import_yaml ]
 end

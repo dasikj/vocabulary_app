@@ -43,8 +43,8 @@ class VocabQuizzesController < ApplicationController
     if tag_ids.any?
       scope = scope.joins(:vocabulary_taggings)
                    .where(vocabulary_taggings: { vocabulary_tag_id: tag_ids })
-                   .group('vocabularies.id')
-                   .having('COUNT(DISTINCT vocabulary_taggings.vocabulary_tag_id) = ?', tag_ids.size)
+                   .group("vocabularies.id")
+                   .having("COUNT(DISTINCT vocabulary_taggings.vocabulary_tag_id) = ?", tag_ids.size)
     end
 
     # DISTINCT と ORDER BY RANDOM() の併用は PostgreSQL でエラーになるため、
@@ -150,10 +150,10 @@ class VocabQuizzesController < ApplicationController
   def build_choices_for(vocab, current_ids)
     correct = vocab.meaning.to_s
     pool = current_user.vocabularies.where.not(id: current_ids)
-              .where.not(meaning: [nil, "", correct])
+              .where.not(meaning: [ nil, "", correct ])
               .order("RANDOM()").limit(20).pluck(:meaning).uniq
     extra = current_user.vocabularies.where.not(id: vocab.id)
-              .where.not(meaning: [nil, "", correct])
+              .where.not(meaning: [ nil, "", correct ])
               .order("RANDOM()").limit(20).pluck(:meaning).uniq
     pool |= extra
 
@@ -161,7 +161,7 @@ class VocabQuizzesController < ApplicationController
     if distractors.size < 3
       redirect_to new_vocab_quiz_path, alert: t("flash.vocab_quiz.too_few_distractors", default: "外れ選択肢を用意できません") and return
     end
-    (distractors + [correct]).shuffle
+    (distractors + [ correct ]).shuffle
   end
 
   def normalize(str)

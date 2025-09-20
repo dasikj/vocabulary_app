@@ -28,7 +28,7 @@ end
 
   def update
     if @sentence.update(sentence_params)
-      redirect_to sentences_path(sort: params[:sort].presence || 'updated_desc', anchor: "s#{@sentence.id}"), notice: t("sentences.update.success")
+      redirect_to sentences_path(sort: params[:sort].presence || "updated_desc", anchor: "s#{@sentence.id}"), notice: t("sentences.update.success")
     else
       @sentence.restore_attributes
       flash.now[:alert] = t("sentences.update.failure")
@@ -75,8 +75,8 @@ end
     else
       base.joins(:sentence_taggings)
           .where(sentence_taggings: { sentence_tag_id: ids })
-          .group('sentences.id')
-          .having('COUNT(DISTINCT sentence_taggings.sentence_tag_id) = ?', ids.size)
+          .group("sentences.id")
+          .having("COUNT(DISTINCT sentence_taggings.sentence_tag_id) = ?", ids.size)
     end
   end
 
@@ -88,11 +88,10 @@ end
 
   def ordering_params
     case params[:sort]
-    when 'updated_asc' then { updated_at: :asc }
-    when 'created_desc' then { created_at: :desc }
-    when 'created_asc' then { created_at: :asc }
+    when "updated_asc" then { updated_at: :asc }
+    when "created_desc" then { created_at: :desc }
+    when "created_asc" then { created_at: :asc }
     else { updated_at: :desc }
     end
   end
-
 end
