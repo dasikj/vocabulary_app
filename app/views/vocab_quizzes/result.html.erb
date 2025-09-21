@@ -36,6 +36,7 @@
       <% end %>
       <%= hidden_field_tag :from, cond[:from] %>
       <%= hidden_field_tag :to,   cond[:to] %>
+      <%= hidden_field_tag :only_favorites, "1" if cond[:only_favorites] %>
       <button class="rounded-xl border px-4 py-2 hover:bg-gray-100"><%= t("vocab_quizzes.result.retry", default: "同条件で再挑戦") %></button>
     <% end %>
 
