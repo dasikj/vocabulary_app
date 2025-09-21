@@ -1,13 +1,10 @@
 import { Controller } from "@hotwired/stimulus"
 
-// data-controller="tag-picker"
-// - Keeps checked tags at the top
-// - Filters labels by partial match (case-insensitive)
 export default class extends Controller {
   static targets = ["search", "list"]
 
   connect() {
-    // Initial sort: put checked tags first when the dialog opens
+    // 選択済みのタグを最上部に表示するよう並べ替え
     this.sortSelectedOnTop()
   }
 

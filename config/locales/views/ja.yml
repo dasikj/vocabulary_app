@@ -16,6 +16,7 @@ ja:
     tag: "タグ"
     choice_tag: "タグを選択(AND検索)"
     new_choice_tag: "タグを選択(最大10個まで)"
+    basic_choice_tag: "タグを選択"
     tag_none: "タグがありません"
     specify: "指定する"
     reset: "リセット"

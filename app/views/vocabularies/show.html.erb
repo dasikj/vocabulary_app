@@ -61,7 +61,7 @@
         <button type="button"
                 onclick="document.getElementById('vocabularyTagPickerShow').showModal()"
                 class="rounded-xl flex border px-3 py-2 text-left hover:bg-gray-100">
-          <%= t("common.choice_tag") %>
+          <%= t("common.new_choice_tag") %>
         </button>
 
         <%= render "shared/tag_picker",
@@ -69,7 +69,7 @@
               field_name: "vocabulary[vocabulary_tag_ids][]",
               tags: sorted_tags,
               selected_ids: selected_ids,
-              title: t("common.choice_tag") %>
+              title: t("common.new_choice_tag") %>
       </div>
 
       <%# 編集チェック時に出現する削除、変更ボタン %>
