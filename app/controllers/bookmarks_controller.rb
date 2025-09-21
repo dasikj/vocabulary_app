@@ -1,5 +1,4 @@
 class BookmarksController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_bookmark, only: :destroy
 
   # GET /bookmarks　トグル切り替え
@@ -68,19 +67,4 @@ class BookmarksController < ApplicationController
     @bookmark = current_user.bookmarks.find(params[:id])
   end
 
-  # Turbo対応の共通レスポンス
-  def respond_ok(notice:)
-    respond_to do |format|
-      format.html { redirect_back fallback_location: bookmarks_path, notice: }
-      format.turbo_stream
-      format.json { head :ok }
-    end
-  end
-
-  def respond_back(alert:)
-    respond_to do |format|
-      format.html { redirect_back fallback_location: bookmarks_path, alert: }
-      format.json { render json: { error: alert }, status: :unprocessable_entity }
-    end
-  end
 end

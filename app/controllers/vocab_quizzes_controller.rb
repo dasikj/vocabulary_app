@@ -1,10 +1,11 @@
 class VocabQuizzesController < ApplicationController
-  before_action :authenticate_user!
 
   QUIZ_KEY = :vocab_quiz
 
   def new
     @vocabulary_tags = current_user.vocabulary_tags.order(:name)
+    @cond = session[:vocab_quiz_cond] || {}
+    params[:only_favorites] = "1" if @cond[:only_favorites] && !params.key?(:only_favorites)
   end
 
   def create
@@ -16,23 +17,11 @@ class VocabQuizzesController < ApplicationController
 
     scope = current_user.vocabularies
 
-    # お気に入りのみ（ユーザーのブックマーク）に絞る（存在する関連に応じて安全に絞り込み）
+    # お気に入りのみ（ユーザーのブックマーク）に絞る（ポリモーフィック Bookmark）
     if only_favorites
-      if current_user.respond_to?(:favorite_vocabularies)
-        # 典型: has_many :favorite_vocabularies
-        scope = current_user.favorite_vocabularies.merge(scope)
-      elsif Vocabulary.reflect_on_association(:vocabulary_bookmarks)
-        # 典型: Vocabulary has_many :vocabulary_bookmarks (user_id, vocabulary_id)
-        scope = scope.joins(:vocabulary_bookmarks).where(vocabulary_bookmarks: { user_id: current_user.id })
-      elsif defined?(VocabularyFavorite)
-        # 典型: 中間テーブル VocabularyFavorite(user_id, vocabulary_id)
-        scope = scope.where(id: VocabularyFavorite.where(user_id: current_user.id).select(:vocabulary_id))
-      elsif defined?(Bookmark)
-        # 典型: ポリモーフィック Bookmark
-        scope = scope.where(id: Bookmark.where(user_id: current_user.id, bookmarkable_type: "Vocabulary").select(:bookmarkable_id))
-      else
-        # 何もしない（関連が不明）
-      end
+      scope = scope.where(
+        id: Bookmark.where(user_id: current_user.id, bookmarkable_type: "Vocabulary").select(:bookmarkable_id)
+      )
     end
 
     # 期間フィルタ
@@ -47,7 +36,6 @@ class VocabQuizzesController < ApplicationController
                    .having("COUNT(DISTINCT vocabulary_taggings.vocabulary_tag_id) = ?", tag_ids.size)
     end
 
-    # DISTINCT と ORDER BY RANDOM() の併用は PostgreSQL でエラーになるため、
     # 先に候補IDを取り出し、Ruby 側でサンプリングする
     candidate_ids = scope.pluck(:id)  # group済みなので重複しない
     if candidate_ids.size < 10
@@ -68,7 +56,6 @@ class VocabQuizzesController < ApplicationController
       "score"   => 0
     }
 
-    # Persist conditions for retry
     session[:vocab_quiz_cond] = {
       pattern: pattern,
       vocabulary_tags_id_in: tag_ids,

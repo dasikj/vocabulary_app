@@ -16,6 +16,7 @@ ja:
     tag: "タグ"
     choice_tag: "タグを選択(AND検索)"
     new_choice_tag: "タグを選択(最大10個まで)"
+    basic_choice_tag: "タグを選択"
     tag_none: "タグがありません"
     specify: "指定する"
     reset: "リセット"
@@ -88,6 +89,10 @@ ja:
       forgot_password: "パスワードをお忘れの方はこちら"
       submit: "ログイン"
   flash:
+    vocab_quiz:
+      too_few_questions: "登録語彙が少なすぎます（10個以上必要）"
+      too_few_distractors: "外れ選択肢を用意できません(最低13個以上の語彙登録が必要です)"
+      no_session: "問題が未作成です"
     users:
       create:
         success: "登録しました。ログインしてください。"
@@ -145,6 +150,7 @@ ja:
     sentence_reviews:
       too_few: "登録されている文章が少なすぎます（10個以上必要）"
       no_session: "復習が未作成です"
+      completed: "お疲れさまでした。"
 
   home:
     index:
@@ -366,7 +372,7 @@ ja:
       your: "あなたの回答"
       retry: "同条件で再挑戦"
       back_home: "トップへ"
-  sentence_reviews:
+sentence_reviews:
     new:
       title: "文章を振り返る"
       heading: "文章の復習を開始"

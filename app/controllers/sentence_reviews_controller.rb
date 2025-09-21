@@ -1,5 +1,4 @@
 class SentenceReviewsController < ApplicationController
-  before_action :authenticate_user!
 
   KEY = :sentence_review
 
@@ -15,23 +14,11 @@ class SentenceReviewsController < ApplicationController
 
     scope = current_user.sentences
 
-    # お気に入りのみ（ユーザーのブックマーク）に絞る（存在する関連に応じて安全に絞り込み）
+    # お気に入りのみ（ユーザーのブックマーク）に絞る（このプロジェクトはポリモーフィック Bookmark 前提）
     if only_favorites
-      if current_user.respond_to?(:favorite_sentences)
-        # 典型: has_many :favorite_sentences, -> { where(bookmarks...) }
-        scope = current_user.favorite_sentences.merge(scope)
-      elsif Sentence.reflect_on_association(:sentence_bookmarks)
-        # 典型: Sentence has_many :sentence_bookmarks (user_id, sentence_id)
-        scope = scope.joins(:sentence_bookmarks).where(sentence_bookmarks: { user_id: current_user.id })
-      elsif defined?(SentenceFavorite)
-        # 典型: 中間テーブル SentenceFavorite(user_id, sentence_id)
-        scope = scope.where(id: SentenceFavorite.where(user_id: current_user.id).select(:sentence_id))
-      elsif defined?(Bookmark)
-        # 典型: ポリモーフィック Bookmark
-        scope = scope.where(id: Bookmark.where(user_id: current_user.id, bookmarkable_type: "Sentence").select(:bookmarkable_id))
-      else
-        # 何もしない（関連が不明）
-      end
+      scope = scope.where(
+        id: Bookmark.where(user_id: current_user.id, bookmarkable_type: "Sentence").select(:bookmarkable_id)
+      )
     end
 
     scope = scope.where("sentences.created_at >= ?", from.to_date.beginning_of_day) if from
@@ -54,7 +41,7 @@ class SentenceReviewsController < ApplicationController
     session[KEY] = {
       "ids"   => ids,
       "index" => 1,
-      "cond"  => { sentence_tags_id_in: tag_ids, from: from, to: to } # 将来の再実行に備えて保持
+      "cond"  => { sentence_tags_id_in: tag_ids, from: from, to: to, only_favorites: only_favorites } # 将来の再実行に備えて保持
     }
 
     redirect_to sentence_review_path(id: "run", q: 1)
@@ -75,7 +62,7 @@ class SentenceReviewsController < ApplicationController
   end
 
   def complete
-  data = session[KEY]
+    data = session[KEY]
     if data.present?
       current_user.increment!(:review_uses_count)
       session.delete(KEY)
