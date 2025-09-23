@@ -1,4 +1,5 @@
 class UserSignupSeeder
+  require "securerandom"
   require "yaml"
   MAX_PER_KIND = 45
 
@@ -11,6 +12,10 @@ class UserSignupSeeder
 
   class << self
     private
+
+    def random_hex_color
+      format("#%06x", SecureRandom.random_number(0x1000000))
+    end
 
     def attach_unique!(collection, record)
       collection << record unless collection.exists?(id: record.id)
@@ -29,7 +34,9 @@ class UserSignupSeeder
         end
 
         Array(h["vocabulary_tags"]).each do |tag_name|
-          tag = user.vocabulary_tags.find_or_create_by!(name: tag_name)
+          tag = user.vocabulary_tags.find_or_initialize_by(name: tag_name)
+          tag.color = random_hex_color if tag.respond_to?(:color) && tag.color.blank?
+          tag.save!
           attach_unique!(vocab.vocabulary_tags, tag)
         end
       end
@@ -45,7 +52,9 @@ class UserSignupSeeder
         end
 
         Array(h["sentence_tags"]).each do |tag_name|
-          tag = user.sentence_tags.find_or_create_by!(name: tag_name)
+          tag = user.sentence_tags.find_or_initialize_by(name: tag_name)
+          tag.color = random_hex_color if tag.respond_to?(:color) && tag.color.blank?
+          tag.save!
           attach_unique!(sentence.sentence_tags, tag)
         end
       end
