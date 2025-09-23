@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   #テストデータ挿入
-  after_commit :seed_initial_data, on: :create
+  after_create :seed_initial_data
 
   # devise
   devise :database_authenticatable, :registerable,
@@ -38,13 +38,14 @@ class User < ApplicationRecord
     self.name  = name.to_s.strip
   end
 
-def seed_initial_data
-  if ENV['SEED_ON_SIGNUP'] == 'true'
-    Rails.logger.info "=== Running UserSignupSeeder for #{self.email} ==="
-    UserSignupSeeder.run(self)
-  else
-    Rails.logger.info "=== Skipped seeding for #{self.email} (flag off) ==="
+  def seed_initial_data
+    if ENV['SEED_ON_SIGNUP'] == 'true'
+      Rails.logger.info "=== [seed] start user=#{email}"
+      UserSignupSeeder.run(self)
+      Rails.logger.info "=== [seed] done  user=#{email}"
+    else
+      Rails.logger.info "=== [seed] skip  user=#{email} (flag off)"
+    end
   end
-end
 
 end
