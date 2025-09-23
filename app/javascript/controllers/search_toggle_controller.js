@@ -2,18 +2,12 @@
 
 import { Controller } from "@hotwired/stimulus"
 
-// data-controller="search-toggle"
-// data-search-toggle-target="tab panel"
-// data-search-toggle-default-value="sentence" | "vocabulary"
 export default class extends Controller {
   static targets = ["tab", "panel"]
-  static values = { default: { type: String, default: "sentence" } }
 
   connect() {
-    const params = new URLSearchParams(window.location.search)
-    const urlTab = params.get("tab")
-    const initial = urlTab || this.defaultValue
-    this.show(initial)
+    // 常に「文章」から始める（URLや値は使わない）
+    this.show("sentence")
   }
 
   select(event) {
@@ -22,14 +16,14 @@ export default class extends Controller {
   }
 
   show(kind) {
-    // tabs
+    // タブの見た目切り替え
     this.tabTargets.forEach(el => {
       const active = el.dataset.kind === kind
       el.classList.toggle("bg-gray-100", active)
       el.classList.toggle("text-gray-900", active)
       el.classList.toggle("text-gray-600", !active)
     })
-    // panels
+    // パネルの表示/非表示
     this.panelTargets.forEach(el => {
       el.classList.toggle("hidden", el.dataset.kind !== kind)
     })

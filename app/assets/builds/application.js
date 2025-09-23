@@ -8626,26 +8626,21 @@ var tag_picker_controller_default = class extends Controller {
 // app/javascript/controllers/dropdown_controller.js
 var dropdown_controller_default = class extends Controller {
   static targets = ["menu"];
+  // menuのクラスリストをクリックで表示 / 非表示切り替え
   toggle(event) {
-    event.preventDefault();
     const hiddenNow = this.menuTarget.classList.toggle("hidden");
-    const expanded = !hiddenNow;
-    try {
-      const btn = event.currentTarget;
-      if (btn?.setAttribute) btn.setAttribute("aria-expanded", String(expanded));
-    } catch (_) {
-    }
   }
+  // 要素以外の場所がクリックされた場合、メニューを閉じる
   outside(event) {
     if (!this.element.contains(event.target)) this.close();
   }
+  // Escapeを押した場合、メニューを閉じる
   closeOnEscape(event) {
     if (event.key === "Escape") this.close();
   }
+  // 閉じた場合、hiddenを付与してメニューを隠す
   close() {
     this.menuTarget.classList.add("hidden");
-    const btn = this.element.querySelector("button[aria-haspopup='menu']");
-    if (btn) btn.setAttribute("aria-expanded", "false");
   }
 };
 
@@ -8736,12 +8731,8 @@ var autocomplete_controller_default = class extends Controller {
 // app/javascript/controllers/search_toggle_controller.js
 var search_toggle_controller_default = class extends Controller {
   static targets = ["tab", "panel"];
-  static values = { default: { type: String, default: "sentence" } };
   connect() {
-    const params = new URLSearchParams(window.location.search);
-    const urlTab = params.get("tab");
-    const initial = urlTab || this.defaultValue;
-    this.show(initial);
+    this.show("sentence");
   }
   select(event) {
     const kind = event.currentTarget.dataset.kind;

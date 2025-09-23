@@ -1,5 +1,4 @@
 class HomeController < ApplicationController
-  before_action :authenticate_user!
 
   def index
     # 検索フォーム（TOPのトグル検索用）
@@ -9,12 +8,14 @@ class HomeController < ApplicationController
     # ===== カレンダー（月別ヒートマップ） =====
     month_param = params[:month].presence
     begin
-      base_month = month_param ? Time.zone.parse("#{month_param}-01") : Time.zone.today.beginning_of_month
+      base_month = month_param ? Time.zone.parse("#{month_param}-01") : Time.zone.today
     rescue
-      base_month = Time.zone.today.beginning_of_month
+      base_month = Time.zone.today
     end
 
-    @month_date = base_month.beginning_of_month
+   
+    base_month  = base_month.to_date.beginning_of_month
+    @month_date = base_month
     @start_date = @month_date
     @end_date   = @month_date.end_of_month
 
@@ -23,9 +24,9 @@ class HomeController < ApplicationController
     @grid_end   = @end_date.end_of_week(:sunday)
 
     # 遡れる最小月：ユーザー作成月（保険で today フォールバック）
-    min_source = current_user&.created_at || Time.zone.today
+    min_source = (current_user&.created_at || Time.zone.today).to_date
     @min_month = min_source.beginning_of_month
-    @max_month = Time.zone.today.beginning_of_month
+    @max_month = Time.zone.today.to_date.beginning_of_month
 
     @prev_month = @month_date - 1.month
     @next_month = @month_date + 1.month

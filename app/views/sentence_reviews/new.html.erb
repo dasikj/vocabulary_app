@@ -19,9 +19,14 @@
           <label class="block text-sm text-gray-600 mb-1"><%= t("sentence_reviews.new.tags", default: "タグで絞り込み") %></label>
           <button type="button" onclick="document.getElementById('reviewSentenceTagDialog').showModal()"
                   class="w-full rounded-xl border px-3 py-2 hover:bg-gray-50 bg-white text-left">
-            <%= t("common.choice_tag", default: "タグを選択") %>
+            <%= t("common.basic_choice_tag", default: "タグを選択") %>
           </button>
         </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <%= check_box_tag :only_favorites, "1", false, id: "only_favorites", class: "rounded" %>
+        <label for="only_favorites" class="text-sm text-gray-700"><%= t("sentence_reviews.new.only_favorites", default: "お気に入りだけに絞る") %></label>
       </div>
 
       <div class="flex gap-2">
@@ -37,7 +42,7 @@
             field_name: "sentence_tags_id_in[]",
             tags: @sentence_tags,
             selected_ids: [],
-            title: t("common.choice_tag", default: "タグを選択") %>
+            title: t("common.basic_choice_tag", default: "タグを選択") %>
     </div>
   <% end %>
 </div>

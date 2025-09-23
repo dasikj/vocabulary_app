@@ -1,10 +1,11 @@
 class VocabQuizzesController < ApplicationController
-  before_action :authenticate_user!
 
   QUIZ_KEY = :vocab_quiz
 
   def new
     @vocabulary_tags = current_user.vocabulary_tags.order(:name)
+    @cond = session[:vocab_quiz_cond] || {}
+    params[:only_favorites] = "1" if @cond[:only_favorites] && !params.key?(:only_favorites)
   end
 
   def create
@@ -12,8 +13,16 @@ class VocabQuizzesController < ApplicationController
     tag_ids = Array(params[:vocabulary_tags_id_in]).map(&:to_i).reject(&:zero?)
     from    = params[:from].presence
     to      = params[:to].presence
+    only_favorites = params[:only_favorites].present?
 
     scope = current_user.vocabularies
+
+    # お気に入りのみ（ユーザーのブックマーク）に絞る（ポリモーフィック Bookmark）
+    if only_favorites
+      scope = scope.where(
+        id: Bookmark.where(user_id: current_user.id, bookmarkable_type: "Vocabulary").select(:bookmarkable_id)
+      )
+    end
 
     # 期間フィルタ
     scope = scope.where("vocabularies.created_at >= ?", from.to_date.beginning_of_day) if from
@@ -23,11 +32,10 @@ class VocabQuizzesController < ApplicationController
     if tag_ids.any?
       scope = scope.joins(:vocabulary_taggings)
                    .where(vocabulary_taggings: { vocabulary_tag_id: tag_ids })
-                   .group('vocabularies.id')
-                   .having('COUNT(DISTINCT vocabulary_taggings.vocabulary_tag_id) = ?', tag_ids.size)
+                   .group("vocabularies.id")
+                   .having("COUNT(DISTINCT vocabulary_taggings.vocabulary_tag_id) = ?", tag_ids.size)
     end
 
-    # DISTINCT と ORDER BY RANDOM() の併用は PostgreSQL でエラーになるため、
     # 先に候補IDを取り出し、Ruby 側でサンプリングする
     candidate_ids = scope.pluck(:id)  # group済みなので重複しない
     if candidate_ids.size < 10
@@ -48,12 +56,12 @@ class VocabQuizzesController < ApplicationController
       "score"   => 0
     }
 
-    # Persist conditions for retry
     session[:vocab_quiz_cond] = {
       pattern: pattern,
       vocabulary_tags_id_in: tag_ids,
       from: from,
-      to: to
+      to: to,
+      only_favorites: only_favorites
     }
 
     redirect_to vocab_quiz_path(id: "run", q: 1)
@@ -129,10 +137,10 @@ class VocabQuizzesController < ApplicationController
   def build_choices_for(vocab, current_ids)
     correct = vocab.meaning.to_s
     pool = current_user.vocabularies.where.not(id: current_ids)
-              .where.not(meaning: [nil, "", correct])
+              .where.not(meaning: [ nil, "", correct ])
               .order("RANDOM()").limit(20).pluck(:meaning).uniq
     extra = current_user.vocabularies.where.not(id: vocab.id)
-              .where.not(meaning: [nil, "", correct])
+              .where.not(meaning: [ nil, "", correct ])
               .order("RANDOM()").limit(20).pluck(:meaning).uniq
     pool |= extra
 
@@ -140,7 +148,7 @@ class VocabQuizzesController < ApplicationController
     if distractors.size < 3
       redirect_to new_vocab_quiz_path, alert: t("flash.vocab_quiz.too_few_distractors", default: "外れ選択肢を用意できません") and return
     end
-    (distractors + [correct]).shuffle
+    (distractors + [ correct ]).shuffle
   end
 
   def normalize(str)

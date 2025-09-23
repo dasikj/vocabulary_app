@@ -25,7 +25,7 @@ end
 
   def update
     if @vocabulary.update(vocabulary_params)
-      redirect_to vocabularies_path(sort: params[:sort].presence || 'updated_desc', anchor: "v#{@vocabulary.id}"), notice: t("vocabularies.update.success")
+      redirect_to vocabularies_path(sort: params[:sort].presence || "updated_desc", anchor: "v#{@vocabulary.id}"), notice: t("vocabularies.update.success")
     else
       @vocabulary.restore_attributes
       flash.now[:alert] = t("vocabularies.update.failure")
@@ -85,17 +85,16 @@ end
     return if ids.blank?
 
     # Ransack の groupings + m='and' 形式に変換
-    params[:q][:m] = 'and'
+    params[:q][:m] = "and"
     params[:q][:groupings] = ids.map { |id| { vocabulary_tags_id_eq: id } }
   end
 
   def ordering_params
     case params[:sort]
-    when 'updated_asc' then { updated_at: :asc }
-    when 'created_desc' then { created_at: :desc }
-    when 'created_asc' then { created_at: :asc }
+    when "updated_asc" then { updated_at: :asc }
+    when "created_desc" then { created_at: :desc }
+    when "created_asc" then { created_at: :asc }
     else { updated_at: :desc }
     end
   end
-
 end

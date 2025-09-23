@@ -1,5 +1,4 @@
 class SentenceReviewsController < ApplicationController
-  before_action :authenticate_user!
 
   KEY = :sentence_review
 
@@ -11,8 +10,17 @@ class SentenceReviewsController < ApplicationController
     tag_ids = Array(params[:sentence_tags_id_in]).map(&:to_i).reject(&:zero?)
     from    = params[:from].presence
     to      = params[:to].presence
+    only_favorites = params[:only_favorites].present?
 
     scope = current_user.sentences
+
+    # お気に入りのみ（ユーザーのブックマーク）に絞る（このプロジェクトはポリモーフィック Bookmark 前提）
+    if only_favorites
+      scope = scope.where(
+        id: Bookmark.where(user_id: current_user.id, bookmarkable_type: "Sentence").select(:bookmarkable_id)
+      )
+    end
+
     scope = scope.where("sentences.created_at >= ?", from.to_date.beginning_of_day) if from
     scope = scope.where("sentences.created_at <= ?", to.to_date.end_of_day) if to
 
@@ -33,7 +41,7 @@ class SentenceReviewsController < ApplicationController
     session[KEY] = {
       "ids"   => ids,
       "index" => 1,
-      "cond"  => { sentence_tags_id_in: tag_ids, from: from, to: to } # 将来の再実行に備えて保持
+      "cond"  => { sentence_tags_id_in: tag_ids, from: from, to: to, only_favorites: only_favorites } # 将来の再実行に備えて保持
     }
 
     redirect_to sentence_review_path(id: "run", q: 1)
@@ -54,7 +62,7 @@ class SentenceReviewsController < ApplicationController
   end
 
   def complete
-  data = session[KEY]
+    data = session[KEY]
     if data.present?
       current_user.increment!(:review_uses_count)
       session.delete(KEY)
@@ -63,5 +71,4 @@ class SentenceReviewsController < ApplicationController
       redirect_to new_sentence_review_path, alert: t("flash.sentence_reviews.no_session", default: "復習が未作成です")
     end
   end
-
 end
