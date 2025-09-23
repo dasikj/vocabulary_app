@@ -19,7 +19,7 @@ class Sentence < ApplicationRecord
     other: 11           # その他
   }
 
-  validates :body, presence: true, length: { maximum: 500 }, uniqueness: true
+  validates :body, presence: true, length: { maximum: 500 }, uniqueness: { scope: :user_id }
   validates :sentence_category, presence: true
   validate :limit_sentence_tags_count
 

@@ -37,4 +37,14 @@ class User < ApplicationRecord
     self.email = email.to_s.strip.downcase
     self.name  = name.to_s.strip
   end
+
+def seed_initial_data
+  if ENV['SEED_ON_SIGNUP'] == 'true'
+    Rails.logger.info "=== Running UserSignupSeeder for #{self.email} ==="
+    UserSignupSeeder.run(self)
+  else
+    Rails.logger.info "=== Skipped seeding for #{self.email} (flag off) ==="
+  end
+end
+
 end
