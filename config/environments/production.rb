@@ -107,12 +107,16 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address:              "smtp.gmail.com",
-    port:                 587,
+    port:                 465,                 # ← 587 から 465 へ
     domain:               "gmail.com",
-    user_name:            ENV["GMAIL_USERNAME"],     # Gmailアドレス
-    password:             ENV["GMAIL_APP_PASSWORD"], # アプリパスワード
-    authentication:       "plain",
-    enable_starttls_auto: true
+    user_name:            ENV["GMAIL_USERNAME"],
+    password:             ENV["GMAIL_APP_PASSWORD"],
+    authentication:       :login,              # :plain でも可
+    ssl:                  true,                # ← 重要（SSLで即接続）
+    tls:                  true,                # ← 重要
+    enable_starttls_auto: true,                # 付けておいてOK
+    open_timeout:         30,                  # タイムアウト少し長め
+    read_timeout:         30
   }
 
   config.action_mailer.perform_caching = false
