@@ -27,5 +27,8 @@ module Myapp
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    #レビュー終了後削除
+    config.x.seed_on_signup = ENV['SEED_ON_SIGNUP'] == 'true'
   end
 end
