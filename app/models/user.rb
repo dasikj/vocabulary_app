@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  #テストデータ挿入
+  after_commit :seed_initial_data, on: :create
+
   # devise
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
