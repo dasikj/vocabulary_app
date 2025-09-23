@@ -60,3 +60,4 @@ build-iPhoneSimulator/
 log/*.log
 /log/*
 /log/development.log
+/log/*.log
